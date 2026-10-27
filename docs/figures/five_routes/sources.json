@@ -1,0 +1,42 @@
+[
+  {
+    "scenario": "baseline",
+    "goal_error_m": 0.2099164936514412,
+    "goal_reached": true,
+    "samples_plotted": 294,
+    "obstacles": 3,
+    "source": "/home/ache/Coding/rov_navigation/logs/scenario_tests/ros_clock_suite/baseline/run.json"
+  },
+  {
+    "scenario": "slalom",
+    "goal_error_m": 0.5191751296253198,
+    "goal_reached": false,
+    "samples_plotted": 298,
+    "obstacles": 7,
+    "source": "/home/ache/Coding/rov_navigation/logs/scenario_tests/ros_clock_suite/slalom/run.json"
+  },
+  {
+    "scenario": "gates",
+    "goal_error_m": 2.029071521742185,
+    "goal_reached": false,
+    "samples_plotted": 381,
+    "obstacles": 6,
+    "source": "/home/ache/Coding/rov_navigation/logs/scenario_tests/ros_clock_suite/gates/run.json"
+  },
+  {
+    "scenario": "pillars",
+    "goal_error_m": 0.2994873802984152,
+    "goal_reached": true,
+    "samples_plotted": 275,
+    "obstacles": 8,
+    "source": "/home/ache/Coding/rov_navigation/logs/scenario_tests/ros_clock_suite/pillars/run.json"
+  },
+  {
+    "scenario": "mixed",
+    "goal_error_m": 0.29977589201022026,
+    "goal_reached": true,
+    "samples_plotted": 286,
+    "obstacles": 8,
+    "source": "/home/ache/Coding/rov_navigation/logs/scenario_tests/ros_clock_suite/mixed/run.json"
+  }
+]

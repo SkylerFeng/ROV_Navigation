@@ -1,0 +1,72 @@
+[
+  {
+    "scenario": "baseline",
+    "goal_error_m": 0.0026476649256081818,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 84.63333774730563,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_baseline.usda",
+    "samples_plotted": 423,
+    "obstacles": 3,
+    "recorded_scenario": "baseline",
+    "source": "logs/suites/five_scenarios_20261015_guide_fix/baseline/run.json"
+  },
+  {
+    "scenario": "slalom",
+    "goal_error_m": 0.0017184427023322695,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 87.2333378829062,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+    "samples_plotted": 436,
+    "obstacles": 7,
+    "recorded_scenario": "slalom",
+    "source": "logs/suites/five_scenarios_20261015_guide_fix/slalom/run.json"
+  },
+  {
+    "scenario": "gates",
+    "goal_error_m": 0.002410102518800083,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 86.50000451132655,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_gates.usda",
+    "samples_plotted": 433,
+    "obstacles": 6,
+    "recorded_scenario": "gates",
+    "source": "/home/ache/Coding/rov_navigation/logs/suites/gates_promoted_20261015/gates/run.json"
+  },
+  {
+    "scenario": "pillars",
+    "goal_error_m": 0.007586551431217791,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 133.06667360663414,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_pillars.usda",
+    "samples_plotted": 665,
+    "obstacles": 8,
+    "recorded_scenario": "pillars",
+    "source": "logs/suites/five_scenarios_20261015_guide_fix/pillars/run.json"
+  },
+  {
+    "scenario": "mixed",
+    "goal_error_m": 0.0028489567377258528,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 93.83333822712302,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_mixed.usda",
+    "samples_plotted": 469,
+    "obstacles": 8,
+    "recorded_scenario": "mixed",
+    "source": "logs/suites/five_scenarios_20261015_guide_fix/mixed/run.json"
+  }
+]

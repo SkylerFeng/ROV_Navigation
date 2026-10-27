@@ -1,0 +1,190 @@
+{
+  "timeline": [
+    {
+      "scenario": "gates",
+      "directory": "/home/ache/Coding/rov_navigation/logs/scenario_tests/recheck_20261014_gui/gates",
+      "first_contacts": [
+        {
+          "colliders": [
+            "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+            "/World/ROV/CollisionHull"
+          ],
+          "first_time": 0.0,
+          "reports": 4068,
+          "last_time": 89.98333802632987,
+          "last_contact_position": [
+            1.6825881004333496,
+            0.22592926025390625,
+            0.9735778570175171
+          ],
+          "last_contact_normal": [
+            -0.7655935287475586,
+            -0.6420751810073853,
+            0.04007444158196449
+          ],
+          "last_contact_impulse": [
+            -0.0,
+            -0.0,
+            0.0
+          ],
+          "max_impulse_norm": 0.562375182895644,
+          "nonzero_impulse_reports": 3804,
+          "first_impulse_time": 26.5000013820827,
+          "last_impulse_time": 89.98333802632987
+        }
+      ]
+    },
+    {
+      "scenario": "slalom",
+      "directory": "/home/ache/Coding/rov_navigation/logs/scenario_tests/recheck_20261014_diagnostic/slalom",
+      "first_contacts": [
+        {
+          "colliders": [
+            "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+            "/World/ROV/CollisionHull"
+          ],
+          "first_time": 0.0,
+          "reports": 521,
+          "last_time": 23.916667914018035,
+          "last_contact_position": [
+            -2.0532898902893066,
+            -0.560849666595459,
+            1.2456090450286865
+          ],
+          "last_contact_normal": [
+            -0.21003180742263794,
+            -0.9776946306228638,
+            -1.0553631000220776e-06
+          ],
+          "last_contact_impulse": [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "max_impulse_norm": 0
+        },
+        {
+          "colliders": [
+            "/World/Obstacles/EntryBlock",
+            "/World/ROV/CollisionHull"
+          ],
+          "first_time": 21.066667765378952,
+          "reports": 183,
+          "last_time": 24.100001256912947,
+          "last_contact_position": [
+            -2.6500000953674316,
+            -1.2078769207000732,
+            0.9859123826026917
+          ],
+          "last_contact_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "last_contact_impulse": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_impulse_norm": 0.4156600534915924,
+          "nonzero_impulse_reports": 171,
+          "first_impulse_time": 21.150001103058457,
+          "last_impulse_time": 23.98333458416164
+        },
+        {
+          "colliders": [
+            "/World/Obstacles/OuterA",
+            "/World/ROV/CollisionHull"
+          ],
+          "first_time": 28.416668148711324,
+          "reports": 9061,
+          "last_time": 179.98334272019565,
+          "last_contact_position": [
+            -0.7377457022666931,
+            -1.2837752103805542,
+            1.246116280555725
+          ],
+          "last_contact_normal": [
+            0.2848840057849884,
+            0.9585620760917664,
+            -8.460084899297726e-08
+          ],
+          "last_contact_impulse": [
+            0.003683096030727029,
+            0.0123926792293787,
+            -1.0937540873001694e-09
+          ],
+          "max_impulse_norm": 0.5323913776067609,
+          "nonzero_impulse_reports": 9006,
+          "first_impulse_time": 28.483334818854928,
+          "last_impulse_time": 179.98334272019565
+        }
+      ]
+    }
+  ],
+  "map_snapshot": "/home/ache/Coding/rov_navigation/logs/diagnostics/freeze_20261014/heading20_map_audit/map_0084.27.json",
+  "map_metadata": {
+    "t": 84.266671061,
+    "position": [
+      0.22448793053627014,
+      -0.1836337447166443,
+      0.9999999403953552
+    ],
+    "goal": [
+      3.5,
+      0.0,
+      1.0
+    ],
+    "goal_occupied": true,
+    "position_occupied": false,
+    "planner": {
+      "t": 83.8667,
+      "state": "GEN_NEW_TRAJ",
+      "have_target": true,
+      "tracking_error": 3.68351e-06,
+      "goal_error": 3.28066,
+      "tracking_recoveries": 8
+    },
+    "tracking": {
+      "t": 84.266671061,
+      "mode": "TRACKING",
+      "heading_error_deg": -0.45233096069506484,
+      "translation_scale": 0.9999376755661038,
+      "target_yaw": -1.565969769220731,
+      "position_error": 3.68351158930564e-06,
+      "position": [
+        0.22448793053627014,
+        -0.1836337447166443,
+        0.9999999403953552
+      ],
+      "reference_position": [
+        0.22448931634426117,
+        -0.18363715708255768,
+        0.9999998807907104
+      ],
+      "reference_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "command_velocity": [
+        2.7714432426586048e-06,
+        -6.824306479234629e-06,
+        4.76837158203125e-08
+      ],
+      "yaw": -1.5580751046478931,
+      "trajectory_id": 43
+    },
+    "input_cells": 369,
+    "inflated_cells": 14057,
+    "goal_input_distance_m": 0.3535533905932738
+  },
+  "validated_runs": [
+    "logs/diagnostics/freeze_20261014/free_goal_validation/baseline/run.json",
+    "logs/diagnostics/freeze_20261014/free_goal_validation/slalom/run.json",
+    "logs/diagnostics/freeze_20261014/free_goal_validation/gates/run.json",
+    "logs/diagnostics/freeze_20261014/clearance_validation/gates/run.json",
+    "logs/diagnostics/freeze_20261014/clearance_gui_validation/gates_clearance/run.json"
+  ],
+  "water_connectivity": "logs/diagnostics/freeze_20261014/water_constrained_connectivity.json"
+}

@@ -1,0 +1,427 @@
+{
+  "baseline": {
+    "title": "Baseline / 三障碍基准",
+    "description": "保留原始基准，便于回归对比。"
+  },
+  "slalom": {
+    "title": "Slalom / 交错绕行",
+    "description": "交错障碍正式布局，使用共享执行进度、已观测地图全局引导及当前公共感知和初始化配置；自由终点任务允许外围绕行。",
+    "obstacles": [
+      {
+        "name": "SlalomA",
+        "position": [
+          -1.5,
+          -0.15,
+          1.05
+        ],
+        "size": [
+          0.45,
+          0.85,
+          0.85
+        ]
+      },
+      {
+        "name": "SlalomB",
+        "position": [
+          0.05,
+          1.05,
+          1.05
+        ],
+        "size": [
+          0.45,
+          0.8,
+          0.85
+        ]
+      },
+      {
+        "name": "SlalomC",
+        "position": [
+          1.6,
+          -0.1,
+          1.05
+        ],
+        "size": [
+          0.45,
+          0.8,
+          0.85
+        ]
+      },
+      {
+        "name": "OuterA",
+        "type": "cylinder",
+        "position": [
+          -0.8,
+          -1.5,
+          1.05
+        ],
+        "size": [
+          0.45,
+          0.45,
+          0.85
+        ]
+      },
+      {
+        "name": "OuterB",
+        "type": "cylinder",
+        "position": [
+          2.4,
+          2.35,
+          1.05
+        ],
+        "size": [
+          0.45,
+          0.45,
+          0.85
+        ]
+      },
+      {
+        "name": "EntryBlock",
+        "position": [
+          -2.9,
+          -1.5,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.6,
+          0.85
+        ]
+      },
+      {
+        "name": "ExitBlock",
+        "position": [
+          3.5,
+          -1.45,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.6,
+          0.85
+        ]
+      }
+    ]
+  },
+  "gates": {
+    "title": "Gates / 错位门洞",
+    "goal": [
+      3.5,
+      0.4,
+      1.0
+    ],
+    "obstacles": [
+      {
+        "name": "Gate1South",
+        "position": [
+          -1.1,
+          -1.15,
+          1.05
+        ],
+        "size": [
+          0.4,
+          1.45,
+          0.85
+        ]
+      },
+      {
+        "name": "Gate1North",
+        "position": [
+          -1.1,
+          2.65,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.85,
+          0.85
+        ]
+      },
+      {
+        "name": "Gate2South",
+        "position": [
+          1.35,
+          -1.65,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.65,
+          0.85
+        ]
+      },
+      {
+        "name": "Gate2North",
+        "position": [
+          1.35,
+          2.35,
+          1.05
+        ],
+        "size": [
+          0.4,
+          1.1,
+          0.85
+        ]
+      },
+      {
+        "name": "EntryPillar",
+        "type": "cylinder",
+        "position": [
+          -2.8,
+          2.35,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.85
+        ]
+      },
+      {
+        "name": "ExitPillar",
+        "type": "cylinder",
+        "position": [
+          3.6,
+          2.1,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.85
+        ]
+      }
+    ],
+    "description": "已校核净空的双错位门洞与外围立柱，正式导航演示布局。"
+  },
+  "pillars": {
+    "title": "Pillars / 立柱阵列",
+    "description": "八根立柱构成多个候选绕行方向，测试路径选择。",
+    "obstacles": [
+      {
+        "name": "PillarA",
+        "type": "cylinder",
+        "position": [
+          -1.25,
+          0,
+          1.05
+        ],
+        "size": [
+          0.55,
+          0.55,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarB",
+        "type": "cylinder",
+        "position": [
+          0.65,
+          0.1,
+          1.05
+        ],
+        "size": [
+          0.55,
+          0.55,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarC",
+        "type": "cylinder",
+        "position": [
+          2.45,
+          0.05,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarD",
+        "type": "cylinder",
+        "position": [
+          -1.4,
+          2.4,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarE",
+        "type": "cylinder",
+        "position": [
+          0.5,
+          -1.65,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarF",
+        "type": "cylinder",
+        "position": [
+          2.5,
+          2.65,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarG",
+        "type": "cylinder",
+        "position": [
+          -3,
+          2.2,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      },
+      {
+        "name": "PillarH",
+        "type": "cylinder",
+        "position": [
+          3.8,
+          -1.6,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      }
+    ]
+  },
+  "mixed": {
+    "title": "Mixed yard / 混合障碍区",
+    "description": "箱体、墙段、立柱组合，测试不同尺寸障碍与遮挡。",
+    "obstacles": [
+      {
+        "name": "CrateA",
+        "position": [
+          -1.4,
+          -0.15,
+          1.05
+        ],
+        "size": [
+          0.65,
+          0.75,
+          0.85
+        ]
+      },
+      {
+        "name": "CrateB",
+        "position": [
+          0.6,
+          0.05,
+          1.05
+        ],
+        "size": [
+          0.6,
+          0.65,
+          0.85
+        ]
+      },
+      {
+        "name": "ShortWall",
+        "position": [
+          2.3,
+          -0.25,
+          1.05
+        ],
+        "size": [
+          0.35,
+          1.25,
+          0.85
+        ]
+      },
+      {
+        "name": "PipeA",
+        "type": "cylinder",
+        "position": [
+          -2.9,
+          2.2,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.85
+        ]
+      },
+      {
+        "name": "PipeB",
+        "type": "cylinder",
+        "position": [
+          0,
+          2.65,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      },
+      {
+        "name": "PipeC",
+        "type": "cylinder",
+        "position": [
+          3.5,
+          2.2,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.85
+        ]
+      },
+      {
+        "name": "SouthWall",
+        "position": [
+          0,
+          -1.75,
+          1.05
+        ],
+        "size": [
+          1.1,
+          0.3,
+          0.85
+        ]
+      },
+      {
+        "name": "SouthCrate",
+        "position": [
+          3.5,
+          -1.5,
+          1.05
+        ],
+        "size": [
+          0.6,
+          0.5,
+          0.85
+        ]
+      }
+    ]
+  }
+}

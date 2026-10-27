@@ -1,0 +1,67 @@
+[
+  {
+    "scenario": "baseline",
+    "goal_error_m": 0.003620524254221924,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 74.06667052954435,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_baseline.usda",
+    "samples_plotted": 371,
+    "obstacles": 3,
+    "source": "logs/scenario_tests/recheck_20261014_diagnostic/baseline/run.json"
+  },
+  {
+    "scenario": "slalom",
+    "goal_error_m": 4.109585995945039,
+    "goal_reached": false,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "simulation_time_limit",
+    "simulation_seconds": 180.00000938773155,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+    "samples_plotted": 899,
+    "obstacles": 7,
+    "source": "logs/scenario_tests/recheck_20261014_diagnostic/slalom/run.json"
+  },
+  {
+    "scenario": "gates",
+    "goal_error_m": 2.0291223012993123,
+    "goal_reached": false,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "simulation_time_limit",
+    "simulation_seconds": 180.00000938773155,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_gates.usda",
+    "samples_plotted": 899,
+    "obstacles": 6,
+    "source": "logs/scenario_tests/recheck_20261014_diagnostic/gates/run.json"
+  },
+  {
+    "scenario": "pillars",
+    "goal_error_m": 0.0032629288918592566,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 73.1333371475339,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_pillars.usda",
+    "samples_plotted": 366,
+    "obstacles": 8,
+    "source": "logs/scenario_tests/recheck_20261014_diagnostic/pillars/run.json"
+  },
+  {
+    "scenario": "mixed",
+    "goal_error_m": 0.0024859398358200455,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 74.40000388026237,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_mixed.usda",
+    "samples_plotted": 372,
+    "obstacles": 8,
+    "source": "logs/scenario_tests/recheck_20261014_diagnostic/mixed/run.json"
+  }
+]

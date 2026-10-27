@@ -1,0 +1,265 @@
+#usda 1.0
+(
+    customLayerData = {
+        string scenario = "gates"
+        string title = "Gates / 错位门洞"
+    }
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "Environment"
+    {
+        double3 xformOp:translate = (-7.5, -0.289182, 1.35)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Xform "Platform" (
+            prepend references = @/home/ache/Platform1013/Platform/Platform.final.usd@
+        )
+        {
+        }
+    }
+
+    def Xform "Water" (
+        prepend references = @/home/ache/Platform1013/Platform/Tile3_water.usda@
+    )
+    {
+        double3 xformOp:translate = (-7.500032, -4, 1.35)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        over "Looks"
+        {
+            over "Water"
+            {
+                over "PreviewSurface"
+                {
+                    float inputs:ior = 1
+                    float inputs:opacity = 0.12
+                    float inputs:roughness = 0.85
+                    color3f inputs:specularColor = (0, 0, 0)
+                    int inputs:useSpecularWorkflow = 1
+                }
+            }
+        }
+    }
+
+    def "Obstacles"
+    {
+        def Cube "Gate1South" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Gate1South>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.4, 1.45, 0.85)
+            double3 xformOp:translate = (-1.1, -1.15, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Gate1North" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Gate1North>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.4, 0.85, 0.85)
+            double3 xformOp:translate = (-1.1, 2.65, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Gate2South" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Gate2South>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.4, 0.65, 0.85)
+            double3 xformOp:translate = (1.35, -1.65, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Gate2North" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Gate2North>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.4, 1.1, 0.85)
+            double3 xformOp:translate = (1.35, 2.35, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cylinder "EntryPillar" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 1
+            rel material:binding = </World/ObstacleMaterials/EntryPillar>
+            color3f[] primvars:displayColor = [(0.12, 0.65, 0.85)]
+            double radius = 0.5
+            float3 xformOp:scale = (0.5, 0.5, 0.85)
+            double3 xformOp:translate = (-2.8, 2.35, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cylinder "ExitPillar" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            double height = 1
+            rel material:binding = </World/ObstacleMaterials/ExitPillar>
+            color3f[] primvars:displayColor = [(0.12, 0.65, 0.85)]
+            double radius = 0.5
+            float3 xformOp:scale = (0.5, 0.5, 0.85)
+            double3 xformOp:translate = (3.6, 2.1, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def "ObstacleMaterials"
+    {
+        def Material "Gate1South"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Gate1South/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "Gate1North"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Gate1North/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "Gate2South"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Gate2South/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "Gate2North"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Gate2North/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "EntryPillar"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/EntryPillar/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.12, 0.65, 0.85)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "ExitPillar"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/ExitPillar/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.12, 0.65, 0.85)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+    }
+
+    def "Markers"
+    {
+        def Sphere "Start"
+        {
+            color3f[] primvars:displayColor = [(0.1, 0.9, 0.2)]
+            double radius = 0.1
+            double3 xformOp:translate = (-3, 0, 1.6500000000000001)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "Goal"
+        {
+            color3f[] primvars:displayColor = [(0.1, 0.4, 1)]
+            double radius = 0.1
+            double3 xformOp:translate = (3.5, 0.4, 1.6500000000000001)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+
+    def Xform "ROV" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend references = @/home/ache/OceanSim_assets/Bluerov/BROV_low.usd@
+    )
+    {
+        float physics:mass = 5
+        double3 xformOp:translate = (-3, 0, 1)
+
+        def Cube "CollisionHull" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            double size = 1
+            token visibility = "invisible"
+            float3 xformOp:scale = (0.48, 0.57, 0.26)
+            double3 xformOp:translate = (0, 0, 0.116)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def PhysicsScene "PhysicsScene"
+    {
+        float physics:gravityMagnitude = 0
+    }
+}
+

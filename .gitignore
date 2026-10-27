@@ -1,0 +1,25 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# ROS/colcon generated artifacts
+/ros_ws/build/
+/ros_ws/install/
+/ros_ws/log/
+
+# Experiment outputs remain local; docs retain published figures.
+/logs/
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+.DS_Store
+*~
