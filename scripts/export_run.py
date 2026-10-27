@@ -8,6 +8,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Circle
 from matplotlib.animation import FuncAnimation, PillowWriter
+from hydrodynamics_metrics import dynamics_metrics
 
 
 def export(directory, animate=True):
@@ -30,6 +31,8 @@ def export(directory, animate=True):
                "conservative_block_clearance_m": min(clearances),
                "depth_mode": r["depth_mode"],
                "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count."}
+    control_file = directory / "controls.json"
+    metrics.update(dynamics_metrics(r, json.loads(control_file.read_text()) if control_file.exists() else []))
     (directory / "metrics.json").write_text(json.dumps(metrics, indent=2))
     fig, ax = plt.subplots(figsize=(10, 6))
     for obj in c["obstacles"]:

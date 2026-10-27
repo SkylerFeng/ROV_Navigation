@@ -45,12 +45,20 @@ def run_case(name, directory, limit, domain, sim_limit=180, tolerance=.01, settl
         sources.append(Path(c["overrides_file"]))
     manifest = {}
     for source in sources:
-        relative = source.relative_to(ROOT)
+        try:
+            relative = source.relative_to(ROOT)
+        except ValueError:
+            relative = Path("external_overrides") / source.name
         destination = source_dir / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
         manifest[str(relative)] = hashlib.sha256(source.read_bytes()).hexdigest()
+    def git_output(*arguments):
+        result = subprocess.run(["git", "-C", str(ROOT), *arguments], capture_output=True, text=True)
+        return result.stdout.strip() if result.returncode == 0 else None
     (directory / "manifest.json").write_text(json.dumps({"sha256": manifest,
+        "git_commit": git_output("rev-parse", "HEAD"),
+        "git_status": git_output("status", "--porcelain"), "config": c,
         "ROS_DOMAIN_ID": domain, "wall_time_limit": limit, "sim_time_limit": sim_limit,
         "arrival_tolerance": tolerance, "settle_time": settle, "cloud_stride": cloud_stride, "headless": not gui,
         "goal_delay_sim_seconds": goal_delay}, indent=2))

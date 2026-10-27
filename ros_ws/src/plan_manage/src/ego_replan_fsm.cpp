@@ -602,7 +602,11 @@ namespace ego_planner
     case REPLAN_TRAJ:
     {
       // Keep the direction being aligned to stable. Safety checks remain active.
-      if (heading_paused_) break;
+      // A failed guide emits a hold spline. Do not keep waiting on the old
+      // spline's heading: retry from measured state while perception updates.
+      if (heading_paused_ && observed_guide_valid_) break;
+      if (node_->now().seconds()-last_plan_attempt_ < .5) break;
+      last_plan_attempt_ = node_->now().seconds();
 
       if (planFromCurrentTraj(1))
       {
@@ -726,6 +730,14 @@ namespace ego_planner
     const Eigen::Vector3d pos = info->position_traj_.evaluateDeBoorT(t);
     const Eigen::Vector3d vel = info->velocity_traj_.evaluateDeBoorT(t);
     Eigen::Vector3d desired = vel + 2.0*(pos-odom_pos_);
+    const double reference_speed = vel.head<2>().norm();
+    if (reference_speed > .01 && (pos-odom_pos_).head<2>().norm() < .1)
+    {
+      const Eigen::Vector2d tangent = vel.head<2>()/reference_speed;
+      const double forward = desired.head<2>().dot(tangent);
+      if (forward < .5*reference_speed)
+        desired.head<2>() += (.5*reference_speed-forward)*tangent;
+    }
     desired.z() = 0.8*(1.0-odom_pos_.z());
     if (desired.norm() > planner_manager_->pp_.max_vel_)
       desired *= planner_manager_->pp_.max_vel_/desired.norm();

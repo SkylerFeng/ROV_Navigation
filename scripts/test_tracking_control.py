@@ -35,6 +35,11 @@ class TrackingTests(unittest.TestCase):
         self.assertEqual(v[:2],[0.,0.])
         self.assertEqual(s['mode'],'ALIGNING')
         self.assertAlmostEqual(s['target_yaw'],math.atan2(.008,-.015))
+    def test_small_inertial_overshoot_keeps_reference_direction(self):
+        v,rate,s=control([.025,0,1],[0,0,1],[.03,0,0],0,0)
+        self.assertEqual(s['mode'],'TRACKING')
+        self.assertGreater(v[0],0)
+        self.assertAlmostEqual(rate,0)
     def test_every_nontrivial_command_is_inside_heading_limit(self):
         for speed in [.0001,.005,.009,.011,.019,.021,.1,.3]:
             for angle in range(-180,180,10):

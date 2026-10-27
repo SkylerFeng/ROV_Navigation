@@ -1,0 +1,810 @@
+{
+  "runs": [
+    {
+      "directory": "/home/ache/Coding/rov_navigation/logs/suites/hydro_still_20261027/slalom",
+      "scenario": "slalom",
+      "checks": {
+        "arrived": true,
+        "tail_within_tolerance": true,
+        "no_nonzero_contact_impulse": true,
+        "finite_controls": true,
+        "actuator_limits_respected": true,
+        "settle_window_sampled": true,
+        "simulation_log_has_no_physx_errors": true
+      },
+      "passed": true,
+      "final_error_m": 0.005220123103006458,
+      "simulation_seconds": 67.0666701644659,
+      "tail_max_error_m": 0.005095035531075895,
+      "source_sha256": {
+        "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+        "scripts/run_sim.py": "db7892268e2417932a9b20655d2a5864d84fb1ebc4537aa308969b4cbaa0b6e6",
+        "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+        "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "c191f9865ccb200f3566bd49e54bddcd3aa27ebffeb7126f4b3dbe02965dbee5",
+        "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c"
+      },
+      "config": {
+        "platform": "/home/ache/Platform1013/Platform/Platform.final.usd",
+        "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+        "water": "/home/ache/Platform1013/Platform/Tile3_water.usda",
+        "environment_offset": [
+          -7.5,
+          -0.289182,
+          1.35
+        ],
+        "source_to_world": [
+          -7.500032,
+          -4.0,
+          1.35
+        ],
+        "pool_floor": 0.6,
+        "water_surface": 1.55,
+        "start": [
+          -3.0,
+          0.0,
+          1.0
+        ],
+        "goal": [
+          3.5,
+          0.4,
+          1.0
+        ],
+        "obstacles": [
+          {
+            "name": "SlalomA",
+            "position": [
+              -1.5,
+              -0.15,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.85,
+              0.85
+            ]
+          },
+          {
+            "name": "SlalomB",
+            "position": [
+              0.05,
+              1.05,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.8,
+              0.85
+            ]
+          },
+          {
+            "name": "SlalomC",
+            "position": [
+              1.6,
+              -0.1,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.8,
+              0.85
+            ]
+          },
+          {
+            "name": "OuterA",
+            "type": "cylinder",
+            "position": [
+              -0.8,
+              -1.5,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.45,
+              0.85
+            ]
+          },
+          {
+            "name": "OuterB",
+            "type": "cylinder",
+            "position": [
+              2.4,
+              2.35,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.45,
+              0.85
+            ]
+          },
+          {
+            "name": "EntryBlock",
+            "position": [
+              -2.9,
+              -1.5,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          },
+          {
+            "name": "ExitBlock",
+            "position": [
+              3.5,
+              -1.45,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          }
+        ],
+        "camera_resolution": [
+          640,
+          360
+        ],
+        "camera_horizontal_fov_deg": 90.0,
+        "depth_mode": "ideal",
+        "max_velocity": 0.3,
+        "max_acceleration": 0.3,
+        "command_timeout": 0.5,
+        "goal_tolerance": 0.3,
+        "align_before_translation": true,
+        "observed_global_guide": true,
+        "max_heading_error_deg": 20.0,
+        "tracking_error_limit": 0.25,
+        "planner_goal_tolerance": 0.05,
+        "render_pool_collision": true,
+        "physics_mode": "hydrodynamics",
+        "hydrodynamics": {
+          "mass_kg": 5.0,
+          "density_kg_m3": 1000.0,
+          "gravity_m_s2": 9.81,
+          "displaced_volume_m3": 0.00505,
+          "center_of_mass_body_m": [
+            0.0,
+            0.0,
+            0.116
+          ],
+          "center_of_buoyancy_offset_m": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "hull_size_m": [
+            0.48,
+            0.57,
+            0.26
+          ],
+          "inertia_kg_m2": [
+            0.1635,
+            0.1242,
+            0.2314
+          ],
+          "linear_drag": [
+            8.0,
+            12.0,
+            16.0
+          ],
+          "quadratic_drag": [
+            12.0,
+            18.0,
+            24.0
+          ],
+          "angular_drag": [
+            0.18,
+            0.18,
+            0.15
+          ],
+          "quadratic_angular_drag": [
+            0.12,
+            0.12,
+            0.1
+          ],
+          "current_world_m_s": [
+            0,
+            0,
+            0
+          ],
+          "force_limit_n": [
+            12.0,
+            12.0,
+            15.0
+          ],
+          "torque_limit_nm": [
+            1.5,
+            1.5,
+            1.0
+          ],
+          "force_tau_s": 0.25,
+          "torque_tau_s": 0.12,
+          "velocity_kp": [
+            30.0,
+            30.0,
+            35.0
+          ],
+          "velocity_ki": [
+            8.0,
+            8.0,
+            12.0
+          ],
+          "integral_limit_n": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "angular_kp": [
+            1.2,
+            1.2,
+            1.0
+          ],
+          "max_yaw_rate_rad_s": 0.25
+        },
+        "title": "Slalom / \u4ea4\u9519\u7ed5\u884c",
+        "description": "\u4ea4\u9519\u969c\u788d\u6b63\u5f0f\u5e03\u5c40\uff0c\u4f7f\u7528\u5171\u4eab\u6267\u884c\u8fdb\u5ea6\u3001\u5df2\u89c2\u6d4b\u5730\u56fe\u5168\u5c40\u5f15\u5bfc\u53ca\u5f53\u524d\u516c\u5171\u611f\u77e5\u548c\u521d\u59cb\u5316\u914d\u7f6e\uff1b\u81ea\u7531\u7ec8\u70b9\u4efb\u52a1\u5141\u8bb8\u5916\u56f4\u7ed5\u884c\u3002",
+        "scenario": "slalom",
+        "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+        "overrides_file": "/home/ache/Coding/rov_navigation/config/experiments/hydro_still_water.json"
+      },
+      "metrics": {
+        "physics_mode": "hydrodynamics",
+        "max_contact_impulse_ns": 0.0,
+        "max_speed_m_s": 0.27382412911334625,
+        "velocity_error_rmse_m_s": 0.06273446750665981,
+        "max_depth_reference_error_m": 0.018521606922149658,
+        "path_length_m": 8.413843689090289,
+        "current_world_m_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "force_saturation_sample_fraction": 0.0,
+        "torque_saturation_sample_fraction": 0.0,
+        "min_submerged_fraction": 0.9999999999999996,
+        "max_actuator_force_n": 4.511146544651033,
+        "max_buoyancy_n": 49.54049999999997
+      },
+      "git_commit_before_run": "4f57662d554f4873d5d1022d4c42dbf9def394f5",
+      "source_tree_status": "M README.md\n M config/experiment.json\n M docs/group_meeting_ROV_navigation.md\n M ros_ws/README.md\n M ros_ws/src/plan_manage/src/ego_replan_fsm.cpp\n M scripts/build_scene.py\n M scripts/export_run.py\n M scripts/run_sim.py\n M scripts/run_suite.py\n M scripts/test_tracking_control.py\n M scripts/tracking_control.py\n?? config/experiments/\n?? docs/hydrodynamics_20261027.md\n?? docs/validation/\n?? scripts/hydrodynamics.py\n?? scripts/hydrodynamics_metrics.py\n?? scripts/plot_hydrodynamics.py\n?? scripts/test_hydrodynamics.py\n?? scripts/test_hydrodynamics_isaac.py\n?? scripts/verify_hydrodynamics_runs.py"
+    },
+    {
+      "directory": "/home/ache/Coding/rov_navigation/logs/suites/hydro_oblique_20261027/slalom",
+      "scenario": "slalom",
+      "checks": {
+        "arrived": true,
+        "tail_within_tolerance": true,
+        "no_nonzero_contact_impulse": true,
+        "finite_controls": true,
+        "actuator_limits_respected": true,
+        "settle_window_sampled": true,
+        "simulation_log_has_no_physx_errors": true
+      },
+      "passed": true,
+      "final_error_m": 0.0042730407939519655,
+      "simulation_seconds": 112.36667252704501,
+      "tail_max_error_m": 0.008482652427465282,
+      "source_sha256": {
+        "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+        "scripts/run_sim.py": "db7892268e2417932a9b20655d2a5864d84fb1ebc4537aa308969b4cbaa0b6e6",
+        "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+        "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "c191f9865ccb200f3566bd49e54bddcd3aa27ebffeb7126f4b3dbe02965dbee5",
+        "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c"
+      },
+      "config": {
+        "platform": "/home/ache/Platform1013/Platform/Platform.final.usd",
+        "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+        "water": "/home/ache/Platform1013/Platform/Tile3_water.usda",
+        "environment_offset": [
+          -7.5,
+          -0.289182,
+          1.35
+        ],
+        "source_to_world": [
+          -7.500032,
+          -4.0,
+          1.35
+        ],
+        "pool_floor": 0.6,
+        "water_surface": 1.55,
+        "start": [
+          -3.0,
+          0.0,
+          1.0
+        ],
+        "goal": [
+          3.5,
+          0.4,
+          1.0
+        ],
+        "obstacles": [
+          {
+            "name": "SlalomA",
+            "position": [
+              -1.5,
+              -0.15,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.85,
+              0.85
+            ]
+          },
+          {
+            "name": "SlalomB",
+            "position": [
+              0.05,
+              1.05,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.8,
+              0.85
+            ]
+          },
+          {
+            "name": "SlalomC",
+            "position": [
+              1.6,
+              -0.1,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.8,
+              0.85
+            ]
+          },
+          {
+            "name": "OuterA",
+            "type": "cylinder",
+            "position": [
+              -0.8,
+              -1.5,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.45,
+              0.85
+            ]
+          },
+          {
+            "name": "OuterB",
+            "type": "cylinder",
+            "position": [
+              2.4,
+              2.35,
+              1.05
+            ],
+            "size": [
+              0.45,
+              0.45,
+              0.85
+            ]
+          },
+          {
+            "name": "EntryBlock",
+            "position": [
+              -2.9,
+              -1.5,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          },
+          {
+            "name": "ExitBlock",
+            "position": [
+              3.5,
+              -1.45,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          }
+        ],
+        "camera_resolution": [
+          640,
+          360
+        ],
+        "camera_horizontal_fov_deg": 90.0,
+        "depth_mode": "ideal",
+        "max_velocity": 0.3,
+        "max_acceleration": 0.3,
+        "command_timeout": 0.5,
+        "goal_tolerance": 0.3,
+        "align_before_translation": true,
+        "observed_global_guide": true,
+        "max_heading_error_deg": 20.0,
+        "tracking_error_limit": 0.25,
+        "planner_goal_tolerance": 0.05,
+        "render_pool_collision": true,
+        "physics_mode": "hydrodynamics",
+        "hydrodynamics": {
+          "mass_kg": 5.0,
+          "density_kg_m3": 1000.0,
+          "gravity_m_s2": 9.81,
+          "displaced_volume_m3": 0.00505,
+          "center_of_mass_body_m": [
+            0.0,
+            0.0,
+            0.116
+          ],
+          "center_of_buoyancy_offset_m": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "hull_size_m": [
+            0.48,
+            0.57,
+            0.26
+          ],
+          "inertia_kg_m2": [
+            0.1635,
+            0.1242,
+            0.2314
+          ],
+          "linear_drag": [
+            8.0,
+            12.0,
+            16.0
+          ],
+          "quadratic_drag": [
+            12.0,
+            18.0,
+            24.0
+          ],
+          "angular_drag": [
+            0.18,
+            0.18,
+            0.15
+          ],
+          "quadratic_angular_drag": [
+            0.12,
+            0.12,
+            0.1
+          ],
+          "current_world_m_s": [
+            0.08,
+            0.04,
+            0
+          ],
+          "force_limit_n": [
+            12.0,
+            12.0,
+            15.0
+          ],
+          "torque_limit_nm": [
+            1.5,
+            1.5,
+            1.0
+          ],
+          "force_tau_s": 0.25,
+          "torque_tau_s": 0.12,
+          "velocity_kp": [
+            30.0,
+            30.0,
+            35.0
+          ],
+          "velocity_ki": [
+            8.0,
+            8.0,
+            12.0
+          ],
+          "integral_limit_n": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "angular_kp": [
+            1.2,
+            1.2,
+            1.0
+          ],
+          "max_yaw_rate_rad_s": 0.25
+        },
+        "title": "Slalom / \u4ea4\u9519\u7ed5\u884c",
+        "description": "\u4ea4\u9519\u969c\u788d\u6b63\u5f0f\u5e03\u5c40\uff0c\u4f7f\u7528\u5171\u4eab\u6267\u884c\u8fdb\u5ea6\u3001\u5df2\u89c2\u6d4b\u5730\u56fe\u5168\u5c40\u5f15\u5bfc\u53ca\u5f53\u524d\u516c\u5171\u611f\u77e5\u548c\u521d\u59cb\u5316\u914d\u7f6e\uff1b\u81ea\u7531\u7ec8\u70b9\u4efb\u52a1\u5141\u8bb8\u5916\u56f4\u7ed5\u884c\u3002",
+        "scenario": "slalom",
+        "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+        "overrides_file": "/home/ache/Coding/rov_navigation/config/experiments/hydro_oblique_current.json"
+      },
+      "metrics": {
+        "physics_mode": "hydrodynamics",
+        "max_contact_impulse_ns": 0.0,
+        "max_speed_m_s": 0.2957538660548966,
+        "velocity_error_rmse_m_s": 0.05104699527366506,
+        "max_depth_reference_error_m": 0.018521606922149658,
+        "path_length_m": 9.460479777192829,
+        "current_world_m_s": [
+          0.08,
+          0.04,
+          0.0
+        ],
+        "force_saturation_sample_fraction": 0.0,
+        "torque_saturation_sample_fraction": 0.0,
+        "min_submerged_fraction": 0.9999999999999996,
+        "max_actuator_force_n": 4.449837853559373,
+        "max_buoyancy_n": 49.54049999999997
+      },
+      "git_commit_before_run": "4f57662d554f4873d5d1022d4c42dbf9def394f5",
+      "source_tree_status": "M README.md\n M config/experiment.json\n M docs/group_meeting_ROV_navigation.md\n M ros_ws/README.md\n M ros_ws/src/plan_manage/src/ego_replan_fsm.cpp\n M scripts/build_scene.py\n M scripts/export_run.py\n M scripts/run_sim.py\n M scripts/run_suite.py\n M scripts/test_tracking_control.py\n M scripts/tracking_control.py\n?? .github/\n?? config/experiments/\n?? docs/hydrodynamics_20261027.md\n?? docs/validation/\n?? scripts/hydrodynamics.py\n?? scripts/hydrodynamics_metrics.py\n?? scripts/plot_hydrodynamics.py\n?? scripts/test_hydrodynamics.py\n?? scripts/test_hydrodynamics_isaac.py\n?? scripts/verify_hydrodynamics_runs.py"
+    },
+    {
+      "directory": "/home/ache/Coding/rov_navigation/logs/suites/hydro_oblique_20261027/gates",
+      "scenario": "gates",
+      "checks": {
+        "arrived": true,
+        "tail_within_tolerance": true,
+        "no_nonzero_contact_impulse": true,
+        "finite_controls": true,
+        "actuator_limits_respected": true,
+        "settle_window_sampled": true,
+        "simulation_log_has_no_physx_errors": true
+      },
+      "passed": true,
+      "final_error_m": 0.005194188518314243,
+      "simulation_seconds": 80.76667087897658,
+      "tail_max_error_m": 0.009011026151456696,
+      "source_sha256": {
+        "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+        "scripts/run_sim.py": "db7892268e2417932a9b20655d2a5864d84fb1ebc4537aa308969b4cbaa0b6e6",
+        "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+        "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "c191f9865ccb200f3566bd49e54bddcd3aa27ebffeb7126f4b3dbe02965dbee5",
+        "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c"
+      },
+      "config": {
+        "platform": "/home/ache/Platform1013/Platform/Platform.final.usd",
+        "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+        "water": "/home/ache/Platform1013/Platform/Tile3_water.usda",
+        "environment_offset": [
+          -7.5,
+          -0.289182,
+          1.35
+        ],
+        "source_to_world": [
+          -7.500032,
+          -4.0,
+          1.35
+        ],
+        "pool_floor": 0.6,
+        "water_surface": 1.55,
+        "start": [
+          -3.0,
+          0.0,
+          1.0
+        ],
+        "goal": [
+          3.5,
+          0.4,
+          1.0
+        ],
+        "obstacles": [
+          {
+            "name": "Gate1South",
+            "position": [
+              -1.1,
+              -1.15,
+              1.05
+            ],
+            "size": [
+              0.4,
+              1.45,
+              0.85
+            ]
+          },
+          {
+            "name": "Gate1North",
+            "position": [
+              -1.1,
+              2.65,
+              1.05
+            ],
+            "size": [
+              0.4,
+              0.85,
+              0.85
+            ]
+          },
+          {
+            "name": "Gate2South",
+            "position": [
+              1.35,
+              -1.65,
+              1.05
+            ],
+            "size": [
+              0.4,
+              0.65,
+              0.85
+            ]
+          },
+          {
+            "name": "Gate2North",
+            "position": [
+              1.35,
+              2.35,
+              1.05
+            ],
+            "size": [
+              0.4,
+              1.1,
+              0.85
+            ]
+          },
+          {
+            "name": "EntryPillar",
+            "type": "cylinder",
+            "position": [
+              -2.8,
+              2.35,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.5,
+              0.85
+            ]
+          },
+          {
+            "name": "ExitPillar",
+            "type": "cylinder",
+            "position": [
+              3.6,
+              2.1,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.5,
+              0.85
+            ]
+          }
+        ],
+        "camera_resolution": [
+          640,
+          360
+        ],
+        "camera_horizontal_fov_deg": 90.0,
+        "depth_mode": "ideal",
+        "max_velocity": 0.3,
+        "max_acceleration": 0.3,
+        "command_timeout": 0.5,
+        "goal_tolerance": 0.3,
+        "align_before_translation": true,
+        "observed_global_guide": true,
+        "max_heading_error_deg": 20.0,
+        "tracking_error_limit": 0.25,
+        "planner_goal_tolerance": 0.05,
+        "render_pool_collision": true,
+        "physics_mode": "hydrodynamics",
+        "hydrodynamics": {
+          "mass_kg": 5.0,
+          "density_kg_m3": 1000.0,
+          "gravity_m_s2": 9.81,
+          "displaced_volume_m3": 0.00505,
+          "center_of_mass_body_m": [
+            0.0,
+            0.0,
+            0.116
+          ],
+          "center_of_buoyancy_offset_m": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "hull_size_m": [
+            0.48,
+            0.57,
+            0.26
+          ],
+          "inertia_kg_m2": [
+            0.1635,
+            0.1242,
+            0.2314
+          ],
+          "linear_drag": [
+            8.0,
+            12.0,
+            16.0
+          ],
+          "quadratic_drag": [
+            12.0,
+            18.0,
+            24.0
+          ],
+          "angular_drag": [
+            0.18,
+            0.18,
+            0.15
+          ],
+          "quadratic_angular_drag": [
+            0.12,
+            0.12,
+            0.1
+          ],
+          "current_world_m_s": [
+            0.08,
+            0.04,
+            0
+          ],
+          "force_limit_n": [
+            12.0,
+            12.0,
+            15.0
+          ],
+          "torque_limit_nm": [
+            1.5,
+            1.5,
+            1.0
+          ],
+          "force_tau_s": 0.25,
+          "torque_tau_s": 0.12,
+          "velocity_kp": [
+            30.0,
+            30.0,
+            35.0
+          ],
+          "velocity_ki": [
+            8.0,
+            8.0,
+            12.0
+          ],
+          "integral_limit_n": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "angular_kp": [
+            1.2,
+            1.2,
+            1.0
+          ],
+          "max_yaw_rate_rad_s": 0.25
+        },
+        "title": "Gates / \u9519\u4f4d\u95e8\u6d1e",
+        "description": "\u5df2\u6821\u6838\u51c0\u7a7a\u7684\u53cc\u9519\u4f4d\u95e8\u6d1e\u4e0e\u5916\u56f4\u7acb\u67f1\uff0c\u6b63\u5f0f\u5bfc\u822a\u6f14\u793a\u5e03\u5c40\u3002",
+        "scenario": "gates",
+        "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_gates.usda",
+        "overrides_file": "/home/ache/Coding/rov_navigation/config/experiments/hydro_oblique_current.json"
+      },
+      "metrics": {
+        "physics_mode": "hydrodynamics",
+        "max_contact_impulse_ns": 0.0,
+        "max_speed_m_s": 0.28176378005801284,
+        "velocity_error_rmse_m_s": 0.048926335797986505,
+        "max_depth_reference_error_m": 0.018521606922149658,
+        "path_length_m": 7.4859378464028135,
+        "current_world_m_s": [
+          0.08,
+          0.04,
+          0.0
+        ],
+        "force_saturation_sample_fraction": 0.0,
+        "torque_saturation_sample_fraction": 0.0,
+        "min_submerged_fraction": 0.9999999999999996,
+        "max_actuator_force_n": 4.503139257987409,
+        "max_buoyancy_n": 49.54049999999997
+      },
+      "git_commit_before_run": "4f57662d554f4873d5d1022d4c42dbf9def394f5",
+      "source_tree_status": "M README.md\n M config/experiment.json\n M docs/group_meeting_ROV_navigation.md\n M ros_ws/README.md\n M ros_ws/src/plan_manage/src/ego_replan_fsm.cpp\n M scripts/build_scene.py\n M scripts/export_run.py\n M scripts/run_sim.py\n M scripts/run_suite.py\n M scripts/test_tracking_control.py\n M scripts/tracking_control.py\n?? .github/\n?? config/experiments/\n?? docs/figures/hydrodynamics_20261027/\n?? docs/figures/hydrodynamics_20261027_figures.zip\n?? docs/hydrodynamics_20261027.md\n?? docs/validation/\n?? scripts/hydrodynamics.py\n?? scripts/hydrodynamics_metrics.py\n?? scripts/plot_hydrodynamics.py\n?? scripts/test_hydrodynamics.py\n?? scripts/test_hydrodynamics_isaac.py\n?? scripts/verify_hydrodynamics_runs.py"
+    }
+  ],
+  "same_core_sources": true,
+  "passed": true,
+  "note": "Finite single trials; sampled telemetry, not a statistical success rate."
+}

@@ -1,0 +1,168 @@
+{
+  "checks": {
+    "neutral_holds_height": true,
+    "positive_buoyancy_rises": true,
+    "passive_drift_matches_flow": true,
+    "controller_holds_against_current": true,
+    "integral_reduces_stationkeeping_bias": true,
+    "buoyancy_restores_tilt": true,
+    "dry_body_falls_under_gravity": true,
+    "actuator_tau_matches_sim_clock": true,
+    "physics_steps_match_elapsed": true
+  },
+  "passed": true,
+  "duration_s": 30.033334899693727,
+  "final": {
+    "neutral": {
+      "t": 29.999999999999577,
+      "position": [
+        -6.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": 0.0
+    },
+    "positive": {
+      "t": 29.999999999999577,
+      "position": [
+        -4.0,
+        0.0,
+        0.872247576713562
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.029362693428993225
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": 0.0
+    },
+    "passive_current": {
+      "t": 29.999999999999577,
+      "position": [
+        0.3528309464454651,
+        1.1838231086730957,
+        0.0
+      ],
+      "velocity": [
+        0.07999986410140991,
+        0.03999995440244675,
+        0.0
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": 0.0
+    },
+    "controlled_current": {
+      "t": 29.999999999999577,
+      "position": [
+        5.0939215725520626e-06,
+        1.385075734106067e-06,
+        -4.6193599700927734e-07
+      ],
+      "velocity": [
+        -1.6408694136771373e-06,
+        -5.47042816378962e-07,
+        2.2351741790771484e-07
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": -0.7168136494234199
+    },
+    "controlled_current_no_integral": {
+      "t": 29.999999999999577,
+      "position": [
+        2.0298573970794678,
+        0.021199919283390045,
+        0.017517179250717163
+      ],
+      "velocity": [
+        5.5729060477460735e-06,
+        4.4594823833676855e-08,
+        4.172325134277344e-07
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": -0.7167447170886582
+    },
+    "tilted": {
+      "t": 29.999999999999577,
+      "position": [
+        4.0,
+        -0.023085350170731544,
+        -0.0023122653365135193
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tilt_rad": 0.00034231386643712665,
+      "actuator_x_n": 0.0
+    },
+    "dry": {
+      "t": 29.999999999999577,
+      "position": [
+        30.0,
+        0.0,
+        -4412.0283203125
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -294.137451171875
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": 0.0
+    },
+    "lag": {
+      "t": 29.999999999999577,
+      "position": [
+        25.556957244873047,
+        0.0,
+        -35.53670883178711
+      ],
+      "velocity": [
+        3.6683995723724365,
+        0.0,
+        -26.32347869873047
+      ],
+      "tilt_rad": 0.0,
+      "actuator_x_n": 5.999999999999994
+    }
+  },
+  "lag_at_one_tau": {
+    "t": 0.24999999999999997,
+    "position": [
+      8.008974075317383,
+      0.0,
+      0.0
+    ],
+    "velocity": [
+      0.09108157455921173,
+      0.0,
+      0.0
+    ],
+    "tilt_rad": 0.0,
+    "actuator_x_n": 3.792723352971346
+  },
+  "dry_at_point_two_s": {
+    "t": 0.19999999999999998,
+    "position": [
+      30.0,
+      0.0,
+      -0.1798500120639801
+    ],
+    "velocity": [
+      0.0,
+      0.0,
+      -1.7985002994537354
+    ],
+    "tilt_rad": 0.0,
+    "actuator_x_n": 0.0
+  },
+  "note": "Synthetic mass/volume/drag; physical probes, not robot parameter identification."
+}

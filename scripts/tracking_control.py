@@ -2,10 +2,25 @@
 import math
 
 
+def translation_command(position, reference_position, reference_velocity):
+    values = [reference_velocity[i]+2*(reference_position[i]-position[i]) for i in range(3)]
+    speed = math.hypot(*reference_velocity[:2])
+    if speed > .01 and math.dist(position[:2], reference_position[:2]) < .1:
+        # Inertia can carry the ROV slightly beyond a frozen reference. Do not
+        # turn a centimetre-scale overshoot into a 180-degree heading reversal.
+        # Retain cross-track correction and let the phase resume forward.
+        tangent = [v/speed for v in reference_velocity[:2]]
+        forward = sum(values[i]*tangent[i] for i in range(2))
+        if forward < .5*speed:
+            for i in range(2):
+                values[i] += (.5*speed-forward)*tangent[i]
+    values[2] = .8*(1-position[2])
+    return values
+
+
 def control(position, reference_position, reference_velocity, yaw, reference_yaw,
             max_speed=.3, align=True, max_heading_error_deg=20):
-    values = [reference_velocity[i]+2*(reference_position[i]-position[i]) for i in range(3)]
-    values[2] = .8*(1-position[2])
+    values = translation_command(position, reference_position, reference_velocity)
     if not all(math.isfinite(v) for v in [*values, yaw, reference_yaw]):
         return [0., 0., 0.], 0., {"mode": "INVALID_REFERENCE"}
     speed = math.sqrt(sum(v*v for v in values))

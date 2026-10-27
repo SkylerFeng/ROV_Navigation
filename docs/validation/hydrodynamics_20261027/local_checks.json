@@ -1,0 +1,21 @@
+{
+  "numerical_tests": {
+    "hydrodynamics": 13,
+    "tracking_control": 9,
+    "spline": 3,
+    "passed": true
+  },
+  "ros_cpp_checks": {
+    "build_overlay": "passed; pre-existing upstream deprecation warnings",
+    "heading_execution": "passed",
+    "planner_feedback": "passed",
+    "execution_phase_clock": "passed"
+  },
+  "local_log_files": [
+    "/tmp/rov-hydro-build.log",
+    "/tmp/rov-hydro-heading.log",
+    "/tmp/rov-hydro-feedback.log",
+    "/tmp/rov-hydro-clock.log"
+  ],
+  "note": "ROS/Isaac checks run locally, not in GitHub Actions."
+}

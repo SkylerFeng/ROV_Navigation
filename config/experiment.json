@@ -80,5 +80,90 @@
   "max_heading_error_deg": 20.0,
   "tracking_error_limit": 0.25,
   "planner_goal_tolerance": 0.05,
-  "render_pool_collision": true
+  "render_pool_collision": true,
+  "physics_mode": "hydrodynamics",
+  "hydrodynamics": {
+    "mass_kg": 5.0,
+    "density_kg_m3": 1000.0,
+    "gravity_m_s2": 9.81,
+    "displaced_volume_m3": 0.00505,
+    "center_of_mass_body_m": [
+      0.0,
+      0.0,
+      0.116
+    ],
+    "center_of_buoyancy_offset_m": [
+      0.0,
+      0.0,
+      0.025
+    ],
+    "hull_size_m": [
+      0.48,
+      0.57,
+      0.26
+    ],
+    "inertia_kg_m2": [
+      0.1635,
+      0.1242,
+      0.2314
+    ],
+    "linear_drag": [
+      8.0,
+      12.0,
+      16.0
+    ],
+    "quadratic_drag": [
+      12.0,
+      18.0,
+      24.0
+    ],
+    "angular_drag": [
+      0.18,
+      0.18,
+      0.15
+    ],
+    "quadratic_angular_drag": [
+      0.12,
+      0.12,
+      0.1
+    ],
+    "current_world_m_s": [
+      0.0,
+      0.08,
+      0.0
+    ],
+    "force_limit_n": [
+      12.0,
+      12.0,
+      15.0
+    ],
+    "torque_limit_nm": [
+      1.5,
+      1.5,
+      1.0
+    ],
+    "force_tau_s": 0.25,
+    "torque_tau_s": 0.12,
+    "velocity_kp": [
+      30.0,
+      30.0,
+      35.0
+    ],
+    "velocity_ki": [
+      8.0,
+      8.0,
+      12.0
+    ],
+    "integral_limit_n": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "angular_kp": [
+      1.2,
+      1.2,
+      1.0
+    ],
+    "max_yaw_rate_rad_s": 0.25
+  }
 }

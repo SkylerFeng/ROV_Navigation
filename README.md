@@ -1,6 +1,8 @@
 # ROV 水池避障导航实验
 
 基于 Isaac Sim 5.1、OceanSim 和本机 ROS2 EGO-Planner-Swarm。
+水动力迭代增加可配置的阻力、执行器滞后、显式浮力与定常水流；说明与实测见
+[水动力模型与验证](docs/hydrodynamics_20261027.md)。历史五场成绩对应旧动力模型。
 原始 Platform / OceanSim / EGO 文件均保持不变；此目录保存独立实验代码。
 
 ## 2026-10-15 slalom 修复与最终回归
@@ -141,8 +143,10 @@ bash /home/ache/Coding/rov_navigation/scripts/send_goal.sh
 ```
 
 仿真用绿色曲线显示已执行轨迹。Isaac Sim 中的水面只是视觉效果，
-第一版采用禁用重力、中性浮力近似、阻尼、姿态恢复和闭环力控制。
-不是完整水动力、推进器或 ArduSub 模型。
+默认 `physics_mode: hydrodynamics` 启用重力、显式浮力、机体系相对水流阻力、
+力/力矩响应滞后，以及带抗饱和积分的速度控制。水流默认 `[0,0.08,0] m/s`。
+`config/experiments/legacy_physics.json` 可恢复禁用重力、中性浮力与固定阻尼的旧物理近似。
+两种模式都通过力/力矩执行；水动力参数属于待标定的简化模型，尚未接入真实推进器或 ArduSub。
 
 ## 数据链路
 

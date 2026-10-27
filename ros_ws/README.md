@@ -77,3 +77,10 @@ can be generated; it preserves initial position/velocity, has zero terminal
 velocity/acceleration, and is checked at 0.01 s intervals against occupancy
 and velocity/acceleration limits. The real planner regression verifies a
 0.1 m terminal target and absence of completion with stationary odometry.
+
+2026-10-27 hydrodynamics adaptation: the tracker and FSM keep a forward tangent
+component for small inertial overshoot (reference speed >0.01 m/s and XY error
+<0.1 m). Position correction can no longer reverse the heading on a centimetre
+overshoot while the spline phase is frozen. Cross-track correction and large
+error recovery remain active. REPLAN_TRAJ retries a failed observed guide even
+when the obsolete trajectory's heading is paused, with a 0.5 s retry interval.

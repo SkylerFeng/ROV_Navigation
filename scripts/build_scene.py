@@ -62,7 +62,7 @@ def build(scenario, show_pool_collision=False):
     water_shader.CreateInput("ior", Sdf.ValueTypeNames.Float).Set(1.0)
     water_shader.CreateInput("useSpecularWorkflow", Sdf.ValueTypeNames.Int).Set(1)
     water_shader.CreateInput("specularColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0))
-    # Water is a visual surface only; physics uses neutral buoyancy + damping.
+    # Water surface has no collider; run_sim supplies the configured fluid model.
     for obj in CONFIG["obstacles"]:
         path = "/World/Obstacles/" + obj["name"]
         if obj.get("type") == "cylinder":
