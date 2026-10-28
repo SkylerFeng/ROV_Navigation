@@ -53,8 +53,8 @@ def Xform "World"
             rel material:binding = </World/ObstacleMaterials/BoxA>
             color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
             double size = 1
-            float3 xformOp:scale = (0.3, 0.6, 0.82)
-            double3 xformOp:translate = (-0.6, 0.15, 1.05)
+            float3 xformOp:scale = (0.25, 0.5, 0.82)
+            double3 xformOp:translate = (-0.75, 0.2, 1.05)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
         }
 
@@ -67,22 +67,20 @@ def Xform "World"
             rel material:binding = </World/ObstacleMaterials/PillarA>
             color3f[] primvars:displayColor = [(0.12, 0.65, 0.85)]
             double radius = 0.5
-            float3 xformOp:scale = (0.4, 0.4, 0.82)
-            double3 xformOp:translate = (0.65, 0.35, 1.05)
+            float3 xformOp:scale = (0.25, 0.25, 0.82)
+            double3 xformOp:translate = (0, -0.25, 1.05)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
         }
 
-        def Cylinder "PillarB" (
+        def Cube "BoxB" (
             prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
         )
         {
-            uniform token axis = "Z"
-            double height = 1
-            rel material:binding = </World/ObstacleMaterials/PillarB>
-            color3f[] primvars:displayColor = [(0.12, 0.65, 0.85)]
-            double radius = 0.5
-            float3 xformOp:scale = (0.4, 0.4, 0.82)
-            double3 xformOp:translate = (0.1, 1.5, 1.05)
+            rel material:binding = </World/ObstacleMaterials/BoxB>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.25, 0.5, 0.82)
+            double3 xformOp:translate = (0.75, 0.25, 1.05)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
         }
     }
@@ -119,14 +117,14 @@ def Xform "World"
             }
         }
 
-        def Material "PillarB"
+        def Material "BoxB"
         {
-            token outputs:surface.connect = </World/ObstacleMaterials/PillarB/Surface.outputs:surface>
+            token outputs:surface.connect = </World/ObstacleMaterials/BoxB/Surface.outputs:surface>
 
             def Shader "Surface"
             {
                 uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (0.12, 0.65, 0.85)
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
                 float inputs:roughness = 0.85
                 color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1

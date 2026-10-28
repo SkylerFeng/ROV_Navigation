@@ -1,0 +1,252 @@
+{
+  "sha256": {
+    "scripts/analyze_freeze.py": "5e381a8c8db9604a9071aafad30e8997d9eb60b030d22ad31585b7b39ff847b2",
+    "scripts/audit_platform_navigation.py": "f22f457817a4a2328d7463ad96bb3cef6e344d3bd64cec0ada9b4d207546c682",
+    "scripts/build_scene.py": "cc90e8ab9b8240c7d1cac7d2667941f0b23b12c8904d2337b9f78db12d43385c",
+    "scripts/clean_pool.py": "74105cee59846e90facc46e03710def1006c20825cc93dd2d45e0202ac675cef",
+    "scripts/experiment.py": "5e3ee0370a673936a89bbc5867fff016e6569c83bf6d8e8747e6e7ca7adf3dd6",
+    "scripts/export_pool_geometry.py": "7aba9ae3a63fefd0becd1e2cb01a4ce0d1d87ffb2d47fceb7b8409420c3ba54a",
+    "scripts/export_run.py": "3c448a8f44fa5e864b4bf1c0ed3441732fc89a5bb3ffa7c013e938808ffa6e7c",
+    "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+    "scripts/hydrodynamics_metrics.py": "f2f4c094f2081758fc27d72925bc77b5ff5a59ef6d52b28a471cb7fc7f0b9e91",
+    "scripts/local_map.py": "d24117d4ac5d8f29a7a143a1a4f3bc7d04af000988ea4087c6eb5949bfd0f412",
+    "scripts/map_audit.py": "3991c6aa1d8139407c8818cc566dbfda2be9b588e9cbd6cc05428de394a75031",
+    "scripts/navigation.launch.py": "0b5ee93033eefa0f48819f589af0529d15b4ee914cf0ae30a91514cfb4ed5ad3",
+    "scripts/package_platform_demo.py": "03ba18c6c100a992b1b7293caff7f476ec8cba3d2f74dccdeff9492e651c76f6",
+    "scripts/platform_navigation.py": "58cc4110f9930ab392f6a5552f330ebd8b8729ceb7dc28ee577eb04de409c5e0",
+    "scripts/plot_five_routes.py": "522a10c34c2aa00d36d0d298e9ef77280fd44fb3983669e1ff4dd1808f935ea1",
+    "scripts/plot_hydrodynamics.py": "54d78c8c7b8d5775fe440770ace4b43e33fa2c2361ca0e6737df2436afb51518",
+    "scripts/plot_platform_suite.py": "c31f23380d55db9de48027393e821ebfbafe162ad52fa4e2898234a5cbadfe1f",
+    "scripts/plot_run.py": "809042d75721eda656c0dc7b003eba98ef154b377a7d9d1c3ed55e331c3d7881",
+    "scripts/plot_scenarios.py": "9ee4d45628fc7b9a0c5313601faa16b5855d6cf59cca7d0b0c9a5021d174af08",
+    "scripts/plot_slalom_fix.py": "0a79cf4e680fc45ca1d0240a3e5ca0cef8b413bd02b8a728b6d79a2e8455e329",
+    "scripts/run_platform_water_demo.py": "c4a5f82fda4252acb8d0265fd93dee3fd5a7dffc96740b826b800d71dbd34022",
+    "scripts/run_sim.py": "fcafd755c0298d0f220da6510e7cee58b5d24a406d669e973e15d51c7f7ed67a",
+    "scripts/run_suite.py": "9f7c1cdccbc62c7cff5cbb79d846755158f3608cc9a12c4c0e607dcb11126ddf",
+    "scripts/send_goal.py": "5977cd893d0947c1f0382207826ac77bb047be3f8ecd68744a52ea147345069e",
+    "scripts/spline.py": "5c17ced71d4cd7e4ae2393b83485f7e966fbd1efa066265ba396018a7ea5ed7d",
+    "scripts/test_clock.py": "3902d5ff39a1548b77088dc469824bc53ab9d3a1d5cb662d61bb247480081d08",
+    "scripts/test_heading_execution.py": "0a288576152910b487e812ffb7f52aba1fa6299c45f070bc263436c00e6017ad",
+    "scripts/test_hydrodynamics.py": "a97150e155ff0e56acaa1234ab29834ad064ed57a2d6d6b601c22a7b370ac283",
+    "scripts/test_hydrodynamics_isaac.py": "06d36c8b5161fce66f9a0252d9c3e236ccd0f490acb0b70e39b5cf5a707206f1",
+    "scripts/test_planner_feedback.py": "15ee79199dbca932097ac27253e27aa9f5406e606d26151a0ab8718f7c603177",
+    "scripts/test_spline.py": "78713c9651790d0cf35e3a7a2777bf28955a167494788c99a738fd2df5c7aa45",
+    "scripts/test_tracking_control.py": "9790e433b172657bfc9f6196474ddb55a7823a4aa48135d6998a109d54b114de",
+    "scripts/tracker.py": "0658fbf00851a3ec29d9dce470e81ae95753115254334fbfcf0dd653654c32ae",
+    "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+    "scripts/trajectory_visualizer.py": "8264d4ab9e2c11a9e02bb2d9379711dd2ee0ce325855ec1436ef6eb753e86411",
+    "scripts/validate_clean_pool.py": "36df0af85d7ae9329f6113266f4f1a89912218186b2c2692a73c4b8f279b52fb",
+    "scripts/validate_highbay_scene.py": "2985a498466f0518143f7ac1e5936b515cad74a5a6fcda832297dba16b9d93aa",
+    "scripts/validate_scenarios.py": "07b1dfa5f3bc630e9336f8be8217c01a4b0b424bec2e0a4009db5715e6395fe7",
+    "scripts/validate_scene.py": "7f619f2e6965865581fe577c2706ed6a7706eda533792f0728a060d927c09d88",
+    "scripts/verify_hydrodynamics_runs.py": "34b5e4b952bd5ab837125013f8f041664247087922d0283c2b6a12bab367ebbf",
+    "scripts/viewport_paths.py": "45b079a74f80e087fee0d5fc719b7e028eaba22be7b3b2f9b3ee813429543435",
+    "config/active_scenario.json": "a9c2e68008da6adf040489cafabb29e7034efe7378284cff409063ed6d24da74",
+    "config/clean_pool_water_boundary.json": "762e999c92a24a754adbd86287cb38e784e4f0c677b1065cfed50db2e33d4ee9",
+    "config/experiment.json": "b30c42d065a62b46b85a0b053b1ac0ca1a9bdef4764ce3c218b3a193bc748264",
+    "config/highbay_current_016.json": "b678d6402ba4743a497ba74de8c4d68081286ad9602285115b403068e5063a93",
+    "config/highbay_water_boundary.json": "c1814bf5466e569acb9613880708c8d168146d2a3c9440b69fb1462be9b46943",
+    "config/platform_water_boundary.json": "9da61c9a412a946a4b0af8eec900e4c11f95086d2598f1d0696ecdc464cc71ab",
+    "config/pool_water_boundary.json": "977638c1a5ab7ab180d95156f6f69e2ca0cdb6961d8bb49effe3799cfd32d59a",
+    "config/scenarios.json": "380a31e3d19882b1ae1da4be959eaf5aaeb4c4ea8aa54f5c1d835ee2148d6ee5",
+    "scenes/pool_platform_ego_mixed.usda": "a049286b1d21a7f15c1363d82ba1bc91056ee406cd3be947541754a8f57f0614",
+    "ros_ws/src/plan_manage/src/ego_planner_node.cpp": "b1dcb78c07114513920b0f709ea04194ed38e1a590a37f359116ac1c24403c4a",
+    "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "97d8993662c683011f87ea7b9ae42f306bb131d208fba29e761180f97e5de2c3",
+    "ros_ws/src/plan_manage/src/planner_manager.cpp": "0df64b2b6f844153719f57c112d1bcf1456de78fab550f90dfbc3cdbc313150c",
+    "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c",
+    "ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h": "ae7662d65fa85c21120630f3b128aeb98a2f231e5fc02c304268c4aa52ffd090",
+    "ros_ws/src/plan_manage/include/ego_planner/observed_guide.h": "7a53d8099fe1dccf207d102b793a7220b54a5ea127bf85520aeb98e08d0e5f75",
+    "ros_ws/src/plan_manage/include/ego_planner/planner_manager.h": "b105c82056296ad1b9c58857d48c1b0165e3e3f4df1b0941c276021363158406"
+  },
+  "git_commit": "003c061620e3c11d417b3fd55a82536ed6cf6a5b",
+  "git_status": "M config/active_scenario.json\n M config/scenarios.json\n M docs/highbay_navigation_20261028.md\n M scenes/pool_highbay.usda\n M scenes/pool_highbay_open.usda\n M scenes/pool_navigation.usda\n M scenes/pool_platform_ego_mixed.usda\n?? config/clean_pool_water_boundary.json\n?? docs/clean_pool_hydrodynamics_20261028.md\n?? docs/platform_navigation_20261028.md\n?? docs/platform_water_demo_20261028.md\n?? docs/validation/platform_navigation_20261028/\n?? docs/validation/platform_water_demo_20261028/\n?? scenes/clean_pool_collision_sections.json\n?? scenes/highbay_preview.usda\n?? scenes/pool_clean_pool.usda\n?? scripts/audit_platform_navigation.py\n?? scripts/clean_pool.py\n?? scripts/package_platform_demo.py\n?? scripts/platform_navigation.py\n?? scripts/run_platform_water_demo.py\n?? scripts/validate_clean_pool.py",
+  "config": {
+    "platform": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+    "water": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "environment_offset": [
+      -5,
+      -1.5,
+      1.3
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": 0.65,
+    "water_surface": 1.5,
+    "start": [
+      -2,
+      0,
+      1
+    ],
+    "goal": [
+      2.1,
+      0,
+      1
+    ],
+    "obstacles": [
+      {
+        "name": "BoxA",
+        "position": [
+          -0.75,
+          0.2,
+          1.05
+        ],
+        "size": [
+          0.25,
+          0.5,
+          0.82
+        ]
+      },
+      {
+        "name": "PillarA",
+        "type": "cylinder",
+        "position": [
+          0.0,
+          -0.25,
+          1.05
+        ],
+        "size": [
+          0.25,
+          0.25,
+          0.82
+        ]
+      },
+      {
+        "name": "BoxB",
+        "position": [
+          0.75,
+          0.25,
+          1.05
+        ],
+        "size": [
+          0.25,
+          0.5,
+          0.82
+        ]
+      }
+    ],
+    "camera_resolution": [
+      640,
+      360
+    ],
+    "camera_horizontal_fov_deg": 90.0,
+    "depth_mode": "ideal",
+    "max_velocity": 0.3,
+    "max_acceleration": 0.3,
+    "command_timeout": 0.5,
+    "goal_tolerance": 0.3,
+    "align_before_translation": true,
+    "observed_global_guide": true,
+    "max_heading_error_deg": 20.0,
+    "tracking_error_limit": 0.25,
+    "planner_goal_tolerance": 0.05,
+    "render_pool_collision": false,
+    "physics_mode": "hydrodynamics",
+    "hydrodynamics": {
+      "mass_kg": 5.0,
+      "density_kg_m3": 1000.0,
+      "gravity_m_s2": 9.81,
+      "displaced_volume_m3": 0.00505,
+      "center_of_mass_body_m": [
+        0.0,
+        0.0,
+        0.116
+      ],
+      "center_of_buoyancy_offset_m": [
+        0.0,
+        0.0,
+        0.025
+      ],
+      "hull_size_m": [
+        0.48,
+        0.57,
+        0.26
+      ],
+      "inertia_kg_m2": [
+        0.1635,
+        0.1242,
+        0.2314
+      ],
+      "linear_drag": [
+        8.0,
+        12.0,
+        16.0
+      ],
+      "quadratic_drag": [
+        12.0,
+        18.0,
+        24.0
+      ],
+      "angular_drag": [
+        0.18,
+        0.18,
+        0.15
+      ],
+      "quadratic_angular_drag": [
+        0.12,
+        0.12,
+        0.1
+      ],
+      "current_world_m_s": [
+        0.0,
+        0.08,
+        0.0
+      ],
+      "force_limit_n": [
+        12.0,
+        12.0,
+        15.0
+      ],
+      "torque_limit_nm": [
+        1.5,
+        1.5,
+        1.0
+      ],
+      "force_tau_s": 0.25,
+      "torque_tau_s": 0.12,
+      "velocity_kp": [
+        30.0,
+        30.0,
+        35.0
+      ],
+      "velocity_ki": [
+        8.0,
+        8.0,
+        12.0
+      ],
+      "integral_limit_n": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "angular_kp": [
+        1.2,
+        1.2,
+        1.0
+      ],
+      "max_yaw_rate_rad_s": 0.25
+    },
+    "water_boundary": "config/platform_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+    "collision_sections": "scenes/platform_collision_sections.json",
+    "display_water_opacity": 0.1,
+    "description": "Platform \u539f\u59cb\u6c34\u4f53\u4e2d\u7684\u5728\u7ebf\u611f\u77e5 A* + EGO \u590d\u6742\u969c\u788d\u6d4b\u8bd5",
+    "title": "Platform water / mixed obstacles",
+    "use_embedded_water": true,
+    "water_prim": "/World/Environment/Platform/Water",
+    "frame_water_boundary": true,
+    "scenario": "platform_ego_mixed",
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_platform_ego_mixed.usda"
+  },
+  "ROS_DOMAIN_ID": 115,
+  "wall_time_limit": 420.0,
+  "sim_time_limit": 120.0,
+  "arrival_tolerance": 0.05,
+  "settle_time": 2.0,
+  "cloud_stride": 1,
+  "headless": true,
+  "goal_delay_sim_seconds": 0
+}
