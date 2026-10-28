@@ -1,4 +1,4 @@
-"""Wait for live odometry and cloud, then publish the configured goal."""
+"""Wait for live odometry and cloud, then publish a live navigation goal."""
 import json
 import argparse
 import time
@@ -12,6 +12,8 @@ from experiment import load_experiment
 c = load_experiment()
 parser=argparse.ArgumentParser()
 parser.add_argument('--delay-sim-seconds',type=float,default=0.)
+parser.add_argument('--goal', nargs=2, type=float, metavar=('X','Y'),
+                    help='goal position in world metres; z is fixed to the planner depth (1.0 m)')
 args=parser.parse_args()
 rclpy.init()
 node = rclpy.create_node("rov_goal_sender")
@@ -32,13 +34,14 @@ deadline=time.monotonic()+650
 while odom_time[0]-first_time < args.delay_sim_seconds:
     if time.monotonic()>deadline:raise RuntimeError('Simulation did not advance during goal delay')
     rclpy.spin_once(node,timeout_sec=.1)
+goal = [float(args.goal[0]), float(args.goal[1]), 1.0] if args.goal else list(map(float, c["goal"]))
 msg = PoseStamped()
 msg.header.frame_id = "world"
-msg.pose.position.x, msg.pose.position.y, msg.pose.position.z = map(float, c["goal"])
+msg.pose.position.x, msg.pose.position.y, msg.pose.position.z = goal
 msg.pose.orientation.w = 1.0
 pub.publish(msg)
 for _ in range(10):
     rclpy.spin_once(node, timeout_sec=0.1)
-print("Goal sent:", c["goal"])
+print("Goal sent:", goal)
 node.destroy_node()
 rclpy.shutdown()

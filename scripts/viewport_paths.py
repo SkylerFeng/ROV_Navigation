@@ -7,17 +7,34 @@ import omni.ui as ui
 from pxr import UsdGeom
 import omni.usd
 from omni.kit.viewport.utility import get_active_viewport
+import json
+from pathlib import Path
 
 
-def top_view():
-    # Below the building roof; orthographic framing covers the entire pool.
+def top_view(config=None):
+    # Frame the configured test-water region instead of the full scan building.
     viewport = get_active_viewport()
     camera = UsdGeom.Camera.Define(omni.usd.get_context().get_stage(), "/OmniverseKit_Persp")
     viewport.camera_path = "/OmniverseKit_Persp"
     camera.CreateProjectionAttr("orthographic")
-    camera.CreateHorizontalApertureAttr(95.0)
-    camera.CreateVerticalApertureAttr(53.4375)
-    set_camera_view(eye=np.array([.3, .6, 2.8]), target=np.array([.3, .6001, 1]), camera_prim_path="/OmniverseKit_Persp")
+    width, height = 9.5, 5.34375
+    center = np.array([.3, .6])
+    if config and (config["scenario"].startswith("highbay") or config.get("frame_water_boundary", False)):
+        boundary = np.asarray(json.loads((Path(__file__).resolve().parents[1] / config["water_boundary"]).read_text()))
+        center = (boundary.min(axis=0)+boundary.max(axis=0))/2
+        span = np.ptp(boundary, axis=0)+.6
+        resolution = viewport.resolution
+        aspect = resolution[0]/max(resolution[1], 1)
+        width = max(span[0], span[1]*aspect)
+        height = width/aspect
+    # USD camera apertures use tenths of a scene unit. Stay under the scan's
+    # building roof; orthographic framing does not require a high viewpoint.
+    camera.CreateHorizontalApertureAttr(float(width*10))
+    camera.CreateVerticalApertureAttr(float(height*10))
+    surface = config["water_surface"] if config else 1.0
+    set_camera_view(eye=np.array([center[0], center[1], 2.8]),
+                    target=np.array([center[0], center[1]+.0001, surface]),
+                    camera_prim_path="/OmniverseKit_Persp")
 
 
 def perspective_view():
@@ -33,6 +50,7 @@ def perspective_view():
 class ViewportPaths:
     def __init__(self, config, headless=False):
         self.config = config
+        self.water_boundary = json.loads((Path(__file__).resolve().parents[1] / config["water_boundary"]).read_text())
         self.draw = _debug_draw.acquire_debug_draw_interface()
         self.current, self.controls = [], []
         self.previous = deque(maxlen=3)
@@ -50,6 +68,8 @@ class ViewportPaths:
                 with ui.VStack(spacing=6):
                     ui.Label(config["title"].split("/")[0].strip())
                     ui.Label("Paths projected above water for visibility", word_wrap=True)
+                    if config["scenario"].startswith("highbay"):
+                        ui.Label("Blue outline: configured test water, not surveyed pool walls", word_wrap=True)
                     self.status = ui.Label("Waiting for planner...", word_wrap=True, height=95)
                     for label, value in self.show.items():
                         with ui.HStack():
@@ -59,7 +79,7 @@ class ViewportPaths:
                             checkbox.model.add_value_changed_fn(lambda model, key=label: self.show.__setitem__(key, model.as_bool))
                             ui.Label(label)
                     with ui.HStack(spacing=8):
-                        ui.Button("Top view", clicked_fn=top_view)
+                        ui.Button("Top view", clicked_fn=lambda: top_view(config))
                         ui.Button("Perspective", clicked_fn=perspective_view)
 
     def receive_path(self, msg):
@@ -87,6 +107,9 @@ class ViewportPaths:
             starts.extend(projected[:-1]); ends.extend(projected[1:])
             colors.extend([color]*(len(points)-1)); widths.extend([width]*(len(points)-1))
         surface = self.config["water_surface"]
+        outline = [(float(x), float(y), surface+.08) for x, y in self.water_boundary]
+        outline.append(outline[0])
+        add(outline, (.15, .72, .88, .95), 2, surface+.08)
         if self.show["Previous plans (orange)"]:
             for old in self.previous:
                 add(old, (1.0, .45, .05, .4), 2, surface+.12)

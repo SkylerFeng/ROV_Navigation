@@ -46,22 +46,30 @@ def build(scenario, show_pool_collision=False):
     stage.SetDefaultPrim(world.GetPrim())
     UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
     UsdGeom.SetStageMetersPerUnit(stage, 1.0)
-    outer = UsdGeom.Xform.Define(stage, "/World/Environment")
-    translate(outer, CONFIG["environment_offset"])
-    platform = UsdGeom.Xform.Define(stage, "/World/Environment/Platform")
-    platform.GetPrim().GetReferences().AddReference(CONFIG["platform"])
-    if show_pool_collision:
-        reveal_pool_collision(stage, CONFIG["collision_prim"])
+    if CONFIG.get("clean_pool", False):
+        from clean_pool import build_pool
+        build_pool(stage, CONFIG)
+    else:
+        outer = UsdGeom.Xform.Define(stage, "/World/Environment")
+        translate(outer, CONFIG["environment_offset"])
+        platform = UsdGeom.Xform.Define(stage, "/World/Environment/Platform")
+        platform.GetPrim().GetReferences().AddReference(CONFIG["platform"])
+        if show_pool_collision:
+            reveal_pool_collision(stage, CONFIG["collision_prim"])
     water = UsdGeom.Xform.Define(stage, "/World/Water")
-    water.GetPrim().GetReferences().AddReference(CONFIG["water"])
-    translate(water, CONFIG["source_to_world"])
+    if not CONFIG.get("use_embedded_water", False):
+        water.GetPrim().GetReferences().AddReference(CONFIG["water"])
+        translate(water, CONFIG["source_to_world"])
     # Suppress the bright water specular highlight that obscures the overview.
-    water_shader = UsdShade.Shader(stage.GetPrimAtPath("/World/Water/Looks/Water/PreviewSurface"))
-    water_shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(.85)
-    water_shader.CreateInput("opacity", Sdf.ValueTypeNames.Float).Set(.12)
-    water_shader.CreateInput("ior", Sdf.ValueTypeNames.Float).Set(1.0)
-    water_shader.CreateInput("useSpecularWorkflow", Sdf.ValueTypeNames.Int).Set(1)
-    water_shader.CreateInput("specularColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0))
+    water_shader = UsdShade.Shader(stage.GetPrimAtPath(CONFIG.get("water_prim", "/World/Water")+"/Looks/Water/PreviewSurface"))
+    if water_shader:
+        water_shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(.85)
+        water_shader.CreateInput("opacity", Sdf.ValueTypeNames.Float).Set(CONFIG.get("display_water_opacity", .12))
+        water_shader.CreateInput("ior", Sdf.ValueTypeNames.Float).Set(1.0)
+        water_shader.CreateInput("useSpecularWorkflow", Sdf.ValueTypeNames.Int).Set(1)
+        water_shader.CreateInput("specularColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0))
+        if CONFIG.get("clean_pool", False):
+            water_shader.CreateInput("diffuseColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(.12, .45, .55))
     # Water surface has no collider; run_sim supplies the configured fluid model.
     for obj in CONFIG["obstacles"]:
         path = "/World/Obstacles/" + obj["name"]
@@ -107,7 +115,7 @@ def build(scenario, show_pool_collision=False):
     UsdPhysics.CollisionAPI.Apply(hull.GetPrim())
     physics = UsdPhysics.Scene.Define(stage, "/World/PhysicsScene")
     physics.CreateGravityMagnitudeAttr(0.0)
-    stage.GetRootLayer().customLayerData = {"scenario": scenario, "title": CONFIG["title"]}
+    stage.GetRootLayer().customLayerData = {**stage.GetRootLayer().customLayerData, "scenario": scenario, "title": CONFIG["title"]}
     stage.GetRootLayer().Save()
     print(output)
 

@@ -67,12 +67,18 @@ try:
     from tf2_msgs.msg import TFMessage
     from geometry_msgs.msg import TransformStamped
 
+    if C.get("clean_pool", False) or C["scenario"].startswith("highbay") or C.get("use_embedded_water", False):
+        import carb
+        # RTX defaults treat PreviewSurface opacity as a binary cutout.
+        # Enable fractional opacity so the overview can see the submerged ROV.
+        carb.settings.get_settings().set("/rtx/raytracing/fractionalCutoutOpacity", True)
+        carb.settings.get_settings().set("/rtx/pathtracing/fractionalCutoutOpacity", True)
     open_stage(C["scene_file"])
     world = World(stage_units_in_meters=1.0, physics_dt=1/60, rendering_dt=1/30)
     stage = world.stage
     # Record the composed stage itself, independently of config names/screenshots.
     environment = stage.GetPrimAtPath("/World/Environment/Platform")
-    water_prim = stage.GetPrimAtPath("/World/Water")
+    water_prim = stage.GetPrimAtPath(C.get("water_prim", "/World/Water"))
     collider = stage.GetPrimAtPath(C["collision_prim"])
     if not collider or not collider.HasAPI(UsdPhysics.CollisionAPI):
         raise RuntimeError(f"Missing environment collider: {C['collision_prim']}")
@@ -88,6 +94,7 @@ try:
         "water_boundary": json.loads((ROOT / C["water_boundary"]).read_text()),
         "water_surface": C["water_surface"], "pool_floor": C["pool_floor"],
         "water_model": "configured finite region with reduced-order fluid forces; not CFD or measured water geometry",
+        "environment_geometry": "engineered Tile3 footprint pool" if C.get("clean_pool") else "referenced scan",
     }
     (OUTPUT / "scene_evidence.json").write_text(json.dumps(evidence, indent=2))
     if C.get("render_pool_collision", False):
@@ -176,7 +183,7 @@ try:
         "horizontal_fov_deg": float(np.degrees(2*np.arctan(C["camera_resolution"][0]/(2*camera._camera_k[0,0]))))}, indent=2))
     set_camera_view(eye=np.array([0, -6, 5]), target=np.array([0, 0, 1]))
     if args.top_view or args.view == "top":
-        top_view()
+        top_view(C)
     rclpy.init()
     node = rclpy.create_node("rov_oceansim")
     odom_pub = node.create_publisher(Odometry, "/rov/odom", 10)
