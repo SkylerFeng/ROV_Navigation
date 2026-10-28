@@ -70,9 +70,29 @@ try:
     open_stage(C["scene_file"])
     world = World(stage_units_in_meters=1.0, physics_dt=1/60, rendering_dt=1/30)
     stage = world.stage
+    # Record the composed stage itself, independently of config names/screenshots.
+    environment = stage.GetPrimAtPath("/World/Environment/Platform")
+    water_prim = stage.GetPrimAtPath("/World/Water")
+    collider = stage.GetPrimAtPath(C["collision_prim"])
+    if not collider or not collider.HasAPI(UsdPhysics.CollisionAPI):
+        raise RuntimeError(f"Missing environment collider: {C['collision_prim']}")
+    from pxr import Usd
+    evidence = {
+        "scene_file": C["scene_file"],
+        "used_layers": sorted(layer.realPath for layer in stage.GetUsedLayers() if layer.realPath),
+        "environment_meshes": sum(p.IsA(UsdGeom.Mesh) for p in Usd.PrimRange(environment)),
+        "collision_prim": str(collider.GetPath()),
+        "collision_points": len(UsdGeom.Mesh(collider).GetPointsAttr().Get()),
+        "water_meshes": sum(p.IsA(UsdGeom.Mesh) for p in Usd.PrimRange(water_prim)),
+        "water_has_colliders": any(p.HasAPI(UsdPhysics.CollisionAPI) for p in Usd.PrimRange(water_prim)),
+        "water_boundary": json.loads((ROOT / C["water_boundary"]).read_text()),
+        "water_surface": C["water_surface"], "pool_floor": C["pool_floor"],
+        "water_model": "configured finite region with reduced-order fluid forces; not CFD or measured water geometry",
+    }
+    (OUTPUT / "scene_evidence.json").write_text(json.dumps(evidence, indent=2))
     if C.get("render_pool_collision", False):
         from build_scene import reveal_pool_collision
-        reveal_pool_collision(stage)
+        reveal_pool_collision(stage, C["collision_prim"])
     from build_scene import translate
     translate(stage.GetPrimAtPath("/World/Markers/Goal"), [*C["goal"][:2], C["water_surface"]+.1])
     translate(stage.GetPrimAtPath("/World/Markers/Start"), [*C["start"][:2], C["water_surface"]+.1])
@@ -83,7 +103,7 @@ try:
     dynamics = servo = None
     api = PhysxSchema.PhysxRigidBodyAPI.Apply(body)
     if physics_mode == "hydrodynamics":
-        boundary = json.loads((ROOT / "config/pool_water_boundary.json").read_text())
+        boundary = json.loads((ROOT / C["water_boundary"]).read_text())
         dynamics = Hydrodynamics(C.get("hydrodynamics", {}), C["water_surface"], C["pool_floor"], boundary)
         servo = VelocityController(C.get("hydrodynamics", {}))
         # PhysX applies weight; our model applies buoyancy and fluid forces.
@@ -337,7 +357,7 @@ try:
     result = {
         "steps": step, "samples": samples,
         "simulation_seconds": float(world.current_time), "wall_seconds": time.monotonic()-loop_started,
-        "pool_collision_visibility": str(UsdGeom.Imageable(stage.GetPrimAtPath("/World/Environment/Platform/Collision/Platform_collision_clean/mesh")).ComputeVisibility()),
+        "pool_collision_visibility": str(UsdGeom.Imageable(stage.GetPrimAtPath(C["collision_prim"])).ComputeVisibility()),
         "cloud_stride": args.cloud_stride,
         "arrival_tolerance": arrival_tolerance, "settle_time": args.settle_time,
         "sim_time_limit": args.sim_time_limit, "wall_time_limit": args.wall_time_limit,

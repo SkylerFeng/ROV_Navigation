@@ -1,0 +1,55 @@
+{
+  "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_highbay.usda",
+  "used_layers": [
+    "/home/ache/Coding/rov_navigation/scenes/highbay_water.usda",
+    "/home/ache/Coding/rov_navigation/scenes/pool_highbay.usda",
+    "/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/HighBay_collision.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/HighBay_visual.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_0/Tile_0.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_1/Tile_1.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_10/Tile_10.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_11/Tile_11.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_12/Tile_12.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_13/Tile_13.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_14/Tile_14.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_15/Tile_15.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_16/Tile_16.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_17/Tile_17.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_18/Tile_18.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_19/Tile_19.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_2/Tile_2.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_3/Tile_3.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_6/Tile_6.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_7/Tile_7.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_8/Tile_8.usd",
+    "/home/ache/OceanSim-Highbay/data/HighBay/visual/source/Tile_9/Tile_9.usd",
+    "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd"
+  ],
+  "environment_meshes": 326,
+  "collision_prim": "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+  "collision_points": 153776,
+  "water_meshes": 1,
+  "water_has_colliders": false,
+  "water_boundary": [
+    [
+      -4,
+      -2.4
+    ],
+    [
+      3.5,
+      -2.4
+    ],
+    [
+      3.5,
+      2.4
+    ],
+    [
+      -4,
+      2.4
+    ]
+  ],
+  "water_surface": 1.55,
+  "pool_floor": -0.4,
+  "water_model": "configured finite region with reduced-order fluid forces; not CFD or measured water geometry"
+}

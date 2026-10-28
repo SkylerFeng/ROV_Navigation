@@ -1,0 +1,27 @@
+{
+  "scenario": "highbay_open",
+  "goal_error_m": 0.012133484078774254,
+  "goal_reached": true,
+  "plan_updates": 48,
+  "stop_reason": "goal_reached",
+  "simulation_seconds": 58.53333638608456,
+  "conservative_block_clearance_m": null,
+  "depth_mode": "ideal",
+  "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+  "physics_mode": "hydrodynamics",
+  "max_contact_impulse_ns": 0.0,
+  "max_speed_m_s": 0.15998093555334042,
+  "velocity_error_rmse_m_s": 0.014646969365097405,
+  "max_depth_reference_error_m": 0.018521606922149658,
+  "path_length_m": 6.120002142242054,
+  "current_world_m_s": [
+    0.0,
+    0.08,
+    0.0
+  ],
+  "force_saturation_sample_fraction": 0.0,
+  "torque_saturation_sample_fraction": 0.0,
+  "min_submerged_fraction": 0.9999999999999996,
+  "max_actuator_force_n": 1.6896260369938425,
+  "max_buoyancy_n": 49.54049999999997
+}

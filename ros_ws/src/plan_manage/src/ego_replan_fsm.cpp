@@ -662,7 +662,7 @@ namespace ego_planner
           have_new_target_=true;
           changeFSMExecState(GEN_NEW_TRAJ,"TERMINAL");
         }
-        else if ((end_pt_ - pos).norm() > no_replan_thresh_ && t_cur > replan_thresh_)
+        else if (!terminal_approach_ && (end_pt_ - pos).norm() > no_replan_thresh_ && t_cur > replan_thresh_)
         {
           changeFSMExecState(REPLAN_TRAJ, "FSM");
         }
@@ -970,10 +970,19 @@ namespace ego_planner
     getLocalTarget();
     if (!local_target_valid_) return false;
 
-    bool terminal = observed_guide_ && (end_pt_-odom_pos_).norm()<.2 &&
-                    odom_vel_.norm()<.05 && (local_target_pt_-end_pt_).norm()<1e-3;
-    bool plan_and_refine_success = terminal ? planner_manager_->planTerminalApproach(odom_pos_,odom_vel_,end_pt_) :
-        planner_manager_->reboundReplan(start_pt_, start_vel_, start_acc_, local_target_pt_, local_target_vel_, (have_new_target_ || flag_use_poly_init), flag_randomPolyTraj);
+    // Constrain the endpoint as soon as the final goal enters the local
+    // horizon. Waiting until 0.6 m can leave a free-endpoint spline active:
+    // near-goal replanning is suppressed and that spline may overshoot.
+    bool terminal = observed_guide_ &&
+                    odom_vel_.norm()<=planner_manager_->pp_.max_vel_+1e-6 && (local_target_pt_-end_pt_).norm()<1e-3;
+    bool plan_and_refine_success = terminal && planner_manager_->planTerminalApproach(odom_pos_,odom_vel_,end_pt_);
+    // Let a validated exact approach finish accelerating. Rebuilding its
+    // zero-velocity start every 0.5 s can prevent it from ever moving.
+    // Safety-map and measured tracking-deviation replans remain active.
+    terminal_approach_ = plan_and_refine_success;
+    // A direct terminal curve can be obstructed; retain the normal detour.
+    if (!plan_and_refine_success)
+      plan_and_refine_success = planner_manager_->reboundReplan(start_pt_, start_vel_, start_acc_, local_target_pt_, local_target_vel_, (have_new_target_ || flag_use_poly_init), flag_randomPolyTraj);
     have_new_target_ = false;
 
     cout << "refine_success=" << plan_and_refine_success << endl;

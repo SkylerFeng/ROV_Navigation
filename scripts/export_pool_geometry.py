@@ -1,4 +1,5 @@
 """Export actual pool-mesh cross sections for honest XY route figures (USD Python)."""
+import argparse
 import json
 from pathlib import Path
 import numpy as np
@@ -6,9 +7,10 @@ from pxr import Usd, UsdGeom
 from experiment import ROOT, load_experiment
 
 
-def export():
-    stage = Usd.Stage.Open(load_experiment()["scene_file"])
-    prim = stage.GetPrimAtPath('/World/Environment/Platform/Collision/Platform_collision_clean/mesh')
+def export(scenario=None):
+    config = load_experiment(scenario)
+    stage = Usd.Stage.Open(config["scene_file"])
+    prim = stage.GetPrimAtPath(config["collision_prim"])
     mesh = UsdGeom.Mesh(prim)
     vertices = np.array(mesh.GetPointsAttr().Get())
     matrix = np.array(UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(Usd.TimeCode.Default()))
@@ -30,13 +32,15 @@ def export():
             for a, b in ((tri[0], tri[1]), (tri[1], tri[2]), (tri[2], tri[0])):
                 if (a[2] < z) != (b[2] < z):
                     points.append((a + (b-a)*(z-a[2])/(b[2]-a[2]))[:2].tolist())
-            if len(points) == 2 and all(-3.65 < p[0] < 4.35 and -2.15 < p[1] < 3.25 for p in points):
+            if len(points) == 2 and all(-8 < p[0] < 8 and -6 < p[1] < 6 for p in points):
                 segments.append(points)
     result = {'collider': str(prim.GetPath()), 'slice_heights_m': heights, 'segments': segments}
-    output = ROOT / 'scenes/pool_collision_sections.json'
+    output = ROOT / config['collision_sections']
     output.write_text(json.dumps(result))
     print(f'{len(segments)} cross-section segments: {output}')
 
 
 if __name__ == '__main__':
-    export()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--scenario")
+    export(parser.parse_args().scenario)

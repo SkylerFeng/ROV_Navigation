@@ -19,7 +19,7 @@ Git 中的场景描述仍引用外部资产，不代表资产已经随仓库分�
 - ROS2 Humble：`/opt/ros/humble`。
 - EGO underlay：`/home/ache/Coding/ego/ego-planner-swarm`。
   来源提交及 overlay 说明见 `ros_ws/README.md`，保留其 GPL 许可证。
-- `/home/ache/OceanSim-Highbay` 是候选仿真能力来源，当前未作为整个工程直接加载。
+- HighBay 测试场景直接引用 `/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd` 的视觉与碰撞网格；水面和水域为本仓库单独配置，原资产不包含水。见 `docs/highbay_navigation_20261028.md`。
 
 以上依赖包含本机绝对路径；更换机器后需配置并重新生成场景、编译 overlay。
 已有实验日志及源码快照应另行备份，文档内指向未提交日志的链接在远端不可用。

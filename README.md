@@ -5,6 +5,9 @@
 [水动力模型与验证](docs/hydrodynamics_20261027.md)。历史五场成绩对应旧动力模型。
 原始 Platform / OceanSim / EGO 文件均保持不变；此目录保存独立实验代码。
 
+HighBay 实景网格入口为 `highbay_open`（空场）和 `highbay`（人工测试箱）。原始 HighBay 不含水；本项目为它配置水面、有限水域与简化流体力。
+[接入、迭代、实测及 Isaac 可视化操作](docs/highbay_navigation_20261028.md)。
+
 ## 2026-10-15 slalom 修复与最终回归
 
 本轮针对实际运行中复发的转向问题，统一低速朝向判定、沿可通行引导前缀选局部目标，并加入精确终端接近轨迹。五场统一回归均到达；正常启动slalom为67.07 s / 误差0.34 mm，55秒延迟发目标的窗口复验在接到任务后约135.23 s到达。均满足0.01 m内保持2 s，最大接触冲量为零。
@@ -13,7 +16,7 @@
 
 ## 当前正式场景（2026-10-15）
 
-现在只保留 baseline、slalom、gates、pillars、mixed 五个正式入口。
+Platform 系列保留 baseline、slalom、gates、pillars、mixed 五个正式入口，2026-10-28 另增两个 HighBay 测试入口。
 slalom 使用最终验证的共享执行进度、已观测地图全局引导和感知配置；gates 已直接替换为净空校核后的布局，不再单列 gates_clearance。
 公共起点 `(-3.0,0,1)`、目标 `(3.5,0.4,1)`、前视相机水平视场 90°、逐像素深度采样。
 [本次组会汇报](docs/group_meeting_ROV_navigation.md)包含当前架构、五场结果、路线图和 Demo 操作。
@@ -21,7 +24,7 @@ slalom 使用最终验证的共享执行进度、已观测地图全局引导和�
 
 ## 多场景与在线规划轨迹
 
-当前默认场景为 **gates**。`scenes/pool_navigation.usda` 保持为当前场景入口，
+默认场景由 `config/active_scenario.json` 决定。`scenes/pool_navigation.usda` 保持为当前场景入口，
 其他场景文件可以分别在 Isaac Sim 中打开预览。
 
 项目自带 `ros_ws` 规划器副本，以 `/clock` 为时间基准；转向等待时暂停轨迹执行进度，规划器与轨迹服务器共享这一进度，地图和物理仿真继续运行。
@@ -35,6 +38,8 @@ slalom 使用最终验证的共享执行进度、已观测地图全局引导和�
 | gates | pool_gates.usda | 6 | 校核净空后的双错位门洞 |
 | pillars | pool_pillars.usda | 8 | 立柱阵列、多条绕行路径 |
 | mixed | pool_mixed.usda | 8 | 箱体、墙段、立柱混合 |
+| highbay_open | pool_highbay_open.usda | 0 人工箱 | 原始 HighBay 扫描及配置水域 |
+| highbay | pool_highbay.usda | 3 人工箱 | HighBay 扫描、水动力与绕障 |
 
 停止旧的仿真和导航节点后，选择场景，再按本文后面的三个终端步骤启动：
 

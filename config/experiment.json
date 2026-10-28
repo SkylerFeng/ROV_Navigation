@@ -165,5 +165,8 @@
       1.0
     ],
     "max_yaw_rate_rad_s": 0.25
-  }
+  },
+  "water_boundary": "config/pool_water_boundary.json",
+  "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+  "collision_sections": "scenes/pool_collision_sections.json"
 }

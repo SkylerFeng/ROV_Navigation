@@ -33,7 +33,7 @@ def run_case(name, directory, limit, domain, sim_limit=180, tolerance=.01, settl
     if (directory / "run.json").exists():
         raise FileExistsError(f"Existing results at {directory}; choose a fresh --output-dir")
     directory.mkdir(parents=True, exist_ok=True)
-    geometry = ROOT / "scenes/pool_collision_sections.json"
+    geometry = ROOT / c["collision_sections"]
     if geometry.exists():
         shutil.copy2(geometry, directory / "pool_collision_sections.json")
     source_dir = directory / "sources"
@@ -41,6 +41,9 @@ def run_case(name, directory, limit, domain, sim_limit=180, tolerance=.01, settl
     sources = sorted((ROOT / "scripts").glob("*.py")) + sorted((ROOT / "config").glob("*.json")) + [Path(c["scene_file"])]
     sources += sorted((ROOT / "ros_ws/src/plan_manage/src").glob("*.cpp"))
     sources += sorted((ROOT / "ros_ws/src/plan_manage/include").rglob("*.h"))
+    water_asset = Path(c["water"])
+    if water_asset.is_relative_to(ROOT):
+        sources.append(water_asset)
     if c.get("overrides_file"):
         sources.append(Path(c["overrides_file"]))
     manifest = {}

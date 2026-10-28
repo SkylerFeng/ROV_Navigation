@@ -30,7 +30,7 @@ def generate_launch_description():
         "fsm/max_heading_error_deg": c.get("max_heading_error_deg", 20.0),
         "fsm/observed_global_guide": c.get("observed_global_guide", True),
         "fsm/navigation_polygon": [coordinate for point in json.loads(
-            (root / "config/pool_water_boundary.json").read_text()) for coordinate in point],
+            (root / c["water_boundary"]).read_text()) for coordinate in point],
         "fsm/thresh_replan_time": 0.5,
         "fsm/thresh_no_replan_meter": 0.2,
         "fsm/planning_horizon": 3.0,

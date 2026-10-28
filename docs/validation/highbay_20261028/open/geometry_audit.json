@@ -1,0 +1,12 @@
+{
+  "scenario": "highbay_open",
+  "samples": 292,
+  "sample_max_interval_s": 0.20000001043081284,
+  "minimum_scanned_mesh_sphere_clearance_m": 0.9285722478272082,
+  "minimum_water_boundary_hull_corner_clearance_m": 0.23518380526306215,
+  "all_sampled_hull_centers_inside_water": true,
+  "all_sampled_hull_corners_inside_water": true,
+  "no_contact_events": true,
+  "passed": true,
+  "note": "Conservative circumscribed hull sphere at recorded samples; not continuous swept collision certification. Artificial obstacles are assessed separately."
+}

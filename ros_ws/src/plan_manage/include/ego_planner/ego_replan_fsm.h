@@ -68,6 +68,7 @@ namespace ego_planner
     double last_status_time_ = -1.0;
     int tracking_recoveries_ = 0;
     bool heading_aware_execution_ = false, heading_paused_ = false;
+    bool terminal_approach_ = false;
     double heading_limit_ = 20.0, phase_update_time_ = -1.0;
     int phase_traj_id_ = -1;
     bool observed_guide_ = false;

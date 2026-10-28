@@ -31,13 +31,15 @@ log=(output/'heading_execution_test.log').open('w')
 process=subprocess.Popen(['bash',str(ROOT/'scripts/start_navigation.sh')],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
 sim_time=10.
 yaw=0.
+forward_velocity=0.
 
 def tick(count):
     global sim_time
     for _ in range(count):
         sim_time+=.05
         stamp=Clock();stamp.clock.sec=int(sim_time);stamp.clock.nanosec=int((sim_time%1)*1e9);clocks.publish(stamp)
-        od=Odometry();od.header=Header(stamp=stamp.clock,frame_id='world');od.pose.pose.position.x=-2.7;od.pose.pose.position.z=1.;od.pose.pose.orientation.w=math.cos(yaw/2);od.pose.pose.orientation.z=math.sin(yaw/2);odoms.publish(od)
+        od=Odometry();od.header=Header(stamp=stamp.clock,frame_id='world');od.pose.pose.position.x=-2.7;od.pose.pose.position.z=1.;od.pose.pose.orientation.w=math.cos(yaw/2);od.pose.pose.orientation.z=math.sin(yaw/2)
+        od.twist.twist.linear.x=forward_velocity;odoms.publish(od)
         points=np.array([[3.5,0,1]],dtype=np.float32)
         clouds.publish(PointCloud2(header=od.header,height=1,width=1,fields=[PointField(name=a,offset=i*4,datatype=7,count=1) for i,a in enumerate('xyz')],point_step=12,row_step=12,data=points.tobytes(),is_dense=True))
         end=time.monotonic()+.025
@@ -73,8 +75,38 @@ try:
     _,points=sample_spline([[p.x,p.y,p.z] for p in m.pos_pts],m.knots,m.order)
     assert np.linalg.norm(points[-1]-np.array([-2.6,0,1]))<1e-8
     assert statuses[-1]['have_target'],'Stationary robot falsely finished terminal approach'
+    # HighBay regression: the free-endpoint optimizer overshot by 0.25 m,
+    # outside the old 0.2 m terminal range. Check a half-metre approach.
+    splines.clear()
+    send(-2.2,0);tick(80)
+    terminal=[m for m in splines if len(m.pos_pts)==6 and
+              all(abs(p.x+2.2)<1e-8 and abs(p.y)<1e-8 for p in m.pos_pts[-3:])]
+    assert terminal,'No exact terminal B-spline for a 0.5 m goal'
+    m=terminal[0]
+    _,points=sample_spline([[p.x,p.y,p.z] for p in m.pos_pts],m.knots,m.order)
+    assert np.linalg.norm(points[-1]-np.array([-2.2,0,1]))<1e-8
+    assert statuses[-1]['have_target'],'Stationary robot falsely finished half-metre approach'
+    # A final target can enter the 3 m horizon long before the old 0.6 m
+    # exact-approach range. Preserve measured initial velocity as well.
+    splines.clear()
+    forward_velocity=.12
+    send(-.2,0);tick(80)
+    terminal=[m for m in splines if len(m.pos_pts)==6 and
+              all(abs(p.x+.2)<1e-8 and abs(p.y)<1e-8 for p in m.pos_pts[-3:])]
+    assert terminal,'No exact terminal B-spline for a moving 2.5 m approach'
+    m=terminal[0]
+    points=np.array([[p.x,p.y,p.z] for p in m.pos_pts])
+    dt=m.knots[m.order+1]-m.knots[m.order]
+    assert np.linalg.norm((points[2]-points[0])/(2*dt)-[.12,0,0])<1e-8
+    times,positions=sample_spline(points,m.knots,m.order,count=1001)
+    assert np.linalg.norm(positions[-1]-[-.2,0,1])<1e-8
+    assert positions[:,0].max()<=-.2+1e-8,'Approach overshoots endpoint'
+    velocity=np.diff(positions,axis=0)/np.diff(times)[:,None]
+    acceleration=np.diff(velocity,axis=0)/np.diff(times[:-1])[:,None]
+    assert np.linalg.norm(velocity,axis=1).max()<=.15+1e-6
+    assert np.linalg.norm(acceleration,axis=1).max()<=.1+1e-6
     (output/'heading_execution_test.json').write_text(json.dumps(statuses,indent=2))
-    print('Passed: heading wait/resume, replacement goals, exact short terminal spline, no stationary arrival')
+    print('Passed: heading wait/resume, replacement goals, exact 0.1/0.5/2.5 m terminal splines, initial velocity and dynamics, no stationary arrival')
 finally:
     process.send_signal(signal.SIGINT)
     try:process.wait(timeout=15)

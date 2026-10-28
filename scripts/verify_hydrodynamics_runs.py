@@ -8,6 +8,8 @@ from hydrodynamics_metrics import dynamics_metrics
 
 
 CORE = ['scripts/hydrodynamics.py', 'scripts/run_sim.py', 'scripts/tracking_control.py',
+        'ros_ws/src/plan_manage/src/planner_manager.cpp',
+        'ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h',
         'ros_ws/src/plan_manage/src/ego_replan_fsm.cpp',
         'ros_ws/src/plan_manage/src/traj_server.cpp']
 

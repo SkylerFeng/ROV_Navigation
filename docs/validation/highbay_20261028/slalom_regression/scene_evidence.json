@@ -1,0 +1,81 @@
+{
+  "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+  "used_layers": [
+    "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+    "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+    "/home/ache/Platform1013/Platform/Platform.final.usd",
+    "/home/ache/Platform1013/Platform/Platform_collision.usd",
+    "/home/ache/Platform1013/Platform/Platform_visual.final.usd",
+    "/home/ache/Platform1013/Platform/Tile3_water.usda",
+    "/home/ache/Platform1013/Platform/visual/source/Tile_0/Tile_0.usd",
+    "/home/ache/Platform1013/Platform/visual/source/Tile_1/Tile_1.usd",
+    "/home/ache/Platform1013/Platform/visual/source/Tile_2/Tile_2.usd",
+    "/home/ache/Platform1013/Platform/visual/source/Tile_3_updated/Tile_3.fixed.usd"
+  ],
+  "environment_meshes": 6,
+  "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+  "collision_points": 169255,
+  "water_meshes": 1,
+  "water_has_colliders": false,
+  "water_boundary": [
+    [
+      -5.150032095367432,
+      -1.75
+    ],
+    [
+      -4.150032095367432,
+      -2.1200000047683716
+    ],
+    [
+      1.749968,
+      -2.1200000047683716
+    ],
+    [
+      3.0499681907348632,
+      -1.7999999523162842
+    ],
+    [
+      4.049968190734863,
+      -1.0999999046325684
+    ],
+    [
+      4.749968,
+      0.05000019073486328
+    ],
+    [
+      5.299968190734863,
+      1.3499999046325684
+    ],
+    [
+      5.449967809265137,
+      2.3499999046325684
+    ],
+    [
+      5.0999683814697265,
+      3.0500001907348633
+    ],
+    [
+      4.299968190734863,
+      3.4000000953674316
+    ],
+    [
+      1.499968,
+      3.4000000953674316
+    ],
+    [
+      -1.500032,
+      3.25
+    ],
+    [
+      -4.000032,
+      2.6999998092651367
+    ],
+    [
+      -5.150032095367432,
+      1.5500001907348633
+    ]
+  ],
+  "water_surface": 1.55,
+  "pool_floor": 0.6,
+  "water_model": "configured finite region with reduced-order fluid forces; not CFD or measured water geometry"
+}

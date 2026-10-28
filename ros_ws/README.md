@@ -59,7 +59,7 @@ search on the actual depth-derived inflated map, with a soft cost near
 occupied cells. Edges are sampled every 0.025 m; shortcuts are checked with
 additional lateral margin. Guide waypoints seed the existing EGO global
 polynomial; EGO remains responsible for local B-spline optimization and
-collision validation. The known water polygon in config/pool_water_boundary.json
+collision validation. The scenario-selected known water polygon (`water_boundary` in the experiment config)
 constrains guide search with a 0.4 m hull allowance. It contains no obstacle
 positions; unobserved cells retain the map's existing free/unknown convention.
 `test_observed_guide.cpp` covers detours, blocked starts, disconnected maps
@@ -84,3 +84,12 @@ component for small inertial overshoot (reference speed >0.01 m/s and XY error
 overshoot while the spline phase is frozen. Cross-track correction and large
 error recovery remain active. REPLAN_TRAJ retries a failed observed guide even
 when the obsolete trajectory's heading is paused, with a 0.5 s retry interval.
+
+2026-10-28 HighBay integration: final goals inside the local 3 m horizon can use
+an exact-boundary B-spline before a free rebound endpoint overshoots. Preserve
+measured initial velocity; sample occupancy and dynamics every 0.01 s. Target
+terminal cruise speed is 0.15 m/s (or measured initial speed if higher), with
+0.1 m/s² acceleration headroom, bounded by configured planner limits. An
+obstructed direct approach falls back to rebound. An accepted exact approach
+is not restarted every 0.5 s; collision and tracking-deviation recovery remain.
+See [HighBay results and limits](../docs/highbay_navigation_20261028.md).

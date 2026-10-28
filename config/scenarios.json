@@ -423,5 +423,111 @@
         ]
       }
     ]
+  },
+  "highbay_open": {
+    "platform": "/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd",
+    "water": "/home/ache/Coding/rov_navigation/scenes/highbay_water.usda",
+    "environment_offset": [
+      14,
+      9,
+      0
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": -0.4,
+    "water_surface": 1.55,
+    "water_boundary": "config/highbay_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+    "collision_sections": "scenes/highbay_collision_sections.json",
+    "render_pool_collision": false,
+    "start": [
+      -3,
+      -0.5,
+      1
+    ],
+    "goal": [
+      3,
+      0.4,
+      1
+    ],
+    "description": "原始 HighBay 视觉与碰撞网格，仅平移坐标；矩形测试水域和水位为配置值，并非实测水体。",
+    "title": "HighBay / 实景网格空场测试",
+    "obstacles": []
+  },
+  "highbay": {
+    "platform": "/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd",
+    "water": "/home/ache/Coding/rov_navigation/scenes/highbay_water.usda",
+    "environment_offset": [
+      14,
+      9,
+      0
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": -0.4,
+    "water_surface": 1.55,
+    "water_boundary": "config/highbay_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+    "collision_sections": "scenes/highbay_collision_sections.json",
+    "render_pool_collision": false,
+    "start": [
+      -3,
+      -0.5,
+      1
+    ],
+    "goal": [
+      3,
+      0.4,
+      1
+    ],
+    "description": "原始 HighBay 视觉与碰撞网格，仅平移坐标；矩形测试水域和水位为配置值，并非实测水体。",
+    "title": "HighBay / 实景网格与人工绕障测试",
+    "obstacles": [
+      {
+        "name": "TestBlockA",
+        "position": [
+          -1.3,
+          0,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.6,
+          0.85
+        ]
+      },
+      {
+        "name": "TestBlockB",
+        "position": [
+          0.4,
+          0.45,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.6,
+          0.85
+        ]
+      },
+      {
+        "name": "TestBlockC",
+        "position": [
+          2,
+          -0.3,
+          1.05
+        ],
+        "size": [
+          0.5,
+          0.6,
+          0.85
+        ]
+      }
+    ]
   }
 }

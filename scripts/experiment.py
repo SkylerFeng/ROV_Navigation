@@ -22,6 +22,8 @@ def load_experiment(scenario=None):
         overrides = json.loads(Path(override_file).read_text())
         if set(overrides)-set(config):
             raise ValueError(f"Unknown experiment overrides: {set(overrides)-set(config)}")
+        if "hydrodynamics" in overrides:
+            overrides["hydrodynamics"] = {**config["hydrodynamics"], **overrides["hydrodynamics"]}
         config.update(overrides)
         config["overrides_file"] = str(Path(override_file).resolve())
     return config
