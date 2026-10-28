@@ -669,5 +669,251 @@
     "use_embedded_water": true,
     "water_prim": "/World/Environment/Platform/Water",
     "frame_water_boundary": true
+  },
+  "platform_ego_slalom": {
+    "platform": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "water": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "environment_offset": [
+      -5,
+      -1.5,
+      1.3
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": 0.65,
+    "water_surface": 1.5,
+    "display_water_opacity": 0.1,
+    "water_boundary": "config/platform_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+    "collision_sections": "scenes/platform_collision_sections.json",
+    "render_pool_collision": false,
+    "start": [
+      -2,
+      0,
+      1
+    ],
+    "goal": [
+      2.1,
+      0,
+      1
+    ],
+    "description": "Platform \u539f\u59cb\u6c34\u4f53\u4e2d\u7684\u5728\u7ebf\u611f\u77e5 A* + EGO \u590d\u6742\u969c\u788d\u6d4b\u8bd5",
+    "title": "Platform water / slalom current",
+    "obstacles": [
+      {
+        "name": "Slalom1",
+        "position": [
+          -0.75,
+          0.2,
+          1.05
+        ],
+        "size": [
+          0.25,
+          0.5,
+          0.82
+        ]
+      },
+      {
+        "name": "Slalom2",
+        "position": [
+          0,
+          -0.25,
+          1.05
+        ],
+        "size": [
+          0.25,
+          0.5,
+          0.82
+        ]
+      },
+      {
+        "name": "Slalom3",
+        "position": [
+          0.75,
+          0.25,
+          1.05
+        ],
+        "size": [
+          0.25,
+          0.5,
+          0.82
+        ]
+      }
+    ],
+    "use_embedded_water": true,
+    "water_prim": "/World/Environment/Platform/Water",
+    "frame_water_boundary": true
+  },
+  "platform_ego_gates": {
+    "platform": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "water": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "environment_offset": [
+      -5,
+      -1.5,
+      1.3
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": 0.65,
+    "water_surface": 1.5,
+    "display_water_opacity": 0.1,
+    "water_boundary": "config/platform_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+    "collision_sections": "scenes/platform_collision_sections.json",
+    "render_pool_collision": false,
+    "start": [
+      -2,
+      0,
+      1
+    ],
+    "goal": [
+      2.1,
+      0,
+      1
+    ],
+    "description": "Platform \u539f\u59cb\u6c34\u4f53\u4e2d\u7684\u5728\u7ebf\u611f\u77e5 A* + EGO \u590d\u6742\u969c\u788d\u6d4b\u8bd5",
+    "title": "Platform water / offset gates",
+    "obstacles": [
+      {
+        "name": "Gate1Lower",
+        "position": [
+          -0.55,
+          -1.5,
+          1.05
+        ],
+        "size": [
+          0.3,
+          0.5,
+          0.82
+        ]
+      },
+      {
+        "name": "Gate1Upper",
+        "position": [
+          -0.55,
+          1.5,
+          1.05
+        ],
+        "size": [
+          0.3,
+          0.5,
+          0.82
+        ]
+      },
+      {
+        "name": "Gate2Lower",
+        "position": [
+          0.65,
+          -1.5,
+          1.05
+        ],
+        "size": [
+          0.3,
+          0.5,
+          0.82
+        ]
+      },
+      {
+        "name": "Gate2Upper",
+        "position": [
+          0.65,
+          1.5,
+          1.05
+        ],
+        "size": [
+          0.3,
+          0.5,
+          0.82
+        ]
+      }
+    ],
+    "use_embedded_water": true,
+    "water_prim": "/World/Environment/Platform/Water",
+    "frame_water_boundary": true
+  },
+  "platform_ego_mixed": {
+    "platform": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "water": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "environment_offset": [
+      -5,
+      -1.5,
+      1.3
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": 0.65,
+    "water_surface": 1.5,
+    "display_water_opacity": 0.1,
+    "water_boundary": "config/platform_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+    "collision_sections": "scenes/platform_collision_sections.json",
+    "render_pool_collision": false,
+    "start": [
+      -2,
+      0,
+      1
+    ],
+    "goal": [
+      2.1,
+      0,
+      1
+    ],
+    "description": "Platform \u539f\u59cb\u6c34\u4f53\u4e2d\u7684\u5728\u7ebf\u611f\u77e5 A* + EGO \u590d\u6742\u969c\u788d\u6d4b\u8bd5",
+    "title": "Platform water / mixed obstacles",
+    "obstacles": [
+      {
+        "name": "BoxA",
+        "position": [
+          -0.6,
+          0.15,
+          1.05
+        ],
+        "size": [
+          0.3,
+          0.6,
+          0.82
+        ]
+      },
+      {
+        "name": "PillarA",
+        "type": "cylinder",
+        "position": [
+          0.65,
+          0.35,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.82
+        ]
+      },
+      {
+        "name": "PillarB",
+        "type": "cylinder",
+        "position": [
+          0.1,
+          1.5,
+          1.05
+        ],
+        "size": [
+          0.4,
+          0.4,
+          0.82
+        ]
+      }
+    ],
+    "use_embedded_water": true,
+    "water_prim": "/World/Environment/Platform/Water",
+    "frame_water_boundary": true
   }
 }

@@ -1,0 +1,113 @@
+{
+  "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_platform_ego_gates.usda",
+  "used_layers": [
+    "/home/ache/Coding/rov_navigation/scenes/pool_platform_ego_gates.usda",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform.final.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_collision.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_visual.final.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_0/Tile_0.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_1/Tile_1.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_10/Tile_10.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_11/Tile_11.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_12/Tile_12.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_13/Tile_13.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_14/Tile_14.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_2/Tile_2.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_3_updated/Tile_3.fixed.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_4/Tile_4.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_6/Tile_6.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_7/Tile_7.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_8/Tile_8.usd",
+    "/home/ache/OceanSim-Highbay/data/Platform(new1)/visual/source/Tile_9/Tile_9.usd",
+    "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd"
+  ],
+  "environment_meshes": 311,
+  "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+  "collision_points": 169255,
+  "water_meshes": 1,
+  "water_has_colliders": false,
+  "water_boundary": [
+    [
+      -1.75,
+      -3.660818
+    ],
+    [
+      4.300000000000001,
+      -3.660818
+    ],
+    [
+      5.699999999999999,
+      -3.3108180000000003
+    ],
+    [
+      6.800000000000001,
+      -2.5608180000000003
+    ],
+    [
+      7.550000000000001,
+      -1.3108180000000003
+    ],
+    [
+      8.1,
+      0.08918199999999965
+    ],
+    [
+      8.25,
+      1.1891820000000002
+    ],
+    [
+      7.85,
+      2.0891819999999997
+    ],
+    [
+      6.9,
+      2.489182
+    ],
+    [
+      4,
+      2.5391820000000003
+    ],
+    [
+      0.9500000000000002,
+      2.509181999999999
+    ],
+    [
+      -3,
+      2.439182
+    ],
+    [
+      -5,
+      2.3891819999999995
+    ],
+    [
+      -6.3,
+      2.069182
+    ],
+    [
+      -6.65,
+      0.989182
+    ],
+    [
+      -6.45,
+      -0.3908179999999999
+    ],
+    [
+      -5.8,
+      -1.7108180000000002
+    ],
+    [
+      -4.7,
+      -2.610818
+    ],
+    [
+      -3.5,
+      -3.210818
+    ]
+  ],
+  "water_surface": 1.5,
+  "pool_floor": 0.65,
+  "water_model": "configured finite region with reduced-order fluid forces; not CFD or measured water geometry",
+  "environment_geometry": "referenced scan"
+}

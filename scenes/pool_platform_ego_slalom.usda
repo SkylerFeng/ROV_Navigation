@@ -1,0 +1,178 @@
+#usda 1.0
+(
+    customLayerData = {
+        string scenario = "platform_ego_slalom"
+        string title = "Platform water / slalom current"
+    }
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "Environment"
+    {
+        double3 xformOp:translate = (-5, -1.5, 1.3)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Xform "Platform" (
+            prepend references = @/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda@
+        )
+        {
+            over "Water"
+            {
+                over "Looks"
+                {
+                    over "Water"
+                    {
+                        over "PreviewSurface"
+                        {
+                            float inputs:ior = 1
+                            float inputs:opacity = 0.1
+                            float inputs:roughness = 0.85
+                            color3f inputs:specularColor = (0, 0, 0)
+                            int inputs:useSpecularWorkflow = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def Xform "Water"
+    {
+    }
+
+    def "Obstacles"
+    {
+        def Cube "Slalom1" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Slalom1>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.25, 0.5, 0.82)
+            double3 xformOp:translate = (-0.75, 0.2, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Slalom2" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Slalom2>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.25, 0.5, 0.82)
+            double3 xformOp:translate = (0, -0.25, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Slalom3" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/ObstacleMaterials/Slalom3>
+            color3f[] primvars:displayColor = [(0.9, 0.28, 0.08)]
+            double size = 1
+            float3 xformOp:scale = (0.25, 0.5, 0.82)
+            double3 xformOp:translate = (0.75, 0.25, 1.05)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def "ObstacleMaterials"
+    {
+        def Material "Slalom1"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Slalom1/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "Slalom2"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Slalom2/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+
+        def Material "Slalom3"
+        {
+            token outputs:surface.connect = </World/ObstacleMaterials/Slalom3/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.9, 0.28, 0.08)
+                float inputs:roughness = 0.85
+                color3f inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:surface
+            }
+        }
+    }
+
+    def "Markers"
+    {
+        def Sphere "Start"
+        {
+            color3f[] primvars:displayColor = [(0.1, 0.9, 0.2)]
+            double radius = 0.1
+            double3 xformOp:translate = (-2, 0, 1.6)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Sphere "Goal"
+        {
+            color3f[] primvars:displayColor = [(0.1, 0.4, 1)]
+            double radius = 0.1
+            double3 xformOp:translate = (2.1, 0, 1.6)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+
+    def Xform "ROV" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend references = @/home/ache/OceanSim_assets/Bluerov/BROV_low.usd@
+    )
+    {
+        float physics:mass = 5
+        double3 xformOp:translate = (-2, 0, 1)
+
+        def Cube "CollisionHull" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            double size = 1
+            token visibility = "invisible"
+            float3 xformOp:scale = (0.48, 0.57, 0.26)
+            double3 xformOp:translate = (0, 0, 0.116)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def PhysicsScene "PhysicsScene"
+    {
+        float physics:gravityMagnitude = 0
+    }
+}
+
