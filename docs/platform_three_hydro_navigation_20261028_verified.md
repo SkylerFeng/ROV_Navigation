@@ -1,5 +1,7 @@
 # Platform 水动力导航三场景复测
 
+> 结果清理说明（2026-11-02）：本页涉及的部分中间迭代原始文件已删除；历史测量与诊断文字保留，各阶段最终结果见[保留结果索引](results_index.md)。缺失的中间文件不能再用于重绘。
+
 ## 目的与运行条件
 
 本次复测针对 `platform_ego_slalom`、`platform_ego_gates` 和 `platform_ego_mixed` 三个复杂障碍场景。三者都使用 OceanSim-Highbay 的 `Platform_black_water.usda` 水体场景，并保持传感器点云建图、A* 全局引导、EGO Planner 局部重规划和 ROS2 tracker 闭环。动力学侧使用浮力、阻力、0.08 m/s 横向水流和推进器响应滞后。

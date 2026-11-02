@@ -36,7 +36,7 @@
 
 - [五场景汇总图](figures/five_routes_20261014_rerun/five_routes_overview.png)
 - [五张单图及 PNG/SVG/PDF](figures/five_routes_20261014_rerun/README.md)
-- [图片压缩包](figures/five_routes_20261014_rerun_figures.zip)
+- [图片压缩包](figures/five_routes_20261014_rerun/README.md)
 - [实测数据汇总](../logs/suites/five_scenarios_20261014_rerun/summary.json)
 - 各场目录保存 run.json、controls.json、plans.json、日志与 trajectory_updates.gif（实际运动与规划更新）。
 

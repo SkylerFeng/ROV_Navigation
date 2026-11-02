@@ -1,0 +1,32 @@
+{
+  "scenario": "platform_ego_gates",
+  "goal_error_m": 0.014168465069152932,
+  "goal_reached": true,
+  "plan_updates": 11,
+  "stop_reason": "goal_reached",
+  "simulation_seconds": 46.30000241473317,
+  "conservative_block_clearance_m": 0.8221083309629147,
+  "depth_mode": "ideal",
+  "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+  "physics_mode": "hydrodynamics",
+  "max_contact_impulse_ns": 0.0,
+  "max_speed_m_s": 0.17739579043701226,
+  "velocity_error_rmse_m_s": 0.027869725673030348,
+  "max_abs_pitch_deg": 2.6064257342203905,
+  "max_abs_roll_deg": 1.5846789841261484,
+  "max_tilt_deg": 3.025095818079583,
+  "attitude_samples_finite": true,
+  "max_depth_reference_error_m": 0.027331292629241943,
+  "path_length_m": 4.199988793579636,
+  "current_world_m_s": [
+    0.0,
+    0.08,
+    0.0
+  ],
+  "force_saturation_sample_fraction": 0.0,
+  "torque_saturation_sample_fraction": 0.0,
+  "min_submerged_fraction": 0.9999999999999996,
+  "max_actuator_force_n": 2.1744981912666534,
+  "max_buoyancy_n": 49.5405,
+  "max_coupling_torque_nm": 0.1047067716070976
+}

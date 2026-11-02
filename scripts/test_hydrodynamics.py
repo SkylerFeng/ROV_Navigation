@@ -104,6 +104,48 @@ class HydrodynamicsTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 parameters(settings)
 
+    def test_distributed_drag_wrench_dissipates_energy(self):
+        h = model(distributed_drag=1, drag_offset_body_m=[.02, -.01, .03])
+        rng = np.random.default_rng(12)
+        for _ in range(200):
+            v, w = rng.normal(size=(2, 3))
+            f, t = h.drag_wrench(v, w, 1.)
+            self.assertLessEqual(np.dot(f, v)+np.dot(t, w), 1e-12)
+
+    def test_distributed_translation_preserves_drag_calibration(self):
+        h = model(distributed_drag=1)
+        v = np.array([.3, -.2, .1])
+        f, t = h.drag_wrench(v, np.zeros(3), 1.)
+        np.testing.assert_allclose(f, -(h.p['linear_drag']*v+h.p['quadratic_drag']*abs(v)*v))
+        np.testing.assert_allclose(t, 0, atol=1e-12)
+
+    def test_braking_pitch_moment_changes_with_thrust_line(self):
+        for offset in (-.045, 0., .045):
+            h = model(thrust_offset_body_m=[0, 0, offset], force_tau_s=0)
+            _, _, info = h.step(.01, [0]*3, IDENTITY, [0, .08, 0], [0]*3, [-4, 0, 0], [0]*3)
+            self.assertAlmostEqual(info['thrust_torque_body_nm'][1], -4*offset)
+
+    def test_added_mass_reduces_acceleration_without_changing_weight(self):
+        h = model(current_world_m_s=[0]*3, added_mass_kg=[2, 3, 4],
+                  force_tau_s=0, displaced_volume_m3=.005)
+        f, t, info = h.step(.01, [0]*3, IDENTITY, [0]*3, [0]*3, [7, 0, 0], [0]*3)
+        np.testing.assert_allclose((f+info['gravity_world_n'])/5, [1, 0, 0], atol=1e-12)
+        np.testing.assert_allclose(t, 0, atol=1e-12)
+
+    def test_added_mass_coupling_conserves_free_motion_energy(self):
+        h = model(current_world_m_s=[0]*3, added_mass_kg=[1, 2, 3],
+                  added_inertia_kg_m2=[.02, .03, .04], linear_drag=[0]*3,
+                  quadratic_drag=[0]*3, angular_drag=[0]*3, quadratic_angular_drag=[0]*3,
+                  displaced_volume_m3=.005)
+        v, w = np.array([.2, -.1, .3]), np.array([.1, .2, -.3])
+        _, _, info = h.step(.01, [0]*3, IDENTITY, v, w, [0]*3, [0]*3)
+        a = np.array(info['predicted_acceleration_body'])
+        # Translational inertial acceleration must be converted to body derivative.
+        vdot = a[:3]-np.cross(w, v)
+        energy_rate = np.dot((5+h.p['added_mass_kg'])*v, vdot)
+        energy_rate += np.dot((h.p['inertia_kg_m2']+h.p['added_inertia_kg_m2'])*w, a[3:])
+        self.assertAlmostEqual(energy_rate, 0, places=12)
+
 
 if __name__ == '__main__':
     unittest.main()

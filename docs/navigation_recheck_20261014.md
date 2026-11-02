@@ -1,5 +1,7 @@
 # 2026-10-14：ROV 五场景重新实验与绘图
 
+> 结果清理说明（2026-11-02）：本页涉及的部分中间迭代原始文件已删除；历史测量与诊断文字保留，各阶段最终结果见[保留结果索引](results_index.md)。缺失的中间文件不能再用于重绘。
+
 > 正式入口更新（2026-10-15）：修正后的门洞已替换 `gates`，不再提供 `gates_clearance` 场景入口；slalom 使用当前默认修正配置。本页历史命名、旧命令和对照数据仅供追溯，当前运行与汇报见[组会汇报](group_meeting_ROV_navigation.md)。
 
 > 后续已完成进一步定位和修复对照，见[ROV卡住与异常运动报告](navigation_freeze_diagnosis.md)。本文件保留原五场景复测条件与结果；修正目标/净空后的结果单独报告。
@@ -53,7 +55,7 @@ GUI 对照同样在原水池细立杆处受阻，记录的接触点约为(1.6826
 
 ## 路线图与复现实验
 
-[五场景汇总图](figures/recheck_20261014/five_routes_overview.png) · [五张4K单图及SVG/PDF目录](figures/recheck_20261014/README.md) · [图片压缩包](figures/recheck_20261014_figures.zip)
+[五场景汇总图](figures/recheck_20261014/five_routes_overview.png) · [五张4K单图及SVG/PDF目录](figures/recheck_20261014/README.md) · [图片压缩包](figures/recheck_20261014/README.md)
 
 绿色为实际位置采样，红色为新增障碍，灰色为原水池网格在船体高度范围内的截面，橙色X为未完成案例真实结束位置。灰线仅用于解释图形，没有注入主实验导航地图。没有平滑、拼接不同轮次或把终点延伸到目标。
 

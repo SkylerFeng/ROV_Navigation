@@ -128,7 +128,7 @@ slalom 另做了延迟55秒发目标的带窗口复验：首次记录任务后�
 
 本表与路线图全部来自同一轮最终五场回归 `five_scenarios_20261015_turn_fix`；起终点、布局、速度和相机配置保持一致。后续实跑发现了旧版本的复发问题，本表已更新为本次修正后的实测，旧记录保留。
 
-单图与矢量版本：[图片目录](figures/five_routes_20261015_turn_fix/README.md) · [图片压缩包](figures/five_routes_20261015_turn_fix_figures.zip)。
+单图与矢量版本：[图片目录](figures/five_routes_20261015_turn_fix/README.md) · [图片压缩包](figures/five_routes_20261015_turn_fix/README.md)。
 
 ## 8. Demo 演示顺序（约 3 分钟）
 

@@ -1,0 +1,25 @@
+{
+  "hydrodynamics": {
+    "thrust_offset_body_m": [
+      0,
+      0,
+      0.045
+    ],
+    "drag_offset_body_m": [
+      0,
+      0,
+      0.015
+    ],
+    "distributed_drag": 1,
+    "added_mass_kg": [
+      1,
+      2,
+      3
+    ],
+    "added_inertia_kg_m2": [
+      0.025,
+      0.035,
+      0.04
+    ]
+  }
+}

@@ -120,6 +120,7 @@ try:
         api.CreateDisableGravityAttr(True)
         api.CreateLinearDampingAttr(0.0)
         api.CreateAngularDampingAttr(0.0)
+        api.CreateEnableGyroscopicForcesAttr(True)
         physics = UsdPhysics.Scene(stage.GetPrimAtPath("/World/PhysicsScene"))
         physics.CreateGravityDirectionAttr(Gf.Vec3f(0, 0, -1))
         physics.CreateGravityMagnitudeAttr(dynamics.p["gravity_m_s2"])

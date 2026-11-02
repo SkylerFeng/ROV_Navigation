@@ -31,6 +31,13 @@ DEFAULTS = {
     "integral_limit_n": [5.0, 5.0, 5.0],
     "angular_kp": [1.2, 1.2, 1.0],
     "max_yaw_rate_rad_s": 0.25,
+    # Offsets are relative to the centre of mass, in body axes (X forward, Z up).
+    # Zero defaults preserve the archived centred-force model.
+    "thrust_offset_body_m": [0.0, 0.0, 0.0],
+    "drag_offset_body_m": [0.0, 0.0, 0.0],
+    "distributed_drag": 0.0,
+    "added_mass_kg": [0.0, 0.0, 0.0],
+    "added_inertia_kg_m2": [0.0, 0.0, 0.0],
 }
 
 
@@ -40,9 +47,11 @@ def parameters(overrides=None):
     if unknown:
         raise ValueError(f"Unknown hydrodynamics parameters: {sorted(unknown)}")
     result = {}
-    unrestricted = {"current_world_m_s", "center_of_mass_body_m", "center_of_buoyancy_offset_m"}
+    unrestricted = {"current_world_m_s", "center_of_mass_body_m", "center_of_buoyancy_offset_m",
+                    "thrust_offset_body_m", "drag_offset_body_m"}
     zeros_allowed = {"force_tau_s", "torque_tau_s", "linear_drag", "quadratic_drag",
-                     "angular_drag", "quadratic_angular_drag", "velocity_ki"}
+                     "angular_drag", "quadratic_angular_drag", "velocity_ki",
+                     "distributed_drag", "added_mass_kg", "added_inertia_kg_m2"}
     for key, default in DEFAULTS.items():
         value = np.asarray(overrides.get(key, default), dtype=float)
         shape = (3,) if isinstance(default, list) else ()
@@ -51,6 +60,8 @@ def parameters(overrides=None):
         if key not in unrestricted and np.any(value < 0 if key in zeros_allowed else value <= 0):
             raise ValueError(f"Invalid non-positive hydrodynamics parameter: {key}")
         result[key] = value.copy() if shape else float(value)
+    if result["distributed_drag"] not in (0., 1.):
+        raise ValueError("distributed_drag must be 0 or 1")
     return result
 
 
@@ -99,6 +110,21 @@ class Hydrodynamics:
         overlap = max(0.0, min(upper, self.surface)-max(lower, self.bottom))
         return float(np.clip(overlap/height, 0, 1)) if inside_polygon(center[:2], self.boundary) else 0.0
 
+    def drag_wrench(self, relative, angular, fraction):
+        """Evaluate drag at physical sample points; include omega cross r.
+
+        Coefficients are divided across points so pure-translation drag retains
+        the old calibration. Additional angular drag represents residual losses.
+        """
+        p = self.p
+        offsets = np.zeros((1, 3))
+        if p["distributed_drag"]:
+            offsets = np.vstack((np.diag(p["hull_size_m"]/2), -np.diag(p["hull_size_m"]/2)))
+        offsets = offsets+p["drag_offset_body_m"]
+        local = relative + np.cross(angular, offsets)
+        forces = -fraction*(p["linear_drag"]*local+p["quadratic_drag"]*np.abs(local)*local)/len(offsets)
+        return forces.sum(axis=0), np.cross(offsets, forces).sum(axis=0)
+
     def step(self, dt, position, quaternion, velocity_world, angular_world,
              force_command_body, torque_command_body):
         if not math.isfinite(dt) or dt <= 0:
@@ -108,7 +134,7 @@ class Hydrodynamics:
         fraction = self.submersion(position, rotation)
         relative = rotation.T @ (np.asarray(velocity_world)-p["current_world_m_s"])
         angular = rotation.T @ np.asarray(angular_world)
-        drag = -fraction*(p["linear_drag"]*relative + p["quadratic_drag"]*np.abs(relative)*relative)
+        drag, drag_torque = self.drag_wrench(relative, angular, fraction)
         angular_drag = -fraction*(p["angular_drag"]*angular + p["quadratic_angular_drag"]*np.abs(angular)*angular)
         buoyancy_world = np.array([0., 0., fraction*p["density_kg_m3"]*p["displaced_volume_m3"]*p["gravity_m_s2"]])
         buoyancy_torque = np.cross(p["center_of_buoyancy_offset_m"], rotation.T @ buoyancy_world)
@@ -118,13 +144,35 @@ class Hydrodynamics:
                                    (self.actuator_torque, torque_target, p["torque_tau_s"])]:
             alpha = -math.expm1(-dt/tau) if tau > 0 else 1.0
             state += alpha*(target-state)
-        force_world = rotation @ (self.actuator_force+drag) + buoyancy_world
-        torque_world = rotation @ (self.actuator_torque+angular_drag+buoyancy_torque)
+        thrust_torque = np.cross(p["thrust_offset_body_m"], self.actuator_force)
+        body_force = self.actuator_force+drag+rotation.T @ buoyancy_world
+        body_torque = self.actuator_torque+angular_drag+buoyancy_torque+drag_torque+thrust_torque
+        # Solve the diagonal effective-mass system analytically. Never estimate
+        # acceleration by differencing noisy velocities, or alter PhysX dry mass.
+        # Rigid-body gyroscopic torque and gravity are integrated by PhysX; they
+        # enter this solve only to obtain the added-mass reaction wrench.
+        ma = fraction*np.r_[p["added_mass_kg"], p["added_inertia_kg_m2"]]
+        momentum, angular_momentum = ma[:3]*relative, ma[3:]*angular
+        coriolis_added = np.r_[np.cross(angular, momentum),
+                              np.cross(relative, momentum)+np.cross(angular, angular_momentum)]
+        rotating_current_term = ma*np.r_[np.cross(angular, relative), np.zeros(3)]
+        gravity_body = rotation.T @ np.array([0., 0., -p["mass_kg"]*p["gravity_m_s2"]])
+        rigid_gyro = np.r_[np.zeros(3), np.cross(angular, p["inertia_kg_m2"]*angular)]
+        external = np.r_[body_force+gravity_body, body_torque]
+        effective = np.r_[np.full(3, p["mass_kg"]), p["inertia_kg_m2"]]+ma
+        acceleration = (external-rigid_gyro+rotating_current_term-coriolis_added)/effective
+        added_wrench = -ma*acceleration+rotating_current_term-coriolis_added
+        force_world = rotation @ (body_force+added_wrench[:3])
+        torque_world = rotation @ (body_torque+added_wrench[3:])
         details = {
             "submerged_fraction": fraction,
             "current_world_m_s": p["current_world_m_s"].tolist(),
             "relative_velocity_body": relative.tolist(), "drag_body_n": drag.tolist(),
             "angular_drag_body_nm": angular_drag.tolist(),
+            "drag_torque_body_nm": drag_torque.tolist(),
+            "thrust_torque_body_nm": thrust_torque.tolist(),
+            "added_mass_wrench_body": added_wrench.tolist(),
+            "predicted_acceleration_body": acceleration.tolist(),
             "actuator_force_body_n": self.actuator_force.tolist(),
             "actuator_torque_body_nm": self.actuator_torque.tolist(),
             "force_target_body_n": force_target.tolist(),

@@ -26,7 +26,7 @@
 
 - [五场路线汇总](figures/five_routes_20261015_guide_fix/five_routes_overview.png)
 - [五张 4K 单图与 SVG/PDF](figures/five_routes_20261015_guide_fix/README.md)
-- [图片压缩包](figures/five_routes_20261015_guide_fix_figures.zip)
+- [图片压缩包](figures/five_routes_20261015_guide_fix/README.md)
 - [slalom 规划更新动画](../logs/suites/five_scenarios_20261015_guide_fix/slalom/trajectory_updates.gif)
 - [修复原因、分步失败对照与运行方式](slalom_execution_fix.md)
 - [新旧 slalom 对照](figures/slalom_execution_fix/slalom_before_after.png)

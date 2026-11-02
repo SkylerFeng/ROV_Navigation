@@ -1,0 +1,38 @@
+{
+  "platform_ego_slalom": {
+    "source_directory": "/home/ache/Coding/rov_navigation/logs/suites/platform_coupled_20261102/platform_ego_slalom",
+    "sha256": {
+      "run.json": "4a4449f8c9dc329bbf477ec6d845c3d5a22d14980a819f92ab10fca0d3af7e55",
+      "plans.json": "08ca8b16a69074f0b0c97d751ac0d0d2def85ade86656f02630cb9901a44646f",
+      "metrics.json": "e2107395368ef6386754ef316491ac817c7bc6b4a5464585e8bbe621a7aa7832",
+      "scene_evidence.json": "863e03e0937deeefffe315450c360a4ac5e087b3e36a8a13bfc35b8867a2374d",
+      "manifest.json": "9abe9d490fac9099dd50ddf15cc390901a8ec5f0df074259c9030063b2cacf88",
+      "trajectory_updates.png": "abebcf7efd94d6f962245f080b299fd359e290208772e5d14c7b0b083bd9540a",
+      "trajectory_updates.gif": "b43c17234d0849a67613bcad986bb331bdc34dbc33f6e093fcbc763019727d35"
+    }
+  },
+  "platform_ego_gates": {
+    "source_directory": "/home/ache/Coding/rov_navigation/logs/suites/platform_coupled_20261102/platform_ego_gates",
+    "sha256": {
+      "run.json": "91214f6dc710a90699bb5b1f450b056c9b458da8da9d4f8699e490a98ce7812b",
+      "plans.json": "f04e2e140b107c8abd2b5609b2f523fc156d7c551537abe43f5f6c06bae6474c",
+      "metrics.json": "2d2525cf37b85578ccea0d831edd4aaab4915d9e8c3b12949302b80d51e739e3",
+      "scene_evidence.json": "e5c0d7a1cbc26709a4b3d4a3d8efbbe72be083bb25af15043a0a96f9a3d6b583",
+      "manifest.json": "79b2e013a47999678f7312fe309f74cfedcf4030f3fa0016e9b04dd24084e94c",
+      "trajectory_updates.png": "b0b14395b44b7b9ced2fc4973993879db38b95f79b946d34a8f467059557939c",
+      "trajectory_updates.gif": "187892c0816dc2176bec0c76639e62d326642e184c5a7308702f25e421f0072a"
+    }
+  },
+  "platform_ego_mixed": {
+    "source_directory": "/home/ache/Coding/rov_navigation/logs/suites/platform_coupled_20261102/platform_ego_mixed",
+    "sha256": {
+      "run.json": "b9e817f00f39fe6d46d04aedf2a75e48149949f0f4d6ee6de57a1d7e0564655e",
+      "plans.json": "54555693e85ea0dd28439ffff4391b39abab58b2f47d95a41406a5c9c1f72b3b",
+      "metrics.json": "ca31dcc085f1c3b5b1e54c866841ee5d34674cf96987286225685a1203a8c131",
+      "scene_evidence.json": "153d36cfb837cde903820631a45a4aaaac984e7d8b232888a9c3423a73d69341",
+      "manifest.json": "913a9bed185df9f78d08c52e42de8521e8d7a5feb0a9e46d02a8d623f4a3049d",
+      "trajectory_updates.png": "7eb3c0fb6543e52357e904b6dfe04a7a3089cc938176471095c44c5a56e1f8b2",
+      "trajectory_updates.gif": "60979db2848cbe69c1981a989d70660bb08ddafbf768cb49aa81f876d300dfea"
+    }
+  }
+}

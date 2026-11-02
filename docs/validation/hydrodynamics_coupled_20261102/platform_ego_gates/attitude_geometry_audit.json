@@ -1,0 +1,8 @@
+{
+  "minimum_obstacle_sphere_to_box_clearance_m": 0.8032513902136261,
+  "minimum_hull_corner_above_fluid_bottom_m": 0.30827167713256576,
+  "minimum_hull_corner_below_surface_m": 0.2359954893540932,
+  "all_sampled_hull_corners_inside_boundary": true,
+  "passed": true,
+  "note": "Recorded attitude-aware sampled bound; fluid bottom is not necessarily the scanned floor. No swept collision guarantee."
+}
