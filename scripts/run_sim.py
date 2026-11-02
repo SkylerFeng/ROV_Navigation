@@ -37,7 +37,8 @@ try:
     import sys
     import time
     import numpy as np
-    from pxr import Gf, PhysicsSchemaTools, PhysxSchema, UsdGeom
+    from pxr import Gf, PhysicsSchemaTools, PhysxSchema, UsdGeom, UsdPhysics
+    from hydrodynamics import Hydrodynamics, VelocityController
     from omni.physx import get_physx_simulation_interface
     from omni.physx.bindings._physx import ContactEventType
     from isaacsim.core.api import World
@@ -66,20 +67,71 @@ try:
     from tf2_msgs.msg import TFMessage
     from geometry_msgs.msg import TransformStamped
 
+    if C.get("clean_pool", False) or C["scenario"].startswith("highbay") or C.get("use_embedded_water", False):
+        import carb
+        # RTX defaults treat PreviewSurface opacity as a binary cutout.
+        # Enable fractional opacity so the overview can see the submerged ROV.
+        carb.settings.get_settings().set("/rtx/raytracing/fractionalCutoutOpacity", True)
+        carb.settings.get_settings().set("/rtx/pathtracing/fractionalCutoutOpacity", True)
     open_stage(C["scene_file"])
     world = World(stage_units_in_meters=1.0, physics_dt=1/60, rendering_dt=1/30)
     stage = world.stage
+    # Record the composed stage itself, independently of config names/screenshots.
+    environment = stage.GetPrimAtPath("/World/Environment/Platform")
+    water_prim = stage.GetPrimAtPath(C.get("water_prim", "/World/Water"))
+    collider = stage.GetPrimAtPath(C["collision_prim"])
+    if not collider or not collider.HasAPI(UsdPhysics.CollisionAPI):
+        raise RuntimeError(f"Missing environment collider: {C['collision_prim']}")
+    from pxr import Usd
+    evidence = {
+        "scene_file": C["scene_file"],
+        "used_layers": sorted(layer.realPath for layer in stage.GetUsedLayers() if layer.realPath),
+        "environment_meshes": sum(p.IsA(UsdGeom.Mesh) for p in Usd.PrimRange(environment)),
+        "collision_prim": str(collider.GetPath()),
+        "collision_points": len(UsdGeom.Mesh(collider).GetPointsAttr().Get()),
+        "water_meshes": sum(p.IsA(UsdGeom.Mesh) for p in Usd.PrimRange(water_prim)),
+        "water_has_colliders": any(p.HasAPI(UsdPhysics.CollisionAPI) for p in Usd.PrimRange(water_prim)),
+        "water_boundary": json.loads((ROOT / C["water_boundary"]).read_text()),
+        "water_surface": C["water_surface"], "pool_floor": C["pool_floor"],
+        "water_model": "configured finite region with reduced-order fluid forces; not CFD or measured water geometry",
+        "environment_geometry": "engineered Tile3 footprint pool" if C.get("clean_pool") else "referenced scan",
+    }
+    (OUTPUT / "scene_evidence.json").write_text(json.dumps(evidence, indent=2))
     if C.get("render_pool_collision", False):
         from build_scene import reveal_pool_collision
-        reveal_pool_collision(stage)
+        reveal_pool_collision(stage, C["collision_prim"])
     from build_scene import translate
     translate(stage.GetPrimAtPath("/World/Markers/Goal"), [*C["goal"][:2], C["water_surface"]+.1])
     translate(stage.GetPrimAtPath("/World/Markers/Start"), [*C["start"][:2], C["water_surface"]+.1])
     body = stage.GetPrimAtPath("/World/ROV")
+    physics_mode = C.get("physics_mode", "legacy")
+    if physics_mode not in ("legacy", "hydrodynamics"):
+        raise ValueError(f"Unknown physics_mode: {physics_mode}")
+    dynamics = servo = None
     api = PhysxSchema.PhysxRigidBodyAPI.Apply(body)
-    api.CreateDisableGravityAttr(True)
-    api.CreateLinearDampingAttr(2.0)
-    api.CreateAngularDampingAttr(4.0)
+    if physics_mode == "hydrodynamics":
+        boundary = json.loads((ROOT / C["water_boundary"]).read_text())
+        dynamics = Hydrodynamics(C.get("hydrodynamics", {}), C["water_surface"], C["pool_floor"], boundary)
+        servo = VelocityController(C.get("hydrodynamics", {}))
+        # PhysX applies weight; our model applies buoyancy and fluid forces.
+        # Disable built-in damping to avoid applying drag twice.
+        # Camera initialization advances Kit; activate gravity only once the
+        # fluid callback is ready, so setup cannot drop the ROV onto the floor.
+        api.CreateDisableGravityAttr(True)
+        api.CreateLinearDampingAttr(0.0)
+        api.CreateAngularDampingAttr(0.0)
+        physics = UsdPhysics.Scene(stage.GetPrimAtPath("/World/PhysicsScene"))
+        physics.CreateGravityDirectionAttr(Gf.Vec3f(0, 0, -1))
+        physics.CreateGravityMagnitudeAttr(dynamics.p["gravity_m_s2"])
+        mass = UsdPhysics.MassAPI.Apply(body)
+        mass.CreateMassAttr(dynamics.p["mass_kg"])
+        mass.CreateCenterOfMassAttr(Gf.Vec3f(*map(float, dynamics.p["center_of_mass_body_m"])))
+        mass.CreateDiagonalInertiaAttr(Gf.Vec3f(*map(float, dynamics.p["inertia_kg_m2"])))
+        mass.CreatePrincipalAxesAttr(Gf.Quatf(1.0, Gf.Vec3f(0)))
+    else:
+        api.CreateDisableGravityAttr(True)
+        api.CreateLinearDampingAttr(2.0)
+        api.CreateAngularDampingAttr(4.0)
     forces = PhysxSchema.PhysxForceAPI.Apply(body)
     forces.CreateForceEnabledAttr(True)
     forces.CreateWorldFrameEnabledAttr(True)
@@ -131,7 +183,7 @@ try:
         "horizontal_fov_deg": float(np.degrees(2*np.arctan(C["camera_resolution"][0]/(2*camera._camera_k[0,0]))))}, indent=2))
     set_camera_view(eye=np.array([0, -6, 5]), target=np.array([0, 0, 1]))
     if args.top_view or args.view == "top":
-        top_view()
+        top_view(C)
     rclpy.init()
     node = rclpy.create_node("rov_oceansim")
     odom_pub = node.create_publisher(Odometry, "/rov/odom", 10)
@@ -171,6 +223,24 @@ try:
     pos, quat = robot.get_world_pose()
     loop_started = time.monotonic()
     stop_reason = "step_limit"
+    hydro_input = {"velocity": np.zeros(3), "yaw_rate": 0.0}
+    hydro_output = {"force": np.zeros(3), "torque": np.zeros(3), "details": None}
+    if dynamics is not None:
+        def apply_fluid_forces(dt):
+            # One rendered frame may advance multiple physics steps. Evolve the
+            # servo and actuator states on the physics clock, not frame count.
+            body_pos, body_quat = robot.get_world_pose()
+            body_velocity = robot.get_linear_velocity()
+            body_angular = robot.get_angular_velocity()
+            force_cmd, torque_cmd = servo.step(dt, body_quat, body_velocity, body_angular,
+                                              hydro_input["velocity"], hydro_input["yaw_rate"])
+            fluid_force, fluid_torque, details = dynamics.step(
+                dt, body_pos, body_quat, body_velocity, body_angular, force_cmd, torque_cmd)
+            forces.GetForceAttr().Set(Gf.Vec3f(*map(float, fluid_force)))
+            forces.GetTorqueAttr().Set(Gf.Vec3f(*map(float, fluid_torque)))
+            hydro_output.update(force=fluid_force, torque=fluid_torque, details=details)
+        world.add_physics_callback("rov_fluid_forces", apply_fluid_forces)
+        api.GetDisableGravityAttr().Set(False)
     node.get_logger().info("ROV ready. World velocities: /rov/cmd_vel_world; start planner separately.")
     while app.is_running() and (not args.steps or step < args.steps):
         if args.wall_time_limit and time.monotonic()-loop_started > args.wall_time_limit:
@@ -209,19 +279,24 @@ try:
             desired[2] = max(desired[2], 0.08)
         if pos[2] > 1.18:
             desired[2] = min(desired[2], -0.08)
-        # Closed-loop force tracking, not teleporting the pose or setting velocity.
-        force = np.clip(5.0 * (6.0 * (desired - velocity) + 2.0 * velocity), -12, 12)
         yaw_rate = float(np.clip(command["yaw_rate"], -0.5, 0.5)) if fresh else 0.0
         if not np.isfinite(yaw_rate):
             yaw_rate = 0.0
-        # Restoring roll/pitch torque makes this a 4-DOF baseline.
-        q = Gf.Quatd(float(quat[0]), Gf.Vec3d(*map(float, quat[1:])))
-        up = np.array(Gf.Rotation(q).TransformDir(Gf.Vec3d(0, 0, 1)))
-        torque = 2 * np.cross(up, [0, 0, 1]) - 0.5 * angular
-        torque[2] = 0.4 * (yaw_rate - angular[2])
-        forces.GetForceAttr().Set(Gf.Vec3f(*map(float, force)))
-        forces.GetTorqueAttr().Set(Gf.Vec3f(*map(float, torque)))
+        hydro = None
+        if dynamics is not None:
+            hydro_input.update(velocity=desired, yaw_rate=yaw_rate)
+        else:
+            # Historical neutral-buoyancy approximation for controlled comparisons.
+            force = np.clip(5.0 * (6.0 * (desired - velocity) + 2.0 * velocity), -12, 12)
+            q = Gf.Quatd(float(quat[0]), Gf.Vec3d(*map(float, quat[1:])))
+            up = np.array(Gf.Rotation(q).TransformDir(Gf.Vec3d(0, 0, 1)))
+            torque = 2 * np.cross(up, [0, 0, 1]) - 0.5 * angular
+            torque[2] = 0.4 * (yaw_rate - angular[2])
+            forces.GetForceAttr().Set(Gf.Vec3f(*map(float, force)))
+            forces.GetTorqueAttr().Set(Gf.Vec3f(*map(float, torque)))
         world.step(render=True)
+        if dynamics is not None:
+            force, torque, hydro = hydro_output["force"], hydro_output["torque"], hydro_output["details"]
         step += 1
         stamp = Clock()
         t = world.current_time
@@ -250,7 +325,10 @@ try:
         if step % 6 == 0:
             samples.append([float(t), *map(float, pos)])
             controls.append({"t": float(t), "desired_velocity": desired.tolist(), "force": force.tolist(),
-                             "velocity": robot.get_linear_velocity().tolist(), "orientation": quat.tolist(), "fresh_command": fresh, **telemetry})
+                             "velocity": robot.get_linear_velocity().tolist(), "orientation": quat.tolist(),
+                             "angular_velocity": robot.get_angular_velocity().tolist(),
+                             "torque": torque.tolist(), "physics_mode": physics_mode,
+                             "hydrodynamics": hydro, "fresh_command": fresh, **telemetry})
             camera.render()
             # Establish the planner/controller baseline before testing optical
             # depth dropout. OceanSim RGB remains underwater-rendered.
@@ -286,7 +364,7 @@ try:
     result = {
         "steps": step, "samples": samples,
         "simulation_seconds": float(world.current_time), "wall_seconds": time.monotonic()-loop_started,
-        "pool_collision_visibility": str(UsdGeom.Imageable(stage.GetPrimAtPath("/World/Environment/Platform/Collision/Platform_collision_clean/mesh")).ComputeVisibility()),
+        "pool_collision_visibility": str(UsdGeom.Imageable(stage.GetPrimAtPath(C["collision_prim"])).ComputeVisibility()),
         "cloud_stride": args.cloud_stride,
         "arrival_tolerance": arrival_tolerance, "settle_time": args.settle_time,
         "sim_time_limit": args.sim_time_limit, "wall_time_limit": args.wall_time_limit,
@@ -295,6 +373,7 @@ try:
         "goal_distance": float(np.linalg.norm(pos - np.array(C["goal"]))),
         "cloud_frames": camera._id,
         "depth_mode": C.get("depth_mode", "ideal"),
+        "physics_mode": physics_mode,
         "scenario": C["scenario"], "config": C, "plan_updates": visualization.updates,
         "output_dir": str(OUTPUT), "stop_reason": stop_reason,
     }

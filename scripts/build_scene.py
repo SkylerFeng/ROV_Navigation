@@ -17,11 +17,11 @@ def translate(prim, position):
     xform.AddTranslateOp().Set(Gf.Vec3d(*position))
 
 
-def reveal_pool_collision(stage):
+def reveal_pool_collision(stage, collider_path="/World/Environment/Platform/Collision/Platform_collision_clean/mesh"):
     # Supplied visual tiles are incomplete and the collision mesh is hidden.
     # Render the actual collider so ideal camera depth sees the same structures
     # that block the ROV; this is a local override, not an edit to source assets.
-    collider = stage.GetPrimAtPath("/World/Environment/Platform/Collision/Platform_collision_clean/mesh")
+    collider = stage.GetPrimAtPath(collider_path)
     UsdGeom.Imageable(collider).MakeVisible()
     # Imported collision triangles have inconsistent winding. PhysX blocks
     # either side, so camera depth must also see either side of the proxy.
@@ -46,23 +46,31 @@ def build(scenario, show_pool_collision=False):
     stage.SetDefaultPrim(world.GetPrim())
     UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
     UsdGeom.SetStageMetersPerUnit(stage, 1.0)
-    outer = UsdGeom.Xform.Define(stage, "/World/Environment")
-    translate(outer, CONFIG["environment_offset"])
-    platform = UsdGeom.Xform.Define(stage, "/World/Environment/Platform")
-    platform.GetPrim().GetReferences().AddReference(CONFIG["platform"])
-    if show_pool_collision:
-        reveal_pool_collision(stage)
+    if CONFIG.get("clean_pool", False):
+        from clean_pool import build_pool
+        build_pool(stage, CONFIG)
+    else:
+        outer = UsdGeom.Xform.Define(stage, "/World/Environment")
+        translate(outer, CONFIG["environment_offset"])
+        platform = UsdGeom.Xform.Define(stage, "/World/Environment/Platform")
+        platform.GetPrim().GetReferences().AddReference(CONFIG["platform"])
+        if show_pool_collision:
+            reveal_pool_collision(stage, CONFIG["collision_prim"])
     water = UsdGeom.Xform.Define(stage, "/World/Water")
-    water.GetPrim().GetReferences().AddReference(CONFIG["water"])
-    translate(water, CONFIG["source_to_world"])
+    if not CONFIG.get("use_embedded_water", False):
+        water.GetPrim().GetReferences().AddReference(CONFIG["water"])
+        translate(water, CONFIG["source_to_world"])
     # Suppress the bright water specular highlight that obscures the overview.
-    water_shader = UsdShade.Shader(stage.GetPrimAtPath("/World/Water/Looks/Water/PreviewSurface"))
-    water_shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(.85)
-    water_shader.CreateInput("opacity", Sdf.ValueTypeNames.Float).Set(.12)
-    water_shader.CreateInput("ior", Sdf.ValueTypeNames.Float).Set(1.0)
-    water_shader.CreateInput("useSpecularWorkflow", Sdf.ValueTypeNames.Int).Set(1)
-    water_shader.CreateInput("specularColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0))
-    # Water is a visual surface only; physics uses neutral buoyancy + damping.
+    water_shader = UsdShade.Shader(stage.GetPrimAtPath(CONFIG.get("water_prim", "/World/Water")+"/Looks/Water/PreviewSurface"))
+    if water_shader:
+        water_shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(.85)
+        water_shader.CreateInput("opacity", Sdf.ValueTypeNames.Float).Set(CONFIG.get("display_water_opacity", .12))
+        water_shader.CreateInput("ior", Sdf.ValueTypeNames.Float).Set(1.0)
+        water_shader.CreateInput("useSpecularWorkflow", Sdf.ValueTypeNames.Int).Set(1)
+        water_shader.CreateInput("specularColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0))
+        if CONFIG.get("clean_pool", False):
+            water_shader.CreateInput("diffuseColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(.12, .45, .55))
+    # Water surface has no collider; run_sim supplies the configured fluid model.
     for obj in CONFIG["obstacles"]:
         path = "/World/Obstacles/" + obj["name"]
         if obj.get("type") == "cylinder":
@@ -107,7 +115,7 @@ def build(scenario, show_pool_collision=False):
     UsdPhysics.CollisionAPI.Apply(hull.GetPrim())
     physics = UsdPhysics.Scene.Define(stage, "/World/PhysicsScene")
     physics.CreateGravityMagnitudeAttr(0.0)
-    stage.GetRootLayer().customLayerData = {"scenario": scenario, "title": CONFIG["title"]}
+    stage.GetRootLayer().customLayerData = {**stage.GetRootLayer().customLayerData, "scenario": scenario, "title": CONFIG["title"]}
     stage.GetRootLayer().Save()
     print(output)
 
@@ -117,11 +125,14 @@ if __name__ == "__main__":
     parser.add_argument("--scenario", default=None)
     parser.add_argument("--show-pool-collision", action="store_true", help="Diagnostic: render original hidden pool collider")
     parser.add_argument("--all", action="store_true")
+    parser.add_argument("--no-select", action="store_true", help="Build without changing the active scenario or editor entry point")
     args = parser.parse_args()
     selected = load_experiment(args.scenario)["scenario"]
     names = json.loads((ROOT / "config/scenarios.json").read_text()) if args.all else [selected]
     for name in names:
         build(name, args.show_pool_collision)
+    if args.no_select:
+        raise SystemExit(0)
     # Preserve the editor's existing entry point as a composed active scene.
     alias = Usd.Stage.CreateNew(str(ROOT / "scenes/pool_navigation.usda"))
     alias.GetRootLayer().subLayerPaths = [f"pool_{selected}.usda"]

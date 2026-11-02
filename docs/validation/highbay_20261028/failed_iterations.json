@@ -1,0 +1,226 @@
+{
+  "note": "Failed iterations retained; no statistical success rate. v1 has a different spawn/transform, v2-v4 retain final start/goal and configured water border.",
+  "v1_initial_penetration": {
+    "reason": "initial hull penetration of scanned HighBay collision mesh; planner cannot leave start",
+    "progress": {
+      "simulation_seconds": 40.03333542123437,
+      "position": [
+        -2.8156847953796387,
+        -0.5305430293083191,
+        0.88086998462677
+      ],
+      "goal_distance": 6.3849805578832175,
+      "contacts": [
+        {
+          "colliders": [
+            "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+            "/World/ROV/CollisionHull"
+          ],
+          "first_time": 0.0,
+          "reports": 2402,
+          "last_time": 40.01666875369847,
+          "last_contact_position": [
+            -3.217466354370117,
+            -0.41678619384765625,
+            1.0469582080841064
+          ],
+          "last_contact_normal": [
+            0.20065522193908691,
+            -0.12116805464029312,
+            -0.972139835357666
+          ],
+          "last_contact_impulse": [
+            0.0,
+            -0.0,
+            -0.0
+          ],
+          "max_impulse_norm": 174.3226776123047,
+          "nonzero_impulse_reports": 2372,
+          "first_impulse_time": 0.0,
+          "last_impulse_time": 40.01666875369847
+        }
+      ],
+      "desired_velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "force": [
+        -0.49577557474119377,
+        0.5354653435423221,
+        50.50516439845953
+      ]
+    }
+  },
+  "v2_open": {
+    "scenario": "highbay_open",
+    "goal_error_m": 0.24961629181609177,
+    "goal_reached": false,
+    "plan_updates": 81,
+    "stop_reason": "simulation_time_limit",
+    "simulation_seconds": 140.00000730156898,
+    "conservative_block_clearance_m": null,
+    "depth_mode": "ideal",
+    "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+    "physics_mode": "hydrodynamics",
+    "max_contact_impulse_ns": 0.0,
+    "max_speed_m_s": 0.27985167067499,
+    "velocity_error_rmse_m_s": 0.014278581346630738,
+    "max_depth_reference_error_m": 0.018521606922149658,
+    "path_length_m": 6.38863337649066,
+    "current_world_m_s": [
+      0.0,
+      0.08,
+      0.0
+    ],
+    "force_saturation_sample_fraction": 0.0,
+    "torque_saturation_sample_fraction": 0.0,
+    "min_submerged_fraction": 0.9999999999999996,
+    "max_actuator_force_n": 3.0413814830362185,
+    "max_buoyancy_n": 49.54049999999997
+  },
+  "v3_summary": [
+    {
+      "scenario": "highbay_open",
+      "goal_error_m": 0.031655098948556296,
+      "goal_reached": true,
+      "plan_updates": 80,
+      "stop_reason": "goal_reached",
+      "simulation_seconds": 61.766669888049364,
+      "conservative_block_clearance_m": null,
+      "depth_mode": "ideal",
+      "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+      "physics_mode": "hydrodynamics",
+      "max_contact_impulse_ns": 0.0,
+      "max_speed_m_s": 0.2751277113757625,
+      "velocity_error_rmse_m_s": 0.026522398606267907,
+      "max_depth_reference_error_m": 0.018521606922149658,
+      "path_length_m": 6.633257039300678,
+      "current_world_m_s": [
+        0.0,
+        0.08,
+        0.0
+      ],
+      "force_saturation_sample_fraction": 0.0,
+      "torque_saturation_sample_fraction": 0.0,
+      "min_submerged_fraction": 0.9999999999999996,
+      "max_actuator_force_n": 4.321330707044323,
+      "max_buoyancy_n": 49.54049999999997,
+      "status": "reached"
+    },
+    {
+      "scenario": "highbay",
+      "goal_error_m": 0.3674401591490339,
+      "goal_reached": false,
+      "plan_updates": 67,
+      "stop_reason": "simulation_time_limit",
+      "simulation_seconds": 140.00000730156898,
+      "conservative_block_clearance_m": 0.39904013107227493,
+      "depth_mode": "ideal",
+      "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+      "physics_mode": "hydrodynamics",
+      "max_contact_impulse_ns": 0.0,
+      "max_speed_m_s": 0.2862724593840891,
+      "velocity_error_rmse_m_s": 0.024632656745646693,
+      "max_depth_reference_error_m": 0.018521606922149658,
+      "path_length_m": 7.716051485031745,
+      "current_world_m_s": [
+        0.0,
+        0.08,
+        0.0
+      ],
+      "force_saturation_sample_fraction": 0.0,
+      "torque_saturation_sample_fraction": 0.0,
+      "min_submerged_fraction": 0.9999999999999996,
+      "max_actuator_force_n": 3.851069325554713,
+      "max_buoyancy_n": 49.54049999999997,
+      "status": "not_reached"
+    }
+  ],
+  "v3_open_geometry": {
+    "scenario": "highbay_open",
+    "samples": 308,
+    "sample_max_interval_s": 0.20000001043081284,
+    "minimum_scanned_mesh_sphere_clearance_m": 0.9282655722637886,
+    "minimum_water_boundary_hull_corner_clearance_m": -0.0995740570337218,
+    "all_sampled_hull_centers_inside_water": true,
+    "all_sampled_hull_corners_inside_water": false,
+    "no_contact_events": true,
+    "passed": false,
+    "note": "Conservative circumscribed hull sphere at recorded samples; not continuous swept collision certification. Artificial obstacles are assessed separately."
+  },
+  "v3_obstacles_geometry": {
+    "scenario": "highbay",
+    "samples": 699,
+    "sample_max_interval_s": 0.20000001043081284,
+    "minimum_scanned_mesh_sphere_clearance_m": 0.924171449555656,
+    "minimum_water_boundary_hull_corner_clearance_m": -0.22688587192346876,
+    "all_sampled_hull_centers_inside_water": true,
+    "all_sampled_hull_corners_inside_water": false,
+    "no_contact_events": true,
+    "passed": false,
+    "note": "Conservative circumscribed hull sphere at recorded samples; not continuous swept collision certification. Artificial obstacles are assessed separately."
+  },
+  "v4_open": {
+    "scenario": "highbay_open",
+    "goal_error_m": 0.00550357608970899,
+    "goal_reached": true,
+    "plan_updates": 53,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 60.63333649560809,
+    "conservative_block_clearance_m": null,
+    "depth_mode": "ideal",
+    "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+    "physics_mode": "hydrodynamics",
+    "max_contact_impulse_ns": 0.0,
+    "max_speed_m_s": 0.28444455800342905,
+    "velocity_error_rmse_m_s": 0.026144610105978062,
+    "max_depth_reference_error_m": 0.018521606922149658,
+    "path_length_m": 6.558193090149674,
+    "current_world_m_s": [
+      0.0,
+      0.08,
+      0.0
+    ],
+    "force_saturation_sample_fraction": 0.0,
+    "torque_saturation_sample_fraction": 0.0,
+    "min_submerged_fraction": 0.9999999999999996,
+    "max_actuator_force_n": 3.876226669592837,
+    "max_buoyancy_n": 49.54049999999997
+  },
+  "v4_open_geometry": {
+    "scenario": "highbay_open",
+    "samples": 303,
+    "sample_max_interval_s": 0.20000001043081284,
+    "minimum_scanned_mesh_sphere_clearance_m": 0.9283096280950865,
+    "minimum_water_boundary_hull_corner_clearance_m": -0.0647635191317586,
+    "all_sampled_hull_centers_inside_water": true,
+    "all_sampled_hull_corners_inside_water": false,
+    "no_contact_events": true,
+    "passed": false,
+    "note": "Conservative circumscribed hull sphere at recorded samples; not continuous swept collision certification. Artificial obstacles are assessed separately."
+  },
+  "v4_obstacles_interrupted": {
+    "reason": "Stopped after completed open-water trial failed hull containment; next iteration reduces terminal acceleration/speed. Not a completed obstacle trial.",
+    "progress": {
+      "simulation_seconds": 30.033334899693727,
+      "position": [
+        0.156257763504982,
+        1.6101913452148438,
+        1.0
+      ],
+      "goal_distance": 3.0905392732755557,
+      "contacts": [],
+      "desired_velocity": [
+        0.23487928749269166,
+        -0.03738790786971871,
+        0.0
+      ],
+      "force": [
+        0.0007076108060490488,
+        -0.039143268676365764,
+        49.05000431020268
+      ]
+    }
+  }
+}

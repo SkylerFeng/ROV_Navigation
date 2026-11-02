@@ -49,11 +49,18 @@ namespace ego_planner
   bool EGOPlannerManager::planTerminalApproach(const Eigen::Vector3d &start,
       const Eigen::Vector3d &velocity, const Eigen::Vector3d &goal)
   {
-    // The rebound optimizer has a free endpoint and may finish centimetres
-    // short. Use an exact-boundary, fully checked short terminal B-spline.
-    if ((goal-start).norm()>.2 || velocity.norm()>.05) return false;
-    double dt=std::max(.5,(goal-start).norm()/.15);
-    for(int attempt=0;attempt<5;++attempt,dt*=1.5)
+    // A free rebound endpoint can overshoot into the water-boundary margin.
+    // Start the exact terminal approach before that happens, preserving the
+    // measured initial velocity and checking the whole curve's dynamics/map.
+    if ((goal-start).norm()>pp_.planning_horizen_+1e-6 || velocity.norm()>pp_.max_vel_+1e-6) return false;
+    // Search from a short interval: a large initial dt with nonzero velocity
+    // can place the initial tangent control point beyond the goal.
+    double dt=.2;
+    // Leave tracking headroom for the lagged force controller. The initial
+    // measured speed is preserved even when it exceeds the cruise target.
+    const double terminal_speed=std::min(pp_.max_vel_,std::max(.15,velocity.norm()+1e-6));
+    const double terminal_acc=std::min(pp_.max_acc_,.1);
+    for(int attempt=0;attempt<20;++attempt,dt*=1.25)
     {
       Eigen::MatrixXd points(3,6);
       points.col(0)=start-velocity*dt;
@@ -66,8 +73,8 @@ namespace ego_planner
       {
         double phase=std::min(t,pos.getTimeSum());
         if(grid_map_->getInflateOccupancy(pos.evaluateDeBoorT(phase))!=0 ||
-           vel.evaluateDeBoorT(phase).norm()>pp_.max_vel_ ||
-           acc.evaluateDeBoorT(phase).norm()>pp_.max_acc_) {valid=false;break;}
+           vel.evaluateDeBoorT(phase).norm()>terminal_speed ||
+           acc.evaluateDeBoorT(phase).norm()>terminal_acc) {valid=false;break;}
       }
       if(valid) {updateTrajInfo(pos,clock_->now());return true;}
     }

@@ -1,0 +1,72 @@
+[
+  {
+    "scenario": "baseline",
+    "goal_error_m": 0.0033814736215859913,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 87.90000458434224,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_baseline.usda",
+    "samples_plotted": 440,
+    "obstacles": 3,
+    "recorded_scenario": "baseline",
+    "source": "logs/suites/hydro_iteration2_20261027/baseline/run.json"
+  },
+  {
+    "scenario": "slalom",
+    "goal_error_m": 0.0028667458486187234,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 61.466669872403145,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_slalom.usda",
+    "samples_plotted": 308,
+    "obstacles": 7,
+    "recorded_scenario": "slalom",
+    "source": "logs/suites/hydro_iteration2_20261027/slalom/run.json"
+  },
+  {
+    "scenario": "gates",
+    "goal_error_m": 0.0015193375758550585,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 62.400003254413605,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_gates.usda",
+    "samples_plotted": 312,
+    "obstacles": 6,
+    "recorded_scenario": "gates",
+    "source": "logs/suites/hydro_iteration2_20261027/gates/run.json"
+  },
+  {
+    "scenario": "pillars",
+    "goal_error_m": 0.0009075933341325258,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 66.83333681896329,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_pillars.usda",
+    "samples_plotted": 334,
+    "obstacles": 8,
+    "recorded_scenario": "pillars",
+    "source": "logs/suites/hydro_iteration2_20261027/pillars/run.json"
+  },
+  {
+    "scenario": "mixed",
+    "goal_error_m": 0.0012021931264320337,
+    "goal_reached": true,
+    "arrival_tolerance_m": 0.01,
+    "settle_time_s": 2.0,
+    "stop_reason": "goal_reached",
+    "simulation_seconds": 82.5000043027103,
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_mixed.usda",
+    "samples_plotted": 413,
+    "obstacles": 8,
+    "recorded_scenario": "mixed",
+    "source": "logs/suites/hydro_iteration2_20261027/mixed/run.json"
+  }
+]

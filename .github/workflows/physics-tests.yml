@@ -1,0 +1,20 @@
+name: Physics and tracking regressions
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  numerical-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install numpy scipy
+      - name: Verify hydrodynamics, tracking and splines
+        run: |
+          python scripts/test_hydrodynamics.py
+          python scripts/test_tracking_control.py
+          python scripts/test_spline.py

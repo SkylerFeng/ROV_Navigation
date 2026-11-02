@@ -1,0 +1,634 @@
+{
+  "runs": [
+    {
+      "directory": "/home/ache/Coding/rov_navigation/logs/highbay_v5/highbay_open",
+      "scenario": "highbay_open",
+      "checks": {
+        "arrived": true,
+        "tail_within_tolerance": true,
+        "no_nonzero_contact_impulse": true,
+        "finite_controls": true,
+        "actuator_limits_respected": true,
+        "settle_window_sampled": true,
+        "simulation_log_has_no_physx_errors": true
+      },
+      "passed": true,
+      "final_error_m": 0.012133484078774254,
+      "simulation_seconds": 58.53333638608456,
+      "tail_max_error_m": 0.04681468958330499,
+      "source_sha256": {
+        "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+        "scripts/run_sim.py": "6b51ccd5187333ff5135313066228289aacad0787e711e1d3950fbc9bf2c91cf",
+        "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+        "ros_ws/src/plan_manage/src/planner_manager.cpp": "0df64b2b6f844153719f57c112d1bcf1456de78fab550f90dfbc3cdbc313150c",
+        "ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h": "ae7662d65fa85c21120630f3b128aeb98a2f231e5fc02c304268c4aa52ffd090",
+        "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "97d8993662c683011f87ea7b9ae42f306bb131d208fba29e761180f97e5de2c3",
+        "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c"
+      },
+      "config": {
+        "platform": "/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd",
+        "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+        "water": "/home/ache/Coding/rov_navigation/scenes/highbay_water.usda",
+        "environment_offset": [
+          14,
+          9,
+          0
+        ],
+        "source_to_world": [
+          0,
+          0,
+          0
+        ],
+        "pool_floor": -0.4,
+        "water_surface": 1.55,
+        "start": [
+          -3,
+          -0.5,
+          1
+        ],
+        "goal": [
+          3,
+          0.4,
+          1
+        ],
+        "obstacles": [],
+        "camera_resolution": [
+          640,
+          360
+        ],
+        "camera_horizontal_fov_deg": 90.0,
+        "depth_mode": "ideal",
+        "max_velocity": 0.3,
+        "max_acceleration": 0.3,
+        "command_timeout": 0.5,
+        "goal_tolerance": 0.3,
+        "align_before_translation": true,
+        "observed_global_guide": true,
+        "max_heading_error_deg": 20.0,
+        "tracking_error_limit": 0.25,
+        "planner_goal_tolerance": 0.05,
+        "render_pool_collision": false,
+        "physics_mode": "hydrodynamics",
+        "hydrodynamics": {
+          "mass_kg": 5.0,
+          "density_kg_m3": 1000.0,
+          "gravity_m_s2": 9.81,
+          "displaced_volume_m3": 0.00505,
+          "center_of_mass_body_m": [
+            0.0,
+            0.0,
+            0.116
+          ],
+          "center_of_buoyancy_offset_m": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "hull_size_m": [
+            0.48,
+            0.57,
+            0.26
+          ],
+          "inertia_kg_m2": [
+            0.1635,
+            0.1242,
+            0.2314
+          ],
+          "linear_drag": [
+            8.0,
+            12.0,
+            16.0
+          ],
+          "quadratic_drag": [
+            12.0,
+            18.0,
+            24.0
+          ],
+          "angular_drag": [
+            0.18,
+            0.18,
+            0.15
+          ],
+          "quadratic_angular_drag": [
+            0.12,
+            0.12,
+            0.1
+          ],
+          "current_world_m_s": [
+            0.0,
+            0.08,
+            0.0
+          ],
+          "force_limit_n": [
+            12.0,
+            12.0,
+            15.0
+          ],
+          "torque_limit_nm": [
+            1.5,
+            1.5,
+            1.0
+          ],
+          "force_tau_s": 0.25,
+          "torque_tau_s": 0.12,
+          "velocity_kp": [
+            30.0,
+            30.0,
+            35.0
+          ],
+          "velocity_ki": [
+            8.0,
+            8.0,
+            12.0
+          ],
+          "integral_limit_n": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "angular_kp": [
+            1.2,
+            1.2,
+            1.0
+          ],
+          "max_yaw_rate_rad_s": 0.25
+        },
+        "water_boundary": "config/highbay_water_boundary.json",
+        "collision_prim": "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+        "collision_sections": "scenes/highbay_collision_sections.json",
+        "description": "\u539f\u59cb HighBay \u89c6\u89c9\u4e0e\u78b0\u649e\u7f51\u683c\uff0c\u4ec5\u5e73\u79fb\u5750\u6807\uff1b\u77e9\u5f62\u6d4b\u8bd5\u6c34\u57df\u548c\u6c34\u4f4d\u4e3a\u914d\u7f6e\u503c\uff0c\u5e76\u975e\u5b9e\u6d4b\u6c34\u4f53\u3002",
+        "title": "HighBay / \u5b9e\u666f\u7f51\u683c\u7a7a\u573a\u6d4b\u8bd5",
+        "scenario": "highbay_open",
+        "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_highbay_open.usda"
+      },
+      "metrics": {
+        "physics_mode": "hydrodynamics",
+        "max_contact_impulse_ns": 0.0,
+        "max_speed_m_s": 0.15998093555334042,
+        "velocity_error_rmse_m_s": 0.014646969365097405,
+        "max_depth_reference_error_m": 0.018521606922149658,
+        "path_length_m": 6.120002142242054,
+        "current_world_m_s": [
+          0.0,
+          0.08,
+          0.0
+        ],
+        "force_saturation_sample_fraction": 0.0,
+        "torque_saturation_sample_fraction": 0.0,
+        "min_submerged_fraction": 0.9999999999999996,
+        "max_actuator_force_n": 1.6896260369938425,
+        "max_buoyancy_n": 49.54049999999997
+      },
+      "git_commit_before_run": "0b324dfe578b868e709d00e4c464aa11907804ac",
+      "source_tree_status": "M config/active_scenario.json\n M config/experiment.json\n M config/scenarios.json\n M docs/hydrodynamics_20261027.md\n M docs/version_control.md\n M ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h\n M ros_ws/src/plan_manage/src/ego_replan_fsm.cpp\n M ros_ws/src/plan_manage/src/planner_manager.cpp\n M scenes/pool_navigation.usda\n M scripts/build_scene.py\n M scripts/experiment.py\n M scripts/export_pool_geometry.py\n M scripts/export_run.py\n M scripts/navigation.launch.py\n M scripts/run_sim.py\n M scripts/run_suite.py\n M scripts/test_heading_execution.py\n M scripts/validate_scenarios.py\n M scripts/validate_scene.py\n M scripts/verify_hydrodynamics_runs.py\n?? config/highbay_current_016.json\n?? config/highbay_water_boundary.json\n?? docs/highbay_navigation_20261028.md\n?? docs/validation/highbay_20261028/\n?? scenes/highbay_collision_sections.json\n?? scenes/highbay_preview.usda\n?? scenes/highbay_water.usda\n?? scenes/pool_highbay.usda\n?? scenes/pool_highbay_open.usda\n?? scripts/validate_highbay_scene.py"
+    },
+    {
+      "directory": "/home/ache/Coding/rov_navigation/logs/highbay_v5/highbay",
+      "scenario": "highbay",
+      "checks": {
+        "arrived": true,
+        "tail_within_tolerance": true,
+        "no_nonzero_contact_impulse": true,
+        "finite_controls": true,
+        "actuator_limits_respected": true,
+        "settle_window_sampled": true,
+        "simulation_log_has_no_physx_errors": true
+      },
+      "passed": true,
+      "final_error_m": 0.044981188175936555,
+      "simulation_seconds": 51.4000026807189,
+      "tail_max_error_m": 0.04464773040862907,
+      "source_sha256": {
+        "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+        "scripts/run_sim.py": "6b51ccd5187333ff5135313066228289aacad0787e711e1d3950fbc9bf2c91cf",
+        "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+        "ros_ws/src/plan_manage/src/planner_manager.cpp": "0df64b2b6f844153719f57c112d1bcf1456de78fab550f90dfbc3cdbc313150c",
+        "ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h": "ae7662d65fa85c21120630f3b128aeb98a2f231e5fc02c304268c4aa52ffd090",
+        "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "97d8993662c683011f87ea7b9ae42f306bb131d208fba29e761180f97e5de2c3",
+        "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c"
+      },
+      "config": {
+        "platform": "/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd",
+        "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+        "water": "/home/ache/Coding/rov_navigation/scenes/highbay_water.usda",
+        "environment_offset": [
+          14,
+          9,
+          0
+        ],
+        "source_to_world": [
+          0,
+          0,
+          0
+        ],
+        "pool_floor": -0.4,
+        "water_surface": 1.55,
+        "start": [
+          -3,
+          -0.5,
+          1
+        ],
+        "goal": [
+          3,
+          0.4,
+          1
+        ],
+        "obstacles": [
+          {
+            "name": "TestBlockA",
+            "position": [
+              -1.3,
+              0,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          },
+          {
+            "name": "TestBlockB",
+            "position": [
+              0.4,
+              0.45,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          },
+          {
+            "name": "TestBlockC",
+            "position": [
+              2,
+              -0.3,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          }
+        ],
+        "camera_resolution": [
+          640,
+          360
+        ],
+        "camera_horizontal_fov_deg": 90.0,
+        "depth_mode": "ideal",
+        "max_velocity": 0.3,
+        "max_acceleration": 0.3,
+        "command_timeout": 0.5,
+        "goal_tolerance": 0.3,
+        "align_before_translation": true,
+        "observed_global_guide": true,
+        "max_heading_error_deg": 20.0,
+        "tracking_error_limit": 0.25,
+        "planner_goal_tolerance": 0.05,
+        "render_pool_collision": false,
+        "physics_mode": "hydrodynamics",
+        "hydrodynamics": {
+          "mass_kg": 5.0,
+          "density_kg_m3": 1000.0,
+          "gravity_m_s2": 9.81,
+          "displaced_volume_m3": 0.00505,
+          "center_of_mass_body_m": [
+            0.0,
+            0.0,
+            0.116
+          ],
+          "center_of_buoyancy_offset_m": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "hull_size_m": [
+            0.48,
+            0.57,
+            0.26
+          ],
+          "inertia_kg_m2": [
+            0.1635,
+            0.1242,
+            0.2314
+          ],
+          "linear_drag": [
+            8.0,
+            12.0,
+            16.0
+          ],
+          "quadratic_drag": [
+            12.0,
+            18.0,
+            24.0
+          ],
+          "angular_drag": [
+            0.18,
+            0.18,
+            0.15
+          ],
+          "quadratic_angular_drag": [
+            0.12,
+            0.12,
+            0.1
+          ],
+          "current_world_m_s": [
+            0.0,
+            0.08,
+            0.0
+          ],
+          "force_limit_n": [
+            12.0,
+            12.0,
+            15.0
+          ],
+          "torque_limit_nm": [
+            1.5,
+            1.5,
+            1.0
+          ],
+          "force_tau_s": 0.25,
+          "torque_tau_s": 0.12,
+          "velocity_kp": [
+            30.0,
+            30.0,
+            35.0
+          ],
+          "velocity_ki": [
+            8.0,
+            8.0,
+            12.0
+          ],
+          "integral_limit_n": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "angular_kp": [
+            1.2,
+            1.2,
+            1.0
+          ],
+          "max_yaw_rate_rad_s": 0.25
+        },
+        "water_boundary": "config/highbay_water_boundary.json",
+        "collision_prim": "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+        "collision_sections": "scenes/highbay_collision_sections.json",
+        "description": "\u539f\u59cb HighBay \u89c6\u89c9\u4e0e\u78b0\u649e\u7f51\u683c\uff0c\u4ec5\u5e73\u79fb\u5750\u6807\uff1b\u77e9\u5f62\u6d4b\u8bd5\u6c34\u57df\u548c\u6c34\u4f4d\u4e3a\u914d\u7f6e\u503c\uff0c\u5e76\u975e\u5b9e\u6d4b\u6c34\u4f53\u3002",
+        "title": "HighBay / \u5b9e\u666f\u7f51\u683c\u4e0e\u4eba\u5de5\u7ed5\u969c\u6d4b\u8bd5",
+        "scenario": "highbay",
+        "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_highbay.usda"
+      },
+      "metrics": {
+        "physics_mode": "hydrodynamics",
+        "max_contact_impulse_ns": 0.0,
+        "max_speed_m_s": 0.2852288396943265,
+        "velocity_error_rmse_m_s": 0.03858484831157308,
+        "max_depth_reference_error_m": 0.018521606922149658,
+        "path_length_m": 7.802060388656963,
+        "current_world_m_s": [
+          0.0,
+          0.08,
+          0.0
+        ],
+        "force_saturation_sample_fraction": 0.0,
+        "torque_saturation_sample_fraction": 0.0,
+        "min_submerged_fraction": 0.9999999999999996,
+        "max_actuator_force_n": 3.9591933259909293,
+        "max_buoyancy_n": 49.54049999999997
+      },
+      "git_commit_before_run": "0b324dfe578b868e709d00e4c464aa11907804ac",
+      "source_tree_status": "M README.md\n M config/active_scenario.json\n M config/experiment.json\n M config/scenarios.json\n M docs/hydrodynamics_20261027.md\n M docs/version_control.md\n M ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h\n M ros_ws/src/plan_manage/src/ego_replan_fsm.cpp\n M ros_ws/src/plan_manage/src/planner_manager.cpp\n M scenes/pool_navigation.usda\n M scripts/build_scene.py\n M scripts/experiment.py\n M scripts/export_pool_geometry.py\n M scripts/export_run.py\n M scripts/navigation.launch.py\n M scripts/run_sim.py\n M scripts/run_suite.py\n M scripts/test_heading_execution.py\n M scripts/validate_scenarios.py\n M scripts/validate_scene.py\n M scripts/verify_hydrodynamics_runs.py\n?? config/highbay_current_016.json\n?? config/highbay_water_boundary.json\n?? docs/highbay_navigation_20261028.md\n?? docs/validation/highbay_20261028/\n?? scenes/highbay_collision_sections.json\n?? scenes/highbay_preview.usda\n?? scenes/highbay_water.usda\n?? scenes/pool_highbay.usda\n?? scenes/pool_highbay_open.usda\n?? scripts/validate_highbay_scene.py"
+    },
+    {
+      "directory": "/home/ache/Coding/rov_navigation/logs/highbay_v5_current016/highbay",
+      "scenario": "highbay",
+      "checks": {
+        "arrived": true,
+        "tail_within_tolerance": true,
+        "no_nonzero_contact_impulse": true,
+        "finite_controls": true,
+        "actuator_limits_respected": true,
+        "settle_window_sampled": true,
+        "simulation_log_has_no_physx_errors": true
+      },
+      "passed": true,
+      "final_error_m": 0.04746737572220585,
+      "simulation_seconds": 60.96666984632611,
+      "tail_max_error_m": 0.04400940929770565,
+      "source_sha256": {
+        "scripts/hydrodynamics.py": "6233d73a923a46060435e74750f7e9f0159289d05486c9a1869f3bed65716259",
+        "scripts/run_sim.py": "6b51ccd5187333ff5135313066228289aacad0787e711e1d3950fbc9bf2c91cf",
+        "scripts/tracking_control.py": "0f5ff2bf20fecbfdafc953fa11e6ee938ebfc0d5980950873fcdba4d83eee54d",
+        "ros_ws/src/plan_manage/src/planner_manager.cpp": "0df64b2b6f844153719f57c112d1bcf1456de78fab550f90dfbc3cdbc313150c",
+        "ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h": "ae7662d65fa85c21120630f3b128aeb98a2f231e5fc02c304268c4aa52ffd090",
+        "ros_ws/src/plan_manage/src/ego_replan_fsm.cpp": "97d8993662c683011f87ea7b9ae42f306bb131d208fba29e761180f97e5de2c3",
+        "ros_ws/src/plan_manage/src/traj_server.cpp": "1fb523fce22e506462986c21bdeb30ab393a589fddeac7cf2d832ec9c0645f5c"
+      },
+      "config": {
+        "platform": "/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd",
+        "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+        "water": "/home/ache/Coding/rov_navigation/scenes/highbay_water.usda",
+        "environment_offset": [
+          14,
+          9,
+          0
+        ],
+        "source_to_world": [
+          0,
+          0,
+          0
+        ],
+        "pool_floor": -0.4,
+        "water_surface": 1.55,
+        "start": [
+          -3,
+          -0.5,
+          1
+        ],
+        "goal": [
+          3,
+          0.4,
+          1
+        ],
+        "obstacles": [
+          {
+            "name": "TestBlockA",
+            "position": [
+              -1.3,
+              0,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          },
+          {
+            "name": "TestBlockB",
+            "position": [
+              0.4,
+              0.45,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          },
+          {
+            "name": "TestBlockC",
+            "position": [
+              2,
+              -0.3,
+              1.05
+            ],
+            "size": [
+              0.5,
+              0.6,
+              0.85
+            ]
+          }
+        ],
+        "camera_resolution": [
+          640,
+          360
+        ],
+        "camera_horizontal_fov_deg": 90.0,
+        "depth_mode": "ideal",
+        "max_velocity": 0.3,
+        "max_acceleration": 0.3,
+        "command_timeout": 0.5,
+        "goal_tolerance": 0.3,
+        "align_before_translation": true,
+        "observed_global_guide": true,
+        "max_heading_error_deg": 20.0,
+        "tracking_error_limit": 0.25,
+        "planner_goal_tolerance": 0.05,
+        "render_pool_collision": false,
+        "physics_mode": "hydrodynamics",
+        "hydrodynamics": {
+          "mass_kg": 5.0,
+          "density_kg_m3": 1000.0,
+          "gravity_m_s2": 9.81,
+          "displaced_volume_m3": 0.00505,
+          "center_of_mass_body_m": [
+            0.0,
+            0.0,
+            0.116
+          ],
+          "center_of_buoyancy_offset_m": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "hull_size_m": [
+            0.48,
+            0.57,
+            0.26
+          ],
+          "inertia_kg_m2": [
+            0.1635,
+            0.1242,
+            0.2314
+          ],
+          "linear_drag": [
+            8.0,
+            12.0,
+            16.0
+          ],
+          "quadratic_drag": [
+            12.0,
+            18.0,
+            24.0
+          ],
+          "angular_drag": [
+            0.18,
+            0.18,
+            0.15
+          ],
+          "quadratic_angular_drag": [
+            0.12,
+            0.12,
+            0.1
+          ],
+          "current_world_m_s": [
+            0.0,
+            0.16,
+            0.0
+          ],
+          "force_limit_n": [
+            12.0,
+            12.0,
+            15.0
+          ],
+          "torque_limit_nm": [
+            1.5,
+            1.5,
+            1.0
+          ],
+          "force_tau_s": 0.25,
+          "torque_tau_s": 0.12,
+          "velocity_kp": [
+            30.0,
+            30.0,
+            35.0
+          ],
+          "velocity_ki": [
+            8.0,
+            8.0,
+            12.0
+          ],
+          "integral_limit_n": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "angular_kp": [
+            1.2,
+            1.2,
+            1.0
+          ],
+          "max_yaw_rate_rad_s": 0.25
+        },
+        "water_boundary": "config/highbay_water_boundary.json",
+        "collision_prim": "/World/Environment/Platform/Collision/HighBay_collision_clean/mesh",
+        "collision_sections": "scenes/highbay_collision_sections.json",
+        "description": "\u539f\u59cb HighBay \u89c6\u89c9\u4e0e\u78b0\u649e\u7f51\u683c\uff0c\u4ec5\u5e73\u79fb\u5750\u6807\uff1b\u77e9\u5f62\u6d4b\u8bd5\u6c34\u57df\u548c\u6c34\u4f4d\u4e3a\u914d\u7f6e\u503c\uff0c\u5e76\u975e\u5b9e\u6d4b\u6c34\u4f53\u3002",
+        "title": "HighBay / \u5b9e\u666f\u7f51\u683c\u4e0e\u4eba\u5de5\u7ed5\u969c\u6d4b\u8bd5",
+        "scenario": "highbay",
+        "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_highbay.usda",
+        "overrides_file": "/home/ache/Coding/rov_navigation/config/highbay_current_016.json"
+      },
+      "metrics": {
+        "physics_mode": "hydrodynamics",
+        "max_contact_impulse_ns": 0.0,
+        "max_speed_m_s": 0.2737286118889135,
+        "velocity_error_rmse_m_s": 0.04186299046545234,
+        "max_depth_reference_error_m": 0.018521606922149658,
+        "path_length_m": 7.739768451066627,
+        "current_world_m_s": [
+          0.0,
+          0.16,
+          0.0
+        ],
+        "force_saturation_sample_fraction": 0.0,
+        "torque_saturation_sample_fraction": 0.0,
+        "min_submerged_fraction": 0.9999999999999996,
+        "max_actuator_force_n": 5.608112133591706,
+        "max_buoyancy_n": 49.54049999999997
+      },
+      "git_commit_before_run": "0b324dfe578b868e709d00e4c464aa11907804ac",
+      "source_tree_status": "M README.md\n M config/active_scenario.json\n M config/experiment.json\n M config/scenarios.json\n M docs/hydrodynamics_20261027.md\n M docs/version_control.md\n M ros_ws/src/plan_manage/include/ego_planner/ego_replan_fsm.h\n M ros_ws/src/plan_manage/src/ego_replan_fsm.cpp\n M ros_ws/src/plan_manage/src/planner_manager.cpp\n M scenes/pool_navigation.usda\n M scripts/build_scene.py\n M scripts/experiment.py\n M scripts/export_pool_geometry.py\n M scripts/export_run.py\n M scripts/navigation.launch.py\n M scripts/run_sim.py\n M scripts/run_suite.py\n M scripts/test_heading_execution.py\n M scripts/validate_scenarios.py\n M scripts/validate_scene.py\n M scripts/verify_hydrodynamics_runs.py\n?? config/highbay_current_016.json\n?? config/highbay_water_boundary.json\n?? docs/highbay_navigation_20261028.md\n?? docs/validation/highbay_20261028/\n?? scenes/highbay_collision_sections.json\n?? scenes/highbay_preview.usda\n?? scenes/highbay_water.usda\n?? scenes/pool_highbay.usda\n?? scenes/pool_highbay_open.usda\n?? scripts/validate_highbay_scene.py"
+    }
+  ],
+  "same_core_sources": true,
+  "passed": true,
+  "note": "Finite single trials; sampled telemetry, not a statistical success rate."
+}

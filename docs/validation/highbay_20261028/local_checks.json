@@ -1,0 +1,16 @@
+{
+  "numeric_unit_tests": {
+    "hydrodynamics": 13,
+    "tracking_control": 9,
+    "spline": 3,
+    "passed": true
+  },
+  "ros_heading_and_terminal_regression": "passed: exact 0.1/0.5/2.5 m endpoints, measured velocity, dynamic bounds, heading wait/resume, goal replacement, no false stationary arrival",
+  "ros_planner_feedback": "passed: occupied-goal hold, replacement goal, measured-state recovery, no false arrival",
+  "static_scenarios": {
+    "passed": 7,
+    "scope": "Transform, ROV and artificial-obstacle route feasibility only; no scanned mesh route certification."
+  },
+  "planner_build": "passed; existing unused-parameter warnings remain",
+  "full_logs": "Local logs/highbay_audit, excluded from Git."
+}

@@ -63,8 +63,7 @@ if __name__ == "__main__":
         runpy.run_path(str(ROOT / "scripts/validate_scene.py"))
         c = load_experiment(name)
         stage = Usd.Stage.Open(c["scene_file"])
-        water = stage.GetPrimAtPath("/World/Water")
-        polygon = np.array(water.GetAttribute("oceansim:water:boundaryXY").Get()) + np.array(c["source_to_world"][:2])
+        polygon = np.array(json.loads((ROOT / c["water_boundary"]).read_text()))
         route = feasible_route(c, polygon)
         reports.append({"scenario": name, "scene_checks": "passed", "obstacles": len(c["obstacles"]),
                         "feasibility_route_xy": route, "source_pool_geometry_checked": False, "note": "Added obstacles only; original pool colliders and runtime inflated occupancy are NOT covered."})

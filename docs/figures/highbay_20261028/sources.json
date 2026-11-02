@@ -1,0 +1,33 @@
+{
+  "note": "Measured samples only; configured test water, ideal depth and ground-truth pose. No statistical success rate.",
+  "inputs": {
+    "open": {
+      "docs/validation/highbay_20261028/open/run.json": "69e9e077500b1ed716320d9eec058fe619a86bb2f06c42f26298caf99cd2743e",
+      "docs/validation/highbay_20261028/open/controls.json": "e90a3737e36fb6a0932b9a2f2ba3edc9f2b238380bfc18b228ecb4b0b366ad59",
+      "docs/validation/highbay_20261028/open/geometry_audit.json": "f6df429ab813706f2a66ffe5d65297542bfb25882a57f5570842ec7725d2ce13"
+    },
+    "obstacles": {
+      "docs/validation/highbay_20261028/obstacles/run.json": "7c02e7899b7d94890b0d3556acdec2d9fed5c64cd7414d13c3d1c25a808bccd9",
+      "docs/validation/highbay_20261028/obstacles/controls.json": "b330d9136f4663e5658d69121f85a04e5b3a8e41158140a9836223535a558298",
+      "docs/validation/highbay_20261028/obstacles/geometry_audit.json": "edd2bbd212294adb914f789d7b34d1c190c30c0eb22e15c390783151d481e864"
+    },
+    "current016": {
+      "docs/validation/highbay_20261028/current016/run.json": "9fd38daf67e5103ad51b49e308f61b5a227e2afa560e761f782b266accaa9e5a",
+      "docs/validation/highbay_20261028/current016/controls.json": "d45a9b91df81713efdb561e7efcb7d9dba815bb155e4ce6a5b6bbd071fb291e1",
+      "docs/validation/highbay_20261028/current016/geometry_audit.json": "156d8a605dc97846bbb44506c3ccf484568d79e666b27d8f266e3ca2f8061b1a"
+    },
+    "failed_paths": {
+      "docs/validation/highbay_20261028/failed_paths.json": "99769f313148fc6192c820c0cb539ce0db5e3a3d900266ec818200ce6789a167"
+    }
+  },
+  "figures": {
+    "open_route.png": "79961206315b850fbcefdb386abe660a6aeee2c858b9e65f6fe1d340ec133b05",
+    "iteration_comparison.pdf": "58c95299a66b9cb9b3970e73fd6e1790e9d94e4d286653e76f8f243aa1e16545",
+    "current016_dynamics.png": "774d710430d4545e7cd9021e40e33c57d82e8b4dcdbb42a2112794e09f0784fd",
+    "obstacles_dynamics.png": "f4a431f34c2fd4dcbf4065e9fee185350488f22492a7e46784a0add131fbe61d",
+    "iteration_comparison.png": "db51e8a0584696d9aff82f2f278fb49593f89be0a603090796cd93b185743248",
+    "current016_route.png": "5bd79746d747e0990c3c08afd90b82f2744f6f07dc95fd4f0b8c9fea7d809f63",
+    "highbay_viewport_600.png": "d3b760498b48fbfc662051c90362575ec43dcf92db42d244c2ad58c987ca50a8",
+    "obstacles_route.png": "b2ec1d526bce7917fd155738235ee927547ef89ea550d3f5fc9015c7ea3fbd35"
+  }
+}
