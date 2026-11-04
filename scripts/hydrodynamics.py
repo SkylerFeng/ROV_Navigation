@@ -38,6 +38,10 @@ DEFAULTS = {
     "distributed_drag": 0.0,
     "added_mass_kg": [0.0, 0.0, 0.0],
     "added_inertia_kg_m2": [0.0, 0.0, 0.0],
+    "component_model_file": "",
+    "component_normal_cd": 1.0,
+    "component_tangential_cf": 0.01,
+    "component_surface_factor": 0.5,
 }
 
 
@@ -53,6 +57,12 @@ def parameters(overrides=None):
                      "angular_drag", "quadratic_angular_drag", "velocity_ki",
                      "distributed_drag", "added_mass_kg", "added_inertia_kg_m2"}
     for key, default in DEFAULTS.items():
+        if key == "component_model_file":
+            path = overrides.get(key, default)
+            if not isinstance(path, str):
+                raise ValueError("component_model_file must be a path string")
+            result[key] = path
+            continue
         value = np.asarray(overrides.get(key, default), dtype=float)
         shape = (3,) if isinstance(default, list) else ()
         if value.shape != shape or not np.all(np.isfinite(value)):
@@ -98,6 +108,10 @@ class Hydrodynamics:
             raise ValueError("Water surface must be above bottom")
         if self.boundary.ndim != 2 or self.boundary.shape[1] != 2 or len(self.boundary) < 3 or not np.all(np.isfinite(self.boundary)):
             raise ValueError("Expected a finite water polygon")
+        self.components = None
+        if self.p["component_model_file"]:
+            from component_hydrodynamics import ComponentHydrodynamics
+            self.components = ComponentHydrodynamics(self.p)
         self.actuator_force = np.zeros(3)
         self.actuator_torque = np.zeros(3)
 
@@ -134,7 +148,12 @@ class Hydrodynamics:
         fraction = self.submersion(position, rotation)
         relative = rotation.T @ (np.asarray(velocity_world)-p["current_world_m_s"])
         angular = rotation.T @ np.asarray(angular_world)
-        drag, drag_torque = self.drag_wrench(relative, angular, fraction)
+        component_details = None
+        if self.components is None:
+            drag, drag_torque = self.drag_wrench(relative, angular, fraction)
+        else:
+            wet = self.components.wet_fractions(position, rotation, self.surface, self.bottom, self.boundary)
+            drag, drag_torque, component_details = self.components.wrench(relative, angular, wet)
         angular_drag = -fraction*(p["angular_drag"]*angular + p["quadratic_angular_drag"]*np.abs(angular)*angular)
         buoyancy_world = np.array([0., 0., fraction*p["density_kg_m3"]*p["displaced_volume_m3"]*p["gravity_m_s2"]])
         buoyancy_torque = np.cross(p["center_of_buoyancy_offset_m"], rotation.T @ buoyancy_world)
@@ -183,6 +202,8 @@ class Hydrodynamics:
             "force_saturated": bool(np.any(np.abs(force_command_body) > p["force_limit_n"])),
             "torque_saturated": bool(np.any(np.abs(torque_command_body) > p["torque_limit_nm"])),
         }
+        if component_details is not None:
+            details["component_hydrodynamics"] = component_details
         return force_world, torque_world, details
 
 

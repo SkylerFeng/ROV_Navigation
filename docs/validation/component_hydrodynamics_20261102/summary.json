@@ -1,0 +1,130 @@
+{
+  "geometry": {
+    "source_asset": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+    "source_mesh": "/BlueROV/Mesh/Mesh",
+    "source_sha256": "aeab5d5b7d4c55a61ef465d9c9f44cd191661ed0ff3f41ed5e350c9784bcc3f6",
+    "bounds_body_m": [
+      [
+        -0.23682571768090477,
+        -0.284162450050555,
+        -0.01070000045001538
+      ],
+      [
+        0.22037428051903513,
+        0.2818557886131184,
+        0.24315199255943287
+      ]
+    ],
+    "source_triangle_count": 1287357,
+    "degenerate_triangles": 3154,
+    "method": "Welded geometric connectivity; area-weighted centroid/normal patches. Names are geometric IDs, not semantic part labels.",
+    "limits": "No shielding, wake, pressure solve or automatic sealed-volume identification. Two-sided surface law approximates paired surfaces with a 0.5 area factor."
+  },
+  "component_count": 1127,
+  "patch_count": 8441,
+  "surface_area_m2": 3.0238403671898806,
+  "geometry_sha256": "b74cb8b1f3264d330b741ac17a840109facd8ed2ed6e1a39e874b064e886a19b",
+  "probe_summary": {
+    "braking": {
+      "max_abs_pitch_deg": 3.680988500680375,
+      "max_abs_roll_deg": 0.043524425771006854,
+      "final_speed_m_s": 2.117549385772049e-05,
+      "yaw_rate_at_command_stop_rad_s": -1.609652827028185e-05,
+      "yaw_command_stop_time_s": 6,
+      "yaw_continuation_after_stop_deg": -0.01204637971835095,
+      "final_yaw_rate_rad_s": -1.4687941074953414e-05,
+      "max_forward_excursion_m": 0.0386573460418731,
+      "speed_at_02s_m_s": 0.09428892255969722,
+      "displacement_m": 0.0029100950080339365,
+      "max_relative_drag_power_w": -4.395436221759506e-12
+    },
+    "coast": {
+      "max_abs_pitch_deg": 3.5677100401205277,
+      "max_abs_roll_deg": 0.13646424106469407,
+      "final_speed_m_s": 0.0013575882375451,
+      "yaw_rate_at_command_stop_rad_s": -0.0019570018630474806,
+      "yaw_command_stop_time_s": 6,
+      "yaw_continuation_after_stop_deg": -1.085552508608452,
+      "final_yaw_rate_rad_s": -0.0010409700917080045,
+      "max_forward_excursion_m": 0.16907978057861328,
+      "speed_at_02s_m_s": 0.13108278842228355,
+      "displacement_m": 0.18630225234997255,
+      "max_relative_drag_power_w": -4.986220717281992e-07
+    },
+    "yaw_stop": {
+      "max_abs_pitch_deg": 0.06519763833719887,
+      "max_abs_roll_deg": 0.11942165322342192,
+      "final_speed_m_s": 3.895868357849144e-06,
+      "yaw_rate_at_command_stop_rad_s": 0.17187610268592834,
+      "yaw_command_stop_time_s": 6,
+      "yaw_continuation_after_stop_deg": 0.12053655581275718,
+      "final_yaw_rate_rad_s": -0.0029800599440932274,
+      "max_forward_excursion_m": 3.814697265625e-06,
+      "speed_at_02s_m_s": 0.04170521074435946,
+      "displacement_m": 0.0007300520894576737,
+      "max_relative_drag_power_w": -9.335031617524116e-10
+    },
+    "moving_turn": {
+      "max_abs_pitch_deg": 2.6384196747991413,
+      "max_abs_roll_deg": 0.34662016638445664,
+      "final_speed_m_s": 0.012516033596147388,
+      "yaw_rate_at_command_stop_rad_s": 0.09456779062747955,
+      "yaw_command_stop_time_s": 8,
+      "yaw_continuation_after_stop_deg": 0.23703874278407183,
+      "final_yaw_rate_rad_s": -0.00039670438854955137,
+      "max_forward_excursion_m": 1.8218584060668945,
+      "speed_at_02s_m_s": 0.06268524740870435,
+      "displacement_m": 1.8953028938444976,
+      "max_relative_drag_power_w": -0.00032117550647933047
+    }
+  },
+  "probe_checks": {
+    "finite": true,
+    "passive_drag": true,
+    "active_brake_settles": true,
+    "yaw_stop_settles": true,
+    "yaw_stop_continues": true
+  },
+  "navigation": [
+    {
+      "scenario": "platform_ego_mixed",
+      "goal_error_m": 0.00778670658938888,
+      "goal_reached": true,
+      "plan_updates": 48,
+      "stop_reason": "goal_reached",
+      "simulation_seconds": 129.4666734188795,
+      "conservative_block_clearance_m": 0.4222390426688692,
+      "depth_mode": "ideal",
+      "note": "Single trial; clearance is a sampled circumscribed-hull bound, not a contact count.",
+      "physics_mode": "hydrodynamics",
+      "max_contact_impulse_ns": 0.0,
+      "max_speed_m_s": 0.2230991952869914,
+      "velocity_error_rmse_m_s": 0.04941907637614466,
+      "max_abs_pitch_deg": 4.8122613797847364,
+      "max_abs_roll_deg": 1.7777247673393695,
+      "max_tilt_deg": 4.895547707989053,
+      "attitude_samples_finite": true,
+      "max_depth_reference_error_m": 0.022367894649505615,
+      "path_length_m": 7.435460548791957,
+      "current_world_m_s": [
+        0.0,
+        0.08,
+        0.0
+      ],
+      "force_saturation_sample_fraction": 0.0,
+      "torque_saturation_sample_fraction": 0.0,
+      "min_submerged_fraction": 0.9999999999999996,
+      "max_actuator_force_n": 7.729643755592479,
+      "max_buoyancy_n": 49.5405,
+      "max_coupling_torque_nm": 0.16839530261354685
+    }
+  ],
+  "source_sha256": {
+    "scripts/hydrodynamics.py": "33f300a219ef278d8854375d638a89697b39c080bebc1c1d729dd5f054077ae0",
+    "scripts/component_hydrodynamics.py": "38ca2679db09c621d9635ea0108ddb546ecdc544b623cdd02eba5abbcf41d113",
+    "scripts/export_hydrodynamic_components.py": "02d6a8888af7245752a6ea0b6e3baae24bdced559ed2d783096c0d741f5d5590",
+    "scripts/probe_component_hydrodynamics.py": "5ee4637ee372d7c9f529f28e11ca1c346c11f997e9ee68550d7fd490fbb770aa",
+    "scripts/run_suite.py": "102d6d90bf2b84fdba13423084a9b722e49a6f76577cdf0337ff7972c65b98d9",
+    "config/experiments/hydro_components.json": "ca7d90fa7cdc4b30ae03db4f20cd20d2b0d3f8187514b4a2ff4784c1887aeec8"
+  }
+}

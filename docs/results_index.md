@@ -33,3 +33,7 @@
 历史 Markdown、已发表轨迹图和精简验证证据保留。历史报告中的已清理目录名用于说明原始来源，不代表文件仍然存在。部分中间结果已无法从原始日志重绘；不修改历史数字，不把中间失败改写为最终成功。
 
 [本轮最新水动力报告](hydrodynamics_coupled_20261102.md) · [三场景最终复验](platform_three_hydro_navigation_20261028_verified.md) · [逐文件删除清单与 SHA256](validation/results_cleanup_20261102.json)
+
+## 最新部件水动力迭代
+
+[网格部件级水动力](component_hydrodynamics_20261102.md)：最终 Mixed 运行 logs/suites/platform_components_20261102，最终四动作探针 logs/component_hydrodynamics_20261102/physx_probe_final.json；2026-11-04 按用户明确授权纳入提交。

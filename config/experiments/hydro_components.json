@@ -1,0 +1,39 @@
+{
+  "hydrodynamics": {
+    "thrust_offset_body_m": [
+      0,
+      0,
+      0.045
+    ],
+    "drag_offset_body_m": [
+      0,
+      0,
+      0
+    ],
+    "distributed_drag": 0,
+    "added_mass_kg": [
+      1,
+      2,
+      3
+    ],
+    "added_inertia_kg_m2": [
+      0.025,
+      0.035,
+      0.04
+    ],
+    "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+    "component_normal_cd": 1.0,
+    "component_tangential_cf": 0.01,
+    "component_surface_factor": 0.5,
+    "angular_drag": [
+      0,
+      0,
+      0
+    ],
+    "quadratic_angular_drag": [
+      0,
+      0,
+      0
+    ]
+  }
+}

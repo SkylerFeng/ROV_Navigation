@@ -46,6 +46,10 @@ def run_case(name, directory, limit, domain, sim_limit=180, tolerance=.01, settl
         sources.append(water_asset)
     if c.get("overrides_file"):
         sources.append(Path(c["overrides_file"]))
+    component_file = c.get("hydrodynamics", {}).get("component_model_file")
+    if component_file:
+        geometry_source = Path(component_file)
+        sources.append(geometry_source if geometry_source.is_absolute() else ROOT/geometry_source)
     manifest = {}
     for source in sources:
         try:
