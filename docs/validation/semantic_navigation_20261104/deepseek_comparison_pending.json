@@ -1,0 +1,19 @@
+{
+  "runs": [
+    {
+      "scene": "basic",
+      "repeat": 0,
+      "policy": "deepseek",
+      "status": "NOT_RUN",
+      "reason": "missing_local_api_key"
+    },
+    {
+      "scene": "screened",
+      "repeat": 0,
+      "policy": "deepseek",
+      "status": "NOT_RUN",
+      "reason": "missing_local_api_key"
+    }
+  ],
+  "note": "NOT_RUN is not failure or zero latency. Trials are serial; no success-rate claim from one repeat."
+}

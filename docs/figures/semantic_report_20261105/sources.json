@@ -1,0 +1,28 @@
+{
+  "source_trial": "/home/ache/Coding/rov_navigation/logs/semantic_final_20261104/screened_rule_00",
+  "scene": "pool_platform_semantic_screened",
+  "policy": "rule",
+  "status": "SUCCEEDED",
+  "snapshot_record_time_s": 142.300007421,
+  "simulation_seconds": 142.300007422,
+  "plan_updates": 17,
+  "contact_pairs": 0,
+  "sha256": {
+    "semantic/latest_sensor.npz": "f5ccd619db46e8086ffdae275a2f704c871835ed545d331d9acea820c7dd1282",
+    "semantic/latest_detection.jpg": "ea5f6456aeb7ed580ef8f2338b2d1f3c29f7e3713e1ee44ac241f438224b1f70",
+    "semantic/events.jsonl": "d8a696a93eaf2d071f588d4089c78b12cd19cf7303ec1536e888e44bac954a5a",
+    "semantic/result.json": "0ceb8f97344653ca0b3254e8f6497200837f13126d56eef3884958e5105a8514",
+    "semantic/map.npz": "f4f62fe2aa18e555c01cb50d486f1c0374b25adf9f7e4773290fa6da1a6ff270",
+    "sim/controls.json": "afe2d59d215f514c74189ffa9deced652d2d2344811daa3ea8d046227a16b071",
+    "sim/run.json": "28b446bab93de18c96fbc1774c5802b2690d3c57b6f0349d8640e7724970349b",
+    "manifest.json": "27e09ed3429f747ae27c4e72f609f48115eb35cfa9a468cb1ddba5efd9cafa60"
+  },
+  "limitations": [
+    "Recorded before 2026-11-05 water appearance repair; do not label as repaired-scene results.",
+    "Only latest sensor snapshot is retained, not a camera sequence or video.",
+    "Range is radial distance, not optical Z-depth; ideal simulated range and true camera pose.",
+    "Snapshot time is perception event record time, not a saved image acquisition timestamp.",
+    "Rule policy; no cloud LLM inference. One trial, not success rate.",
+    "Force and torque are model-computed; not measured experimental ground truth."
+  ]
+}

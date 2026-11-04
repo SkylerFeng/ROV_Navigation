@@ -1,0 +1,1 @@
+{"qwen":{"base_url":"https://dashscope.aliyuncs.com/compatible-mode/v1","model":"qwen-plus","key_env":"DASHSCOPE_API_KEY"},"deepseek":{"base_url":"https://api.deepseek.com","model":"deepseek-chat","key_env":"DEEPSEEK_API_KEY"}}

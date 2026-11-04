@@ -1,0 +1,2 @@
+record_time_s,category,color,detector_score,color_score,surface_x_m,surface_y_m,surface_z_m,camera_to_surface_range_m
+142.300007421,pipe,yellow,0.9270666241645813,0.9071944355964661,-4.207411619556975,0.13489881830299894,1.1131379970429487,0.8301321268081665

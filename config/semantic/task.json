@@ -1,0 +1,1 @@
+{"instruction":"找到黄色管子并靠近","category":"pipe","color":"yellow","depth_m":1.0,"surface_standoff_m":0.8,"arrival_tolerance_m":0.18,"hold_seconds":2.0,"max_speed_at_completion":0.045,"max_observation_age_s":2.0,"detector_confidence":0.45,"confirmation_frames":3,"grid_resolution_m":0.15,"clearance_m":0.5,"timeout_sim_s":300,"action_timeout_sim_s":75}

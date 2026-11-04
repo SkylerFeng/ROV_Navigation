@@ -60,7 +60,7 @@ try:
     from nav_msgs.msg import Path as RosPath
     from rclpy.qos import QoSProfile, DurabilityPolicy
     from std_msgs.msg import String
-    from viewport_paths import ViewportPaths, top_view
+    from viewport_paths import ViewportPaths, top_view, perspective_view
     from rosgraph_msgs.msg import Clock
     from sensor_msgs.msg import Image, PointCloud2, PointField
     from std_msgs.msg import Header
@@ -185,11 +185,15 @@ try:
     set_camera_view(eye=np.array([0, -6, 5]), target=np.array([0, 0, 1]))
     if args.top_view or args.view == "top":
         top_view(C)
+    elif C.get('overview_eye'):
+        perspective_view(C)
     rclpy.init()
     node = rclpy.create_node("rov_oceansim")
     odom_pub = node.create_publisher(Odometry, "/rov/odom", 10)
     cloud_pub = node.create_publisher(PointCloud2, "/rov/cloud_world", 10)
     rgb_pub = node.create_publisher(Image, "/rov/rgb", 10)
+    from semantic_sensors import SemanticSensors
+    semantic_sensors = SemanticSensors(node)
     clock_pub = node.create_publisher(Clock, "/clock", 10)
     tf_pub = node.create_publisher(TFMessage, "/tf", 10)
     command = {"linear": np.zeros(3), "yaw_rate": 0.0, "received": -float("inf")}
@@ -216,6 +220,14 @@ try:
         setattr(visualization, kind+"_status", data)
     node.create_subscription(String, "/rov/tracking_status", lambda msg: receive_status("tracking", msg), 10)
     node.create_subscription(String, "/rov/planner_status", lambda msg: receive_status("planner", msg), 10)
+    semantic_result = {"state": None}
+    def receive_semantic_status(msg):
+        try:
+            semantic_result.update(json.loads(msg.data))
+        except ValueError:
+            pass
+    if C["scenario"] == "platform_semantic":
+        node.create_subscription(String, "/rov/semantic/status", receive_semantic_status, 10)
     arrival_since = None
     blocked_since = None
     arrival_tolerance = args.arrival_tolerance if args.arrival_tolerance is not None else C.get("goal_tolerance", .3)
@@ -244,6 +256,9 @@ try:
         api.GetDisableGravityAttr().Set(False)
     node.get_logger().info("ROV ready. World velocities: /rov/cmd_vel_world; start planner separately.")
     while app.is_running() and (not args.steps or step < args.steps):
+        if semantic_result.get("state") in ("SUCCEEDED", "FAILED"):
+            stop_reason = "semantic_" + semantic_result["state"].lower()
+            break
         if args.wall_time_limit and time.monotonic()-loop_started > args.wall_time_limit:
             stop_reason = "wall_time_limit"
             break
@@ -338,6 +353,7 @@ try:
                 camera._degraded_depth_frame = np.where(
                     np.isfinite(raw_depth) & (raw_depth > 0.08) & (raw_depth < 8.0),
                     raw_depth, 0.0).astype(np.float32)
+            semantic_sensors.publish(camera, stamp.clock)
             points = camera._build_pointcloud(stride=args.cloud_stride)
             if len(points):
                 cp, cq = camera.get_world_pose(camera_axes="ros")
@@ -375,6 +391,7 @@ try:
         "cloud_frames": camera._id,
         "depth_mode": C.get("depth_mode", "ideal"),
         "physics_mode": physics_mode,
+        "semantic_result": semantic_result,
         "scenario": C["scenario"], "config": C, "plan_updates": visualization.updates,
         "output_dir": str(OUTPUT), "stop_reason": stop_reason,
     }

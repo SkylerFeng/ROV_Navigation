@@ -1,0 +1,16 @@
+{
+  "weights": "/home/ache/Coding/rov_navigation/logs/semantic_detector_lit/train/weights/best.pt",
+  "sha256": "ac12e83817979d8a3a6f0472d3b64ad422c9c9944ce60cb7af74186ac585cb24",
+  "onnx": "/home/ache/Coding/rov_navigation/logs/semantic_detector_lit/train/weights/best.onnx",
+  "test_metrics": {
+    "metrics/precision(B)": 0.9833215157617456,
+    "metrics/recall(B)": 0.9116129032258065,
+    "metrics/mAP50(B)": 0.9569616894116959,
+    "metrics/mAP50-95(B)": 0.8825882993360002,
+    "fitness": 0.8825882993360002
+  },
+  "classes": {
+    "0": "pipe",
+    "1": "box"
+  }
+}

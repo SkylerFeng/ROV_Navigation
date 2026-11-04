@@ -1,0 +1,49 @@
+{
+  "platform_semantic": {
+    "platform": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "water": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "environment_offset": [
+      -5,
+      -1.5,
+      1.3
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": 0.65,
+    "water_surface": 1.5,
+    "display_water_opacity": 0.38,
+    "water_boundary": "config/platform_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+    "collision_sections": "scenes/platform_collision_sections.json",
+    "render_pool_collision": false,
+    "start": [
+      -2.0,
+      0.0,
+      1.0
+    ],
+    "goal": [
+      -2.0,
+      0.0,
+      1.0
+    ],
+    "description": "原始 Platform_black_water 场景，使用嵌入水体与扫描碰撞体，接入 A* 全局引导和 EGO 局部重规划。",
+    "title": "Highbay semantic search / component hydrodynamics",
+    "obstacles": [],
+    "use_embedded_water": true,
+    "water_prim": "/World/Environment/Platform/Water",
+    "frame_water_boundary": true,
+    "overview_eye": [
+      -2.0,
+      -2.8,
+      2.6
+    ],
+    "overview_target": [
+      -2.0,
+      0.0,
+      1.3
+    ]
+  }
+}

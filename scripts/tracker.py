@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Convert EGO PositionCommand into explicitly world-frame velocity targets."""
 import math
+import os
+from semantic_motion import motion_override, parse_motion
 import json
 from std_msgs.msg import String
 from experiment import load_experiment
@@ -19,12 +21,22 @@ class Tracker(Node):
         self.config = load_experiment()
         self.status_pub = self.create_publisher(String, "/rov/tracking_status", 10)
         self.last_status = -math.inf
+        self.semantic_enabled = os.environ.get("ROV_SEMANTIC") == "1"
+        self.semantic_command = None
+        if self.semantic_enabled:
+            self.create_subscription(String, "/rov/semantic/motion", self.receive_semantic, 10)
         self.odom = self.reference = None
         self.last_odom = self.last_reference = -math.inf
         self.publisher = self.create_publisher(Twist, "/rov/cmd_vel_world", 10)
         self.create_subscription(Odometry, "/rov/odom", self.receive_odom, 10)
         self.create_subscription(PositionCommand, "/rov/position_cmd", self.receive_reference, 10)
         self.create_timer(1 / 30, self.update)
+
+    def receive_semantic(self, msg):
+        try:
+            self.semantic_command = parse_motion(msg.data)
+        except (ValueError, TypeError, KeyError):
+            self.semantic_command = None
 
     def receive_odom(self, msg):
         self.odom = msg
@@ -55,6 +67,17 @@ class Tracker(Node):
             if detail["mode"] != "INVALID_REFERENCE":
                 status.update(position=position, reference_position=ref_position, reference_velocity=ref_velocity,
                               command_velocity=values, yaw=yaw, trajectory_id=ref.trajectory_id)
+        if self.semantic_enabled:
+            if self.odom and now-self.last_odom < .5:
+                p=self.odom.pose.pose.position;q=self.odom.pose.pose.orientation
+                yaw=math.atan2(2*(q.w*q.z+q.x*q.y),1-2*(q.y*q.y+q.z*q.z))
+                override=motion_override(self.semantic_command,now,[p.x,p.y,p.z],yaw)
+                if override is not None:
+                    values,rate,mode=override
+                    out.linear.x,out.linear.y,out.linear.z=values;out.angular.z=rate
+                    status.update(mode=mode)
+            else:
+                out=Twist();status.update(mode="SEMANTIC_STALE_ODOM")
         self.publisher.publish(out)
         if now-self.last_status >= .1:
             self.status_pub.publish(String(data=json.dumps(status,allow_nan=False)))

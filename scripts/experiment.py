@@ -9,6 +9,9 @@ ROOT = Path(__file__).resolve().parents[1]
 def load_experiment(scenario=None):
     config = json.loads((ROOT / "config/experiment.json").read_text())
     catalog = json.loads((ROOT / "config/scenarios.json").read_text())
+    semantic_catalog = ROOT / "config/scenarios_semantic.json"
+    if semantic_catalog.exists():
+        catalog.update(json.loads(semantic_catalog.read_text()))
     active = ROOT / "config/active_scenario.json"
     selected = scenario or os.environ.get("ROV_SCENARIO") or (
         json.loads(active.read_text())["scenario"] if active.exists() else "slalom")

@@ -1,0 +1,63 @@
+{
+  "splits": {
+    "train": {
+      "images": 300,
+      "layouts": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "labels": 769
+    },
+    "val": {
+      "images": 60,
+      "layouts": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "labels": 150
+    },
+    "test": {
+      "images": 72,
+      "layouts": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "labels": 193
+    }
+  },
+  "source": "logs/semantic_dataset_lit",
+  "renderer": "OceanSim UW_Camera",
+  "seed": 41,
+  "annotation": "visible instance masks",
+  "onnx_sha256": "ce2bf48cf6a87c8eedc3f6ca50ba51fcf54e46d59fdb7354c5246508812b9cbb"
+}

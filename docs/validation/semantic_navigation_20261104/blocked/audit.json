@@ -1,0 +1,73 @@
+{
+  "policy": "rule",
+  "scene": "pool_platform_semantic_occluded",
+  "runtime_status": "FAILED",
+  "reason": "no_reachable_frontier",
+  "simulation_seconds": 223.200011641,
+  "frames": 1106,
+  "path_length_m": 5.2757833314963865,
+  "actual_ego_updates": 3,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 0.300000015,
+      "task_id": "411070c513b4",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "observe_unknown"
+    },
+    {
+      "sim_time": 41.900002185,
+      "task_id": "411070c513b4",
+      "observation_id": 2,
+      "action": "explore",
+      "candidate_id": "frontier_42_42",
+      "reason_code": "explore_frontier"
+    },
+    {
+      "sim_time": 77.700004052,
+      "task_id": "411070c513b4",
+      "observation_id": 3,
+      "action": "scan",
+      "reason_code": "observe_unknown"
+    },
+    {
+      "sim_time": 120.600006289,
+      "task_id": "411070c513b4",
+      "observation_id": 4,
+      "action": "explore",
+      "candidate_id": "frontier_38_24",
+      "reason_code": "explore_frontier"
+    },
+    {
+      "sim_time": 181.26667612,
+      "task_id": "411070c513b4",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "observe_unknown"
+    },
+    {
+      "sim_time": 223.500011656,
+      "task_id": "411070c513b4",
+      "observation_id": 6,
+      "action": "report",
+      "reason_code": "no_reachable_frontier"
+    }
+  ],
+  "target_surface_error_median_m": null,
+  "target_surface_error_p95_m": null,
+  "llm_calls": 0,
+  "evidence_directory": "logs/semantic_trials/occluded_06",
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only"
+  ],
+  "final_target_center_distance_xy_m": 3.2705668543025426,
+  "final_target_surface_distance_xy_m": 2.8223513998540155,
+  "offline_verified": false
+}

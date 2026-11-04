@@ -1,0 +1,47 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    subLayers = [
+        @pool_platform_semantic.usda@
+    ]
+)
+
+over "World"
+{
+    over "SemanticObjects"
+    {
+        over "YellowPipe"
+        {
+            double3 xformOp:translate = (1.2, -1.6, 1.12)
+        }
+
+        def Cube "Occluder" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+        )
+        {
+            rel material:binding = </World/SemanticMaterials/blue>
+            color3f[] primvars:displayColor = [(0.03, 0.15, 0.85)]
+            custom string semantic:category = "box"
+            double size = 1
+            float xformOp:rotateZ = 0
+            float3 xformOp:scale = (0.3, 1.1, 0.8)
+            double3 xformOp:translate = (-0.15, -0.8, 1.1)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ", "xformOp:scale"]
+        }
+    }
+
+    over "SemanticMaterials"
+    {
+        over "blue"
+        {
+            token outputs:surface.connect = </World/SemanticMaterials/blue/Surface.outputs:surface>
+
+            over "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.03, 0.15, 0.85)
+                float inputs:roughness = 0.65
+            }
+        }
+    }
+}

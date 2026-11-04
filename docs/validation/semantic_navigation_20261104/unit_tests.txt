@@ -1,0 +1,24 @@
+test_floor_ray_clears_segment_without_occupied_floor (scripts.test_semantic.GridRegressionTests) ... ok
+test_unknown_gain_respects_occlusion (scripts.test_semantic.GridRegressionTests) ... ok
+test_foreground_localization (scripts.test_semantic.SemanticTests) ... ok
+test_invalid_lease (scripts.test_semantic.SemanticTests) ... ok
+test_invalid_range (scripts.test_semantic.SemanticTests) ... ok
+test_invented_coordinate_rejected (scripts.test_semantic.SemanticTests) ... ok
+test_lease_expires (scripts.test_semantic.SemanticTests) ... ok
+test_memory_requires_frames (scripts.test_semantic.SemanticTests) ... ok
+test_occupied_inflation (scripts.test_semantic.SemanticTests) ... ok
+test_range_not_z (scripts.test_semantic.SemanticTests) ... ok
+test_rule_scans (scripts.test_semantic.SemanticTests) ... ok
+test_stale_action_rejected (scripts.test_semantic.SemanticTests) ... ok
+test_unknown_grid_not_free (scripts.test_semantic.SemanticTests) ... ok
+test_world_rotation (scripts.test_semantic.SemanticTests) ... ok
+test_wrong_target_rejected (scripts.test_semantic.SemanticTests) ... ok
+test_json_transport_and_validation (scripts.test_semantic_llm.ContractTests) ... ok
+test_missing_key_fails (scripts.test_semantic_llm.ContractTests) ... ok
+test_env_file_does_not_execute_shell (scripts.test_semantic_llm.CredentialsTests) ... ok
+test_reject_unrelated_variables (scripts.test_semantic_llm.CredentialsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.691s
+
+OK

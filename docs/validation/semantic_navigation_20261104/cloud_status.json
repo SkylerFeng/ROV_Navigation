@@ -1,0 +1,11 @@
+{
+  "deepseek": {
+    "status": "NOT_RUN",
+    "reason": "API key not available to agent process"
+  },
+  "qwen": {
+    "status": "NOT_RUN",
+    "reason": "User selected DeepSeek first"
+  },
+  "http_stub": "passed; local transport contract only, not a cloud experiment"
+}

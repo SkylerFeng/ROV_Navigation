@@ -1,0 +1,45 @@
+{
+  "policy": "rule",
+  "scene": "pool_platform_semantic",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 15.600000814,
+  "frames": 79,
+  "path_length_m": 0.3419062144903369,
+  "actual_ego_updates": 1,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 0.300000015,
+      "task_id": "f8cee257e419",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "observe_unknown"
+    },
+    {
+      "sim_time": 6.400000333,
+      "task_id": "f8cee257e419",
+      "observation_id": 2,
+      "action": "approach",
+      "object_id": "obj_003",
+      "candidate_id": "approach_obj_003",
+      "reason_code": "confirmed_target"
+    }
+  ],
+  "target_surface_error_median_m": 0.013204361912700385,
+  "target_surface_error_p95_m": 0.01753908105491488,
+  "llm_calls": 0,
+  "evidence_directory": "logs/semantic_water_visual_20261105/basic_rule",
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only"
+  ],
+  "final_target_center_distance_xy_m": 1.1181000328039612,
+  "final_target_surface_distance_xy_m": 0.9877090615034104,
+  "offline_verified": true
+}

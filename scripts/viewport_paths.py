@@ -37,14 +37,17 @@ def top_view(config=None):
                     camera_prim_path="/OmniverseKit_Persp")
 
 
-def perspective_view():
+def perspective_view(config=None):
     viewport = get_active_viewport()
     camera = UsdGeom.Camera.Define(omni.usd.get_context().get_stage(), "/OmniverseKit_Persp")
     viewport.camera_path = "/OmniverseKit_Persp"
     camera.CreateProjectionAttr("perspective")
     camera.CreateHorizontalApertureAttr(20.955)
     camera.CreateVerticalApertureAttr(11.787)
-    set_camera_view(eye=np.array([0, -6, 5]), target=np.array([0, .6, 1]), camera_prim_path="/OmniverseKit_Persp")
+    config = config or {}
+    set_camera_view(eye=np.array(config.get('overview_eye', [0, -6, 5])),
+                    target=np.array(config.get('overview_target', [0, .6, 1])),
+                    camera_prim_path="/OmniverseKit_Persp")
 
 
 class ViewportPaths:
@@ -80,7 +83,7 @@ class ViewportPaths:
                             ui.Label(label)
                     with ui.HStack(spacing=8):
                         ui.Button("Top view", clicked_fn=lambda: top_view(config))
-                        ui.Button("Perspective", clicked_fn=perspective_view)
+                        ui.Button("Perspective", clicked_fn=lambda: perspective_view(config))
 
     def receive_path(self, msg):
         points = [(p.pose.position.x, p.pose.position.y, p.pose.position.z) for p in msg.poses]
