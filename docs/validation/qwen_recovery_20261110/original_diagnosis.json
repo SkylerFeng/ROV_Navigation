@@ -1,0 +1,44 @@
+[
+  {
+    "t": 120,
+    "target_id": "obj_012",
+    "observation_age_s_at_nearby_snapshot": 17.400000907000006,
+    "snapshot_t": 118.70000619,
+    "distance_to_last_surface_m": 1.2875363998097038,
+    "speed_m_s": 0.0005234473164255547,
+    "heading_error_deg": 0.07347890773883765,
+    "position": [
+      -3.5253210067749023,
+      1.1237857341766357,
+      0.9999712705612183
+    ]
+  },
+  {
+    "t": 157,
+    "target_id": "obj_017",
+    "observation_age_s_at_nearby_snapshot": 16.200000845000005,
+    "snapshot_t": 155.500008109,
+    "distance_to_last_surface_m": 0.9309547759074425,
+    "speed_m_s": 9.834492301046998e-05,
+    "heading_error_deg": 0.5499200480056696,
+    "position": [
+      -3.675189733505249,
+      1.1249231100082397,
+      0.9999983310699463
+    ]
+  },
+  {
+    "t": 197,
+    "target_id": "obj_019",
+    "observation_age_s_at_nearby_snapshot": 16.200000845000005,
+    "snapshot_t": 195.900010216,
+    "distance_to_last_surface_m": 1.0313010954845705,
+    "speed_m_s": 6.158689967872298e-05,
+    "heading_error_deg": 0.5479808561817778,
+    "position": [
+      -3.674928903579712,
+      1.1248722076416016,
+      0.9999958276748657
+    ]
+  }
+]

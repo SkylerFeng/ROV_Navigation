@@ -1,0 +1,167 @@
+{
+  "target": {
+    "id": "YellowPipe",
+    "category": "pipe",
+    "color": "yellow",
+    "position": [
+      1.2,
+      -1.6,
+      1.12
+    ],
+    "yaw": 0
+  },
+  "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_occluded",
+  "runtime_status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 300.00001564599995,
+  "frames": 1374,
+  "path_length_m": 7.992606614222228,
+  "actual_ego_updates": 17,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.500000078,
+      "task_id": "57901d80c68c",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 18.500000964,
+      "task_id": "57901d80c68c",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_72_78",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 47.700002487,
+      "task_id": "57901d80c68c",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 66.900003489,
+      "task_id": "57901d80c68c",
+      "observation_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_132_126",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 93.300004865,
+      "task_id": "57901d80c68c",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_36_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 98.300005126,
+      "task_id": "57901d80c68c",
+      "observation_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_72_126",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 144.900007557,
+      "task_id": "57901d80c68c",
+      "observation_id": 13,
+      "action": "scan",
+      "reason_code": "scan_incomplete"
+    },
+    {
+      "sim_time": 164.100008558,
+      "task_id": "57901d80c68c",
+      "observation_id": 15,
+      "action": "explore",
+      "candidate_id": "frontier_54_102",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 194.500010143,
+      "task_id": "57901d80c68c",
+      "observation_id": 17,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 213.700011145,
+      "task_id": "57901d80c68c",
+      "observation_id": 19,
+      "action": "explore",
+      "candidate_id": "frontier_108_126",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 246.100012835,
+      "task_id": "57901d80c68c",
+      "observation_id": 21,
+      "action": "explore",
+      "candidate_id": "frontier_48_78",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 250.900013085,
+      "task_id": "57901d80c68c",
+      "observation_id": 23,
+      "action": "explore",
+      "candidate_id": "frontier_120_72",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 255.500013325,
+      "task_id": "57901d80c68c",
+      "observation_id": 25,
+      "action": "explore",
+      "candidate_id": "frontier_78_102",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 270.700014118,
+      "task_id": "57901d80c68c",
+      "observation_id": 27,
+      "action": "scan",
+      "reason_code": "scan_incomplete"
+    },
+    {
+      "sim_time": 288.600015051,
+      "task_id": "57901d80c68c",
+      "observation_id": 29,
+      "action": "explore",
+      "candidate_id": "frontier_126_108",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 293.300015296,
+      "task_id": "57901d80c68c",
+      "observation_id": 31,
+      "action": "explore",
+      "candidate_id": "frontier_54_126",
+      "reason_code": "search_unseen_area"
+    }
+  ],
+  "target_surface_error_median_m": null,
+  "target_surface_error_p95_m": null,
+  "llm_calls": 16,
+  "evidence_directory": "logs/diversity_20261110_diagnostic04/yellow_occluded_fine",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 5.4284551236846195,
+  "final_target_surface_distance_xy_m": 5.078420822185479,
+  "offline_verified": false,
+  "exploration_verified": false
+}

@@ -1,0 +1,21 @@
+{
+  "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。",
+  "resolution": {
+    "status": "accepted",
+    "category": "pipe",
+    "color": "blue",
+    "surface_standoff_m": 1.0,
+    "reason": ""
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 1.3245459930003562,
+  "usage": {
+    "total_tokens": 441,
+    "completion_tokens": 40,
+    "prompt_tokens": 401,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    }
+  }
+}

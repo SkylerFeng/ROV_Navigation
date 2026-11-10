@@ -1,0 +1,3 @@
+name,instruction,run,status,reason,offline_verified,exploration_verified,simulation_seconds,path_length_m,contact_pairs,surface_distance_m,decision_api_calls,instruction_api_calls
+yellow_occluded_fine,Find the yellow tube and stop 80 centimeters from its surface.,logs/diversity_20261110_diagnostic04/yellow_occluded_fine,FAILED,task_timeout,False,False,300.00001564599995,7.992606614222228,0,5.078420822185479,16,1
+red_screened,请找到红色箱子，在它旁边停住。,logs/diversity_20261110_diagnostic04/red_screened,FAILED,no_red_box_found,False,False,191.000009962,5.565197607698465,0,3.6811158804882256,7,1

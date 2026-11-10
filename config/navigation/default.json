@@ -1,0 +1,23 @@
+{
+  "limits": {},
+  "planner": {
+    "replan_time_s": 0.5,
+    "no_replan_distance_m": 0.2,
+    "planning_horizon_m": 3.0,
+    "map_resolution_m": 0.05,
+    "obstacle_inflation_m": 0.5,
+    "collision_distance_m": 0.35,
+    "collision_weight": 3.0,
+    "trajectory_lookahead_s": 0.5
+  },
+  "tracker": {
+    "position_kp": 2.0,
+    "depth_kp": 0.8,
+    "yaw_kp": 1.0,
+    "max_yaw_rate_rad_s": 0.5,
+    "update_hz": 30.0,
+    "input_timeout_s": 0.5,
+    "yaw_acceleration_rad_s2": 0.4,
+    "near_track_crab_deg": 15.0
+  }
+}

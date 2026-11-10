@@ -1,0 +1,84 @@
+[
+  {
+    "run": "logs/qwen_demo_20261110_154503",
+    "status": "FAILED",
+    "reason": "no confirmed yellow pipe with observation_age_s <= 2.0",
+    "llm_calls": 2,
+    "simulation_seconds": 45.200002358,
+    "errors": []
+  },
+  {
+    "run": "logs/qwen_demo_20261110_154731",
+    "status": "FAILED",
+    "reason": "llm_response_failed_validation_or_transport",
+    "llm_calls": 2,
+    "simulation_seconds": 46.200002409999996,
+    "errors": [
+      {
+        "event": "llm_error",
+        "sim_time": 46.500002425,
+        "type": "ValueError"
+      }
+    ]
+  },
+  {
+    "run": "logs/qwen_fix_20261110_screened_01",
+    "status": "FAILED",
+    "reason": "llm_retry_limit: premature report: scan or explore reachable candidates before giving up",
+    "llm_calls": 4,
+    "simulation_seconds": 50.600002638999996,
+    "errors": [
+      {
+        "event": "llm_error",
+        "sim_time": 45.700002383,
+        "type": "ValueError",
+        "detail": "premature report: scan or explore reachable candidates before giving up",
+        "consecutive_errors": 1
+      },
+      {
+        "event": "llm_error",
+        "sim_time": 47.900002498,
+        "type": "ValueError",
+        "detail": "invalid reason",
+        "consecutive_errors": 2
+      },
+      {
+        "event": "llm_error",
+        "sim_time": 50.900002654,
+        "type": "ValueError",
+        "detail": "premature report: scan or explore reachable candidates before giving up",
+        "consecutive_errors": 3
+      }
+    ]
+  },
+  {
+    "run": "logs/qwen_fix_20261110_screened_02",
+    "status": "FAILED",
+    "reason": "llm_retry_limit: invalid candidate",
+    "llm_calls": 4,
+    "simulation_seconds": 47.600002483,
+    "errors": [
+      {
+        "event": "llm_error",
+        "sim_time": 44.600002326,
+        "type": "ValueError",
+        "detail": "invalid candidate",
+        "consecutive_errors": 1
+      },
+      {
+        "event": "llm_error",
+        "sim_time": 46.300002414,
+        "type": "ValueError",
+        "detail": "invalid candidate",
+        "consecutive_errors": 2
+      },
+      {
+        "event": "llm_error",
+        "sim_time": 47.900002498,
+        "type": "ValueError",
+        "detail": "invalid candidate",
+        "consecutive_errors": 3
+      }
+    ]
+  }
+]

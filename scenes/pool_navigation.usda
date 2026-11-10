@@ -2,7 +2,7 @@
 (
     defaultPrim = "World"
     subLayers = [
-        @pool_mixed.usda@
+        @pool_slalom.usda@
     ]
 )
 

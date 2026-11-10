@@ -1,0 +1,31 @@
+[
+  {
+    "name": "yellow_box_turn",
+    "scene": "scenes/pool_platform_semantic_yellow_box_turn.usda",
+    "instruction": "靠近黄色方块，不要找管子。"
+  },
+  {
+    "name": "yellow_occluded_passage",
+    "scene": "scenes/pool_platform_semantic_occluded_passage.usda",
+    "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+    "task_config": "config/semantic/task_search_budget.json",
+    "wall_limit": 1000
+  },
+  {
+    "name": "red_screened",
+    "scene": "scenes/pool_platform_semantic_red_screened.usda",
+    "instruction": "请找到红色箱子，在它旁边停住。",
+    "task_config": "config/semantic/task_search_budget.json",
+    "wall_limit": 1000
+  },
+  {
+    "name": "yellow_screened",
+    "scene": "scenes/pool_platform_semantic_screened.usda",
+    "instruction": "找到黄色管子，停在离它表面八十厘米的位置。"
+  },
+  {
+    "name": "blue_distance",
+    "scene": "scenes/pool_platform_semantic_blue_search.usda",
+    "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。"
+  }
+]

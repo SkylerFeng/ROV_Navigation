@@ -1,0 +1,257 @@
+{
+  "policy": "rule",
+  "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic.usda",
+  "model": "/home/ache/Coding/rov_navigation/logs/semantic_detector_lit/train/weights/best.onnx",
+  "task": {
+    "instruction": "找到黄色管子并靠近",
+    "category": "pipe",
+    "color": "yellow",
+    "depth_m": 1.0,
+    "surface_standoff_m": 0.8,
+    "arrival_tolerance_m": 0.18,
+    "hold_seconds": 2.0,
+    "max_speed_at_completion": 0.045,
+    "max_observation_age_s": 2.0,
+    "detector_confidence": 0.45,
+    "confirmation_frames": 3,
+    "grid_resolution_m": 0.15,
+    "clearance_m": 0.5,
+    "timeout_sim_s": 300,
+    "action_timeout_sim_s": 75
+  },
+  "runtime": {
+    "scan": {
+      "sweep_deg": 180.0,
+      "timeout_s": 35.0,
+      "yaw_step_rad": 0.8
+    },
+    "verification": {
+      "timeout_s": 20.0,
+      "freshness_s": 0.6,
+      "heading_tolerance_deg": 12.0,
+      "distance_near_margin_m": 0.12,
+      "distance_far_margin_m": 0.35
+    },
+    "execution": {
+      "tick_s": 0.1,
+      "snapshot_interval_s": 2.0,
+      "hold_s": 2.0,
+      "blocked_grace_s": 2.0,
+      "max_llm_calls": 30
+    },
+    "motion": {
+      "hold_max_speed_m_s": 0.12,
+      "position_kp": 0.8,
+      "yaw_kp": 0.8,
+      "max_yaw_rate_rad_s": 0.25,
+      "lease_timeout_s": 0.6
+    },
+    "exploration": {
+      "max_candidates": 6,
+      "min_travel_m": 0.45,
+      "min_viewpoint_separation_m": 0.7,
+      "candidate_separation_m": 0.6,
+      "viewpoint_radius_m": 3.0,
+      "min_unknown_cells": 10
+    },
+    "llm": {
+      "timeout_s": 15.0,
+      "temperature": 0.0,
+      "max_tokens": 350,
+      "enable_thinking": false
+    }
+  },
+  "providers": {
+    "qwen": {
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "qwen-plus",
+      "key_env": "DASHSCOPE_API_KEY"
+    },
+    "deepseek": {
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-chat",
+      "key_env": "DEEPSEEK_API_KEY"
+    }
+  },
+  "experiment": {
+    "platform": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Platform_black_water.usda",
+    "robot": "/home/ache/OceanSim_assets/Bluerov/BROV_low.usd",
+    "water": "/home/ache/OceanSim-Highbay/data/Platform(new1)/Tile3_water.usda",
+    "environment_offset": [
+      -5,
+      -1.5,
+      1.3
+    ],
+    "source_to_world": [
+      0,
+      0,
+      0
+    ],
+    "pool_floor": 0.65,
+    "water_surface": 1.5,
+    "start": [
+      -2.0,
+      0.0,
+      1.0
+    ],
+    "goal": [
+      -2.0,
+      0.0,
+      1.0
+    ],
+    "obstacles": [],
+    "camera_resolution": [
+      640,
+      360
+    ],
+    "camera_horizontal_fov_deg": 90.0,
+    "depth_mode": "ideal",
+    "max_velocity": 0.3,
+    "max_acceleration": 0.3,
+    "command_timeout": 0.5,
+    "goal_tolerance": 0.3,
+    "align_before_translation": true,
+    "observed_global_guide": true,
+    "max_heading_error_deg": 20.0,
+    "tracking_error_limit": 0.25,
+    "planner_goal_tolerance": 0.05,
+    "render_pool_collision": false,
+    "physics_mode": "hydrodynamics",
+    "hydrodynamics": {
+      "mass_kg": 5.0,
+      "density_kg_m3": 1000.0,
+      "gravity_m_s2": 9.81,
+      "displaced_volume_m3": 0.00505,
+      "center_of_mass_body_m": [
+        0.0,
+        0.0,
+        0.116
+      ],
+      "center_of_buoyancy_offset_m": [
+        0.0,
+        0.0,
+        0.025
+      ],
+      "hull_size_m": [
+        0.48,
+        0.57,
+        0.26
+      ],
+      "inertia_kg_m2": [
+        0.1635,
+        0.1242,
+        0.2314
+      ],
+      "linear_drag": [
+        8.0,
+        12.0,
+        16.0
+      ],
+      "quadratic_drag": [
+        12.0,
+        18.0,
+        24.0
+      ],
+      "angular_drag": [
+        0,
+        0,
+        0
+      ],
+      "quadratic_angular_drag": [
+        0,
+        0,
+        0
+      ],
+      "current_world_m_s": [
+        0.0,
+        0.08,
+        0.0
+      ],
+      "force_limit_n": [
+        12.0,
+        12.0,
+        15.0
+      ],
+      "torque_limit_nm": [
+        1.5,
+        1.5,
+        1.0
+      ],
+      "force_tau_s": 0.25,
+      "torque_tau_s": 0.12,
+      "velocity_kp": [
+        30.0,
+        30.0,
+        35.0
+      ],
+      "velocity_ki": [
+        8.0,
+        8.0,
+        12.0
+      ],
+      "integral_limit_n": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "angular_kp": [
+        1.2,
+        1.2,
+        1.0
+      ],
+      "max_yaw_rate_rad_s": 0.25,
+      "thrust_offset_body_m": [
+        0,
+        0,
+        0.045
+      ],
+      "drag_offset_body_m": [
+        0,
+        0,
+        0
+      ],
+      "distributed_drag": 0,
+      "added_mass_kg": [
+        1,
+        2,
+        3
+      ],
+      "added_inertia_kg_m2": [
+        0.025,
+        0.035,
+        0.04
+      ],
+      "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+      "component_normal_cd": 1.0,
+      "component_tangential_cf": 0.01,
+      "component_surface_factor": 0.5
+    },
+    "water_boundary": "config/platform_water_boundary.json",
+    "collision_prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+    "collision_sections": "scenes/platform_collision_sections.json",
+    "display_water_opacity": 0.38,
+    "description": "原始 Platform_black_water 场景，使用嵌入水体与扫描碰撞体，接入 A* 全局引导和 EGO 局部重规划。",
+    "title": "Highbay semantic search / component hydrodynamics",
+    "use_embedded_water": true,
+    "water_prim": "/World/Environment/Platform/Water",
+    "frame_water_boundary": true,
+    "overview_eye": [
+      -2.0,
+      -2.8,
+      2.6
+    ],
+    "overview_target": [
+      -2.0,
+      0.0,
+      1.3
+    ],
+    "scenario": "platform_semantic",
+    "scene_file": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic.usda",
+    "overrides_file": "/home/ache/Coding/rov_navigation/config/experiments/hydro_components.json"
+  },
+  "domain": 142,
+  "view": "perspective",
+  "wall_limit_s": 600,
+  "sim_limit_s": 310,
+  "credential_present": null
+}

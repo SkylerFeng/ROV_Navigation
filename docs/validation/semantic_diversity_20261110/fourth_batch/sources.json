@@ -1,0 +1,24 @@
+[
+  {
+    "run": "logs/diversity_20261110_diagnostic04/yellow_occluded_fine",
+    "files": {
+      "manifest.json": "bdd10f9e389ff32d42460e18c5df624fd2328587ee54922b80894dad4d3b4514",
+      "instruction.json": "4d533e5d5d233fa76237046e665f8e62f5c27b1900447a17d51f7489c8c1be27",
+      "config/task.json": "bbecc2c0ccb0e27d9bedeee91ca30c973023b23e843a1fef0a8abe474f52c2fe",
+      "summary.json": "9e014886865c1262bc491cfebc05e2bd25ea8c5eeb3cde51a5d032a3416f159d",
+      "semantic/result.json": "22b9efdee3f1785ba4ef230a04ffd1dcb538361d83ebb1a1193715fb32662dbd",
+      "sim/run.json": "e64688fb258b1e3ea314dc434ec1fc8cab5f9ece401498bf38d3250dd8616d5a"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_diagnostic04/red_screened",
+    "files": {
+      "manifest.json": "236c7ee3a172d1d75493d5495c926a7b183efcf9afebbd312c6b2e4e6a055bc5",
+      "instruction.json": "f95d6b4b2355be904b9d57c134c2ee1215fa94e45d83a28679d6f9fa4d472c6a",
+      "config/task.json": "e420d22e4ac8011db7db5f44dd03600409053559204c06bf1b185b6f9d43790a",
+      "summary.json": "14194f66ba6fdd7aebe090672652c1b135628f5b9df39adef0ae512b88a8fbce",
+      "semantic/result.json": "f6742ceeb98edd9efcf64abdfc1c92a2e193c34b05ae2487a7492e30f7db7d0b",
+      "sim/run.json": "c4ae5061862f2a33300a3255aa29f165545db9f7243aca11676268ac11fe5b10"
+    }
+  }
+]

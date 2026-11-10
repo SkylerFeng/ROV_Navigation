@@ -26,6 +26,8 @@ namespace ego_planner
     arrival_tolerance_ = node_->declare_parameter("fsm/arrival_tolerance", 0.05);
     heading_aware_execution_ = node_->declare_parameter("fsm/heading_aware_execution", false);
     heading_limit_ = node_->declare_parameter("fsm/max_heading_error_deg", 20.0);
+    near_track_crab_deg_ = node_->declare_parameter("fsm/near_track_crab_deg", 15.0);
+    tracker_position_kp_ = node_->declare_parameter("fsm/tracker_position_kp", 2.0);
     observed_guide_ = node_->declare_parameter("fsm/observed_global_guide", false);
     navigation_polygon_ = node_->declare_parameter("fsm/navigation_polygon", std::vector<double>{});
     phase_pub_ = node_->create_publisher<geometry_msgs::msg::Vector3Stamped>("/rov/trajectory_phase", 10);
@@ -729,14 +731,19 @@ namespace ego_planner
     const double t = std::clamp((node_->now()-info->start_time_).seconds(), 0.0, info->duration_);
     const Eigen::Vector3d pos = info->position_traj_.evaluateDeBoorT(t);
     const Eigen::Vector3d vel = info->velocity_traj_.evaluateDeBoorT(t);
-    Eigen::Vector3d desired = vel + 2.0*(pos-odom_pos_);
+    Eigen::Vector3d desired = vel + tracker_position_kp_*(pos-odom_pos_);
     const double reference_speed = vel.head<2>().norm();
-    if (reference_speed > .01 && (pos-odom_pos_).head<2>().norm() < .1)
+    if (reference_speed > .001 && (pos-odom_pos_).head<2>().norm() < .1)
     {
       const Eigen::Vector2d tangent = vel.head<2>()/reference_speed;
       const double forward = desired.head<2>().dot(tangent);
       if (forward < .5*reference_speed)
         desired.head<2>() += (.5*reference_speed-forward)*tangent;
+      const double corrected_forward = desired.head<2>().dot(tangent);
+      Eigen::Vector2d cross = desired.head<2>()-corrected_forward*tangent;
+      const double limit = corrected_forward*std::tan(near_track_crab_deg_*M_PI/180.0);
+      if (cross.norm()>limit) cross *= limit/cross.norm();
+      desired.head<2>() = corrected_forward*tangent+cross;
     }
     desired.z() = 0.8*(1.0-odom_pos_.z());
     if (desired.norm() > planner_manager_->pp_.max_vel_)

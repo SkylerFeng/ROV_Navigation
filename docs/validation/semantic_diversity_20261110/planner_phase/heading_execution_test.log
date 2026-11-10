@@ -1,0 +1,80 @@
+[INFO] [launch]: All log files can be found below /home/ache/.ros/log/2026-11-10-18-55-21-585699-ache-ROG-Strix-G713PV-G713PV-148466
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ego_planner_node-1]: process started with pid [148500]
+[INFO] [traj_server-2]: process started with pid [148502]
+[INFO] [python3-3]: process started with pid [148504]
+[INFO] [python3-4]: process started with pid [148506]
+[INFO] [python3-5]: process started with pid [148508]
+[ego_planner_node-1] hit: 0.619039
+[ego_planner_node-1] miss: -0.619039
+[ego_planner_node-1] min log: -1.99243
+[ego_planner_node-1] max: 2.19722
+[ego_planner_node-1] thresh log: 1.38629
+[ego_planner_node-1] [FSM]: from INIT to WAIT_TARGET
+[ego_planner_node-1] Triggered!
+[ego_planner_node-1] [TRIG]: from WAIT_TARGET to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[traj_server-2] [WARN] [1794308122.682753857] [rov_trajectory_server]: [Traj server]: ready.
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [WARN] [1794308129.945609570] [rov_ego_planner]: Tracking deviation 0.251 m at sim 27.200: hold actual pose and replan
+[ego_planner_node-1] [TRACKING]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] Triggered!
+[ego_planner_node-1] [TRIG]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] [WARN] [1794308131.282585698] [rov_ego_planner]: Goal is occupied in inflated map at sim 29.800; holding measured pose until a valid goal is provided
+[ego_planner_node-1] [GOAL_CHECK]: from GEN_NEW_TRAJ to BLOCKED_GOAL
+[ego_planner_node-1] [FSM]: state: BLOCKED_GOAL
+[ego_planner_node-1] Triggered!
+[ego_planner_node-1] [TRIG]: from BLOCKED_GOAL to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] Triggered!
+[ego_planner_node-1] [TRIG]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [TERMINAL]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] Triggered!
+[ego_planner_node-1] [TRIG]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] Triggered!
+[ego_planner_node-1] [TRIG]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[ego_planner_node-1] [WARN] [1794308139.543406771] [rov_ego_planner]: Tracking deviation 0.253 m at sim 45.900: hold actual pose and replan
+[ego_planner_node-1] [TRACKING]: from EXEC_TRAJ to GEN_NEW_TRAJ
+[ego_planner_node-1] refine_success=1
+[ego_planner_node-1] [FSM]: from GEN_NEW_TRAJ to EXEC_TRAJ
+[ego_planner_node-1] [FSM]: state: EXEC_TRAJ
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [python3-5]: sending signal 'SIGINT' to process[python3-5]
+[INFO] [python3-4]: sending signal 'SIGINT' to process[python3-4]
+[INFO] [python3-3]: sending signal 'SIGINT' to process[python3-3]
+[INFO] [traj_server-2]: sending signal 'SIGINT' to process[traj_server-2]
+[INFO] [ego_planner_node-1]: sending signal 'SIGINT' to process[ego_planner_node-1]
+[traj_server-2] [INFO] [1794308140.528565194] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ego_planner_node-1] [INFO] [1794308140.528876923] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [traj_server-2]: process has finished cleanly [pid 148502]
+[INFO] [python3-3]: process has finished cleanly [pid 148504]
+[INFO] [python3-5]: process has finished cleanly [pid 148508]
+[INFO] [python3-4]: process has finished cleanly [pid 148506]
+[INFO] [ego_planner_node-1]: process has finished cleanly [pid 148500]

@@ -1,0 +1,14 @@
+{
+  "run": "logs/diversity_20261110_retest07/yellow_occluded_passage",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 207.000010796,
+  "path_length_m": 9.52434142758485,
+  "stationary_turn_seconds": 95.60000498592854,
+  "total_yaw_travel_deg": 976.2482059178923,
+  "yaw_acceleration_p95_rad_s2": 0.1835831908090739,
+  "llm_calls": 8,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

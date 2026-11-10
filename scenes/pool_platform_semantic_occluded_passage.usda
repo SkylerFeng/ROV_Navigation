@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    subLayers = [@pool_platform_semantic_occluded.usda@]
+)
+over "World"
+{
+    over "SemanticObjects"
+    {
+        over "RedBox"
+        {
+            double3 xformOp:translate = (-0.6, 0.55, 1.05)
+        }
+        over "BluePipe"
+        {
+            double3 xformOp:translate = (0.1, 0.55, 1.12)
+        }
+    }
+}

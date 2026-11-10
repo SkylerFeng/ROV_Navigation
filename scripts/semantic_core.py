@@ -83,7 +83,7 @@ class ObjectMemory:
 
 
 class ExplorationGrid:
-    def __init__(self,boundary,resolution=.15,clearance=.5):
+    def __init__(self,boundary,resolution=.15,clearance=.5,inspection_range=None):
         from matplotlib.path import Path
         self.res=float(resolution);self.clearance=float(clearance)
         boundary=np.asarray(boundary);self.origin=np.floor((boundary.min(0)-1)/self.res)*self.res
@@ -91,6 +91,8 @@ class ExplorationGrid:
         self.shape=tuple(shape);cells=np.indices(self.shape).reshape(2,-1).T
         self.inside=Path(boundary).contains_points(self.origin+(cells+.5)*self.res).reshape(self.shape)
         self.free=np.zeros(self.shape,bool);self.occupied=np.zeros(self.shape,bool);self.visits={};self.scan_positions=[]
+        self.inspection_range=inspection_range
+        self.inspected=np.zeros(self.shape,bool) if inspection_range is not None else None
         self._safe=None
     def cell(self,xy):return tuple(np.floor((np.asarray(xy)[:2]-self.origin)/self.res).astype(int))
     def xy(self,cell):return self.origin+(np.asarray(cell)+.5)*self.res
@@ -109,7 +111,18 @@ class ExplorationGrid:
         if len(cells):
             ok=(cells>=0).all(1)&(cells<self.shape).all(1);cells=cells[ok]
             self.free[tuple(cells.T)]=True
-        ends=pts[(pts[:,2]>.84)&(pts[:,2]<1.28)]
+        if self.inspected is not None:
+            close=valid & (distance[None,:]<=self.inspection_range)
+            seen=np.floor((samples[:,:,:2][close]-self.origin)/self.res).astype(int)
+            if len(seen):
+                seen=seen[(seen>=0).all(1)&(seen<self.shape).all(1)]
+                self.inspected[tuple(seen.T)]=True
+        # Free-space rays are subsampled for cost, but obstacle endpoints must
+        # match the dense planner cloud. Sparse endpoints missed thin geometry
+        # and proposed goals that EGO then rejected as occupied.
+        dense,_=range_points(depth,k,cp,cq,stride=1)
+        ends=dense[(dense[:,2]>.84)&(dense[:,2]<1.28)].copy()
+        ends[:,:2]=(np.floor(ends[:,:2]/.1)+.5)*.1  # same occupied XY cells as local_map.py
         cells=np.floor((ends[:,:2]-self.origin)/self.res).astype(int)
         if len(cells):
             ok=(cells>=0).all(1)&(cells<self.shape).all(1);cells=cells[ok]
@@ -129,81 +142,103 @@ class ExplorationGrid:
         return self._safe
     def reachable(self,start):
         root=self.cell(start);safe=self.safe();cost={};parent={}
-        if not self.valid(root) or not safe[root]:return cost,parent
+        if not self.valid(root) or not self.free[root] or self.occupied[root]:return cost,parent
+        # Newly observed geometry can put the current pose inside inflation.
+        # Permit only monotonic-clearance escape in observed free cells, never
+        # a new destination inside inflation or a route cutting through it.
+        clearance=distance_transform_edt(~(self.occupied|~self.inside))*self.res
+        def allowed(a,b):
+            if not self.valid(b) or not self.free[b] or self.occupied[b] or not self.inside[b]:return False
+            if safe[b]:return True
+            return not safe[a] and clearance[b]>=clearance[a]-1e-9
         cost[root]=0.;queue=[(0.,root)]
         while queue:
             d,c=heapq.heappop(queue)
             if d>cost[c]:continue
             for dx,dy in [(1,0),(-1,0),(0,1),(0,-1),(1,1),(-1,1),(1,-1),(-1,-1)]:
                 v=(c[0]+dx,c[1]+dy)
-                if not self.valid(v) or not safe[v]:continue
-                if dx and dy and not(safe[c[0]+dx,c[1]] and safe[c[0],c[1]+dy]):continue
+                if not allowed(c,v):continue
+                if dx and dy and not(allowed(c,(c[0]+dx,c[1])) and allowed(c,(c[0],c[1]+dy))):continue
                 nd=d+math.hypot(dx,dy)*self.res
                 if nd<cost.get(v,float('inf')):cost[v]=nd;parent[v]=c;heapq.heappush(queue,(nd,v))
-        return cost,parent
+        return {c:d for c,d in cost.items() if safe[c]},parent
     def mark_scanned(self,position):
         self.scan_positions.append(np.asarray(position[:2],float))
 
-    def visible_unknown_gain(self,cell,meaningful):
+    def visible_unknown_gain(self,cell,meaningful,with_heading=False):
         # Count unknown cells reachable by sight without crossing an observed wall.
-        visible=set()
-        for angle in np.linspace(-np.pi,np.pi,48,endpoint=False):
+        visible=set();angles=np.linspace(-np.pi,np.pi,48,endpoint=False);ray_gains=[]
+        for angle in angles:
+            ray_cells=set()
             direction=np.array([np.cos(angle),np.sin(angle)])
-            for distance in np.arange(self.res,3.01,self.res):
+            for distance in np.arange(self.res,(self.inspection_range or 3.)+.01,self.res):
                 c=self.cell(self.xy(cell)+direction*distance)
                 if not self.valid(c) or not self.inside[c] or self.occupied[c]:break
-                if not self.free[c]:
-                    if meaningful[c]:visible.add(c)
-                    break
+                if meaningful[c]:visible.add(c);ray_cells.add(c)
+                # Uninspected free space also needs a close visual observation.
+                # Unknown space is potential information, not an observed wall.
+            ray_gains.append(len(ray_cells))
+        if with_heading:
+            scores=[sum(g for a,g in zip(angles,ray_gains) if abs(math.atan2(math.sin(a-center),math.cos(a-center)))<=math.pi/2) for center in angles]
+            preferred=math.atan2(sum(g*math.sin(a) for a,g in zip(angles,ray_gains)),sum(g*math.cos(a) for a,g in zip(angles,ray_gains)))
+            best=max(range(len(angles)),key=lambda i:(scores[i],math.cos(angles[i]-preferred)))
+            return len(visible),float(angles[best])
         return len(visible)
 
-    def candidates(self,robot,objects,standoff=.8):
+    def candidates(self,robot,objects,standoff=.8,settings=None,max_age=2.,excluded_approaches=(),excluded_explores=()):
+        settings=settings or {}
         cost,parent=self.reachable(robot);candidates=[]
         if not cost:return candidates
         cells=list(cost);xy=np.array([self.xy(c) for c in cells])
         for obj in objects:
-            if not obj['confirmed'] or obj['observation_age_s']>2.:continue
+            if not obj['confirmed'] or obj['observation_age_s']>max_age:continue
             target=np.array(obj['surface_world'][:2]);distance=np.linalg.norm(xy-target,axis=1)
             eligible=np.flatnonzero((distance>=standoff)&(distance<=standoff+.28))
             if not len(eligible):continue
             # Stay on the observed side of the visible surface; no blind rear approach.
             side=np.asarray(robot[:2])-target
-            eligible=[i for i in eligible if np.dot(xy[i]-target,side)>0]
+            eligible=[i for i in eligible if np.dot(xy[i]-target,side)>0 and
+                      all(np.linalg.norm(xy[i]-np.asarray(previous)[:2])>=settings.get('approach_retry_separation_m',.45) for previous in excluded_approaches)]
             if not eligible:continue
             i=min(eligible,key=lambda i:cost[cells[i]]+abs(distance[i]-standoff))
             cid='approach_'+obj['id'];obj['approach_candidate_ids']=[cid]
             candidates.append({'id':cid,'kind':'approach','object_id':obj['id'],'position':[*xy[i].tolist(),1.],
                 'yaw':math.atan2(target[1]-xy[i,1],target[0]-xy[i,0]),'reachable':True,'path_length_m':cost[cells[i]]})
-        unknown=self.inside & ~self.free & ~self.occupied
+        unknown=self.inside & ~self.occupied & ~(self.free if self.inspected is None else self.inspected)
         regions,_=label(unknown)
-        sizes=np.bincount(regions.ravel());meaningful=unknown&(sizes[regions]>=10)
+        sizes=np.bincount(regions.ravel());meaningful=unknown&(sizes[regions]>=settings.get('min_unknown_cells',10))
         # Observed viewpoints can stand back from a frontier inflation band.
-        front=self.safe() & (distance_transform_edt(~meaningful)*self.res<=3.0)
-        viable=[c for c in cells if front[c] and cost[c]>.45]
+        front=self.safe() & (distance_transform_edt(~meaningful)*self.res<=settings.get('viewpoint_radius_m',3.0))
+        viable=[c for c in cells if front[c] and cost[c]>settings.get('min_travel_m',.45)]
         ranked=[]
+        sample_step=max(1,int(math.ceil(.3/self.res)))
         for c in viable:
             # Subsample spatially for bounded CPU cost; exact geometry rechecked.
-            if c[0]%2 or c[1]%2:continue
+            if c[0]%sample_step or c[1]%sample_step:continue
+            if any(np.linalg.norm(self.xy(c)-np.asarray(previous)[:2])<settings.get('explore_retry_separation_m',.6) for previous in excluded_explores):continue
             novelty=min((np.linalg.norm(self.xy(c)-p) for p in self.scan_positions),default=3.)
-            if novelty < .7:continue
-            gain=self.visible_unknown_gain(c,meaningful)
+            if novelty < settings.get('min_viewpoint_separation_m',.7):continue
+            gain,heading=self.visible_unknown_gain(c,meaningful,with_heading=True)
             if gain==0:continue
             visited=sum(n for other,n in self.visits.items() if np.linalg.norm(self.xy(c)-self.xy(other))<.8)
-            score=gain*min(novelty,2.)/(1+.25*cost[c])/(1+visited*4)
-            ranked.append((score,c,gain))
+            # Diminishing information returns keep a large distant room from
+            # suppressing every nearby viewpoint. Novelty remains a hard
+            # separation constraint instead of another reward for long travel.
+            score=gain**settings.get('gain_power',.5)/(1+settings.get('travel_cost_weight',2.)*cost[c])/(1+visited*4)
+            ranked.append((score,c,gain,heading))
         chosen=[]
-        for score,c,gain in sorted(ranked,reverse=True):
-            if any(np.linalg.norm(self.xy(c)-self.xy(other))<.6 for other in chosen):continue
+        for score,c,gain,heading in sorted(ranked,reverse=True):
+            if any(np.linalg.norm(self.xy(c)-self.xy(other))<settings.get('candidate_separation_m',.6) for other in chosen):continue
             chosen.append(c);p=self.xy(c)
             candidates.append({'id':f'frontier_{c[0]}_{c[1]}','kind':'explore','position':[float(p[0]),float(p[1]),1.],
-                'reachable':True,'path_length_m':cost[c],'information_gain_score':gain,'score':score})
-            if len(chosen)>=6:break
+                'reachable':True,'path_length_m':cost[c],'information_gain_score':gain,'score':score,'inspection_yaw':heading})
+            if len(chosen)>=settings.get('max_candidates',6):break
         return candidates
 
 
 def rule_action(obs):
     base={'task_id':obs['task_id'],'observation_id':obs['observation_id']}
-    targets=[o for o in obs['objects'] if o['category']==obs['target']['category'] and o['color']==obs['target']['color'] and o['confirmed'] and o['observation_age_s']<=2.]
+    targets=[o for o in obs['objects'] if o['category']==obs['target']['category'] and o['color']==obs['target']['color'] and o['confirmed'] and o['observation_age_s']<=obs.get('max_observation_age_s',2.)]
     for o in sorted(targets,key=lambda o:o['range_m']):
         if o['approach_candidate_ids']:
             return {**base,'action':'approach','object_id':o['id'],'candidate_id':o['approach_candidate_ids'][0],'reason_code':'confirmed_target'}
@@ -212,6 +247,19 @@ def rule_action(obs):
     if candidates:return {**base,'action':'explore','candidate_id':max(candidates,key=lambda c:c['score'])['id'],'reason_code':'explore_frontier'}
     return {**base,'action':'report','reason_code':'no_reachable_frontier'}
 
+
+def refresh_selected_explore(action, pending, current, grid, position):
+    """Top-K ranking changes are not obstacle changes. Recheck selected cell itself."""
+    if action.get('action')!='explore':return False
+    cid=action.get('candidate_id')
+    if any(c['id']==cid for c in current['candidates']):return False
+    old=next((c for c in pending['candidates'] if c['id']==cid and c['kind']=='explore'),None)
+    if old is None:return False
+    costs,_=grid.reachable(position)
+    cell=grid.cell(old['position'])
+    if cell not in costs:return False
+    current['candidates'].append({**old,'reachable':True,'path_length_m':costs[cell]})
+    return True
 
 def validate_action(action,obs):
     if not isinstance(action,dict):raise ValueError('action must be object')
@@ -222,11 +270,14 @@ def validate_action(action,obs):
     if kind not in ('scan','explore','approach','hold','report'):raise ValueError('unsupported action')
     if not isinstance(action.get('reason_code'),str) or len(action['reason_code'])>100:raise ValueError('invalid reason')
     if kind in ('explore','approach'):
+        if not isinstance(action.get('candidate_id'),str):raise ValueError('missing candidate_id: copy an ID from candidates for '+kind)
         candidates={c['id']:c for c in obs['candidates']};c=candidates.get(action.get('candidate_id'))
         if not c or not c['reachable'] or c['kind']!=kind:raise ValueError('invalid candidate')
         if kind=='approach':
             o=next((o for o in obs['objects'] if o['id']==action.get('object_id')),None)
-            if not o or c.get('object_id')!=o['id'] or not o['confirmed'] or o['observation_age_s']>2.:raise ValueError('invalid object')
+            if not o or c.get('object_id')!=o['id'] or not o['confirmed'] or o['observation_age_s']>obs.get('max_observation_age_s',2.):raise ValueError('invalid object')
             if o['category']!=obs['target']['category'] or o['color']!=obs['target']['color']:raise ValueError('wrong target')
     elif 'candidate_id' in action or 'object_id' in action:raise ValueError('unexpected references')
+    if kind=='report' and (not obs.get('scan_completed',False) or any(c.get('reachable') and c['kind']=='explore' for c in obs['candidates'])):
+        raise ValueError('premature report: scan or explore reachable candidates before giving up')
     return action

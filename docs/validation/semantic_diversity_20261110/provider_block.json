@@ -1,0 +1,11 @@
+{
+  "provider": "qwen",
+  "http_status": 400,
+  "provider_error_code": "Arrearage",
+  "meaning": "provider account balance/payment issue; real API trials stopped",
+  "affected_runs": [
+    "retest07/red_screened",
+    "retest07/yellow_screened",
+    "retest07/blue_distance"
+  ]
+}

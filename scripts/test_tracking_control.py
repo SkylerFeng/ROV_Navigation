@@ -49,4 +49,16 @@ class TrackingTests(unittest.TestCase):
                     error=math.atan2(math.sin(math.atan2(v[1],v[0])-yaw),math.cos(math.atan2(v[1],v[0])-yaw))
                     self.assertLess(abs(error),math.radians(20)+1e-9)
 
+    def test_centimetre_lateral_drift_does_not_chase_a_full_heading_circle(self):
+        for speed in [.002,.005,.0206]:
+            heading=math.atan2(.01650,.01227)
+            velocity=[speed*math.cos(heading),speed*math.sin(heading),0.]
+            for angle in range(0,360,10):
+                p=[.04*math.cos(math.radians(angle)),.04*math.sin(math.radians(angle)),1.]
+                v,_,s=control(p,[0,0,1],velocity,heading,heading)
+                error=math.atan2(math.sin(s['target_yaw']-heading),math.cos(s['target_yaw']-heading))
+                self.assertLessEqual(abs(error),math.radians(15)+1e-9)
+                self.assertEqual(s['mode'],'TRACKING')
+                self.assertGreater(math.hypot(*v[:2]),0)
+
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,59 @@
+{
+  "scan": {
+    "sweep_deg": 120.0,
+    "timeout_s": 25.0,
+    "yaw_step_rad": 0.8,
+    "max_sectors_per_viewpoint": 3
+  },
+  "verification": {
+    "timeout_s": 20.0,
+    "freshness_s": 0.6,
+    "heading_tolerance_deg": 12.0,
+    "distance_near_margin_m": 0.12,
+    "distance_far_margin_m": 0.35
+  },
+  "execution": {
+    "tick_s": 0.1,
+    "snapshot_interval_s": 2.0,
+    "hold_s": 2.0,
+    "blocked_grace_s": 2.0,
+    "max_llm_calls": 30,
+    "progress_timeout_s": 30.0,
+    "progress_distance_m": 0.15
+  },
+  "motion": {
+    "hold_max_speed_m_s": 0.12,
+    "position_kp": 0.8,
+    "yaw_kp": 0.8,
+    "max_yaw_rate_rad_s": 0.25,
+    "lease_timeout_s": 0.6
+  },
+  "exploration": {
+    "max_candidates": 6,
+    "min_travel_m": 0.45,
+    "min_viewpoint_separation_m": 0.7,
+    "candidate_separation_m": 0.6,
+    "viewpoint_radius_m": 3.0,
+    "min_unknown_cells": 10,
+    "approach_retry_separation_m": 0.45,
+    "explore_retry_separation_m": 0.6,
+    "inspection_range_m": 2.5
+  },
+  "llm": {
+    "timeout_s": 15.0,
+    "temperature": 0.0,
+    "max_tokens": 350,
+    "enable_thinking": false,
+    "max_consecutive_errors": 3
+  },
+  "recovery": {
+    "timeout_s": 16.0,
+    "look_s": 4.0,
+    "sweep_deg": 25.0,
+    "max_attempts": 2,
+    "association_radius_m": 0.7,
+    "target_memory_s": 30.0,
+    "cooldown_s": 12.0,
+    "explore_commit_s": 4.0
+  }
+}

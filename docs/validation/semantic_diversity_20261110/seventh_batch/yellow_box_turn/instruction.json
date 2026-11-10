@@ -1,0 +1,21 @@
+{
+  "instruction": "靠近黄色方块，不要找管子。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "yellow",
+    "surface_standoff_m": null,
+    "reason": ""
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 1.2902353780009435,
+  "usage": {
+    "total_tokens": 431,
+    "completion_tokens": 37,
+    "prompt_tokens": 394,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    }
+  }
+}

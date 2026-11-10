@@ -1,0 +1,18 @@
+{
+  "completed": true,
+  "duration_s": 32.033335004001856,
+  "final_error_m": 0.017577077404362013,
+  "max_depth_error_m": 0.019553112983703602,
+  "path_length_m": 5.01534331408935,
+  "min_submerged_fraction": 1.0,
+  "contacts": [
+    {
+      "t": 0.03333333507180214,
+      "pair": [
+        "/World/ROV/Hull",
+        "/World/Pool/Collision/Platform_collision_clean/mesh"
+      ],
+      "type": 1
+    }
+  ]
+}

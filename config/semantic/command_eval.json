@@ -1,0 +1,84 @@
+[
+  {
+    "instruction": "不要黄色管子，请靠近蓝色管子。",
+    "expected": [
+      "accepted",
+      "pipe",
+      "blue"
+    ]
+  },
+  {
+    "instruction": "请找到红色箱子，在它旁边停住。",
+    "expected": [
+      "accepted",
+      "box",
+      "red"
+    ]
+  },
+  {
+    "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+    "expected": [
+      "accepted",
+      "pipe",
+      "yellow"
+    ],
+    "expected_distance": 0.8
+  },
+  {
+    "instruction": "去管子那里",
+    "expected": [
+      "clarify",
+      null,
+      null
+    ]
+  },
+  {
+    "instruction": "先去蓝色管子，再去红色箱子",
+    "expected": [
+      "unsupported",
+      null,
+      null
+    ]
+  },
+  {
+    "instruction": "去最近的黄色管子旁边",
+    "expected": [
+      "unsupported",
+      null,
+      null
+    ]
+  },
+  {
+    "instruction": "靠近黄色方块，不要找管子。",
+    "expected": [
+      "accepted",
+      "box",
+      "yellow"
+    ]
+  },
+  {
+    "instruction": "找绿色管子",
+    "expected": [
+      "unsupported",
+      null,
+      null
+    ]
+  },
+  {
+    "instruction": "靠近蓝色管子，距它表面保持一米。",
+    "expected": [
+      "accepted",
+      "pipe",
+      "blue"
+    ],
+    "expected_distance": 1.0
+  },
+  {
+    "instruction": "下降两米去找黄色管子",
+    "expected": [
+      "unsupported",
+      null,
+      null
+    ]
+  }
+]

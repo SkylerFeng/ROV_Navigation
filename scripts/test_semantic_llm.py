@@ -22,6 +22,23 @@ class ContractTests(unittest.TestCase):
                 action,meta=policy.decide(obs)
                 self.assertEqual(action['action'],'scan');self.assertEqual(meta['usage']['total_tokens'],37)
                 self.assertEqual(captured[0]['response_format'],{'type':'json_object'})
+                qwen=JSONPolicy('qwen',{'base_url':'http://127.0.0.1:'+str(server.server_port),'model':'stub-only','key_env':'SEMANTIC_TEST_KEY'},
+                                settings={'timeout_s':3,'temperature':.2,'max_tokens':123,'enable_thinking':False})
+                action,_=qwen.decide(obs)
+                self.assertEqual(action['action'],'scan')
+                self.assertEqual(qwen.timeout,3)
+                self.assertEqual(captured[-1]['max_tokens'],123)
+                self.assertEqual(captured[-1]['temperature'],.2)
+                self.assertFalse(captured[-1]['enable_thinking'])
+                obs['scan_completed']=True
+                obs['objects']=[{'id':'blue','category':'pipe','color':'blue','confirmed':True,'observation_age_s':0}]
+                obs['candidates']=[{'id':'wrong','kind':'approach','object_id':'blue','reachable':True},
+                                   {'id':'frontier','kind':'explore','reachable':True}]
+                # Stub still emits scan; inspect the exact model-facing search contract.
+                with self.assertRaisesRegex(ValueError,'action not allowed'):qwen.decide(obs)
+                sent=json.loads(captured[-1]['messages'][1]['content'])
+                self.assertEqual(sent['allowed_actions'],['explore','hold'])
+                self.assertEqual([c['id'] for c in sent['candidates']],['frontier'])
         finally:server.shutdown();server.server_close();thread.join()
     def test_missing_key_fails(self):
         with patch.dict(os.environ,{},clear=True):
@@ -53,7 +70,7 @@ class TrialCredentialTests(unittest.TestCase):
             root = Path(directory)
             output = root / 'trial'
             argv = ['run_semantic_trial.py', '--policy', 'rule', '--output', str(output)]
-            with patch.object(trial, 'ROOT', root), patch('sys.argv', argv), \
+            with patch('sys.argv', argv), \
                  patch.dict(os.environ, {'ROV_SEMANTIC_ENV_FILE': str(root / 'missing.env')}), \
                  patch('semantic_credentials.load_credentials') as credentials, \
                  patch.object(trial.subprocess, 'Popen') as launch, \
@@ -63,6 +80,16 @@ class TrialCredentialTests(unittest.TestCase):
                 credentials.assert_not_called()
                 self.assertEqual(launch.call_count, 3)
                 self.assertTrue((output / 'summary.json').exists())
+                effective=json.loads((output/'effective_config.json').read_text())
+                self.assertEqual(effective['policy'],'rule')
+                # Both child processes must consume the frozen runtime settings.
+                self.assertTrue((output/'config/runtime.json').exists())
+                env=launch.call_args_list[0].kwargs['env']
+                self.assertEqual(env['ROV_SEMANTIC_RUNTIME_CONFIG'],str(output/'config/runtime.json'))
+                from experiment import load_experiment
+                with patch.dict(os.environ,env):
+                    self.assertEqual(load_experiment('platform_semantic')['hydrodynamics']['component_model_file'],
+                                     'config/hydrodynamic_components/bluerov_mesh.json')
 
     def test_cloud_missing_file_fails_before_launch(self):
         import tempfile

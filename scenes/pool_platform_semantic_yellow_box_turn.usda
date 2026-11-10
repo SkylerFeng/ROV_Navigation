@@ -1,0 +1,12 @@
+#usda 1.0
+(
+ defaultPrim = "World"
+ subLayers = [@pool_platform_semantic.usda@]
+)
+over "World" {
+ over "SemanticObjects" {
+  over "YellowBox" {
+   double3 xformOp:translate = (-3.6, 1.55, 1.05)
+  }
+ }
+}

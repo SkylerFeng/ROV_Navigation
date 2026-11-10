@@ -1,0 +1,19 @@
+#usda 1.0
+(
+ defaultPrim = "World"
+ subLayers = [@pool_platform_semantic.usda@]
+)
+over "World" {
+ over "SemanticObjects" {
+  over "RedBox" {
+   double3 xformOp:translate = (-4.35, 0.25, 1.05)
+  }
+  def Cube "Screen" (prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]) {
+   rel material:binding = </World/SemanticMaterials/blue>
+   double size = 1
+   float3 xformOp:scale = (0.25, 0.8, 0.8)
+   double3 xformOp:translate = (-3.25, 0.15, 1.1)
+   uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+  }
+ }
+}

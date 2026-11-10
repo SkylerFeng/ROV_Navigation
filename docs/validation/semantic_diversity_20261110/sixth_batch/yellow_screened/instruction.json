@@ -1,0 +1,21 @@
+{
+  "instruction": "找到黄色管子，停在离它表面八十厘米的位置。",
+  "resolution": {
+    "status": "accepted",
+    "category": "pipe",
+    "color": "yellow",
+    "surface_standoff_m": 0.8,
+    "reason": "明确指定单一目标：黄色管子（pipe + yellow）；请求停在表面80 cm处，换算为0.8 m，在允许区间[0.6, 1.5] m内。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.487300922999566,
+  "usage": {
+    "total_tokens": 485,
+    "completion_tokens": 87,
+    "prompt_tokens": 398,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

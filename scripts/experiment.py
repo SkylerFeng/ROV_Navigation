@@ -20,6 +20,8 @@ def load_experiment(scenario=None):
     config.update(catalog[selected])
     config["scenario"] = selected
     config["scene_file"] = str(ROOT / "scenes" / f"pool_{selected}.usda")
+    from navigation_config import load_navigation, validate_navigation
+    config['navigation'] = load_navigation()
     override_file = os.environ.get("ROV_EXPERIMENT_OVERRIDES")
     if override_file:
         overrides = json.loads(Path(override_file).read_text())
@@ -29,4 +31,6 @@ def load_experiment(scenario=None):
             overrides["hydrodynamics"] = {**config["hydrodynamics"], **overrides["hydrodynamics"]}
         config.update(overrides)
         config["overrides_file"] = str(Path(override_file).resolve())
+    validate_navigation(config['navigation'])
+    config.update(config['navigation']['limits'])
     return config

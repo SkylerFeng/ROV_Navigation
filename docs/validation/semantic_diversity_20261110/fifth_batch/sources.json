@@ -1,0 +1,24 @@
+[
+  {
+    "run": "logs/diversity_20261110_additional05/yellow_screened",
+    "files": {
+      "manifest.json": "807f0cde4620159db65ca1a661cf531407061ba367883668a69f618895d7e50b",
+      "instruction.json": "c8294f0023421eea8d1794b0b8ebdb8b97818673cdbb2b661a12d9539c5eec8a",
+      "config/task.json": "79e408574a82c27843dbeddfeaeb5b150c0dc75196d64b05bdad7cbbce1228b0",
+      "summary.json": "83d8185d9f6e9a6a0382899bfc5ee6eec2437c5ffa74c58a1dfe8d34f76bf3f8",
+      "semantic/result.json": "22e0cdfada765768c0e92fd359150eed21fbe3ff3c2bd3591de61ec8ef1e62f6",
+      "sim/run.json": "283fe564d9a6ef562c7c6e579edab84fcb6786bfc75a7910df0d49fe8de95165"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_additional05/yellow_occluded_passage",
+    "files": {
+      "manifest.json": "df2d866cc08ad1c2da8795dc4d78efcff0972fc7db4b32451db62df54c0bb280",
+      "instruction.json": "a771fa7440197526e74953d035242fe906311aa3f2fa2c100e0de5e8932bfbee",
+      "config/task.json": "4392cc82b89b858fb52fa15c9b7546221b54422a2500efaee5c8072e253a20ab",
+      "summary.json": "483522ef0bdb2e47bc526d2d3eb9aba2369130c16eaacb8d2cdb0fb4c2d52061",
+      "semantic/result.json": "abf3d1ec15450352b9a3f2e665a83dc3e8fe9802544e47e0fcf3cf0c945b5950",
+      "sim/run.json": "c3223ff49b3abad578a19b56499d8dace6f46bad4ec30db1aa88d795c7086473"
+    }
+  }
+]

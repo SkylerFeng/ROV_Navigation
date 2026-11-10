@@ -1,0 +1,155 @@
+{
+  "target": {
+    "id": "YellowPipe",
+    "category": "pipe",
+    "color": "yellow",
+    "position": [
+      1.2,
+      -1.6,
+      1.12
+    ],
+    "yaw": 0
+  },
+  "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_occluded_passage",
+  "runtime_status": "FAILED",
+  "reason": "target_not_found",
+  "simulation_seconds": 366.80001912999995,
+  "frames": 1833,
+  "path_length_m": 14.817367750295526,
+  "actual_ego_updates": 44,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.600000083,
+      "task_id": "2a74d221896b",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 17.700000923,
+      "task_id": "2a74d221896b",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_26_26",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 44.900002341,
+      "task_id": "2a74d221896b",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 62.000003233,
+      "task_id": "2a74d221896b",
+      "observation_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_42_40",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 115.300006013,
+      "task_id": "2a74d221896b",
+      "observation_id": 9,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 132.50000691,
+      "task_id": "2a74d221896b",
+      "observation_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_20_42",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 177.700009267,
+      "task_id": "2a74d221896b",
+      "observation_id": 13,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 194.500010143,
+      "task_id": "2a74d221896b",
+      "observation_id": 15,
+      "action": "explore",
+      "candidate_id": "frontier_44_26",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 226.100011792,
+      "task_id": "2a74d221896b",
+      "observation_id": 17,
+      "action": "explore",
+      "candidate_id": "frontier_36_16",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 272.300014201,
+      "task_id": "2a74d221896b",
+      "observation_id": 19,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 288.500015046,
+      "task_id": "2a74d221896b",
+      "observation_id": 21,
+      "action": "explore",
+      "candidate_id": "frontier_38_26",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 318.700016621,
+      "task_id": "2a74d221896b",
+      "observation_id": 23,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 335.000017471,
+      "task_id": "2a74d221896b",
+      "observation_id": 25,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 350.800018295,
+      "task_id": "2a74d221896b",
+      "observation_id": 27,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 367.100019145,
+      "task_id": "2a74d221896b",
+      "observation_id": 29,
+      "action": "report",
+      "reason_code": "target_not_found"
+    }
+  ],
+  "target_surface_error_median_m": null,
+  "target_surface_error_p95_m": null,
+  "llm_calls": 15,
+  "evidence_directory": "logs/diversity_20261110_additional05/yellow_occluded_passage",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 3.3155513850267817,
+  "final_target_surface_distance_xy_m": 2.9724909218513202,
+  "offline_verified": false,
+  "exploration_verified": false
+}

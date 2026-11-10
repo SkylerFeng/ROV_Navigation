@@ -1,0 +1,46 @@
+[
+  {
+    "run": "logs/diversity_20261110_final/red_screened",
+    "files": {
+      "manifest.json": "4895e1004ad0ac530cf3586e426081aa358d172f383b834503f9b56abd538900",
+      "instruction.json": "6fb75ad24ce31792f4f670b24d9e89ec7298f44b507d3da0482d971e12c788e6",
+      "config/task.json": "e420d22e4ac8011db7db5f44dd03600409053559204c06bf1b185b6f9d43790a",
+      "summary.json": "e8f07acada85b328e82db754c4f0e233ddb78aa52257640919c32a2f622ea686",
+      "semantic/result.json": "a34a502f2357646b0c000bda2e118679f9d191d9a6263cb09fa86b5055a6c1d0",
+      "sim/run.json": "bc75c5dff259d5879b7fa9381baba62e38a4d6b0420cda4329563b92160ec648"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_final/yellow_box_turn",
+    "files": {
+      "manifest.json": "4da4c7be0e25d89dffd923a4cdf3a7fb6c1c7a8fd956ff12c9f961a26064b3f4",
+      "instruction.json": "a1f4d6db143704c2ced6a6698022743d9a112d012bb9fdee6356df2857c03e4f",
+      "config/task.json": "f26de5ed8b140609174ce9a841bf3855d2630b0323cf4527595da294aa301774",
+      "summary.json": "8b7f46c3a7f3add5c9d35c605017a30a8ea44b7e6b2c4009c793a5485763d14f",
+      "semantic/result.json": "43533fb23ac5f4d5d71001d099c5bba99570f063d12fd32a7990be1acdb146ab",
+      "sim/run.json": "2f5f203f330a8dc224cb3a9c8e086f46284c33f0f8d026ed40e208019a6a1966"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_final/yellow_occluded",
+    "files": {
+      "manifest.json": "4491e74cbd11df6db0d249cb295cfab0ece0ad250d394059d3edd009fbde645e",
+      "instruction.json": "bddec27a2ffa5607a31efde1084e8e4ac5ed7c3cae6dce21d09bf6654cbfd6fb",
+      "config/task.json": "fb90e218257540e98ae83d529697260b82903e3fec2608b9d1a1b5398a6ade1c",
+      "summary.json": "716bac0e31c24674808f6b119d065fdf5925be160f3e62479b9ca4b039d25837",
+      "semantic/result.json": "e9d72777101cb66f5ffc3634cda69b156941a75be33885cd1dbfff57d961acdd",
+      "sim/run.json": "7353432e15739ac92cf9ca61f2ec1c3bffda445fc8ae86da6f0bddf33f10d439"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_final/blue_distance",
+    "files": {
+      "manifest.json": "effa7f6c7ae9a601693d298d2e2fd09d30997dc7937196425891cf9a88275184",
+      "instruction.json": "68889fa6879fc82e815c4e57edbf5dd07f917c45c60226755ddb04804b4f6335",
+      "config/task.json": "d097e61a677d099227e8e7c009972264c709b5dcf974ec58c7959003b6938bd1",
+      "summary.json": "9381a45befe30b1cb4dd4bee4817bf23ea05344d775090cd1c134820ccb4d522",
+      "semantic/result.json": "e461b514b3949a4e74cf90e11a932fc50b0844cfa02e57eff26dd5efe884bf66",
+      "sim/run.json": "bf0f4583233853129c9b7b11c51f3cb242e9b3ff1c686aa74b5b69011b7eaa08"
+    }
+  }
+]

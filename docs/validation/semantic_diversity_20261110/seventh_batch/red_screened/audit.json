@@ -1,0 +1,54 @@
+{
+  "target": {
+    "id": "RedBox",
+    "category": "box",
+    "color": "red",
+    "position": [
+      -4.35,
+      0.25,
+      1.05
+    ],
+    "yaw": 15
+  },
+  "instruction": "请找到红色箱子，在它旁边停住。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_red_screened",
+  "runtime_status": "FAILED",
+  "reason": "llm_retry_limit: HTTPError",
+  "simulation_seconds": 18.266667619000003,
+  "frames": 90,
+  "path_length_m": 0.13418145870014922,
+  "actual_ego_updates": 0,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.500000078,
+      "task_id": "8ccd4fac55fc",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  ],
+  "target_surface_error_median_m": null,
+  "target_surface_error_p95_m": null,
+  "llm_calls": 4,
+  "evidence_directory": "logs/diversity_20261110_retest07/red_screened",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 2.352794012166977,
+  "final_target_surface_distance_xy_m": 2.1114318679129536,
+  "offline_verified": false,
+  "exploration_verified": false,
+  "contact_evidence": "no_reports"
+}

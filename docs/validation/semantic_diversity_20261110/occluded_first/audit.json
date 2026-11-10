@@ -1,0 +1,103 @@
+{
+  "target": {
+    "id": "YellowPipe",
+    "category": "pipe",
+    "color": "yellow",
+    "position": [
+      1.2,
+      -1.6,
+      1.12
+    ],
+    "yaw": 0
+  },
+  "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_occluded",
+  "runtime_status": "FAILED",
+  "reason": "no_valid_target",
+  "simulation_seconds": 162.60000848,
+  "frames": 813,
+  "path_length_m": 7.868332943632312,
+  "actual_ego_updates": 10,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.400000073,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 17.500000912,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_32_22",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 38.500002007,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 55.500002894,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_30_42",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 91.300004761,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 9,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 108.100005637,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_44_26",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 146.900007661,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 13,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 162.900008495,
+      "task_id": "8f2d15bb7893",
+      "observation_id": 15,
+      "action": "report",
+      "reason_code": "no_valid_target"
+    }
+  ],
+  "target_surface_error_median_m": null,
+  "target_surface_error_p95_m": null,
+  "llm_calls": 8,
+  "evidence_directory": "logs/diversity_20261110_matrix/yellow_occluded",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 2.559278210207403,
+  "final_target_surface_distance_xy_m": 2.209399000648898,
+  "offline_verified": false,
+  "exploration_verified": false
+}

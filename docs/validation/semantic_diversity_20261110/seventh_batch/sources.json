@@ -1,0 +1,43 @@
+[
+  {
+    "run": "logs/diversity_20261110_retest07/yellow_box_turn",
+    "files": {
+      "manifest.json": "f63ca4c983a495ac46ab3d2178721fe0e22ec03d77a41e1631f68fa2713a4050",
+      "instruction.json": "a7360240b9c9373669b0532bfd34ce1b022d22fb11a120ebc51b048d99915a1f",
+      "config/task.json": "f26de5ed8b140609174ce9a841bf3855d2630b0323cf4527595da294aa301774",
+      "summary.json": "ba2d1023cc46cbc59982cfe00b04dcd3979044944ee803531aeb5b36bc2dbd72",
+      "semantic/result.json": "141302512c9da234f0bd4e378a88fe995413d082ec9fff424fbd1cb491b23fbe",
+      "sim/run.json": "61975a7ec997999c9994034397f4501e122e48a9037e1420b045df7680d2d24f"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_retest07/yellow_occluded_passage",
+    "files": {
+      "manifest.json": "4d4bb41b3e5eaaa9158ccf41b29a88ac635b35c8f98575bb7ce91cb83764a7db",
+      "instruction.json": "fde3542da3182804701ea97763977bd524e09321c36f06cb6d39bca6e369c54c",
+      "config/task.json": "4392cc82b89b858fb52fa15c9b7546221b54422a2500efaee5c8072e253a20ab",
+      "summary.json": "dc9438b72791ab599eb9c818439c5b96966f23d2e0a8b347bd6baa58dd88e299",
+      "semantic/result.json": "fc376450d9703c657231849d1a40df7d612cfab7da8ef13a166e3d469b4e0526",
+      "sim/run.json": "1a112c8040ab2ba4e34278df32981a5814024343972cacef72e24e0d6488eb32"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_retest07/red_screened",
+    "files": {
+      "manifest.json": "b4bd986c451963707612edc9b1c8903053a38ab85985dfb14f897f7b340fec41",
+      "instruction.json": "4e712639dfed6e78d12d74e53640e5b590962286312aec1e3307981387e9ca02",
+      "config/task.json": "beddbbdcddde1a36e49d76510c7e268cba525417da74cc30534e2d9f90adaf07",
+      "summary.json": "0f772ef49d1468fd6c77f5fe0189b1e1deaf0f1d26cdc557dcd0fd91b4dd90cc",
+      "semantic/result.json": "2d0c3b99482147e759e070caacd4000b11e6ebaaf6926e96762e682ea19e02f0",
+      "sim/run.json": "5f1e74ffa6ec46e9c1431be8fdf3bf240485bf7e776500c7cdf650f088810679"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_retest07/yellow_screened",
+    "files": {}
+  },
+  {
+    "run": "logs/diversity_20261110_retest07/blue_distance",
+    "files": {}
+  }
+]

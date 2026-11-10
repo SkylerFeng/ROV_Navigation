@@ -1,0 +1,21 @@
+{
+  "instruction": "请找到红色箱子，在它旁边停住。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "red",
+    "surface_standoff_m": null,
+    "reason": "明确指定单一目标：红色箱子（'箱子'是box的同义词，'红色'为支持的颜色）；'在它旁边停住'对应支持的水平找寻并接近任务，未指定距离，故surface_standoff_m为null。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.539445809998142,
+  "usage": {
+    "total_tokens": 487,
+    "completion_tokens": 93,
+    "prompt_tokens": 394,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

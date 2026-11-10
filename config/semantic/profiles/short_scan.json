@@ -1,0 +1,6 @@
+{
+  "scan": {
+    "sweep_deg": 180.0,
+    "timeout_s": 35.0
+  }
+}

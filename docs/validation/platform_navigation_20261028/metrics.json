@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "duration_s": 75.03333724662662,
+  "final_error_m": 2.147761385219454e-05,
+  "max_depth_error_m": 0.018804264068603527,
+  "path_length_m": 4.693949922079442,
+  "min_submerged_fraction": 1.0,
+  "contacts": [],
+  "min_obstacle_hull_clearance_m": 0.19067905621957304
+}

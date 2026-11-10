@@ -1,0 +1,32 @@
+[
+  {
+    "evidence_directory": "logs/qwen_recovery_20261110_01",
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 170.10000887200002,
+    "path_length_m": 5.845436043998008,
+    "llm_calls": 4,
+    "offline_verified": true,
+    "contact_pairs": 0,
+    "sources_sha256": {
+      "logs/qwen_recovery_20261110_01/manifest.json": "e5ae7aca6ee04b984a18bc0a09b646e2603b933b1fb78e214db2f3e83853c62c",
+      "logs/qwen_recovery_20261110_01/semantic/events.jsonl": "d11c699f18dcc0adae593e60c255b33d6ec7bb5b2facd13689cfd3925bfd794a",
+      "logs/qwen_recovery_20261110_01/semantic/result.json": "a06a043612bd50be8505c97adcfa7ace46b98d1fdb10a20e45c3006ef9a05a10",
+      "logs/qwen_recovery_20261110_01/sim/run.json": "cab0b0d861fb252bde44b190610bcfe3156215e550a76d52aed9aa4831b5e070"
+    }
+  },
+  {
+    "evidence_directory": "logs/qwen_recovery_20261110_02",
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 123.10000642,
+    "path_length_m": 3.262191890176433,
+    "llm_calls": 3,
+    "offline_verified": true,
+    "contact_pairs": 0,
+    "sources_sha256": {
+      "logs/qwen_recovery_20261110_02/manifest.json": "e6b5a271b1b4f2ad169493098c47a34b526f86012dbfceb48292789f916bc462",
+      "logs/qwen_recovery_20261110_02/semantic/events.jsonl": "c554ecd68025411d317c7e0e028bb77e6387bbc23e37c2f0447c3b8bd9fc4269",
+      "logs/qwen_recovery_20261110_02/semantic/result.json": "3e1855f58cfb5c1d2cc4a20021ff59212ed6b49a21199735fabe51219b29fe6d",
+      "logs/qwen_recovery_20261110_02/sim/run.json": "0cea719bd705f74bfc5ee8b5d1dc23850b2585dd78dbbddae74d878e3a371cea"
+    }
+  }
+]

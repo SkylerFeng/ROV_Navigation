@@ -1,0 +1,14 @@
+{
+  "run": "logs/diversity_20261110_retry03/yellow_box_turn",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 84.700004418,
+  "path_length_m": 3.3576376692646726,
+  "stationary_turn_seconds": 33.00000172108412,
+  "total_yaw_travel_deg": 298.06156323506707,
+  "yaw_acceleration_p95_rad_s2": 0.15488911841609126,
+  "llm_calls": 4,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

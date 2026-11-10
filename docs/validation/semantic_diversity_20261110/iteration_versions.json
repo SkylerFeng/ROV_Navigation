@@ -1,0 +1,137 @@
+[
+  {
+    "run": "logs/diversity_20261110_blue_02",
+    "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_blue_search.usda",
+    "stop_reason": "SUCCEEDED",
+    "source_sha256": "95e74b9b5c05fda406a124ef6fb8f341720c6ae5f9a26238531f9fa95aa846dd",
+    "instruction": {
+      "instruction": "不要黄色管子，请靠近蓝色管子。",
+      "resolution": {
+        "status": "accepted",
+        "category": "pipe",
+        "color": "blue",
+        "surface_standoff_m": null,
+        "reason": ""
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.224791141001333,
+      "usage": {
+        "total_tokens": 425,
+        "completion_tokens": 31,
+        "prompt_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_matrix/yellow_box_turn",
+    "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_yellow_box_turn.usda",
+    "stop_reason": "SUCCEEDED",
+    "source_sha256": "51eddd4f1c9c1d3727055fa879be8091c9eb7a8bc5af74208b983957eaf8d764",
+    "instruction": {
+      "instruction": "靠近黄色方块，不要找管子。",
+      "resolution": {
+        "status": "accepted",
+        "category": "box",
+        "color": "yellow",
+        "surface_standoff_m": null,
+        "reason": "明确指定目标为黄色方块（'方块'是'box'的同义词），并排除管子，无歧义；未指定距离，故surface_standoff_m为null。"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.309719512999436,
+      "usage": {
+        "total_tokens": 474,
+        "completion_tokens": 80,
+        "prompt_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_matrix/yellow_occluded",
+    "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_occluded.usda",
+    "stop_reason": "FAILED",
+    "source_sha256": "f080e743d86e30de7848f438b100b9f9dd4f3e10c12913abd619ed34af5e1836",
+    "instruction": {
+      "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+      "resolution": {
+        "status": "accepted",
+        "category": "pipe",
+        "color": "yellow",
+        "surface_standoff_m": 0.8,
+        "reason": ""
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.5987220549995982,
+      "usage": {
+        "total_tokens": 439,
+        "completion_tokens": 40,
+        "prompt_tokens": 399,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_matrix/blue_distance",
+    "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_blue_search.usda",
+    "stop_reason": "SUCCEEDED",
+    "source_sha256": "f080e743d86e30de7848f438b100b9f9dd4f3e10c12913abd619ed34af5e1836",
+    "instruction": {
+      "instruction": "靠近蓝色管子，距它表面保持一米。",
+      "resolution": {
+        "status": "accepted",
+        "category": "pipe",
+        "color": "blue",
+        "surface_standoff_m": 1.0,
+        "reason": ""
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.390347118000136,
+      "usage": {
+        "total_tokens": 436,
+        "completion_tokens": 40,
+        "prompt_tokens": 396,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_matrix/red_screened",
+    "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_red_screened.usda",
+    "stop_reason": "SUCCEEDED",
+    "source_sha256": "95e74b9b5c05fda406a124ef6fb8f341720c6ae5f9a26238531f9fa95aa846dd",
+    "instruction": {
+      "instruction": "请找到红色箱子，在它旁边停住。",
+      "resolution": {
+        "status": "accepted",
+        "category": "box",
+        "color": "red",
+        "surface_standoff_m": null,
+        "reason": "明确指定单一目标：红色箱子（'箱子'是box的中文同义词，'红色'为支持的颜色）；'在它旁边停住'对应支持的水平找寻并接近任务，未指定距离，故surface_standoff_m为null。"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.580449768998733,
+      "usage": {
+        "total_tokens": 488,
+        "completion_tokens": 94,
+        "prompt_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  }
+]

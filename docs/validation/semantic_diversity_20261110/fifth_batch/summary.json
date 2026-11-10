@@ -1,0 +1,32 @@
+[
+  {
+    "name": "yellow_screened",
+    "instruction": "找到黄色管子，停在离它表面八十厘米的位置。",
+    "run": "logs/diversity_20261110_additional05/yellow_screened",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "offline_verified": true,
+    "exploration_verified": true,
+    "simulation_seconds": 77.90000406300001,
+    "path_length_m": 3.054603568162485,
+    "contact_pairs": 0,
+    "surface_distance_m": 0.9979849925033972,
+    "decision_api_calls": 3,
+    "instruction_api_calls": 1
+  },
+  {
+    "name": "yellow_occluded_passage",
+    "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+    "run": "logs/diversity_20261110_additional05/yellow_occluded_passage",
+    "status": "FAILED",
+    "reason": "target_not_found",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "simulation_seconds": 366.80001912999995,
+    "path_length_m": 14.817367750295526,
+    "contact_pairs": 0,
+    "surface_distance_m": 2.9724909218513202,
+    "decision_api_calls": 15,
+    "instruction_api_calls": 1
+  }
+]

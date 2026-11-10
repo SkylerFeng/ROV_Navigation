@@ -1,0 +1,62 @@
+[
+  {
+    "name": "red_screened",
+    "instruction": "请找到红色箱子，在它旁边停住。",
+    "run": "logs/diversity_20261110_final/red_screened",
+    "status": "FAILED",
+    "reason": "target_not_found",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "simulation_seconds": 88.80000463100001,
+    "path_length_m": 1.1324377954605391,
+    "contact_pairs": 0,
+    "surface_distance_m": 1.4820283962456013,
+    "decision_api_calls": 6,
+    "instruction_api_calls": 1
+  },
+  {
+    "name": "yellow_box_turn",
+    "instruction": "靠近黄色方块，不要找管子。",
+    "run": "logs/diversity_20261110_final/yellow_box_turn",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "offline_verified": true,
+    "exploration_verified": true,
+    "simulation_seconds": 207.800010838,
+    "path_length_m": 7.809927437955528,
+    "contact_pairs": 0,
+    "surface_distance_m": 0.9436677740242906,
+    "decision_api_calls": 7,
+    "instruction_api_calls": 1
+  },
+  {
+    "name": "yellow_occluded",
+    "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+    "run": "logs/diversity_20261110_final/yellow_occluded",
+    "status": "FAILED",
+    "reason": "llm_call_budget_exhausted",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "simulation_seconds": 212.30001107200002,
+    "path_length_m": 5.424660355274343,
+    "contact_pairs": 0,
+    "surface_distance_m": 5.005708138802963,
+    "decision_api_calls": 30,
+    "instruction_api_calls": 1
+  },
+  {
+    "name": "blue_distance",
+    "instruction": "靠近蓝色管子，距它表面保持一米。",
+    "run": "logs/diversity_20261110_final/blue_distance",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "offline_verified": true,
+    "exploration_verified": true,
+    "simulation_seconds": 28.300001476000002,
+    "path_length_m": 0.9431945854917421,
+    "contact_pairs": 0,
+    "surface_distance_m": 0.9962199781950323,
+    "decision_api_calls": 2,
+    "instruction_api_calls": 1
+  }
+]

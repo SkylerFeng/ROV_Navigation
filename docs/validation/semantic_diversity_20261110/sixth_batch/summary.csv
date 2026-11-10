@@ -1,0 +1,6 @@
+name,instruction,run,status,reason,offline_verified,exploration_verified,simulation_seconds,path_length_m,contact_pairs,surface_distance_m,decision_api_calls,instruction_api_calls
+blue_distance,不要黄色管子，请靠近蓝色管子，距它表面保持一米。,logs/diversity_20261110_consistent06/blue_distance,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,True,28.600001492,0.8479850035680647,0,1.137449310686894,2,1
+yellow_box_turn,靠近黄色方块，不要找管子。,logs/diversity_20261110_consistent06/yellow_box_turn,FAILED,task_timeout,False,False,300.00001564599995,11.347929206279616,0,5.839369187131081,9,1
+yellow_screened,找到黄色管子，停在离它表面八十厘米的位置。,logs/diversity_20261110_consistent06/yellow_screened,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,True,101.700005304,3.285932638431343,0,0.8000432205200195,6,1
+red_screened,请找到红色箱子，在它旁边停住。,logs/diversity_20261110_consistent06/red_screened,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,True,206.40001076500002,5.291238763361054,0,0.8083146707865864,9,1
+yellow_occluded_passage,Find the yellow tube and stop 80 centimeters from its surface.,logs/diversity_20261110_consistent06/yellow_occluded_passage,FAILED,interrupted,False,False,510.73335997,5.132551785726071,1,3.79715131220318,18,1

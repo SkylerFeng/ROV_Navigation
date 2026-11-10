@@ -1,0 +1,102 @@
+[
+  {
+    "run": "logs/qwen_demo_20261110_165224",
+    "status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 300.00001564599995,
+    "path_length_m": 10.162025029473128,
+    "stationary_turn_seconds": 149.00000777095556,
+    "total_yaw_travel_deg": 1555.468135689386,
+    "yaw_acceleration_p95_rad_s2": 0.27921527212717445,
+    "llm_calls": 10,
+    "recovery_attempts": 0,
+    "verification_failures": 2,
+    "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time",
+    "source_sha256": {
+      "logs/qwen_demo_20261110_165224/semantic/events.jsonl": "f0aeaba84762c4035adccbcd9114a02a8c725d935f8c97d7aa28cfdc0186e6c9",
+      "logs/qwen_demo_20261110_165224/sim/controls.json": "6d8994b0cea106804b3f76d4c99422e92b3c0c52b5c4020789e1c8931c91213c",
+      "logs/qwen_demo_20261110_165224/semantic/result.json": "2ed65a1e9ff17c56031f368b3152425f5d1d79ee84d2fdcf8f5350ae4c5e64ef",
+      "logs/qwen_demo_20261110_165224/manifest.json": "2447b8f27f67c7713592d1c7503a864015fb9365855683ad4d4e11e2bbafa51d"
+    }
+  },
+  {
+    "run": "logs/qwen_recovery_20261110_02",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 123.10000642,
+    "path_length_m": 3.262191890176433,
+    "stationary_turn_seconds": 84.2000043913722,
+    "total_yaw_travel_deg": 837.4805685460212,
+    "yaw_acceleration_p95_rad_s2": 0.19728841294828828,
+    "llm_calls": 3,
+    "recovery_attempts": 0,
+    "verification_failures": 0,
+    "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time",
+    "source_sha256": {
+      "logs/qwen_recovery_20261110_02/semantic/events.jsonl": "c554ecd68025411d317c7e0e028bb77e6387bbc23e37c2f0447c3b8bd9fc4269",
+      "logs/qwen_recovery_20261110_02/sim/controls.json": "78224bbf261c9351bd6942b478bbb28bbd2a7a3a02f1e7204295770f9d9c51f4",
+      "logs/qwen_recovery_20261110_02/semantic/result.json": "3e1855f58cfb5c1d2cc4a20021ff59212ed6b49a21199735fabe51219b29fe6d",
+      "logs/qwen_recovery_20261110_02/manifest.json": "e6b5a271b1b4f2ad169493098c47a34b526f86012dbfceb48292789f916bc462"
+    }
+  },
+  {
+    "run": "logs/qwen_stable_20261110_01",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 79.00000412,
+    "path_length_m": 3.1037440335885265,
+    "stationary_turn_seconds": 34.80000181496143,
+    "total_yaw_travel_deg": 334.3193196559834,
+    "yaw_acceleration_p95_rad_s2": 0.18404002857291085,
+    "llm_calls": 4,
+    "recovery_attempts": 0,
+    "verification_failures": 0,
+    "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time",
+    "source_sha256": {
+      "logs/qwen_stable_20261110_01/semantic/events.jsonl": "6f706dff0c6b6c9b990382d4b1df64d05167484ca87cb395c73c044692067198",
+      "logs/qwen_stable_20261110_01/sim/controls.json": "8f72ed9f7e8dfa7f5aa67f6bf79b75d47d132224d62c598ef3f13f123d7e6708",
+      "logs/qwen_stable_20261110_01/semantic/result.json": "63e6096d7de12b93a9b023e27a96472dd56dfdbe100fd646ac7cf480f7d83a69",
+      "logs/qwen_stable_20261110_01/manifest.json": "0b821e3503e459465c76d16ea130672c4b0f26788e960e246a193300f44e77a9"
+    }
+  },
+  {
+    "run": "logs/qwen_stable_20261110_02",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 79.300004136,
+    "path_length_m": 3.107478004267154,
+    "stationary_turn_seconds": 34.60000180453062,
+    "total_yaw_travel_deg": 334.20495461703865,
+    "yaw_acceleration_p95_rad_s2": 0.19273902094709866,
+    "llm_calls": 4,
+    "recovery_attempts": 0,
+    "verification_failures": 0,
+    "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time",
+    "source_sha256": {
+      "logs/qwen_stable_20261110_02/semantic/events.jsonl": "31e4746ce5769470756283af33287ffff8da7e1c3bf08c4db04b48a3b7d5aef6",
+      "logs/qwen_stable_20261110_02/sim/controls.json": "f2eb8382f46cb8dc76418468bca9dbf2c9de2d208b48fceed6d0c4cdf869ef5f",
+      "logs/qwen_stable_20261110_02/semantic/result.json": "db57154663ed7ee14901a4603308bf6cd0e94d761fcb8c88ac42397dfeb009b1",
+      "logs/qwen_stable_20261110_02/manifest.json": "f783e8c6e3cfa520e48751a9d8f27b9cb8f791c7e9691667dabad74c956e0f91"
+    }
+  },
+  {
+    "run": "logs/qwen_stable_20261110_relocated",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 29.300001528000003,
+    "path_length_m": 1.0640575600210642,
+    "stationary_turn_seconds": 14.80000077188015,
+    "total_yaw_travel_deg": 139.01146483395823,
+    "yaw_acceleration_p95_rad_s2": 0.15474391966319956,
+    "llm_calls": 2,
+    "recovery_attempts": 0,
+    "verification_failures": 0,
+    "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time",
+    "source_sha256": {
+      "logs/qwen_stable_20261110_relocated/semantic/events.jsonl": "a8e48735b8c0162e57f511ece2ab7a396a0087b6de1ce29906d6873aed5d3997",
+      "logs/qwen_stable_20261110_relocated/sim/controls.json": "445ca7130f08b717bd96f6ce9066a9549a7eb7bbf7d3c488d6c1f5f5330e9f15",
+      "logs/qwen_stable_20261110_relocated/semantic/result.json": "e5355f19de2954cb932a965bbf2e4dba94dbd466c6ad93403b586a525aa1cf83",
+      "logs/qwen_stable_20261110_relocated/manifest.json": "009f44e19f4cfc940f4636720b52559c05dcb933e683f88d36f261774ff75717"
+    }
+  }
+]

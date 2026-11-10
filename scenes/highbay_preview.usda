@@ -1,0 +1,23 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "HighBay" (
+        prepend references = @/home/ache/OceanSim-Highbay/data/HighBay/HighBay.usd@
+    )
+    {
+    }
+
+    def Xform "ROV" (
+        prepend references = @/home/ache/OceanSim_assets/Bluerov/BROV_low.usd@
+    )
+    {
+        double3 xformOp:translate = (-29, -1, 4)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}

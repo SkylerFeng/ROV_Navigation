@@ -1,0 +1,49 @@
+{
+  "runtime_access": "forbidden: offline evaluation labels only",
+  "objects": [
+    {
+      "id": "YellowPipe",
+      "category": "pipe",
+      "color": "yellow",
+      "position": [
+        -2.0,
+        -1.35,
+        1.12
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "BluePipe",
+      "category": "pipe",
+      "color": "blue",
+      "position": [
+        -3.6,
+        -1.4,
+        1.12
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "YellowBox",
+      "category": "box",
+      "color": "yellow",
+      "position": [
+        0.5,
+        -0.7,
+        1.05
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "RedBox",
+      "category": "box",
+      "color": "red",
+      "position": [
+        -0.6,
+        1.0,
+        1.05
+      ],
+      "yaw": 15
+    }
+  ]
+}

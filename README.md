@@ -1,5 +1,7 @@
 # ROV 水池避障导航实验
 
+当前语义导航与调参入口见 [配置指南](config/README.md)。任务、扫描/探索策略、Qwen/DeepSeek 接口和水动力覆盖配置均有独立入口；用 `python3 scripts/run_semantic_trial.py --check-config` 可检查配置而不启动仿真或调用 API。
+
 基于 Isaac Sim 5.1、OceanSim 和本机 ROS2 EGO-Planner-Swarm。
 水动力迭代增加可配置的阻力、执行器滞后、显式浮力与定常水流；说明与实测见
 [水动力模型与验证](docs/hydrodynamics_20261027.md)。历史五场成绩对应旧动力模型。

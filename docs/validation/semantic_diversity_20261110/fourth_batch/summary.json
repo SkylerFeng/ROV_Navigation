@@ -1,0 +1,32 @@
+[
+  {
+    "name": "yellow_occluded_fine",
+    "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+    "run": "logs/diversity_20261110_diagnostic04/yellow_occluded_fine",
+    "status": "FAILED",
+    "reason": "task_timeout",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "simulation_seconds": 300.00001564599995,
+    "path_length_m": 7.992606614222228,
+    "contact_pairs": 0,
+    "surface_distance_m": 5.078420822185479,
+    "decision_api_calls": 16,
+    "instruction_api_calls": 1
+  },
+  {
+    "name": "red_screened",
+    "instruction": "请找到红色箱子，在它旁边停住。",
+    "run": "logs/diversity_20261110_diagnostic04/red_screened",
+    "status": "FAILED",
+    "reason": "no_red_box_found",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "simulation_seconds": 191.000009962,
+    "path_length_m": 5.565197607698465,
+    "contact_pairs": 0,
+    "surface_distance_m": 3.6811158804882256,
+    "decision_api_calls": 7,
+    "instruction_api_calls": 1
+  }
+]

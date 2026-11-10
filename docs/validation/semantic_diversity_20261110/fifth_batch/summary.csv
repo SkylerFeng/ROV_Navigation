@@ -1,0 +1,3 @@
+name,instruction,run,status,reason,offline_verified,exploration_verified,simulation_seconds,path_length_m,contact_pairs,surface_distance_m,decision_api_calls,instruction_api_calls
+yellow_screened,找到黄色管子，停在离它表面八十厘米的位置。,logs/diversity_20261110_additional05/yellow_screened,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,True,77.90000406300001,3.054603568162485,0,0.9979849925033972,3,1
+yellow_occluded_passage,Find the yellow tube and stop 80 centimeters from its surface.,logs/diversity_20261110_additional05/yellow_occluded_passage,FAILED,target_not_found,False,False,366.80001912999995,14.817367750295526,0,2.9724909218513202,15,1

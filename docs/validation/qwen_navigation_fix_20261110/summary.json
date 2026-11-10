@@ -1,0 +1,172 @@
+[
+  {
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 128.400006697,
+    "path_length_m": 3.556242446980752,
+    "llm_calls": 3,
+    "contact_pairs": 0,
+    "offline_verified": true,
+    "evidence_directory": "logs/qwen_fix_20261110_screened_03",
+    "final_target_surface_distance_xy_m": 0.989912019790712,
+    "llm_errors": 0,
+    "responses": [
+      {
+        "event": "llm_response",
+        "sim_time": 1.500000078,
+        "action": {
+          "task_id": "5953d959a60c",
+          "observation_id": 1,
+          "action": "scan",
+          "reason_code": "scan_required"
+        },
+        "provider": "qwen",
+        "model": "qwen-plus",
+        "latency_wall_s": 1.2568605809992732,
+        "usage": {
+          "total_tokens": 931,
+          "completion_tokens": 32,
+          "prompt_tokens": 899,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "llm_response",
+        "sim_time": 44.700002331,
+        "action": {
+          "task_id": "5953d959a60c",
+          "observation_id": 3,
+          "action": "explore",
+          "candidate_id": "frontier_24_26",
+          "reason_code": "search_unseen_area"
+        },
+        "provider": "qwen",
+        "model": "qwen-plus",
+        "latency_wall_s": 1.6176742969983025,
+        "usage": {
+          "total_tokens": 1987,
+          "completion_tokens": 47,
+          "prompt_tokens": 1940,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "llm_response",
+        "sim_time": 117.500006128,
+        "action": {
+          "task_id": "5953d959a60c",
+          "observation_id": 5,
+          "action": "approach",
+          "candidate_id": "approach_obj_008",
+          "object_id": "obj_008",
+          "reason_code": "target_visible"
+        },
+        "provider": "qwen",
+        "model": "qwen-plus",
+        "latency_wall_s": 1.6036205339987646,
+        "usage": {
+          "total_tokens": 1675,
+          "completion_tokens": 53,
+          "prompt_tokens": 1622,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      }
+    ],
+    "source_sha256": {
+      "logs/qwen_fix_20261110_screened_03/manifest.json": "0473876882980e9fcb7a8aef4cfb405434f223d7b37fa1b93bd6418e5642616f",
+      "logs/qwen_fix_20261110_screened_03/semantic/events.jsonl": "2baa0d2a3b4055ec0b035ed1641967a0070d992a98c4f45a0972110d5a606bf9",
+      "logs/qwen_fix_20261110_screened_03/semantic/result.json": "f752c8572b43d1a1f5ef079414ecad09cac9aaad2e71fc29d1afe8a343b1ea07",
+      "logs/qwen_fix_20261110_screened_03/sim/run.json": "189129e43e0459983af19fad8cdfcbace689d990096faecda25fa4b2974488b3"
+    }
+  },
+  {
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 143.300007474,
+    "path_length_m": 3.8435244473431633,
+    "llm_calls": 3,
+    "contact_pairs": 0,
+    "offline_verified": true,
+    "evidence_directory": "logs/qwen_fix_20261110_screened_04",
+    "final_target_surface_distance_xy_m": 0.9987997620126209,
+    "llm_errors": 0,
+    "responses": [
+      {
+        "event": "llm_response",
+        "sim_time": 1.400000073,
+        "action": {
+          "task_id": "3e7fdb1f070d",
+          "observation_id": 1,
+          "action": "scan",
+          "reason_code": "scan_required"
+        },
+        "provider": "qwen",
+        "model": "qwen-plus",
+        "latency_wall_s": 1.149230131000877,
+        "usage": {
+          "total_tokens": 927,
+          "completion_tokens": 30,
+          "prompt_tokens": 897,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "llm_response",
+        "sim_time": 44.50000232,
+        "action": {
+          "task_id": "3e7fdb1f070d",
+          "observation_id": 3,
+          "action": "explore",
+          "candidate_id": "frontier_24_26",
+          "reason_code": "search_unseen_area"
+        },
+        "provider": "qwen",
+        "model": "qwen-plus",
+        "latency_wall_s": 1.5307817720004095,
+        "usage": {
+          "total_tokens": 1987,
+          "completion_tokens": 45,
+          "prompt_tokens": 1942,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      {
+        "event": "llm_response",
+        "sim_time": 116.900006096,
+        "action": {
+          "task_id": "3e7fdb1f070d",
+          "observation_id": 5,
+          "action": "approach",
+          "candidate_id": "approach_obj_008",
+          "object_id": "obj_008",
+          "reason_code": "target_visible"
+        },
+        "provider": "qwen",
+        "model": "qwen-plus",
+        "latency_wall_s": 1.6817652890003956,
+        "usage": {
+          "total_tokens": 1674,
+          "completion_tokens": 51,
+          "prompt_tokens": 1623,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          }
+        }
+      }
+    ],
+    "source_sha256": {
+      "logs/qwen_fix_20261110_screened_04/manifest.json": "d7fbccf3502f6d0c0d8ea8e569182cbe0539647f536f42120d553a24770c9b58",
+      "logs/qwen_fix_20261110_screened_04/semantic/events.jsonl": "b5266b2233e34dfe756b3ec4f1d8c06d8e930852a04cefb2ef0978cfeaa4bc84",
+      "logs/qwen_fix_20261110_screened_04/semantic/result.json": "db9b30d5f9297855d9882bb0a0bd6988d902c189198cb4a6f5c4bd294ba4e698",
+      "logs/qwen_fix_20261110_screened_04/sim/run.json": "5bcb4f6141d0e38fdcaffbf1f7e75613991d8cf869e1ee77893a4ec9b521d945"
+    }
+  }
+]

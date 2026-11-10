@@ -1,0 +1,62 @@
+{
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_screened",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 170.10000887200002,
+  "frames": 848,
+  "path_length_m": 5.845436043998008,
+  "actual_ego_updates": 33,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.500000078,
+      "task_id": "a6332f6cc86c",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 44.700002331,
+      "task_id": "a6332f6cc86c",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_64_16",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 121.500006336,
+      "task_id": "a6332f6cc86c",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_28_40",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 146.50000764,
+      "task_id": "a6332f6cc86c",
+      "observation_id": 8,
+      "action": "approach",
+      "candidate_id": "approach_obj_011",
+      "object_id": "obj_011",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.03293081303032074,
+  "target_surface_error_p95_m": 0.06849251089447216,
+  "llm_calls": 4,
+  "evidence_directory": "logs/qwen_recovery_20261110_01",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only"
+  ],
+  "final_target_center_distance_xy_m": 1.1539944060733744,
+  "final_target_surface_distance_xy_m": 0.8319104802003321,
+  "offline_verified": true
+}

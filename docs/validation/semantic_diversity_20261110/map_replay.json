@@ -1,0 +1,105 @@
+[
+  {
+    "run": "logs/diversity_20261110_final/red_screened",
+    "position": [
+      -2.69663667678833,
+      -0.30640268325805664,
+      0.9999362826347351
+    ],
+    "start_inside_inflation": true,
+    "reachable_safe_cells": 456,
+    "candidate_count_after_fix": 6,
+    "candidates": [
+      {
+        "id": "frontier_64_16",
+        "kind": "explore",
+        "position": [
+          1.8749999999999991,
+          -2.3249999999999997,
+          1.0
+        ],
+        "reachable": true,
+        "path_length_m": 5.9955844122715725,
+        "information_gain_score": 21,
+        "score": 16.80742146439647
+      },
+      {
+        "id": "frontier_30_42",
+        "kind": "explore",
+        "position": [
+          -3.2249999999999996,
+          1.5750000000000002,
+          1.0
+        ],
+        "reachable": true,
+        "path_length_m": 2.710660171779821,
+        "information_gain_score": 14,
+        "score": 16.689863162940497
+      },
+      {
+        "id": "frontier_60_18",
+        "kind": "explore",
+        "position": [
+          1.2749999999999995,
+          -2.025,
+          1.0
+        ],
+        "reachable": true,
+        "path_length_m": 5.519848480983498,
+        "information_gain_score": 19,
+        "score": 15.966640677488686
+      },
+      {
+        "id": "frontier_56_14",
+        "kind": "explore",
+        "position": [
+          0.6749999999999998,
+          -2.625,
+          1.0
+        ],
+        "reachable": true,
+        "path_length_m": 4.671320343559643,
+        "information_gain_score": 16,
+        "score": 14.761304499039536
+      },
+      {
+        "id": "frontier_50_12",
+        "kind": "explore",
+        "position": [
+          -0.22500000000000053,
+          -2.925,
+          1.0
+        ],
+        "reachable": true,
+        "path_length_m": 4.247056274847712,
+        "information_gain_score": 15,
+        "score": 14.550646436836143
+      },
+      {
+        "id": "frontier_68_14",
+        "kind": "explore",
+        "position": [
+          2.4750000000000005,
+          -2.625,
+          1.0
+        ],
+        "reachable": true,
+        "path_length_m": 6.471320343559647,
+        "information_gain_score": 19,
+        "score": 14.515838978557
+      }
+    ]
+  },
+  {
+    "run": "logs/diversity_20261110_matrix/yellow_occluded",
+    "position": [
+      -1.2017186880111694,
+      -0.7158889770507812,
+      1.000018835067749
+    ],
+    "start_inside_inflation": false,
+    "reachable_safe_cells": 595,
+    "candidate_count_after_fix": 0,
+    "candidates": []
+  }
+]

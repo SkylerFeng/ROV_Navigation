@@ -37,7 +37,7 @@ def Xform "World"
                 over "PreviewSurface"
                 {
                     float inputs:ior = 1
-                    float inputs:opacity = 0.12
+                    float inputs:opacity = 0.05
                     float inputs:roughness = 0.85
                     color3f inputs:specularColor = (0, 0, 0)
                     int inputs:useSpecularWorkflow = 1
@@ -177,3 +177,4 @@ def Xform "World"
         float physics:gravityMagnitude = 0
     }
 }
+

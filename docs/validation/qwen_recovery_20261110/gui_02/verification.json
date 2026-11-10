@@ -1,0 +1,98 @@
+[
+  {
+    "event": "verification",
+    "sim_time": 117.900006148,
+    "object_id": "obj_007",
+    "visible": true,
+    "observation_age_s": 0.06666667000000359,
+    "distance_m": 1.1069093007444588,
+    "speed_m_s": 0.13533933258287792,
+    "heading_error_deg": 27.321174842115045,
+    "good": false,
+    "position": [
+      -3.8598668575286865,
+      -0.7858934998512268,
+      1.0004428625106812
+    ]
+  },
+  {
+    "event": "verification",
+    "sim_time": 118.900006201,
+    "object_id": "obj_007",
+    "visible": true,
+    "observation_age_s": 0.06666667099999302,
+    "distance_m": 0.9772979543244308,
+    "speed_m_s": 0.07383343338679776,
+    "heading_error_deg": 24.011432622891782,
+    "good": false,
+    "position": [
+      -3.944845676422119,
+      -0.7204497456550598,
+      0.9998511075973511
+    ]
+  },
+  {
+    "event": "verification",
+    "sim_time": 119.900006253,
+    "object_id": "obj_007",
+    "visible": true,
+    "observation_age_s": 0.06666667000000359,
+    "distance_m": 0.8997607366063569,
+    "speed_m_s": 0.025330700483437905,
+    "heading_error_deg": 20.30850719177705,
+    "good": false,
+    "position": [
+      -3.9807498455047607,
+      -0.6920578479766846,
+      0.9993844032287598
+    ]
+  },
+  {
+    "event": "verification",
+    "sim_time": 120.900006305,
+    "object_id": "obj_007",
+    "visible": true,
+    "observation_age_s": 0.2666666810000038,
+    "distance_m": 0.87252020508922,
+    "speed_m_s": 0.01157584536215096,
+    "heading_error_deg": 14.195711617413748,
+    "good": false,
+    "position": [
+      -3.99534273147583,
+      -0.6823622584342957,
+      0.9993073344230652
+    ]
+  },
+  {
+    "event": "verification",
+    "sim_time": 121.900006357,
+    "object_id": "obj_007",
+    "visible": true,
+    "observation_age_s": 0.06666666999998938,
+    "distance_m": 0.8604252675206198,
+    "speed_m_s": 0.004437349997900962,
+    "heading_error_deg": 9.127478143135196,
+    "good": true,
+    "position": [
+      -4.002322673797607,
+      -0.6791428923606873,
+      0.9993510246276855
+    ]
+  },
+  {
+    "event": "verification",
+    "sim_time": 122.900006409,
+    "object_id": "obj_007",
+    "visible": true,
+    "observation_age_s": 0.06666667000000359,
+    "distance_m": 0.8631329517430008,
+    "speed_m_s": 0.0010416155498989962,
+    "heading_error_deg": 4.6312809606961105,
+    "good": true,
+    "position": [
+      -4.004056930541992,
+      -0.6778311133384705,
+      0.9994555115699768
+    ]
+  }
+]

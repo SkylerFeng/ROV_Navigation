@@ -1,0 +1,5 @@
+name,instruction,run,status,reason,offline_verified,exploration_verified,simulation_seconds,path_length_m,contact_pairs,surface_distance_m,decision_api_calls,instruction_api_calls
+red_screened,请找到红色箱子，在它旁边停住。,logs/diversity_20261110_final/red_screened,FAILED,target_not_found,False,False,88.80000463100001,1.1324377954605391,0,1.4820283962456013,6,1
+yellow_box_turn,靠近黄色方块，不要找管子。,logs/diversity_20261110_final/yellow_box_turn,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,True,207.800010838,7.809927437955528,0,0.9436677740242906,7,1
+yellow_occluded,Find the yellow tube and stop 80 centimeters from its surface.,logs/diversity_20261110_final/yellow_occluded,FAILED,llm_call_budget_exhausted,False,False,212.30001107200002,5.424660355274343,0,5.005708138802963,30,1
+blue_distance,靠近蓝色管子，距它表面保持一米。,logs/diversity_20261110_final/blue_distance,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,True,28.300001476000002,0.9431945854917421,0,0.9962199781950323,2,1

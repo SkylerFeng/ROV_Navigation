@@ -2,10 +2,11 @@
 import math
 
 
-def translation_command(position, reference_position, reference_velocity):
-    values = [reference_velocity[i]+2*(reference_position[i]-position[i]) for i in range(3)]
+def translation_command(position, reference_position, reference_velocity, settings=None):
+    settings = settings or {}
+    values = [reference_velocity[i]+settings.get("position_kp",2.)*(reference_position[i]-position[i]) for i in range(3)]
     speed = math.hypot(*reference_velocity[:2])
-    if speed > .01 and math.dist(position[:2], reference_position[:2]) < .1:
+    if speed > .001 and math.dist(position[:2], reference_position[:2]) < .1:
         # Inertia can carry the ROV slightly beyond a frozen reference. Do not
         # turn a centimetre-scale overshoot into a 180-degree heading reversal.
         # Retain cross-track correction and let the phase resume forward.
@@ -14,13 +15,19 @@ def translation_command(position, reference_position, reference_velocity):
         if forward < .5*speed:
             for i in range(2):
                 values[i] += (.5*speed-forward)*tangent[i]
-    values[2] = .8*(1-position[2])
+        forward=sum(values[i]*tangent[i] for i in range(2))
+        cross=[values[i]-forward*tangent[i] for i in range(2)]
+        limit=forward*math.tan(math.radians(settings.get('near_track_crab_deg',15.)))
+        factor=min(1.,limit/max(math.hypot(*cross),1e-9))
+        for i in range(2):values[i]=forward*tangent[i]+factor*cross[i]
+    values[2] = settings.get("depth_kp",.8)*(1-position[2])
     return values
 
 
 def control(position, reference_position, reference_velocity, yaw, reference_yaw,
-            max_speed=.3, align=True, max_heading_error_deg=20):
-    values = translation_command(position, reference_position, reference_velocity)
+            max_speed=.3, align=True, max_heading_error_deg=20, settings=None):
+    settings = settings or {}
+    values = translation_command(position, reference_position, reference_velocity, settings)
     if not all(math.isfinite(v) for v in [*values, yaw, reference_yaw]):
         return [0., 0., 0.], 0., {"mode": "INVALID_REFERENCE"}
     speed = math.sqrt(sum(v*v for v in values))
@@ -36,7 +43,15 @@ def control(position, reference_position, reference_velocity, yaw, reference_yaw
     if align and not holding:
         scale = math.cos(error)**2 if abs(error)<math.radians(max_heading_error_deg) else 0.
         values[0] *= scale; values[1] *= scale
-    return values, max(-.5,min(.5,error)), {
+    limit = settings.get("max_yaw_rate_rad_s",.5)
+    return values, max(-limit,min(limit,settings.get("yaw_kp",1.)*error)), {
         "mode":"HOLDING" if holding else "ALIGNING" if scale==0 else "TRACKING", "heading_error_deg":math.degrees(error),
         "translation_scale":scale, "target_yaw":target_yaw,
         "position_error":math.dist(position,reference_position)}
+
+
+def smooth_yaw_rate(previous, requested, dt, acceleration):
+    """Slew angular commands only; caller bypasses for stale/safety stop."""
+    if dt<=0 or dt>.2:return 0.
+    step=acceleration*dt
+    return max(previous-step,min(previous+step,requested))

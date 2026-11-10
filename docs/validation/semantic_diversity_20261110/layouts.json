@@ -1,0 +1,17 @@
+[
+  {
+    "scene": "scenes/pool_platform_semantic_blue_search.usda",
+    "truth_file": "scenes/pool_platform_semantic_blue_search.truth.json",
+    "note": "Static Highbay water + component hydrodynamics; metadata evaluation-only"
+  },
+  {
+    "scene": "scenes/pool_platform_semantic_red_screened.usda",
+    "truth_file": "scenes/pool_platform_semantic_red_screened.truth.json",
+    "note": "Static Highbay water + component hydrodynamics; metadata evaluation-only"
+  },
+  {
+    "scene": "scenes/pool_platform_semantic_yellow_box_turn.usda",
+    "truth_file": "scenes/pool_platform_semantic_yellow_box_turn.truth.json",
+    "note": "Static Highbay water + component hydrodynamics; metadata evaluation-only"
+  }
+]

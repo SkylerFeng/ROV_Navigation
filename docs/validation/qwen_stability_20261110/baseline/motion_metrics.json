@@ -1,0 +1,14 @@
+{
+  "run": "logs/qwen_demo_20261110_165224",
+  "status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 300.00001564599995,
+  "path_length_m": 10.162025029473128,
+  "stationary_turn_seconds": 149.00000777095556,
+  "total_yaw_travel_deg": 1555.468135689386,
+  "yaw_acceleration_p95_rad_s2": 0.27921527212717445,
+  "llm_calls": 10,
+  "recovery_attempts": 0,
+  "verification_failures": 2,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

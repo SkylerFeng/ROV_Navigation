@@ -26,7 +26,7 @@ clocks=node.create_publisher(Clock,'/clock',10)
 odoms=node.create_publisher(Odometry,'/rov/odom',10)
 clouds=node.create_publisher(PointCloud2,'/rov/cloud_navigation',10)
 goals=node.create_publisher(PoseStamped,'/move_base_simple/goal',10)
-output=ROOT/'logs/diagnostics/slalom_phase_20261014';output.mkdir(parents=True,exist_ok=True)
+output=Path(os.environ.get('ROV_HEADING_TEST_OUTPUT',str(ROOT/'logs/diagnostics/slalom_phase_20261014')));output.mkdir(parents=True,exist_ok=True)
 log=(output/'heading_execution_test.log').open('w')
 process=subprocess.Popen(['bash',str(ROOT/'scripts/start_navigation.sh')],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
 sim_time=10.

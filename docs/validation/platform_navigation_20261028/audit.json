@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": {
+    "goal_reached": true,
+    "no_contact_reports": true,
+    "scan_sphere_clearance_positive": true,
+    "obstacle_hull_clearance_positive": true,
+    "fully_submerged": true
+  },
+  "sampled_scan_sphere_clearance_m": 0.15011225004819373,
+  "sample_interval_s": 0.25
+}

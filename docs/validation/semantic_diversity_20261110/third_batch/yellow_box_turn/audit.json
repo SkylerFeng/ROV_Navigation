@@ -1,0 +1,75 @@
+{
+  "target": {
+    "id": "YellowBox",
+    "category": "box",
+    "color": "yellow",
+    "position": [
+      -3.6,
+      1.55,
+      1.05
+    ],
+    "yaw": 0
+  },
+  "instruction": "靠近黄色方块，不要找管子。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_yellow_box_turn",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 84.700004418,
+  "frames": 408,
+  "path_length_m": 3.3576376692646726,
+  "actual_ego_updates": 2,
+  "contact_pairs": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.800000093,
+      "task_id": "e0594c9caa94",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 18.900000985,
+      "task_id": "e0594c9caa94",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_26_26",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 47.500002477,
+      "task_id": "e0594c9caa94",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 65.600003421,
+      "task_id": "e0594c9caa94",
+      "observation_id": 7,
+      "action": "approach",
+      "candidate_id": "approach_obj_005",
+      "object_id": "obj_005",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.006558897299711541,
+  "target_surface_error_p95_m": 0.01664877721083019,
+  "llm_calls": 4,
+  "evidence_directory": "logs/diversity_20261110_retry03/yellow_box_turn",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.1678815738975565,
+  "final_target_surface_distance_xy_m": 0.9754992282390595,
+  "offline_verified": true,
+  "exploration_verified": true
+}

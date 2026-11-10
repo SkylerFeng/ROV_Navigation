@@ -70,6 +70,7 @@ namespace ego_planner
     bool heading_aware_execution_ = false, heading_paused_ = false;
     bool terminal_approach_ = false;
     double heading_limit_ = 20.0, phase_update_time_ = -1.0;
+    double near_track_crab_deg_ = 15.0, tracker_position_kp_ = 2.0;
     int phase_traj_id_ = -1;
     bool observed_guide_ = false;
     std::vector<double> navigation_polygon_;

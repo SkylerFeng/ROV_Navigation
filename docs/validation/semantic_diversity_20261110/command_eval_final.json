@@ -1,0 +1,439 @@
+[
+  {
+    "case": {
+      "instruction": "不要黄色管子，请靠近蓝色管子。",
+      "expected": [
+        "accepted",
+        "pipe",
+        "blue"
+      ]
+    },
+    "passed": true,
+    "decision_passed": true,
+    "parse": {
+      "instruction": "不要黄色管子，请靠近蓝色管子。",
+      "resolution": {
+        "status": "accepted",
+        "category": "pipe",
+        "color": "blue",
+        "surface_standoff_m": null,
+        "reason": "Explicitly rejects yellow pipe and positively requests approach to blue pipe; category '管子' maps to 'pipe', color '蓝色' maps to 'blue'; no standoff distance specified."
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.068517439000061,
+      "usage": {
+        "total_tokens": 462,
+        "completion_tokens": 68,
+        "prompt_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "decision": {
+      "task_id": "command_eval",
+      "observation_id": 0,
+      "action": "approach",
+      "candidate_id": "approach_blue_pipe",
+      "object_id": "blue_pipe",
+      "reason_code": "target_visible"
+    },
+    "decision_metadata": {
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.3205512880012975,
+      "usage": {
+        "total_tokens": 779,
+        "completion_tokens": 37,
+        "prompt_tokens": 742,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "请找到红色箱子，在它旁边停住。",
+      "expected": [
+        "accepted",
+        "box",
+        "red"
+      ]
+    },
+    "passed": true,
+    "decision_passed": true,
+    "parse": {
+      "instruction": "请找到红色箱子，在它旁边停住。",
+      "resolution": {
+        "status": "accepted",
+        "category": "box",
+        "color": "red",
+        "surface_standoff_m": null,
+        "reason": "明确指定单一目标：红色箱子（'箱子'是box的中文同义词，'红色'对应red）；'在它旁边停住'属于支持的水平找寻并靠近任务，未指定距离，故surface_standoff_m为null。"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.528262674999496,
+      "usage": {
+        "total_tokens": 487,
+        "completion_tokens": 93,
+        "prompt_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "decision": {
+      "task_id": "command_eval",
+      "observation_id": 1,
+      "action": "approach",
+      "candidate_id": "approach_red_box",
+      "object_id": "red_box",
+      "reason_code": "target_visible"
+    },
+    "decision_metadata": {
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.3331200659995375,
+      "usage": {
+        "total_tokens": 779,
+        "completion_tokens": 37,
+        "prompt_tokens": 742,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+      "expected": [
+        "accepted",
+        "pipe",
+        "yellow"
+      ],
+      "expected_distance": 0.8
+    },
+    "passed": true,
+    "decision_passed": true,
+    "parse": {
+      "instruction": "Find the yellow tube and stop 80 centimeters from its surface.",
+      "resolution": {
+        "status": "accepted",
+        "category": "pipe",
+        "color": "yellow",
+        "surface_standoff_m": 0.8,
+        "reason": "Tube is synonym for pipe; yellow is supported color; 80 cm = 0.8 m is within [0.6, 1.5] m range."
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.2323059600003035,
+      "usage": {
+        "total_tokens": 475,
+        "completion_tokens": 76,
+        "prompt_tokens": 399,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    },
+    "decision": {
+      "task_id": "command_eval",
+      "observation_id": 2,
+      "action": "approach",
+      "candidate_id": "approach_yellow_pipe",
+      "object_id": "yellow_pipe",
+      "reason_code": "target_visible"
+    },
+    "decision_metadata": {
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.2995370909993653,
+      "usage": {
+        "total_tokens": 783,
+        "completion_tokens": 37,
+        "prompt_tokens": 746,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "去管子那里",
+      "expected": [
+        "clarify",
+        null,
+        null
+      ]
+    },
+    "passed": true,
+    "decision_passed": null,
+    "parse": {
+      "instruction": "去管子那里",
+      "resolution": {
+        "status": "clarify",
+        "category": null,
+        "color": null,
+        "surface_standoff_m": null,
+        "reason": "未指定管子的颜色，且'管子'未明确是pipe还是box（虽'管子'通常指pipe，但颜色缺失导致目标不唯一）"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.000880977999259,
+      "usage": {
+        "total_tokens": 453,
+        "completion_tokens": 65,
+        "prompt_tokens": 388,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "先去蓝色管子，再去红色箱子",
+      "expected": [
+        "unsupported",
+        null,
+        null
+      ]
+    },
+    "passed": true,
+    "decision_passed": null,
+    "parse": {
+      "instruction": "先去蓝色管子，再去红色箱子",
+      "resolution": {
+        "status": "unsupported",
+        "category": null,
+        "color": null,
+        "surface_standoff_m": null,
+        "reason": "sequential multi-object mission"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.3303470600003493,
+      "usage": {
+        "total_tokens": 426,
+        "completion_tokens": 33,
+        "prompt_tokens": 393,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "去最近的黄色管子旁边",
+      "expected": [
+        "unsupported",
+        null,
+        null
+      ]
+    },
+    "passed": true,
+    "decision_passed": null,
+    "parse": {
+      "instruction": "去最近的黄色管子旁边",
+      "resolution": {
+        "status": "unsupported",
+        "category": null,
+        "color": null,
+        "surface_standoff_m": null,
+        "reason": "relative selection 'nearest' is unsupported"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.444089394999537,
+      "usage": {
+        "total_tokens": 434,
+        "completion_tokens": 43,
+        "prompt_tokens": 391,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "靠近黄色方块，不要找管子。",
+      "expected": [
+        "accepted",
+        "box",
+        "yellow"
+      ]
+    },
+    "passed": true,
+    "decision_passed": true,
+    "parse": {
+      "instruction": "靠近黄色方块，不要找管子。",
+      "resolution": {
+        "status": "accepted",
+        "category": "box",
+        "color": "yellow",
+        "surface_standoff_m": null,
+        "reason": "明确指定单一目标：方块（即box）且颜色为黄色；'不要找管子'为排除性描述，不引入歧义。"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.20671432600102,
+      "usage": {
+        "total_tokens": 464,
+        "completion_tokens": 70,
+        "prompt_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    },
+    "decision": {
+      "task_id": "command_eval",
+      "observation_id": 6,
+      "action": "approach",
+      "candidate_id": "approach_yellow_box",
+      "object_id": "yellow_box",
+      "reason_code": "target_visible"
+    },
+    "decision_metadata": {
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.3923334110004362,
+      "usage": {
+        "total_tokens": 779,
+        "completion_tokens": 37,
+        "prompt_tokens": 742,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "找绿色管子",
+      "expected": [
+        "unsupported",
+        null,
+        null
+      ]
+    },
+    "passed": true,
+    "decision_passed": null,
+    "parse": {
+      "instruction": "找绿色管子",
+      "resolution": {
+        "status": "unsupported",
+        "category": null,
+        "color": null,
+        "surface_standoff_m": null,
+        "reason": "green color is unsupported"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.3085032700000738,
+      "usage": {
+        "total_tokens": 421,
+        "completion_tokens": 33,
+        "prompt_tokens": 388,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "靠近蓝色管子，距它表面保持一米。",
+      "expected": [
+        "accepted",
+        "pipe",
+        "blue"
+      ],
+      "expected_distance": 1.0
+    },
+    "passed": true,
+    "decision_passed": true,
+    "parse": {
+      "instruction": "靠近蓝色管子，距它表面保持一米。",
+      "resolution": {
+        "status": "accepted",
+        "category": "pipe",
+        "color": "blue",
+        "surface_standoff_m": 1.0,
+        "reason": "明确指定目标为蓝色管子（pipe），且表面 standoff 距离为 1 米，在允许区间 [0.6, 1.5] m 内。"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 2.1496673330002523,
+      "usage": {
+        "total_tokens": 469,
+        "completion_tokens": 73,
+        "prompt_tokens": 396,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    },
+    "decision": {
+      "task_id": "command_eval",
+      "observation_id": 8,
+      "action": "approach",
+      "candidate_id": "approach_blue_pipe",
+      "object_id": "blue_pipe",
+      "reason_code": "target_visible"
+    },
+    "decision_metadata": {
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.2978218710013607,
+      "usage": {
+        "total_tokens": 781,
+        "completion_tokens": 37,
+        "prompt_tokens": 744,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  },
+  {
+    "case": {
+      "instruction": "下降两米去找黄色管子",
+      "expected": [
+        "unsupported",
+        null,
+        null
+      ]
+    },
+    "passed": true,
+    "decision_passed": null,
+    "parse": {
+      "instruction": "下降两米去找黄色管子",
+      "resolution": {
+        "status": "unsupported",
+        "category": null,
+        "color": null,
+        "surface_standoff_m": null,
+        "reason": "下降深度（垂直运动）不支持；仅支持水平找寻与接近，固定深度作业"
+      },
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "latency_wall_s": 1.5763142010000593,
+      "usage": {
+        "total_tokens": 440,
+        "completion_tokens": 49,
+        "prompt_tokens": 391,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        }
+      }
+    }
+  }
+]

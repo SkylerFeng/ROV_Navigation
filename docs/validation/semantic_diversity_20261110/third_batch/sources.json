@@ -1,0 +1,46 @@
+[
+  {
+    "run": "logs/diversity_20261110_retry03/yellow_occluded",
+    "files": {
+      "manifest.json": "f2cf8446fe81403bc0da5e4a505f5bdb3ca8f8f1b18b797fcb04215270cf03d5",
+      "instruction.json": "285a10d3f70f2cd9263efd6a69efb24fba07a47dd54da6d359717e9627a1dc51",
+      "config/task.json": "fb90e218257540e98ae83d529697260b82903e3fec2608b9d1a1b5398a6ade1c",
+      "summary.json": "1b7e2e9a51dab7629e4fa8c8173261c9ceb8be76dae5f0068122bdb9e64ba2d8",
+      "semantic/result.json": "4d5dba3ed69651e2b48a56e4f361426f4ece137ecaedcbad364721b0e36d7612",
+      "sim/run.json": "b3f7e2095b7fc88d71907128ea681aad3b5d969ee4efa1d0962a06d01e1a00ec"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_retry03/red_screened",
+    "files": {
+      "manifest.json": "0ad8586ca28665f08586cd2e0c1b63d936009cb7a78f325fe2823c24fe86a2f2",
+      "instruction.json": "18db8ef67d79dcd3fd4a7834a9c03238d709b7abf707065d1b1fa547df4352d5",
+      "config/task.json": "e420d22e4ac8011db7db5f44dd03600409053559204c06bf1b185b6f9d43790a",
+      "summary.json": "448de956f50bc75da34ac419cf655be64ab397bdcd72544175678241230217be",
+      "semantic/result.json": "2e0960fd6ed1253cc9e363dfccd1b41939835f7645ddadd219ff90c9f8588063",
+      "sim/run.json": "8804b9a09fb75db2f0e7e2c87ed55ab471a0674b17f9a118201b7e138d941617"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_retry03/yellow_box_turn",
+    "files": {
+      "manifest.json": "401074fb20f3350df62f918f733b2375fa6149d8d7a57cfc20cf7649196941e4",
+      "instruction.json": "0aee43e5d76d68fc335cbcef758dfb83d9d25dc8c71a106c54f54f361e5395eb",
+      "config/task.json": "f26de5ed8b140609174ce9a841bf3855d2630b0323cf4527595da294aa301774",
+      "summary.json": "59acb2a9d03f598b4ef76304509ef0885b24e1c7b3cb71a4ef505f39075e639b",
+      "semantic/result.json": "fc3824a04376505e21ce0a9ce3334d882c91ea2191e7b0b775d48a6518c9e4d6",
+      "sim/run.json": "a7f9d6ad284eafa32dd24f48bd05c296d98fc68909038abc0eb78321ef00d74e"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_retry03/blue_distance",
+    "files": {
+      "manifest.json": "5ed981de9b2bee4e0fc53f5c648d88a7b79a1038c36bc7b69e425cd6633a05bf",
+      "instruction.json": "8f3aa15083ee2d452125249527ab9c356caee5757f9c44efd14156b118902ad9",
+      "config/task.json": "d097e61a677d099227e8e7c009972264c709b5dcf974ec58c7959003b6938bd1",
+      "summary.json": "c16b4e1dd6db3ef556b790095e91a7980a23cd5c2da358a1a215318fa3651a42",
+      "semantic/result.json": "bcd3781b16f01589211bb1304127edfbeae408ee9949bf8ef95ed8f652079012",
+      "sim/run.json": "54c62f5deee9386282c2179230f3c1dd27dab5807e5a553fc0273267f2d6d61f"
+    }
+  }
+]

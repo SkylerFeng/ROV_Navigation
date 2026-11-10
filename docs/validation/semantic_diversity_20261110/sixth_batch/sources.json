@@ -1,0 +1,57 @@
+[
+  {
+    "run": "logs/diversity_20261110_consistent06/blue_distance",
+    "files": {
+      "manifest.json": "6ed40202cc1583c913025e86b101f74392eff11dcbf2ed03b2bcc1b54b8f3c9b",
+      "instruction.json": "530eb0368ab2c4b4d817427496cb2dd434b12abfa698c5251009307412780e58",
+      "config/task.json": "a214e799351505981c674bfc76031362233cf33050095168824d298b0a2645fc",
+      "summary.json": "f0ee623c37caa16e5b1ea45ae1c6419f42b1c2b7f702ab900ec0c3315e23956f",
+      "semantic/result.json": "47387129ea747df6ef0d4379213ded0a8e28e790bc94a4f94bf99a9aabeb6326",
+      "sim/run.json": "ddda3d29e4e215d13f5a04accee4cbde54733145c60a2713c894b50f1d5e870d"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_consistent06/yellow_box_turn",
+    "files": {
+      "manifest.json": "c81e2a871c0b112b876da3d6aa84f5c4c220d05721dafe31741ea599a9a78021",
+      "instruction.json": "3203abe0c0999dc2e4ff6f6484d987a40385038ee4ec9321bb801c3042656f48",
+      "config/task.json": "f26de5ed8b140609174ce9a841bf3855d2630b0323cf4527595da294aa301774",
+      "summary.json": "4e5077147c280c25879de6c479442d00d8ebe94b0684b79c4e6e2db368139f9f",
+      "semantic/result.json": "75535d7581241479b02ab9634db92bad1efb61027de38631e1dd1db0bff5c216",
+      "sim/run.json": "73cb0639475bcae69b42ebe2db9722297e5e0776d46908e3c0eb72107212a88e"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_consistent06/yellow_screened",
+    "files": {
+      "manifest.json": "3b14fa0b682adb89a49d1f08d2433465fc9081324d291abd6762823010aa916b",
+      "instruction.json": "34827d4b9ee91a48bc13046f967be6de496156ee053d9c745c5015ea7b8a5897",
+      "config/task.json": "79e408574a82c27843dbeddfeaeb5b150c0dc75196d64b05bdad7cbbce1228b0",
+      "summary.json": "d65790487215364db61db2338e9cb01ede0ba3e911b95d59894ee6384e37aef7",
+      "semantic/result.json": "8f31485ed42950af5d953e7f54b73230f6c01c20b25fae52b38cea65e109edb5",
+      "sim/run.json": "c6f07ee99dd58fdab06b3e6e099acf5f0fc0982982f7cf9942abd15bcedf448d"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_consistent06/red_screened",
+    "files": {
+      "manifest.json": "30eeb59844e3789e8ab9be2ef6e58c7ac964bdd1bdc03c67ec4fa00ab83b7e45",
+      "instruction.json": "087bc42bd446a5a4a857c59c5c33f3f5d31f595e1011e335bd0d59bcfebada37",
+      "config/task.json": "beddbbdcddde1a36e49d76510c7e268cba525417da74cc30534e2d9f90adaf07",
+      "summary.json": "5cac71471094096d9ed70edcdf7a4330d6b804f7e4acfcb9e292f3c9eb168b01",
+      "semantic/result.json": "6b1dca07bcc89e55fb9d5ce73d265db858006588b0ea60fadfef417f654ea094",
+      "sim/run.json": "b411a21f983f87738f58758b139e34d3a5a05cfc6294229eb8af5ad111cfac33"
+    }
+  },
+  {
+    "run": "logs/diversity_20261110_consistent06/yellow_occluded_passage",
+    "files": {
+      "manifest.json": "c721194ec14b84af9f54816cab85529400bc37fabe940f32cbc46b93d84e4dcc",
+      "instruction.json": "ee51859ea107eefcc32769c1bec14701ac47cffa8b376291aba1d4149d540ec1",
+      "config/task.json": "4392cc82b89b858fb52fa15c9b7546221b54422a2500efaee5c8072e253a20ab",
+      "summary.json": "de1c26303947b4d440653bbcc2cb7065baf5f640b51e054118a9d713c675f587",
+      "semantic/result.json": "75a6346f9651cb1700cb5fb48ef01c9a900b934062dc41cad11da7b75bf0f9f2",
+      "sim/run.json": "b79699d72a499ad8841f2d947a669b63ef5d6965de439bad0c71bbb5e64a957e"
+    }
+  }
+]

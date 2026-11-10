@@ -9,6 +9,7 @@ from launch_ros.actions import Node
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from experiment import load_experiment
+from navigation_config import planner_parameters
 
 
 def generate_launch_description():
@@ -31,10 +32,6 @@ def generate_launch_description():
         "fsm/observed_global_guide": c.get("observed_global_guide", True),
         "fsm/navigation_polygon": [coordinate for point in json.loads(
             (root / c["water_boundary"]).read_text()) for coordinate in point],
-        "fsm/thresh_replan_time": 0.5,
-        "fsm/thresh_no_replan_meter": 0.2,
-        "fsm/planning_horizon": 3.0,
-        "manager/planning_horizon": 3.0,
         "manager/drone_id": 0,
         "grid_map/map_size_x": 16.0,
         "grid_map/map_size_y": 12.0,
@@ -42,13 +39,9 @@ def generate_launch_description():
         "grid_map/ground_height": 0.6,
         "grid_map/virtual_ceil_height": 1.5,
         "grid_map/visualization_truncate_height": 1.7,
-        "grid_map/resolution": 0.05,
-        "grid_map/obstacles_inflation": 0.5,
         "grid_map/local_update_range_x": 8.0,
         "grid_map/local_update_range_y": 6.0,
         "grid_map/local_update_range_z": 2.0,
-        "optimization/dist0": 0.35,
-        "optimization/lambda_collision": 3.0,
         "manager/max_vel": c["max_velocity"],
         "optimization/max_vel": c["max_velocity"],
         "bspline/limit_vel": c["max_velocity"],
@@ -57,6 +50,7 @@ def generate_launch_description():
         "bspline/limit_acc": c["max_acceleration"],
         "prediction/obj_num": 0,
     })
+    params.append(planner_parameters(c['navigation']))
     # Resolve the template's launch substitutions by retaining its declarations.
     declarations = [a for a in module.generate_launch_description().entities if not isinstance(a, Node)]
     planner = Node(package="ego_planner", executable="ego_planner_node", name="rov_ego_planner",
@@ -65,7 +59,7 @@ def generate_launch_description():
                     ("grid_map/cloud", "/rov/cloud_navigation"),
                     ("planning/bspline", "/rov/bspline")])
     trajectory = Node(package="ego_planner", executable="traj_server", name="rov_trajectory_server",
-        output="screen", parameters=[{"use_sim_time": True, "traj_server/time_forward": 0.5,
+        output="screen", parameters=[{"use_sim_time": True, "traj_server/time_forward": c["navigation"]["planner"]["trajectory_lookahead_s"],
                                       "traj_server/use_execution_phase": c.get("align_before_translation", True)}],
         remappings=[("planning/bspline", "/rov/bspline"), ("position_cmd", "/rov/position_cmd")])
     tracker = ExecuteProcess(cmd=["/usr/bin/python3", str(root / "scripts/tracker.py"),

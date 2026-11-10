@@ -158,6 +158,11 @@ try:
                 entry["last_contact_position"] = list(map(float, contact.position))
                 entry["last_contact_normal"] = list(map(float, contact.normal))
                 entry["last_contact_impulse"] = list(map(float, contact.impulse))
+                separations = [float(data[i].separation) for i in range(header.contact_data_offset, header.contact_data_offset+header.num_contact_data)]
+                entry["min_separation_m"] = min(entry.get("min_separation_m", float("inf")), min(separations))
+                entry["max_separation_m"] = max(entry.get("max_separation_m", -float("inf")), max(separations))
+                if min(separations) < 0:
+                    entry["penetration_reports"] = entry.get("penetration_reports", 0)+1
                 impulses = [float(np.linalg.norm(data[i].impulse)) for i in range(header.contact_data_offset, header.contact_data_offset+header.num_contact_data)]
                 impulse = max(impulses, default=0)
                 entry["max_impulse_norm"] = max(entry.get("max_impulse_norm", 0), impulse)
