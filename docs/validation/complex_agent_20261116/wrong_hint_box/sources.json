@@ -1,0 +1,6 @@
+{
+  "logs/complex_agent_20261116/wrong_hint_box/semantic/events.jsonl": "3291105f04e311d576b1db7320f46cde7ed21bed70f8a51d17fe67893c6437ca",
+  "logs/complex_agent_20261116/wrong_hint_box/semantic/latest_sensor.npz": "a64d294dbc0ce21b9f3ca460c75407cb6acee1c3555d6bedcc3b03c1afc17d9a",
+  "logs/complex_agent_20261116/wrong_hint_box/sim/run.json": "9591b554ba7f0f117c23a7564f6f68a1dcdc3445366c6124100d6ed5b429f86d",
+  "logs/complex_agent_20261116/wrong_hint_box/manifest.json": "c40a132ca4c7b029300180e92d24b541b13b0136d37ad592a45208cb5b2a17fa"
+}

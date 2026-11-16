@@ -1,0 +1,249 @@
+{
+  "phase": "FAILED",
+  "coarse_region_xyxy": [
+    1.0,
+    -2.0,
+    4.0,
+    2.5
+  ],
+  "region_name": "东侧设备区",
+  "effective_region_xyxy": [
+    -6.0,
+    -2.0,
+    -3.0,
+    2.5
+  ],
+  "alternative_region_index": 0,
+  "search_elapsed_s": 0.0,
+  "search_expansion": 3,
+  "search_events": [
+    {
+      "time_s": 64.400003358,
+      "reason": "search_budget_exhausted",
+      "expansion": 1,
+      "global_search": false
+    },
+    {
+      "time_s": 128.000006675,
+      "reason": "search_budget_exhausted",
+      "expansion": 2,
+      "global_search": false
+    },
+    {
+      "time_s": 186.200009711,
+      "reason": "search_budget_exhausted",
+      "expansion": 3,
+      "global_search": true
+    },
+    {
+      "time_s": 186.200009711,
+      "reason": "prior_exhausted_try_alternative",
+      "region": "西侧设备区"
+    }
+  ],
+  "visited_viewpoints": [
+    "frontier_44_32",
+    "frontier_66_32",
+    "frontier_78_32",
+    "frontier_60_16",
+    "frontier_34_26"
+  ],
+  "viewpoint_attempts": {
+    "frontier_44_32": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    },
+    "frontier_60_32": {
+      "attempts": 1,
+      "failures": 1,
+      "visited": false,
+      "last_failure_s": 96.500005032
+    },
+    "frontier_66_32": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    },
+    "frontier_78_32": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    },
+    "frontier_86_32": {
+      "attempts": 1,
+      "failures": 1,
+      "visited": false,
+      "last_failure_s": 215.233344558
+    },
+    "frontier_60_16": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    },
+    "frontier_34_26": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    },
+    "frontier_36_42": {
+      "attempts": 1,
+      "failures": 1,
+      "visited": false,
+      "last_failure_s": 420.30002192
+    }
+  },
+  "recent_results": [
+    {
+      "tool_id": 4,
+      "action": "explore",
+      "candidate_id": "frontier_60_32",
+      "object_id": null,
+      "started_s": 66.500003468,
+      "observation_id": 7,
+      "status": "FAILED",
+      "reason": "no_progress_choose_another_viewpoint",
+      "ended_s": 96.500005032,
+      "duration_s": 30.000001564
+    },
+    {
+      "tool_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_66_32",
+      "object_id": null,
+      "started_s": 98.600005142,
+      "observation_id": 9,
+      "status": "SUCCEEDED",
+      "reason": "exploration_waypoint_reached",
+      "ended_s": 127.90000667,
+      "duration_s": 29.300001527999996
+    },
+    {
+      "tool_id": 6,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 130.100006785,
+      "observation_id": 11,
+      "status": "SUCCEEDED",
+      "reason": "scan_completed",
+      "ended_s": 150.800007864,
+      "duration_s": 20.700001079000003
+    },
+    {
+      "tool_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_78_32",
+      "object_id": null,
+      "started_s": 153.500008005,
+      "observation_id": 13,
+      "status": "SUCCEEDED",
+      "reason": "exploration_waypoint_reached",
+      "ended_s": 186.100009705,
+      "duration_s": 32.60000169999998
+    },
+    {
+      "tool_id": 8,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 188.10000981,
+      "observation_id": 15,
+      "status": "SUCCEEDED",
+      "reason": "scan_completed",
+      "ended_s": 211.700011041,
+      "duration_s": 23.60000123100002
+    },
+    {
+      "tool_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_86_32",
+      "object_id": null,
+      "started_s": 214.100011166,
+      "observation_id": 17,
+      "status": "FAILED",
+      "reason": "sensor_stale_replan",
+      "ended_s": 215.233344558,
+      "duration_s": 1.1333333919999973
+    },
+    {
+      "tool_id": 10,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 217.700011353,
+      "observation_id": 19,
+      "status": "SUCCEEDED",
+      "reason": "scan_completed",
+      "ended_s": 233.200012162,
+      "duration_s": 15.500000809
+    },
+    {
+      "tool_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_60_16",
+      "object_id": null,
+      "started_s": 235.900012303,
+      "observation_id": 21,
+      "status": "SUCCEEDED",
+      "reason": "exploration_waypoint_reached",
+      "ended_s": 275.100014347,
+      "duration_s": 39.200002044
+    },
+    {
+      "tool_id": 12,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 277.300014462,
+      "observation_id": 23,
+      "status": "SUCCEEDED",
+      "reason": "scan_completed",
+      "ended_s": 296.133348777,
+      "duration_s": 18.833334315000002
+    },
+    {
+      "tool_id": 13,
+      "action": "explore",
+      "candidate_id": "frontier_34_26",
+      "object_id": null,
+      "started_s": 298.400015562,
+      "observation_id": 25,
+      "status": "SUCCEEDED",
+      "reason": "exploration_waypoint_reached",
+      "ended_s": 370.300019312,
+      "duration_s": 71.90000375
+    },
+    {
+      "tool_id": 14,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 372.500019427,
+      "observation_id": 27,
+      "status": "SUCCEEDED",
+      "reason": "target_observed",
+      "ended_s": 373.633352819,
+      "duration_s": 1.1333333919999973
+    },
+    {
+      "tool_id": 15,
+      "action": "explore",
+      "candidate_id": "frontier_36_42",
+      "object_id": null,
+      "started_s": 375.900019604,
+      "observation_id": 29,
+      "status": "FAILED",
+      "reason": "task_timeout",
+      "ended_s": 420.30002192,
+      "duration_s": 44.400002315999984
+    }
+  ],
+  "consecutive_holds": 0,
+  "max_consecutive_holds": 3
+}

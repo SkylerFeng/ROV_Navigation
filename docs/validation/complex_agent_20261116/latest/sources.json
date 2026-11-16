@@ -1,0 +1,6 @@
+{
+  "west_baffles": "logs/complex_agent_20261116/west_baffles",
+  "east_equipment": "logs/complex_agent_20261116_retry/east_equipment",
+  "wrong_hint_box": "logs/complex_agent_20261116/wrong_hint_box",
+  "note": "Different revisions as frozen in per-run manifests; failed run retained."
+}

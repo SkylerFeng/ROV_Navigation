@@ -1,0 +1,194 @@
+[
+  {
+    "case": "red_box",
+    "method": "reference",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 0.0,
+    "chromaticity_l1_lit": 0.0,
+    "detector_tp": 0,
+    "detector_fp": 0,
+    "detector_fn": 1,
+    "preprocessing_ms": 0.00028999966161791235,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 0.0,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 0.0,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "none",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 6.162829861111111,
+    "chromaticity_l1_lit": 0.16475191712379456,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 0.03258900051150704,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 3.034675412529294,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 7.457082271575928,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "white_balance",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 7.823250868055555,
+    "chromaticity_l1_lit": 0.14287985861301422,
+    "detector_tp": 0,
+    "detector_fp": 0,
+    "detector_fn": 1,
+    "preprocessing_ms": 3.0451480006377096,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 8.338382740209225,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 1.4468538761138916,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "fusion",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 32.08152777777778,
+    "chromaticity_l1_lit": 0.3440088629722595,
+    "detector_tp": 0,
+    "detector_fp": 0,
+    "detector_fn": 1,
+    "preprocessing_ms": 39.99596900030156,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 33.85477519267474,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 2.373077630996704,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "clahe",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 17.796236979166668,
+    "chromaticity_l1_lit": 0.3371428847312927,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 2.7185560002180864,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 15.255574883428764,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 7.580907344818115,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "range_restore",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 0.8875159143518518,
+    "chromaticity_l1_lit": 0.03964758664369583,
+    "detector_tp": 0,
+    "detector_fp": 0,
+    "detector_fn": 1,
+    "preprocessing_ms": 10.647480000443466,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 0.9630656422893866,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 0.02970585785806179,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "range_preserve",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 6.969836516203704,
+    "chromaticity_l1_lit": 0.04101475700736046,
+    "detector_tp": 0,
+    "detector_fp": 0,
+    "detector_fn": 1,
+    "preprocessing_ms": 16.956322000623913,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 5.671021478099104,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 0.050810981541872025,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "red_box",
+    "method": "exposure_only",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 135546,
+    "rgb_mae_0_255": 14.199116030092593,
+    "chromaticity_l1_lit": 0.16530348360538483,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 8.350800000698655,
+    "objects": [
+      {
+        "id": "RedBox",
+        "expected_color": "red",
+        "mask_pixels": 55188,
+        "rgb_mae": 9.32194196806069,
+        "hue_valid_pixels": 45108,
+        "hue_error_deg": 7.433680057525635,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  }
+]

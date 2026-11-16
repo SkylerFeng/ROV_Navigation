@@ -10,6 +10,10 @@ def main():
     p.add_argument('--instruction',help='Resolve a natural-language command with the selected cloud model before launch')
     p.add_argument('--navigation-config',type=Path,help='Navigation tuning JSON patch')
     p.add_argument('--task-config',type=Path,help='JSON patch over config/semantic/task.json')
+    p.add_argument('--vision-config',type=Path,help='Underwater image processing patch')
+    p.add_argument('--agent-config',type=Path,help='Task memory, region prior and loop-monitor patch')
+    p.add_argument('--search-region',help='Exact region name from config/semantic/search_regions.json; explicit mission hint')
+    p.add_argument('--regions-config',type=Path,default=ROOT/'config/semantic/search_regions.json')
     p.add_argument('--runtime-config',type=Path,help='JSON patch over config/semantic/runtime.json')
     p.add_argument('--providers-config',type=Path,help='JSON patch over config/semantic/providers.json')
     p.add_argument('--overrides',type=Path,default=ROOT/'config/experiments/hydro_components.json')
@@ -22,6 +26,12 @@ def main():
     if a.instruction and a.policy=='rule':p.error('--instruction requires qwen or deepseek; rule uses task-config')
     if a.wall_limit<=0:p.error('--wall-limit must be positive')
     from semantic_config import load_task,load_runtime,load_providers,effective_provider
+    from semantic_vision import load_vision
+    from semantic_agent import load_agent
+    vision=load_vision(a.vision_config);agent=load_agent(a.agent_config)
+    if a.search_region:
+        from semantic_agent import resolve_region
+        agent=resolve_region(agent,a.search_region,a.regions_config)
     task=load_task(a.task_config);runtime=load_runtime(a.runtime_config);providers=load_providers(a.providers_config)
     if runtime['verification']['distance_near_margin_m']>=task['surface_standoff_m']:
         p.error('verification.distance_near_margin_m must be smaller than task.surface_standoff_m')
@@ -47,7 +57,7 @@ def main():
         else:os.environ['ROV_EXPERIMENT_OVERRIDES']=previous
     experiment['scene_file']=str(a.scene_file)
     effective={'policy':a.policy,'scene':str(a.scene_file),'model':str(a.model),'task':task,'runtime':runtime,
-               'providers':providers,'experiment':experiment,'domain':a.domain,'view':a.view,
+               'vision':vision,'agent':agent,'providers':providers,'experiment':experiment,'domain':a.domain,'view':a.view,
                'wall_limit_s':a.wall_limit,'sim_limit_s':task['timeout_sim_s']+10,
                'credential_present':bool(os.getenv(providers[a.policy]['key_env'])) if a.policy!='rule' else None}
     if a.check_config:
@@ -72,7 +82,7 @@ def main():
             (a.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2));print(json.dumps(summary,ensure_ascii=False));return
         task=apply_resolution(task,parsed);effective['task']=task;effective['sim_limit_s']=task['timeout_sim_s']+10
     snapshots=a.output/'config';snapshots.mkdir()
-    for name,value in [('task',task),('runtime',runtime),('providers',providers),('experiment',experiment)]:
+    for name,value in [('vision',vision),('agent',agent),('task',task),('runtime',runtime),('providers',providers),('experiment',experiment)]:
         (snapshots/(name+'.json')).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
     (a.output/'effective_config.json').write_text(json.dumps(effective,ensure_ascii=False,indent=2)+'\n')
     env=dict(os.environ,ROS_DOMAIN_ID=str(a.domain),ROV_SCENARIO='platform_semantic',ROV_SEMANTIC='1',
@@ -86,7 +96,9 @@ def main():
     sources += [*ROOT.glob('ros_ws/src/plan_manage/src/*.cpp'),*ROOT.glob('ros_ws/src/plan_manage/include/**/*.h'),
                 ROOT/'ros_ws/install/ego_planner/lib/ego_planner/ego_planner_node',
                 *ROOT.glob('ros_ws/install/ego_planner/lib/*.so')]
-    sources += [a.model,a.overrides,*snapshots.glob('*.json')]
+    sources += [a.model,a.overrides,*snapshots.glob('*.json'),ROOT/'scripts/static_collision_prior.py']
+    if experiment.get('static_collision_prior'):
+        sources += [ROOT/experiment['static_collision_prior'],(ROOT/experiment['static_collision_prior']).with_suffix('.json')]
     (a.output/'manifest.json').write_text(json.dumps({'policy':a.policy,'scene':str(a.scene_file),'sha256':{str(f.relative_to(ROOT) if f.is_relative_to(ROOT) else f):hashlib.sha256(f.read_bytes()).hexdigest() for f in sources if f.is_file()},'hydrodynamics':experiment.get('hydrodynamics',{}).get('component_model_file'),'domain':a.domain},indent=2))
     children=[];streams=[];start=time.monotonic();reason='unknown'
     def launch(name,cmd):
@@ -95,6 +107,7 @@ def main():
     try:
         nav=launch('navigation',['bash','scripts/start_navigation.sh'])
         semantic=launch('semantic',['bash','scripts/start_semantic.sh','--policy',a.policy,'--output',str(a.output/'semantic'),
+                                   '--vision-config',str(snapshots/'vision.json'),'--agent-config',str(snapshots/'agent.json'),
                                    '--model',str(a.model),'--task-config',str(snapshots/'task.json'),
                                    '--runtime-config',str(snapshots/'runtime.json'),'--providers-config',str(snapshots/'providers.json')])
         sim=launch('simulation',['bash','scripts/start_sim.sh',* ([] if a.gui else ['--headless']),'--scenario','platform_semantic','--scene-file',str(a.scene_file),'--output-dir',str(a.output/'sim'),'--sim-time-limit',str(task['timeout_sim_s']+10),'--wall-time-limit',str(a.wall_limit),'--view',a.view])

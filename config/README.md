@@ -163,3 +163,37 @@ max_velocity、max_acceleration、max_heading_error_deg 等导航参数也可放
 `config/semantic/profiles/efficient_scan.json` 是可选对照配置，将语义转向上限从 0.25 调至 0.30 rad/s，影响扫描、保持朝向和恢复；不会提高导航平移速度。使用 `--runtime-config` 指定。实测与限制见 `docs/semantic_scan_efficiency_20261110.md`。
 
 水动力控制器另有 `hydrodynamics.max_yaw_rate_rad_s` 指令限幅。较快扫描需同时指定 `--overrides config/experiments/hydro_components_fast_scan.json`，否则仍被原0.25 rad/s限幅截断。配套配置保留原部件水动力系数，仅将这个控制指令上限调至0.30。
+
+### 水下视觉与任务 Agent（2026-11-16）
+
+- `semantic/vision.json` / `--vision-config`：几何校正、白平衡、CLAHE、融合、已知参数距离恢复；当前图像增强默认关闭，颜色默认使用原色训练模型。
+- `semantic/agent.json` / `--agent-config`：任务行动记忆、粗略搜索区域、观察点尝试预算、失败冷却和导航转圈监测；任务层默认启用。
+- `semantic/agent_profiles/west_search.json`：世界坐标系西侧粗略区域提示；`disabled.json`：旧策略对照。任意自然语言区域尚不会自动变成坐标范围。
+- 运行快照增加 `config/vision.json` 与 `config/agent.json`；详细方法、论文对应关系和实验局限见 `docs/underwater_vision_agent_20261116.md`。
+
+偏黄修正后可用 `--vision-config config/semantic/vision_profiles/range_preserve.json`：按距离恢复＋保色提亮作为预览，`detector_source=raw` 保留检测器原始输入。`preview_gamma` 和 `preview_max_gain` 控制提亮；`neutral_gain_rgb` 仅填明确灰卡标定的增益，不能从蓝色目标猜测白平衡。详情见 `docs/vision_color_preservation_20261116.md`。
+
+### 区域先验搜索
+
+用 `--search-region '西侧设备区'` 选择 `config/semantic/search_regions.json` 中的人工地图区域。
+`--agent-config` 可覆盖搜索时间预算、区域扩展步长、定位离散度与接近位置更新阈值。
+区域是软提示，发现视觉目标后优先接近；超时会逐步扩大搜索，最终释放区域偏好。
+详见 [区域 Agent 说明](../docs/regional_agent_20261116.md)。
+
+### 复杂语义搜索场景
+
+`config/semantic/complex_scenes.json` 定义目标、干扰物及碰撞挡板布局。
+运行 `python3 scripts/build_complex_semantic_scenes.py` 生成三个独立 USD 层与离线真值标签。
+`config/semantic/complex_suite.json` 定义对应命令和区域提示，供 `scripts/run_semantic_diversity.py --cases` 串行测试。
+场景布局只在构建和离线审核时使用；运行时决策不加载目标真值。
+说明与 GUI 命令：[复杂场景测试](../docs/complex_agent_20261116.md)。
+
+### 复杂场景碰撞地图与类别冲突（2026-11-16）
+
+- `experiment.json/static_collision_prior` 默认 `null`；`experiments/hydro_components_known_pool.json` 显式启用 `maps/platform_static_collision.npz`，供语义探索与 EGO 共享。它只含已知池体碰撞网格，无目标位置，也不提供未知区域的自由空间。
+- 更换池体、坐标变换或导航高度后需要重新导出并检查该地图：`bash scripts/usd_python.sh scripts/export_pool_collision_prior.py --scene <场景.usda> --output <地图.npz>`。
+- `semantic/agent.json/category_conflict_radius_m`：同色近邻异类别冲突半径，当前 0.65m。较大值更保守，也可能延后近邻真实异类目标的确认。
+- `alternative_regions`、`alternative_region_weight`：先验耗尽后的备选区域及评分权重；`--search-region` 从区域目录自动填入其他区域。备选区域的局部搜索计时在进入区域后进行，总任务超时不变。
+- 本次候选检测器通过 `--model logs/hardening_20261116/detector/train/weights/best.onnx` 显式选择；默认旧模型尚未替换。
+- 回归套件：`semantic/complex_hardening_suite.json`。完整说明见 `docs/complex_hardening_20261116.md`。
+- `navigation/profiles/complex_hull_clearance.json` 与 `semantic/complex_hull_task.json` 配套使用，两个规划层均设 0.40m，匹配 0.48×0.57m 碰撞盒的旋转外廓（半径约0.373m）。启用池体先验时，语义层改为与 EGO 点云一致的方形 XY 膨胀；这是复杂场景专用候选配置，不改变旧默认0.25m。

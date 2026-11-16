@@ -1,0 +1,1025 @@
+[
+  {
+    "event": "agent_search_expanded",
+    "sim_time": 64.300003353,
+    "time_s": 64.300003353,
+    "reason": "search_budget_exhausted",
+    "expansion": 1,
+    "global_search": false
+  },
+  {
+    "event": "navigation_no_progress",
+    "sim_time": 96.900005053,
+    "goal": [
+      1.2749999999999995,
+      0.07500000000000018,
+      1.0
+    ],
+    "position": [
+      -1.1939424276351929,
+      0.09092112630605698,
+      0.9998824000358582
+    ],
+    "distance_m": 2.4689937640807766,
+    "mode": "EXPLORING"
+  },
+  {
+    "event": "agent_search_expanded",
+    "sim_time": 129.700006764,
+    "time_s": 129.700006764,
+    "reason": "search_budget_exhausted",
+    "expansion": 2,
+    "global_search": false
+  },
+  {
+    "event": "agent_search_expanded",
+    "sim_time": 190.700009945,
+    "time_s": 190.700009945,
+    "reason": "prior_exhausted_try_alternative",
+    "region": "西侧设备区"
+  },
+  {
+    "event": "perception",
+    "sim_time": 231.500012073,
+    "vision": {
+      "method": "none",
+      "rectified": false,
+      "color_source": "raw",
+      "detector_source": "processed",
+      "processing_ms": 0.18878400078392588,
+      "invalid_range_fraction": 0.026358506944444443
+    },
+    "detections": [
+      {
+        "category": "pipe",
+        "detector_score": 0.9280617237091064,
+        "bbox": [
+          585.510498046875,
+          156.56512451171875,
+          640.0,
+          191.84530639648438
+        ],
+        "color": "yellow",
+        "color_score": 0.9777994751930237,
+        "surface_world": [
+          0.3945278178220808,
+          0.8341969253721264,
+          1.104533774524292
+        ],
+        "range_m": 3.2833428382873535,
+        "depth_samples": 1407,
+        "depth_mad_m": 0.08648943901062012,
+        "localization_valid": true
+      },
+      {
+        "category": "pipe",
+        "detector_score": 0.858414351940155,
+        "bbox": [
+          375.383056640625,
+          167.2591552734375,
+          397.2635803222656,
+          183.14236450195312
+        ],
+        "color": "blue",
+        "color_score": 0.9281166791915894,
+        "surface_world": [
+          -1.9653200586937767,
+          -1.5018097235944845,
+          1.105697428806702
+        ],
+        "range_m": 5.710711479187012,
+        "depth_samples": 162,
+        "depth_mad_m": 0.06808662414550781,
+        "localization_valid": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_006",
+        "hits": 19,
+        "first_seen": 227.833345215,
+        "category": "pipe",
+        "detector_score": 0.858414351940155,
+        "bbox": [
+          375.383056640625,
+          167.2591552734375,
+          397.2635803222656,
+          183.14236450195312
+        ],
+        "color": "blue",
+        "color_score": 0.9281166791915894,
+        "surface_world": [
+          -1.9680301579290633,
+          -1.502486590091502,
+          1.114698480244694
+        ],
+        "range_m": 5.710711479187012,
+        "depth_samples": 162,
+        "depth_mad_m": 0.06808662414550781,
+        "localization_valid": true,
+        "last_seen": 231.433345403,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.019310382668587703,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_007",
+        "hits": 3,
+        "first_seen": 231.033345382,
+        "category": "pipe",
+        "detector_score": 0.9280617237091064,
+        "bbox": [
+          585.510498046875,
+          156.56512451171875,
+          640.0,
+          191.84530639648438
+        ],
+        "color": "yellow",
+        "color_score": 0.9777994751930237,
+        "surface_world": [
+          0.31133058316446544,
+          0.7978109500025514,
+          1.109684099580258
+        ],
+        "range_m": 3.2833428382873535,
+        "depth_samples": 1407,
+        "depth_mad_m": 0.08648943901062012,
+        "localization_valid": true,
+        "last_seen": 231.433345403,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 3,
+        "position_spread_m": 0.08489845006640118,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      }
+    ],
+    "free_cells": 2775,
+    "occupied_cells": 1229,
+    "inspected_cells": 2193
+  },
+  {
+    "event": "perception",
+    "sim_time": 235.233345601,
+    "vision": {
+      "method": "none",
+      "rectified": false,
+      "color_source": "raw",
+      "detector_source": "processed",
+      "processing_ms": 0.1221389993588673,
+      "invalid_range_fraction": 0.017782118055555556
+    },
+    "detections": [
+      {
+        "category": "pipe",
+        "detector_score": 0.939025342464447,
+        "bbox": [
+          463.85540771484375,
+          158.56747436523438,
+          553.87744140625,
+          195.42886352539062
+        ],
+        "color": "yellow",
+        "color_score": 0.980085015296936,
+        "surface_world": [
+          0.617923252437308,
+          0.9073841934170142,
+          1.112944824054027
+        ],
+        "range_m": 2.861403226852417,
+        "depth_samples": 2028,
+        "depth_mad_m": 0.06606149673461914,
+        "localization_valid": true
+      },
+      {
+        "category": "pipe",
+        "detector_score": 0.8721534013748169,
+        "bbox": [
+          280.3267822265625,
+          168.77301025390625,
+          302.9870300292969,
+          183.58834838867188
+        ],
+        "color": "blue",
+        "color_score": 0.9403592348098755,
+        "surface_world": [
+          -1.9149352256421976,
+          -1.6229788439497237,
+          1.1155347174495485
+        ],
+        "range_m": 5.477243423461914,
+        "depth_samples": 188,
+        "depth_mad_m": 0.08116364479064941,
+        "localization_valid": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_006",
+        "hits": 29,
+        "first_seen": 227.833345215,
+        "category": "pipe",
+        "detector_score": 0.8721534013748169,
+        "bbox": [
+          280.3267822265625,
+          168.77301025390625,
+          302.9870300292969,
+          183.58834838867188
+        ],
+        "color": "blue",
+        "color_score": 0.9403592348098755,
+        "surface_world": [
+          -1.9401300983290672,
+          -1.5732243307238942,
+          1.1133462806499952
+        ],
+        "range_m": 5.477243423461914,
+        "depth_samples": 188,
+        "depth_mad_m": 0.08116364479064941,
+        "localization_valid": true,
+        "last_seen": 234.63334557,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.09208011815120937,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_007",
+        "hits": 13,
+        "first_seen": 231.033345382,
+        "category": "pipe",
+        "detector_score": 0.939025342464447,
+        "bbox": [
+          463.85540771484375,
+          158.56747436523438,
+          553.87744140625,
+          195.42886352539062
+        ],
+        "color": "yellow",
+        "color_score": 0.980085015296936,
+        "surface_world": [
+          0.6145120303734537,
+          0.928529092488586,
+          1.1100804965909952
+        ],
+        "range_m": 2.861403226852417,
+        "depth_samples": 2028,
+        "depth_mad_m": 0.06606149673461914,
+        "localization_valid": true,
+        "last_seen": 234.63334557,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.04321811401910628,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_008",
+        "hits": 3,
+        "first_seen": 232.433345455,
+        "category": "box",
+        "detector_score": 0.7082730531692505,
+        "bbox": [
+          469.9195251464844,
+          164.40802001953125,
+          507.7828674316406,
+          185.3748779296875
+        ],
+        "color": "yellow",
+        "color_score": 0.9870542883872986,
+        "surface_world": [
+          0.24770750760245386,
+          0.7445311932043186,
+          1.0988083813264446
+        ],
+        "range_m": 3.1880877017974854,
+        "depth_samples": 499,
+        "depth_mad_m": 0.06231284141540527,
+        "localization_valid": true,
+        "last_seen": 233.233345497,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 3,
+        "position_spread_m": 0.12684222239904536,
+        "observation_age_s": 1.400000073000001,
+        "visible_now": false,
+        "approach_candidate_ids": []
+      }
+    ],
+    "free_cells": 2774,
+    "occupied_cells": 1242,
+    "inspected_cells": 2193
+  },
+  {
+    "event": "perception",
+    "sim_time": 237.266679041,
+    "vision": {
+      "method": "none",
+      "rectified": false,
+      "color_source": "raw",
+      "detector_source": "processed",
+      "processing_ms": 0.20626699915737845,
+      "invalid_range_fraction": 0.017508680555555555
+    },
+    "detections": [
+      {
+        "category": "pipe",
+        "detector_score": 0.9379187822341919,
+        "bbox": [
+          462.99957275390625,
+          158.40264892578125,
+          554.6151733398438,
+          195.64291381835938
+        ],
+        "color": "yellow",
+        "color_score": 0.9790348410606384,
+        "surface_world": [
+          0.6154484580780373,
+          0.9091610559844694,
+          1.1134775149893255
+        ],
+        "range_m": 2.814058780670166,
+        "depth_samples": 2136,
+        "depth_mad_m": 0.06617212295532227,
+        "localization_valid": true
+      },
+      {
+        "category": "pipe",
+        "detector_score": 0.8873516321182251,
+        "bbox": [
+          277.54388427734375,
+          168.6064453125,
+          301.1028137207031,
+          184.66885375976562
+        ],
+        "color": "blue",
+        "color_score": 0.9593774676322937,
+        "surface_world": [
+          -1.8820319490237374,
+          -1.6169402262948853,
+          1.1190500044607166
+        ],
+        "range_m": 5.395396709442139,
+        "depth_samples": 169,
+        "depth_mad_m": 0.0534977912902832,
+        "localization_valid": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_006",
+        "hits": 1,
+        "first_seen": 227.833345215,
+        "category": "pipe",
+        "detector_score": 0.8873516321182251,
+        "bbox": [
+          277.54388427734375,
+          168.6064453125,
+          301.1028137207031,
+          184.66885375976562
+        ],
+        "color": "blue",
+        "color_score": 0.9593774676322937,
+        "surface_world": [
+          -1.9197957460722017,
+          -1.5885248941737409,
+          1.1153425839837476
+        ],
+        "range_m": 5.395396709442139,
+        "depth_samples": 169,
+        "depth_mad_m": 0.0534977912902832,
+        "localization_valid": true,
+        "last_seen": 237.033345695,
+        "confirmed": false,
+        "category_conflict": false,
+        "category_streak": 1,
+        "position_spread_m": 0.0,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_007",
+        "hits": 1,
+        "first_seen": 231.033345382,
+        "category": "pipe",
+        "detector_score": 0.9379187822341919,
+        "bbox": [
+          462.99957275390625,
+          158.40264892578125,
+          554.6151733398438,
+          195.64291381835938
+        ],
+        "color": "yellow",
+        "color_score": 0.9790348410606384,
+        "surface_world": [
+          0.614839780070058,
+          0.9217502797121452,
+          1.1112694530304108
+        ],
+        "range_m": 2.814058780670166,
+        "depth_samples": 2136,
+        "depth_mad_m": 0.06617212295532227,
+        "localization_valid": true,
+        "last_seen": 237.033345695,
+        "confirmed": false,
+        "category_conflict": false,
+        "category_streak": 1,
+        "position_spread_m": 0.0,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_008",
+        "hits": 3,
+        "first_seen": 232.433345455,
+        "category": "box",
+        "detector_score": 0.7082730531692505,
+        "bbox": [
+          469.9195251464844,
+          164.40802001953125,
+          507.7828674316406,
+          185.3748779296875
+        ],
+        "color": "yellow",
+        "color_score": 0.9870542883872986,
+        "surface_world": [
+          0.24770750760245386,
+          0.7445311932043186,
+          1.0988083813264446
+        ],
+        "range_m": 3.1880877017974854,
+        "depth_samples": 499,
+        "depth_mad_m": 0.06231284141540527,
+        "localization_valid": true,
+        "last_seen": 233.233345497,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 3,
+        "position_spread_m": 0.12684222239904536,
+        "observation_age_s": 3.8000001980000206,
+        "visible_now": false,
+        "approach_candidate_ids": []
+      }
+    ],
+    "free_cells": 2775,
+    "occupied_cells": 1242,
+    "inspected_cells": 2193
+  },
+  {
+    "event": "perception",
+    "sim_time": 240.400012537,
+    "vision": {
+      "method": "none",
+      "rectified": false,
+      "color_source": "raw",
+      "detector_source": "processed",
+      "processing_ms": 0.1359550005872734,
+      "invalid_range_fraction": 0.017486979166666666
+    },
+    "detections": [
+      {
+        "category": "pipe",
+        "detector_score": 0.9387350678443909,
+        "bbox": [
+          462.35797119140625,
+          158.87603759765625,
+          553.18310546875,
+          196.01092529296875
+        ],
+        "color": "yellow",
+        "color_score": 0.9823720455169678,
+        "surface_world": [
+          0.6185509900511215,
+          0.9093719278865936,
+          1.1164285334799422
+        ],
+        "range_m": 2.8212461471557617,
+        "depth_samples": 2089,
+        "depth_mad_m": 0.06514573097229004,
+        "localization_valid": true
+      },
+      {
+        "category": "pipe",
+        "detector_score": 0.878613293170929,
+        "bbox": [
+          278.14410400390625,
+          168.46884155273438,
+          301.4623718261719,
+          184.81588745117188
+        ],
+        "color": "blue",
+        "color_score": 0.9607032537460327,
+        "surface_world": [
+          -1.9074026800093389,
+          -1.6206578229394948,
+          1.124243521932573
+        ],
+        "range_m": 5.435006141662598,
+        "depth_samples": 192,
+        "depth_mad_m": 0.07442808151245117,
+        "localization_valid": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_006",
+        "hits": 8,
+        "first_seen": 227.833345215,
+        "category": "pipe",
+        "detector_score": 0.878613293170929,
+        "bbox": [
+          278.14410400390625,
+          168.46884155273438,
+          301.4623718261719,
+          184.81588745117188
+        ],
+        "color": "blue",
+        "color_score": 0.9607032537460327,
+        "surface_world": [
+          -1.9063067762540962,
+          -1.619514726361218,
+          1.1213548865265213
+        ],
+        "range_m": 5.435006141662598,
+        "depth_samples": 192,
+        "depth_mad_m": 0.07442808151245117,
+        "localization_valid": true,
+        "last_seen": 239.833345841,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.01782260641377539,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_007",
+        "hits": 8,
+        "first_seen": 231.033345382,
+        "category": "pipe",
+        "detector_score": 0.9387350678443909,
+        "bbox": [
+          462.35797119140625,
+          158.87603759765625,
+          553.18310546875,
+          196.01092529296875
+        ],
+        "color": "yellow",
+        "color_score": 0.9823720455169678,
+        "surface_world": [
+          0.6198194252745043,
+          0.90881654955385,
+          1.1146475386437271
+        ],
+        "range_m": 2.8212461471557617,
+        "depth_samples": 2089,
+        "depth_mad_m": 0.06514573097229004,
+        "localization_valid": true,
+        "last_seen": 239.833345841,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.006929728283758703,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_008",
+        "hits": 3,
+        "first_seen": 232.433345455,
+        "category": "box",
+        "detector_score": 0.7082730531692505,
+        "bbox": [
+          469.9195251464844,
+          164.40802001953125,
+          507.7828674316406,
+          185.3748779296875
+        ],
+        "color": "yellow",
+        "color_score": 0.9870542883872986,
+        "surface_world": [
+          0.24770750760245386,
+          0.7445311932043186,
+          1.0988083813264446
+        ],
+        "range_m": 3.1880877017974854,
+        "depth_samples": 499,
+        "depth_mad_m": 0.06231284141540527,
+        "localization_valid": true,
+        "last_seen": 233.233345497,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 3,
+        "position_spread_m": 0.12684222239904536,
+        "observation_age_s": 6.600000344000023,
+        "visible_now": false,
+        "approach_candidate_ids": []
+      }
+    ],
+    "free_cells": 2775,
+    "occupied_cells": 1245,
+    "inspected_cells": 2193
+  },
+  {
+    "event": "perception",
+    "sim_time": 241.900012616,
+    "vision": {
+      "method": "none",
+      "rectified": false,
+      "color_source": "raw",
+      "detector_source": "processed",
+      "processing_ms": 0.1691880006546853,
+      "invalid_range_fraction": 0.016631944444444446
+    },
+    "detections": [
+      {
+        "category": "pipe",
+        "detector_score": 0.9318580627441406,
+        "bbox": [
+          442.49884033203125,
+          157.2430419921875,
+          528.9390258789062,
+          193.35720825195312
+        ],
+        "color": "yellow",
+        "color_score": 0.9828588366508484,
+        "surface_world": [
+          0.6181615763464385,
+          0.9239386507602705,
+          1.115594743098782
+        ],
+        "range_m": 2.7751152515411377,
+        "depth_samples": 1970,
+        "depth_mad_m": 0.06492507457733154,
+        "localization_valid": true
+      },
+      {
+        "category": "pipe",
+        "detector_score": 0.8759211301803589,
+        "bbox": [
+          258.50250244140625,
+          167.620849609375,
+          282.9253845214844,
+          182.89288330078125
+        ],
+        "color": "blue",
+        "color_score": 0.9528488516807556,
+        "surface_world": [
+          -1.9432417441286631,
+          -1.5911287474193014,
+          1.124492906420585
+        ],
+        "range_m": 5.415603160858154,
+        "depth_samples": 213,
+        "depth_mad_m": 0.088775634765625,
+        "localization_valid": true
+      },
+      {
+        "category": "box",
+        "detector_score": 0.4692005515098572,
+        "bbox": [
+          430.65216064453125,
+          166.86456298828125,
+          446.8587646484375,
+          187.5224609375
+        ],
+        "color": "yellow",
+        "color_score": 0.9699310064315796,
+        "surface_world": [
+          0.18047190283438175,
+          0.6835011426428814,
+          1.1161231216297884
+        ],
+        "range_m": 3.0718963146209717,
+        "depth_samples": 83,
+        "depth_mad_m": 0.012572288513183594,
+        "localization_valid": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_006",
+        "hits": 16,
+        "first_seen": 227.833345215,
+        "category": "pipe",
+        "detector_score": 0.8759211301803589,
+        "bbox": [
+          258.50250244140625,
+          167.620849609375,
+          282.9253845214844,
+          182.89288330078125
+        ],
+        "color": "blue",
+        "color_score": 0.9528488516807556,
+        "surface_world": [
+          -1.9344370339054813,
+          -1.58755797189289,
+          1.1183334283058586
+        ],
+        "range_m": 5.415603160858154,
+        "depth_samples": 213,
+        "depth_mad_m": 0.088775634765625,
+        "localization_valid": true,
+        "last_seen": 241.833345945,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.03693169158461872,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_007",
+        "hits": 16,
+        "first_seen": 231.033345382,
+        "category": "pipe",
+        "detector_score": 0.9318580627441406,
+        "bbox": [
+          442.49884033203125,
+          157.2430419921875,
+          528.9390258789062,
+          193.35720825195312
+        ],
+        "color": "yellow",
+        "color_score": 0.9828588366508484,
+        "surface_world": [
+          0.6206517511110441,
+          0.9256017413137858,
+          1.114308811296762
+        ],
+        "range_m": 2.7751152515411377,
+        "depth_samples": 1970,
+        "depth_mad_m": 0.06492507457733154,
+        "localization_valid": true,
+        "last_seen": 241.833345945,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.01546582578449616,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_008",
+        "hits": 2,
+        "first_seen": 232.433345455,
+        "category": "box",
+        "detector_score": 0.4692005515098572,
+        "bbox": [
+          430.65216064453125,
+          166.86456298828125,
+          446.8587646484375,
+          187.5224609375
+        ],
+        "color": "yellow",
+        "color_score": 0.9699310064315796,
+        "surface_world": [
+          0.24815958300085245,
+          0.7312537006372435,
+          1.1043176168214215
+        ],
+        "range_m": 3.0718963146209717,
+        "depth_samples": 83,
+        "depth_mad_m": 0.012572288513183594,
+        "localization_valid": true,
+        "last_seen": 241.833345945,
+        "confirmed": false,
+        "category_conflict": false,
+        "category_streak": 2,
+        "position_spread_m": 0.09940515690127348,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      }
+    ],
+    "free_cells": 2778,
+    "occupied_cells": 1245,
+    "inspected_cells": 2193
+  },
+  {
+    "event": "perception",
+    "sim_time": 244.700012762,
+    "vision": {
+      "method": "none",
+      "rectified": false,
+      "color_source": "raw",
+      "detector_source": "processed",
+      "processing_ms": 0.12355099897831678,
+      "invalid_range_fraction": 0.0157421875
+    },
+    "detections": [
+      {
+        "category": "pipe",
+        "detector_score": 0.9397759437561035,
+        "bbox": [
+          435.66046142578125,
+          160.4696044921875,
+          527.357421875,
+          198.1778564453125
+        ],
+        "color": "yellow",
+        "color_score": 0.9831408858299255,
+        "surface_world": [
+          0.6195113682407778,
+          0.9028526911897005,
+          1.1139163094776552
+        ],
+        "range_m": 2.6245346069335938,
+        "depth_samples": 2088,
+        "depth_mad_m": 0.06147170066833496,
+        "localization_valid": true
+      },
+      {
+        "category": "pipe",
+        "detector_score": 0.8828471899032593,
+        "bbox": [
+          245.53076171875,
+          170.3143310546875,
+          270.63739013671875,
+          186.65444946289062
+        ],
+        "color": "blue",
+        "color_score": 0.9648134708404541,
+        "surface_world": [
+          -1.9121076581994823,
+          -1.6227242113396945,
+          1.1251804908815157
+        ],
+        "range_m": 5.25493860244751,
+        "depth_samples": 237,
+        "depth_mad_m": 0.0804891586303711,
+        "localization_valid": true
+      },
+      {
+        "category": "box",
+        "detector_score": 0.46369123458862305,
+        "bbox": [
+          422.54510498046875,
+          171.55450439453125,
+          442.604736328125,
+          192.76022338867188
+        ],
+        "color": "yellow",
+        "color_score": 0.9884600043296814,
+        "surface_world": [
+          0.19197192529867113,
+          0.6691416637213421,
+          1.1131214874002826
+        ],
+        "range_m": 2.9057164192199707,
+        "depth_samples": 126,
+        "depth_mad_m": 0.01871955394744873,
+        "localization_valid": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_006",
+        "hits": 22,
+        "first_seen": 227.833345215,
+        "category": "pipe",
+        "detector_score": 0.8828471899032593,
+        "bbox": [
+          245.53076171875,
+          170.3143310546875,
+          270.63739013671875,
+          186.65444946289062
+        ],
+        "color": "blue",
+        "color_score": 0.9648134708404541,
+        "surface_world": [
+          -1.9295840361802452,
+          -1.6148952875145581,
+          1.1207702416789194
+        ],
+        "range_m": 5.25493860244751,
+        "depth_samples": 237,
+        "depth_mad_m": 0.0804891586303711,
+        "localization_valid": true,
+        "last_seen": 244.233346071,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.02991693079078926,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_007",
+        "hits": 22,
+        "first_seen": 231.033345382,
+        "category": "pipe",
+        "detector_score": 0.9397759437561035,
+        "bbox": [
+          435.66046142578125,
+          160.4696044921875,
+          527.357421875,
+          198.1778564453125
+        ],
+        "color": "yellow",
+        "color_score": 0.9831408858299255,
+        "surface_world": [
+          0.6153555883324211,
+          0.9087684752001942,
+          1.1117482073137022
+        ],
+        "range_m": 2.6245346069335938,
+        "depth_samples": 2088,
+        "depth_mad_m": 0.06147170066833496,
+        "localization_valid": true,
+        "last_seen": 244.233346071,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 8,
+        "position_spread_m": 0.017699011620749022,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      },
+      {
+        "id": "obj_008",
+        "hits": 4,
+        "first_seen": 232.433345455,
+        "category": "box",
+        "detector_score": 0.46369123458862305,
+        "bbox": [
+          422.54510498046875,
+          171.55450439453125,
+          442.604736328125,
+          192.76022338867188
+        ],
+        "color": "yellow",
+        "color_score": 0.9884600043296814,
+        "surface_world": [
+          0.21489953821999785,
+          0.6965443396140012,
+          1.1100757404124606
+        ],
+        "range_m": 2.9057164192199707,
+        "depth_samples": 126,
+        "depth_mad_m": 0.01871955394744873,
+        "localization_valid": true,
+        "last_seen": 244.233346071,
+        "confirmed": true,
+        "category_conflict": false,
+        "category_streak": 4,
+        "position_spread_m": 0.1926720240064272,
+        "observation_age_s": 0,
+        "visible_now": true,
+        "approach_candidate_ids": []
+      }
+    ],
+    "free_cells": 2779,
+    "occupied_cells": 1245,
+    "inspected_cells": 2193
+  },
+  {
+    "event": "llm_error",
+    "sim_time": 248.100012939,
+    "type": "ValueError",
+    "detail": "invalid candidate",
+    "consecutive_errors": 1,
+    "rejected_action": null
+  },
+  {
+    "event": "recovery_started",
+    "sim_time": 248.100012939,
+    "reason": "approach_became_invalid",
+    "attempt": 1,
+    "target_surface": [
+      0.21489953821999785,
+      0.6965443396140012,
+      1.1100757404124606
+    ],
+    "position": [
+      3.2997140884399414,
+      0.036442503333091736,
+      0.999882161617279
+    ]
+  },
+  {
+    "event": "llm_error",
+    "sim_time": 272.500014211,
+    "type": "ValueError",
+    "detail": "invalid candidate",
+    "consecutive_errors": 2,
+    "rejected_action": null
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "note": "Same known coefficients generate and invert the chart; ideal range, no noise. Not Sea-thru parameter estimation or real camera color accuracy.",
+  "results": [
+    {
+      "method": "none",
+      "synthetic_rgb_mae_0_255": 14.13888888888889,
+      "synthetic_hsv_correct_patches": 12,
+      "patches": 12
+    },
+    {
+      "method": "white_balance",
+      "synthetic_rgb_mae_0_255": 22.02777777777778,
+      "synthetic_hsv_correct_patches": 11,
+      "patches": 12
+    },
+    {
+      "method": "clahe",
+      "synthetic_rgb_mae_0_255": 17.90111111111111,
+      "synthetic_hsv_correct_patches": 12,
+      "patches": 12
+    },
+    {
+      "method": "wb_clahe",
+      "synthetic_rgb_mae_0_255": 26.84258246527778,
+      "synthetic_hsv_correct_patches": 11,
+      "patches": 12
+    },
+    {
+      "method": "fusion",
+      "synthetic_rgb_mae_0_255": 35.71360677083333,
+      "synthetic_hsv_correct_patches": 12,
+      "patches": 12
+    },
+    {
+      "method": "range_restore",
+      "synthetic_rgb_mae_0_255": 1.1388888888888888,
+      "synthetic_hsv_correct_patches": 12,
+      "patches": 12
+    }
+  ]
+}

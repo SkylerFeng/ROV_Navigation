@@ -21,7 +21,7 @@ def draw(fig,state):
     ax=fig.add_subplot(layout[:,0]);raw_ax=fig.add_subplot(layout[0,1]);det_ax=fig.add_subplot(layout[1,1])
     panel=fig.add_subplot(layout[:,2]);panel.axis('off')
     for image_ax in (raw_ax,det_ax):image_ax.axis('off')
-    raw_ax.set_title('Camera RGB / 相机原图');det_ax.set_title('YOLO / 检测结果')
+    raw_ax.set_title('Detector input / 检测输入');det_ax.set_title('YOLO / 检测结果')
     data=state.get('debug')
     if not data:
         panel.text(0,1,'Waiting for /rov/semantic/debug\nStart a NEW trial using the updated code.',va='top')
@@ -30,12 +30,12 @@ def draw(fig,state):
     rgb=state.get('camera_rgb')
     if camera and rgb is not None:
         from matplotlib.patches import Rectangle
-        raw_ax.imshow(rgb);det_ax.imshow(rgb)
+        raw_ax.imshow(state.get('preview_rgb',rgb));det_ax.imshow(rgb)
         camera_age=data['sim_time']-camera['sim_time']
         wall_age=time.monotonic()-state.get('received',time.monotonic())
         stale=camera_age>1. or camera_age<-.05 or wall_age>3.
         caption=f"Frame {camera['sim_time']:.2f}s | lag {camera_age:.2f}s"+(' | STALE' if stale else '')
-        raw_ax.set_title('Camera RGB / 相机原图\n'+caption,fontsize=10)
+        raw_ax.set_title(('Processed preview / 处理预览' if 'preview_rgb' in state else 'Detector input / 检测输入')+'\n'+caption,fontsize=10)
         det_ax.set_title(f"YOLO: {len(camera['detections'])} detections / 同帧检测",fontsize=10)
         for d in camera['detections']:
             x0,y0,x1,y1=d['bbox'];color='lime' if d['localized'] else 'orange'
@@ -77,6 +77,9 @@ def draw(fig,state):
     lines=[f"Telemetry age: {age:.1f}s"+('  STALE' if age>3 else ''),
            f"Sim time: {data['sim_time']:.1f}s   Policy: {data['policy']}",
            'Task / 任务: '+(data.get('instruction') or '[任务文本未收到]'),'State: '+data['state'],'Reason: '+data['reason'],
+           'Agent phase: '+str((data.get('agent') or {}).get('phase','disabled')),
+           'Vision: '+str((data.get('vision') or {}).get('method','none')),
+           'Detection input: '+str((data.get('vision') or {}).get('detector_source','processed')),
            'Planner: '+data['planner_state'],'Tracker: '+str(state.get('tracker',{}).get('mode','waiting')),
            '', 'Last accepted decision at '+str(decision.get('sim_time','-'))+' s:',
            json.dumps(decision.get('action',{}),ensure_ascii=False),
@@ -88,6 +91,8 @@ def draw(fig,state):
            'EGO cloud: '+state.get('cloud_topic','waiting for publisher'),
            'Cloud age: '+(f"{time.monotonic()-state['cloud_received']:.1f}s" if 'cloud_received' in state else 'not received'),
            'Plan age: '+(f"{time.monotonic()-state['plan_received']:.1f}s" if 'plan_received' in state else 'not received'),
+           '', 'Latest tool results:',
+           *[str(r['action'])+' '+r['status']+' '+r['reason'] for r in (data.get('agent') or {}).get('recent_results',[])[-2:]],
            '', 'Recent stages (simulation seconds):',
            *[f"{e['t']:.1f}s {e['event']} {e['action']} {e['reason']}" for e in data.get('stages',[])],
            '', 'No ground-truth object coordinates are displayed.']
@@ -97,6 +102,14 @@ def draw(fig,state):
 def accept_debug(state,data):
     from semantic_debug_camera import decode_frame
     camera=data.get('camera');old=state.get('debug',{}).get('camera')
+    preview=data.get('camera_preview')
+    if preview and camera and preview.get('sim_time')==camera.get('sim_time'):
+        try:
+            state['preview_rgb']=decode_frame(preview);state.pop('preview_decode_error',None)
+        except Exception as exc:
+            state.pop('preview_rgb',None);state['preview_decode_error']=type(exc).__name__
+    else:
+        state.pop('preview_rgb',None);state.pop('preview_decode_error',None)
     state.update(debug=data,received=time.monotonic())
     if not camera:
         state.pop('camera_rgb',None);state.pop('camera_decode_error',None)
@@ -105,7 +118,7 @@ def accept_debug(state,data):
         try:
             state['camera_rgb']=decode_frame(camera);state.pop('camera_decode_error',None)
         except Exception as exc:
-            state.pop('camera_rgb',None);state['camera_decode_error']=type(exc).__name__
+            state.pop('camera_rgb',None);state.pop('preview_rgb',None);state['camera_decode_error']=type(exc).__name__
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--save',type=Path,help='Save latest frame on close');a=p.parse_args()

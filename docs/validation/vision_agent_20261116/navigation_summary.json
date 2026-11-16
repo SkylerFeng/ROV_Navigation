@@ -1,0 +1,42 @@
+[
+  {
+    "case": "qwen_yellow_baseline",
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 64.40000335900001,
+    "path_length_m": 1.9825181944569419,
+    "contact_pairs": 0,
+    "offline_verified": true,
+    "llm_calls": 4,
+    "final_target_surface_distance_xy_m": 1.168413228912078
+  },
+  {
+    "case": "qwen_yellow_raw",
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 65.500003416,
+    "path_length_m": 2.1034415829617816,
+    "contact_pairs": 0,
+    "offline_verified": true,
+    "llm_calls": 4,
+    "final_target_surface_distance_xy_m": 1.1761627241718373
+  },
+  {
+    "case": "qwen_yellow_clahe",
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 67.1000035,
+    "path_length_m": 2.1226972675266094,
+    "contact_pairs": 0,
+    "offline_verified": true,
+    "llm_calls": 4,
+    "final_target_surface_distance_xy_m": 1.1761194356238156
+  },
+  {
+    "case": "qwen_yellow_final",
+    "runtime_status": "SUCCEEDED",
+    "simulation_seconds": 66.00000344200001,
+    "path_length_m": 2.0958736008550645,
+    "contact_pairs": 0,
+    "offline_verified": true,
+    "llm_calls": 4,
+    "final_target_surface_distance_xy_m": 1.174369310557204
+  }
+]

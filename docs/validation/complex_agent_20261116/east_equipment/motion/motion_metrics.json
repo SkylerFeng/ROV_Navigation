@@ -1,0 +1,14 @@
+{
+  "run": "logs/complex_agent_20261116/east_equipment",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 308.00001606399996,
+  "path_length_m": 6.522441206160173,
+  "stationary_turn_seconds": 94.60000493377447,
+  "total_yaw_travel_deg": 1021.7033261305526,
+  "yaw_acceleration_p95_rad_s2": 0.1278236521724232,
+  "llm_calls": 21,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

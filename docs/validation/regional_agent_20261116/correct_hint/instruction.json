@@ -1,0 +1,21 @@
+{
+  "instruction": "请靠近黄色方块，距它表面保持一米。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "yellow",
+    "surface_standoff_m": 1.0,
+    "reason": "明确指定单目标：方块（即box），颜色为黄色，距离为一米（在允许区间[0.6, 1.5] m内）。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.0219275599993125,
+  "usage": {
+    "total_tokens": 467,
+    "completion_tokens": 70,
+    "prompt_tokens": 397,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

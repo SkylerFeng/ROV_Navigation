@@ -1,0 +1,11 @@
+{
+  "scripts/generate_semantic_hardcases.py": "efb2f20ea45b64d7fc7876e7b245bc08e32454aee4a9a4d3f6f073d639eac1a0",
+  "scripts/prepare_semantic_hardcases.py": "9981371145fe1e8d396fef885b5885fa8c88e02cd31bcf50cb2afa28a6775a2b",
+  "scripts/evaluate_semantic_hardcases.py": "1e55829a7090801ccf23bc52b550939008d009beefab8d422a00ec0e3c70c44a",
+  "scripts/evaluate_hardcase_runtime.py": "69373b09fdd557e537a53d3390ad2d9624a3059a5384608519128c705e57e7f1",
+  "scripts/export_pool_collision_prior.py": "d6dbe5d2e92fe2a1f228e24664c5fb744aba5b6bf660925b645ecb4559591ae3",
+  "scripts/static_collision_prior.py": "512e577dd12fbdae95013d0c955d37e6edcfc99dccbd2eb0108432f12bfc60a7",
+  "scripts/semantic_core.py": "8088f48d9a20f5933aa3d92cd3d6f9603abad57283f6481b7ac2a787e98893cf",
+  "scripts/semantic_agent.py": "25c58722b2b4556513cb44d30f7390bc9c93f934530122f48e389a0ed64700cf",
+  "scripts/semantic_navigation.py": "441db6e1f9c3e6d14a7b72ece3a97480ddb1c65f183bcb25c51bf4f8ed3d180c"
+}

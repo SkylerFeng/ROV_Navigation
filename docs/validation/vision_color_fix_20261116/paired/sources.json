@@ -1,0 +1,17 @@
+{
+  "logs/vision_color_fix_20261116/static_pairs/blue_pipe/paired.npz": "5e08368a785577584d0f00c031cd7ab34a65ab15975e5da3199298ef53921565",
+  "logs/vision_color_fix_20261116/static_pairs/blue_pipe/underwater.png": "df3f028b02671ab95ea32eb015684fad0f0a0cdde9e0cb27091c145c451c6e09",
+  "logs/vision_color_fix_20261116/static_pairs/blue_pipe/metadata.json": "f5394150d191d0472d2d003bb51adfd0412a429efcfb1c5c4840c5139c152133",
+  "logs/vision_color_fix_20261116/static_pairs/blue_pipe/object_masks.npz": "2c0d69bb0d84d91c1e39c192da9e06d4c98fcb8ac95487a921dc71da876837f5",
+  "logs/vision_color_fix_20261116/static_pairs/blue_pipe/reference.png": "631dd47dea8d137fb26639f14206285c6e48dc5114f556a5597e991bcf17a560",
+  "logs/vision_color_fix_20261116/static_pairs/yellow_box/paired.npz": "a7d8ef132caebf2e8f20e752c329a61ccd00360edcdccc7524d5ea76b28021d1",
+  "logs/vision_color_fix_20261116/static_pairs/yellow_box/underwater.png": "477c5d382c5407490822146ea2d0dcdbe84c716aa3d0a8d7c3694deb043b4c1e",
+  "logs/vision_color_fix_20261116/static_pairs/yellow_box/metadata.json": "f1909e4720673b53c45911f09dcf9c01de3716b4aee4d2738d39560583725ab0",
+  "logs/vision_color_fix_20261116/static_pairs/yellow_box/object_masks.npz": "dc927449b9f69598079f38e450c0ceb6a8585402b563c745912f9d147a00512d",
+  "logs/vision_color_fix_20261116/static_pairs/yellow_box/reference.png": "49125bca58af489649975b89a54832bbdbdb15d7ef4794193b888f02e3ea1460",
+  "logs/vision_color_fix_20261116/static_pairs/red_box/paired.npz": "b8b107630c513972c3bd1366728c0ec360edf60cddb187002fe8726213443ef3",
+  "logs/vision_color_fix_20261116/static_pairs/red_box/underwater.png": "77248f94c402ccdcdc66913a3d23b4a6e5d024902b070b841399972bbc0fc7b8",
+  "logs/vision_color_fix_20261116/static_pairs/red_box/metadata.json": "4b7588754a8389630da81ab882d4b98343cbefc940b9c0c8ed69452ca1234a5d",
+  "logs/vision_color_fix_20261116/static_pairs/red_box/object_masks.npz": "c0894f8bb157a69dd7393dadbe6377837407038796fa812ee774361b04a1687f",
+  "logs/vision_color_fix_20261116/static_pairs/red_box/reference.png": "8c8e08f286326df7141f626917c451006239f4a2714bf36b71da1241ec5077a6"
+}

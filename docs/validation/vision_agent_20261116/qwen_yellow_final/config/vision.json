@@ -1,0 +1,25 @@
+{
+  "method": "none",
+  "geometry": "auto",
+  "color_source": "raw",
+  "max_gain": 2.0,
+  "clahe_clip": 2.0,
+  "gamma": 0.7,
+  "min_transmission": 0.25,
+  "attenuation_rgb": [
+    0.05,
+    0.05,
+    0.05
+  ],
+  "backscatter_rgb": [
+    0.05,
+    0.05,
+    0.2
+  ],
+  "veiling_rgb": [
+    0.0,
+    0.31,
+    0.24
+  ],
+  "calibration": null
+}

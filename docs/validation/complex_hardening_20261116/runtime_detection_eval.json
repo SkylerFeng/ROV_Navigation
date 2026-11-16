@@ -1,0 +1,4275 @@
+{
+  "baseline": {
+    "groups": {
+      "pipe_end": {
+        "correct": 11,
+        "miss": 0,
+        "wrong_class": 0
+      },
+      "pipe_oblique": {
+        "correct": 47,
+        "miss": 1,
+        "wrong_class": 0
+      },
+      "pipe_side": {
+        "correct": 12,
+        "miss": 0,
+        "wrong_class": 0
+      },
+      "box": {
+        "correct": 70,
+        "miss": 0,
+        "wrong_class": 0
+      }
+    },
+    "rows": [
+      {
+        "id": "wrong_hint_box_0_0_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9246634840965271,
+          "bbox": [
+            279.2608642578125,
+            122.43194580078125,
+            361.3047790527344,
+            205.10931396484375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_0_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9121552109718323,
+          "bbox": [
+            285.01708984375,
+            131.930419921875,
+            355.1064147949219,
+            201.60580444335938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_0_2",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9396816492080688,
+          "bbox": [
+            299.15869140625,
+            151.68035888671875,
+            341.3786315917969,
+            192.93243408203125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_1_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.940068244934082,
+          "bbox": [
+            290.1339111328125,
+            123.1968994140625,
+            399.0013122558594,
+            204.52728271484375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_1_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9119454622268677,
+          "bbox": [
+            251.71717834472656,
+            134.586669921875,
+            372.1231689453125,
+            201.64431762695312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_1_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8881871700286865,
+          "bbox": [
+            277.89434814453125,
+            152.63912963867188,
+            354.40509033203125,
+            193.37741088867188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_2_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9377170205116272,
+          "bbox": [
+            290.929931640625,
+            122.80255126953125,
+            422.9347839355469,
+            206.06509399414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_2_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9336866736412048,
+          "bbox": [
+            243.66954040527344,
+            138.32305908203125,
+            391.62939453125,
+            199.33367919921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_2_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9235548973083496,
+          "bbox": [
+            271.0522155761719,
+            153.56170654296875,
+            366.8278503417969,
+            192.26535034179688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_3_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8479996919631958,
+          "bbox": [
+            215.85824584960938,
+            138.6474609375,
+            424.1602783203125,
+            191.0484619140625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_3_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9338700771331787,
+          "bbox": [
+            242.43316650390625,
+            140.92852783203125,
+            396.1185302734375,
+            197.23703002929688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_3_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9178038835525513,
+          "bbox": [
+            272.05999755859375,
+            155.4072265625,
+            368.013427734375,
+            191.97756958007812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_4_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9336928129196167,
+          "bbox": [
+            217.23760986328125,
+            122.91537475585938,
+            347.698974609375,
+            204.98287963867188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_4_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9232783317565918,
+          "bbox": [
+            246.85919189453125,
+            138.3236083984375,
+            396.330322265625,
+            199.32778930664062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_4_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9319967031478882,
+          "bbox": [
+            273.14599609375,
+            153.59320068359375,
+            368.9737854003906,
+            192.93597412109375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_5_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9370620846748352,
+          "bbox": [
+            241.50537109375,
+            122.62750244140625,
+            349.648193359375,
+            204.92880249023438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_5_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9229320287704468,
+          "bbox": [
+            269.92352294921875,
+            133.859375,
+            387.92474365234375,
+            200.87808227539062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_5_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9004905223846436,
+          "bbox": [
+            284.88006591796875,
+            152.38519287109375,
+            362.572509765625,
+            192.88827514648438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_6_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9259990453720093,
+          "bbox": [
+            278.29071044921875,
+            122.7152099609375,
+            361.3918762207031,
+            204.69357299804688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_6_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9084685444831848,
+          "bbox": [
+            284.60076904296875,
+            132.37750244140625,
+            355.2518310546875,
+            201.90274047851562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_6_2",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9469777941703796,
+          "bbox": [
+            298.92218017578125,
+            151.49636840820312,
+            341.4105529785156,
+            192.86239624023438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_7_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9355696439743042,
+          "bbox": [
+            290.48974609375,
+            123.2718505859375,
+            399.6584167480469,
+            204.98666381835938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_7_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9194985628128052,
+          "bbox": [
+            252.10906982421875,
+            133.178955078125,
+            372.32080078125,
+            201.22344970703125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_7_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8976628184318542,
+          "bbox": [
+            276.86773681640625,
+            151.99346923828125,
+            354.4397277832031,
+            192.90267944335938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_8_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9495396614074707,
+          "bbox": [
+            291.85064697265625,
+            121.95077514648438,
+            422.7631530761719,
+            205.74063110351562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_8_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9352604746818542,
+          "bbox": [
+            243.06674194335938,
+            139.3746337890625,
+            391.88336181640625,
+            199.486083984375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_8_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9190954566001892,
+          "bbox": [
+            270.8585205078125,
+            153.32952880859375,
+            367.1069030761719,
+            192.14962768554688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_9_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8586028814315796,
+          "bbox": [
+            215.80960083007812,
+            138.3848876953125,
+            423.73138427734375,
+            191.96591186523438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_9_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9323638677597046,
+          "bbox": [
+            244.07977294921875,
+            140.759033203125,
+            397.1553955078125,
+            197.24493408203125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_9_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9246898293495178,
+          "bbox": [
+            272.490234375,
+            155.6884765625,
+            368.73095703125,
+            191.89300537109375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_10_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9404476881027222,
+          "bbox": [
+            217.73281860351562,
+            121.74716186523438,
+            347.82794189453125,
+            205.46469116210938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_10_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9181802272796631,
+          "bbox": [
+            248.08090209960938,
+            137.1534423828125,
+            396.5270690917969,
+            199.60711669921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_10_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9306479692459106,
+          "bbox": [
+            273.17999267578125,
+            153.43597412109375,
+            368.7754211425781,
+            192.27993774414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_11_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9352079629898071,
+          "bbox": [
+            241.6129608154297,
+            122.67630004882812,
+            349.96307373046875,
+            205.07192993164062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_11_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9275487661361694,
+          "bbox": [
+            269.965576171875,
+            133.51470947265625,
+            388.460205078125,
+            200.80740356445312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_11_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9025025963783264,
+          "bbox": [
+            285.57244873046875,
+            152.11685180664062,
+            361.0812072753906,
+            192.40634155273438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_0_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.922187089920044,
+          "bbox": [
+            278.53173828125,
+            122.89443969726562,
+            360.85906982421875,
+            205.39065551757812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_0_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9136161804199219,
+          "bbox": [
+            284.71063232421875,
+            131.72015380859375,
+            355.19879150390625,
+            202.15756225585938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_1_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9434130787849426,
+          "bbox": [
+            290.2266845703125,
+            123.05889892578125,
+            398.9447937011719,
+            205.09970092773438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_1_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9063979387283325,
+          "bbox": [
+            252.0785369873047,
+            133.66131591796875,
+            372.05364990234375,
+            200.76190185546875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_1_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8731153011322021,
+          "bbox": [
+            278.890869140625,
+            152.64654541015625,
+            354.6384582519531,
+            193.03060913085938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_2_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9479706287384033,
+          "bbox": [
+            291.56597900390625,
+            122.91619873046875,
+            423.0674133300781,
+            205.82354736328125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_2_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9242441654205322,
+          "bbox": [
+            244.3983154296875,
+            137.96038818359375,
+            391.85760498046875,
+            199.12646484375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_2_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9151918888092041,
+          "bbox": [
+            270.56134033203125,
+            153.1864013671875,
+            366.55816650390625,
+            192.30572509765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_3_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8553992509841919,
+          "bbox": [
+            218.00376892089844,
+            137.25265502929688,
+            424.5833740234375,
+            190.66867065429688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_3_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9163437485694885,
+          "bbox": [
+            244.6512451171875,
+            140.24322509765625,
+            396.16558837890625,
+            197.51290893554688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_3_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9070907831192017,
+          "bbox": [
+            272.03375244140625,
+            154.8388671875,
+            368.5929260253906,
+            191.60488891601562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_4_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9042948484420776,
+          "bbox": [
+            217.21336364746094,
+            122.680419921875,
+            347.9453125,
+            205.73931884765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_4_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9247468113899231,
+          "bbox": [
+            248.59959411621094,
+            137.63067626953125,
+            396.6961669921875,
+            199.1424560546875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_4_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9262880086898804,
+          "bbox": [
+            272.964111328125,
+            153.4471435546875,
+            368.729736328125,
+            192.54486083984375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_5_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9374022483825684,
+          "bbox": [
+            240.864013671875,
+            123.02410888671875,
+            350.003662109375,
+            205.26712036132812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_5_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9301265478134155,
+          "bbox": [
+            270.52374267578125,
+            132.90762329101562,
+            388.39251708984375,
+            201.01004028320312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_5_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.46177777647972107,
+          "bbox": [
+            285.30389404296875,
+            158.599365234375,
+            301.8108825683594,
+            189.68289184570312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_6_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9000418782234192,
+          "bbox": [
+            279.2126159667969,
+            122.90155029296875,
+            360.5155334472656,
+            205.35409545898438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_6_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9081152677536011,
+          "bbox": [
+            284.73370361328125,
+            134.79071044921875,
+            355.8510437011719,
+            201.22116088867188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_6_2",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.6366410851478577,
+          "bbox": [
+            299.08453369140625,
+            152.31405639648438,
+            341.4803771972656,
+            195.97213745117188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_7_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9285465478897095,
+          "bbox": [
+            290.28271484375,
+            122.78408813476562,
+            399.3481140136719,
+            204.89566040039062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_7_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9106957912445068,
+          "bbox": [
+            250.84947204589844,
+            134.03668212890625,
+            371.5869140625,
+            201.70150756835938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_7_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9098869562149048,
+          "bbox": [
+            278.548583984375,
+            152.681884765625,
+            354.5925598144531,
+            193.24295043945312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_8_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.919370710849762,
+          "bbox": [
+            290.7613220214844,
+            122.24566650390625,
+            423.6541442871094,
+            206.09869384765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_8_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9281610250473022,
+          "bbox": [
+            243.51890563964844,
+            138.43048095703125,
+            391.9681396484375,
+            199.24301147460938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_8_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9257872104644775,
+          "bbox": [
+            270.9794921875,
+            153.724365234375,
+            366.9632568359375,
+            192.65982055664062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_9_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8666309118270874,
+          "bbox": [
+            218.307373046875,
+            137.60162353515625,
+            424.3961181640625,
+            191.13995361328125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_9_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9337295293807983,
+          "bbox": [
+            242.64747619628906,
+            140.39117431640625,
+            395.909423828125,
+            197.959228515625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_9_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9325609803199768,
+          "bbox": [
+            271.95562744140625,
+            155.32720947265625,
+            368.2486877441406,
+            192.27182006835938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_10_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.938143253326416,
+          "bbox": [
+            215.718017578125,
+            122.1055908203125,
+            347.89178466796875,
+            205.30078125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_10_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9306210875511169,
+          "bbox": [
+            249.4974365234375,
+            137.51251220703125,
+            396.55615234375,
+            199.29006958007812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_10_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9285695552825928,
+          "bbox": [
+            273.4132080078125,
+            152.93206787109375,
+            368.9906921386719,
+            193.12765502929688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_11_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9345093965530396,
+          "bbox": [
+            240.2525634765625,
+            122.64111328125,
+            349.603271484375,
+            212.30892944335938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_11_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9200565218925476,
+          "bbox": [
+            266.85662841796875,
+            133.37322998046875,
+            388.8504943847656,
+            201.45364379882812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_11_2",
+        "group": "pipe_oblique",
+        "outcome": "miss",
+        "prediction": null
+      },
+      {
+        "id": "wrong_hint_box_2_0_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9649395942687988,
+          "bbox": [
+            258.22021484375,
+            103.34765625,
+            381.24505615234375,
+            225.5098876953125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_0_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9529421329498291,
+          "bbox": [
+            273.62042236328125,
+            120.66302490234375,
+            366.4902038574219,
+            214.41635131835938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_1_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9694368839263916,
+          "bbox": [
+            268.00811767578125,
+            103.87551879882812,
+            385.7304382324219,
+            224.4779052734375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_1_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9709322452545166,
+          "bbox": [
+            261.7745666503906,
+            119.33746337890625,
+            372.2297668457031,
+            216.16531372070312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_1_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9486740231513977,
+          "bbox": [
+            283.320068359375,
+            142.906494140625,
+            354.9483337402344,
+            202.07598876953125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_2_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9664679765701294,
+          "bbox": [
+            253.74681091308594,
+            103.87969970703125,
+            372.1900634765625,
+            224.377197265625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_2_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9638521075248718,
+          "bbox": [
+            266.31121826171875,
+            119.40512084960938,
+            377.8506774902344,
+            216.38430786132812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_2_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9531189203262329,
+          "bbox": [
+            284.85546875,
+            142.89697265625,
+            356.6720886230469,
+            202.17208862304688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_3_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.964277982711792,
+          "bbox": [
+            258.90972900390625,
+            103.32183837890625,
+            381.15478515625,
+            224.63226318359375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_3_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9485129117965698,
+          "bbox": [
+            273.53729248046875,
+            121.25604248046875,
+            366.2645263671875,
+            214.1942138671875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_3_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9405212998390198,
+          "bbox": [
+            290.6560974121094,
+            144.11505126953125,
+            348.9939270019531,
+            200.86044311523438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_4_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9656133651733398,
+          "bbox": [
+            267.816650390625,
+            102.92320251464844,
+            386.2369079589844,
+            224.6544189453125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_4_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9703664779663086,
+          "bbox": [
+            262.0970458984375,
+            119.4862060546875,
+            372.2673645019531,
+            216.12783813476562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_4_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.949268639087677,
+          "bbox": [
+            283.4722595214844,
+            142.61517333984375,
+            354.9036560058594,
+            201.8792724609375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_5_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9625201225280762,
+          "bbox": [
+            253.89923095703125,
+            102.36138916015625,
+            372.44940185546875,
+            226.59930419921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_5_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9647036790847778,
+          "bbox": [
+            266.3836669921875,
+            119.13265991210938,
+            378.01739501953125,
+            217.13180541992188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_5_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.936375617980957,
+          "bbox": [
+            284.9574279785156,
+            142.645751953125,
+            356.6520690917969,
+            201.23916625976562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_6_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9473555088043213,
+          "bbox": [
+            252.62591552734375,
+            103.49371337890625,
+            381.156005859375,
+            226.3858642578125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_6_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9489916563034058,
+          "bbox": [
+            273.0813903808594,
+            120.3663330078125,
+            366.6740417480469,
+            214.916748046875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_6_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.849631667137146,
+          "bbox": [
+            290.22674560546875,
+            144.474365234375,
+            348.98828125,
+            200.718505859375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_7_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9672272205352783,
+          "bbox": [
+            267.9801940917969,
+            102.39643859863281,
+            386.0350646972656,
+            224.28094482421875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_7_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9715601205825806,
+          "bbox": [
+            262.03271484375,
+            120.48577880859375,
+            372.5791320800781,
+            215.92962646484375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_7_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9460684061050415,
+          "bbox": [
+            282.8782653808594,
+            142.6505126953125,
+            354.8912658691406,
+            201.8841552734375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_8_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9632399678230286,
+          "bbox": [
+            253.75567626953125,
+            103.89834594726562,
+            372.0721435546875,
+            223.92572021484375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_8_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9576367139816284,
+          "bbox": [
+            267.31732177734375,
+            119.07708740234375,
+            378.09930419921875,
+            216.73696899414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_8_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.951776385307312,
+          "bbox": [
+            284.8963623046875,
+            141.72503662109375,
+            356.5362243652344,
+            202.20135498046875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_9_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9690247774124146,
+          "bbox": [
+            257.813232421875,
+            103.49537658691406,
+            381.3518371582031,
+            225.02978515625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_9_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9542286396026611,
+          "bbox": [
+            273.39947509765625,
+            120.8204345703125,
+            366.54913330078125,
+            215.457275390625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_9_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9435271620750427,
+          "bbox": [
+            290.4989318847656,
+            143.20294189453125,
+            348.8313903808594,
+            201.55511474609375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_10_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.971682071685791,
+          "bbox": [
+            267.46826171875,
+            103.83560180664062,
+            386.19256591796875,
+            224.81344604492188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_10_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9700871706008911,
+          "bbox": [
+            261.64599609375,
+            118.5791015625,
+            373.1883850097656,
+            216.20523071289062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_10_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9507126212120056,
+          "bbox": [
+            282.5908203125,
+            142.13812255859375,
+            355.34796142578125,
+            202.6702880859375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_11_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9625362753868103,
+          "bbox": [
+            253.98184204101562,
+            104.14923095703125,
+            372.0855407714844,
+            223.8466796875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_11_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9642609357833862,
+          "bbox": [
+            266.8172607421875,
+            119.42462158203125,
+            378.9576721191406,
+            217.31414794921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_11_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9443131685256958,
+          "bbox": [
+            284.8267822265625,
+            142.8568115234375,
+            350.9732666015625,
+            202.25210571289062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_0_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9633687734603882,
+          "bbox": [
+            258.3663330078125,
+            103.375732421875,
+            381.3153381347656,
+            225.007080078125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_0_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9477601051330566,
+          "bbox": [
+            274.21337890625,
+            120.90460205078125,
+            365.7697448730469,
+            214.086181640625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_0_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.94026780128479,
+          "bbox": [
+            290.588623046875,
+            143.62274169921875,
+            348.87872314453125,
+            201.414306640625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_1_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9602351188659668,
+          "bbox": [
+            268.2319641113281,
+            103.7091064453125,
+            385.7233581542969,
+            224.6080322265625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_1_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9683146476745605,
+          "bbox": [
+            262.00921630859375,
+            119.28363037109375,
+            372.29730224609375,
+            216.06936645507812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_1_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9482445120811462,
+          "bbox": [
+            283.40240478515625,
+            143.2073974609375,
+            354.9786376953125,
+            202.1441650390625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_2_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9629100561141968,
+          "bbox": [
+            253.52108764648438,
+            103.80389404296875,
+            372.0775451660156,
+            224.6744384765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_2_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9709526300430298,
+          "bbox": [
+            267.0826721191406,
+            119.55328369140625,
+            378.2288513183594,
+            216.35015869140625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_2_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9555245041847229,
+          "bbox": [
+            284.7148742675781,
+            143.07730102539062,
+            356.6593933105469,
+            202.10299682617188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_3_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9668784141540527,
+          "bbox": [
+            259.03375244140625,
+            103.12789916992188,
+            381.2741394042969,
+            225.12686157226562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_3_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9503186345100403,
+          "bbox": [
+            274.23394775390625,
+            121.03887939453125,
+            365.8067932128906,
+            214.28765869140625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_3_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.945529580116272,
+          "bbox": [
+            290.75634765625,
+            143.0,
+            349.1770324707031,
+            201.33746337890625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_4_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9655129909515381,
+          "bbox": [
+            268.3768310546875,
+            102.31405639648438,
+            386.2074890136719,
+            224.70571899414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_4_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9678692817687988,
+          "bbox": [
+            262.144775390625,
+            119.29437255859375,
+            372.1667175292969,
+            216.05502319335938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_4_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9515199661254883,
+          "bbox": [
+            283.39471435546875,
+            142.6175537109375,
+            354.7384338378906,
+            202.16549682617188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_5_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.96302330493927,
+          "bbox": [
+            253.94102478027344,
+            101.9071044921875,
+            371.4102783203125,
+            224.58258056640625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_5_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9623478055000305,
+          "bbox": [
+            267.31109619140625,
+            119.0521240234375,
+            378.5432434082031,
+            216.18923950195312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_5_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9510371685028076,
+          "bbox": [
+            285.1630859375,
+            143.39031982421875,
+            356.4870300292969,
+            202.02792358398438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_6_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9577224254608154,
+          "bbox": [
+            259.3162841796875,
+            103.23867797851562,
+            381.3220520019531,
+            224.20074462890625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_6_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9472470283508301,
+          "bbox": [
+            274.06866455078125,
+            121.11041259765625,
+            365.9835510253906,
+            214.46038818359375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_6_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.926666259765625,
+          "bbox": [
+            290.931640625,
+            144.39566040039062,
+            349.1990051269531,
+            201.28854370117188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_7_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9633388519287109,
+          "bbox": [
+            267.9469299316406,
+            102.90757751464844,
+            386.3091735839844,
+            224.728759765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_7_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9628832936286926,
+          "bbox": [
+            262.1253662109375,
+            118.94967651367188,
+            372.8790283203125,
+            216.10006713867188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_8_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9685443639755249,
+          "bbox": [
+            253.4585418701172,
+            103.56689453125,
+            372.25970458984375,
+            224.31439208984375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_8_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9534366130828857,
+          "bbox": [
+            266.81524658203125,
+            118.37045288085938,
+            378.6165771484375,
+            216.60189819335938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_8_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9395085573196411,
+          "bbox": [
+            306.29583740234375,
+            143.20343017578125,
+            356.830322265625,
+            201.5439453125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_9_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9634897708892822,
+          "bbox": [
+            257.78045654296875,
+            102.44245910644531,
+            381.323974609375,
+            224.52142333984375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_9_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9532264471054077,
+          "bbox": [
+            273.40032958984375,
+            120.8468017578125,
+            366.1240234375,
+            214.34420776367188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_9_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9367034435272217,
+          "bbox": [
+            290.744384765625,
+            143.89996337890625,
+            349.2833251953125,
+            201.63858032226562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_10_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9658190011978149,
+          "bbox": [
+            267.8128662109375,
+            102.88807678222656,
+            386.2600402832031,
+            224.58056640625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_10_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9663752913475037,
+          "bbox": [
+            262.2882995605469,
+            119.17630004882812,
+            372.4661560058594,
+            216.08462524414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_10_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9477245807647705,
+          "bbox": [
+            283.00531005859375,
+            142.7095947265625,
+            354.7787780761719,
+            202.32171630859375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_11_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9662784337997437,
+          "bbox": [
+            253.65621948242188,
+            103.97367858886719,
+            372.2615661621094,
+            224.08013916015625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_11_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9660314321517944,
+          "bbox": [
+            266.95916748046875,
+            119.05731201171875,
+            378.4582824707031,
+            216.45849609375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_11_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9469363689422607,
+          "bbox": [
+            285.4484558105469,
+            144.28497314453125,
+            356.9877624511719,
+            201.7779541015625
+          ]
+        }
+      }
+    ]
+  },
+  "candidate": {
+    "groups": {
+      "pipe_end": {
+        "correct": 11,
+        "miss": 0,
+        "wrong_class": 0
+      },
+      "pipe_oblique": {
+        "correct": 47,
+        "miss": 1,
+        "wrong_class": 0
+      },
+      "pipe_side": {
+        "correct": 12,
+        "miss": 0,
+        "wrong_class": 0
+      },
+      "box": {
+        "correct": 70,
+        "miss": 0,
+        "wrong_class": 0
+      }
+    },
+    "rows": [
+      {
+        "id": "wrong_hint_box_0_0_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9764513373374939,
+          "bbox": [
+            279.380859375,
+            122.38067626953125,
+            361.46417236328125,
+            205.41378784179688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_0_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9565479755401611,
+          "bbox": [
+            285.57916259765625,
+            131.288818359375,
+            355.0915832519531,
+            201.84829711914062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_0_2",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9318781495094299,
+          "bbox": [
+            299.5537109375,
+            150.89984130859375,
+            341.0636901855469,
+            192.70486450195312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_1_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.96876060962677,
+          "bbox": [
+            290.1553039550781,
+            122.07852172851562,
+            399.2861022949219,
+            205.80252075195312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_1_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.961402416229248,
+          "bbox": [
+            251.76022338867188,
+            132.76678466796875,
+            370.616455078125,
+            201.51760864257812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_1_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9460047483444214,
+          "bbox": [
+            278.46746826171875,
+            151.23751831054688,
+            354.2062683105469,
+            192.98446655273438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_2_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9633066654205322,
+          "bbox": [
+            291.522216796875,
+            122.01663208007812,
+            422.4107971191406,
+            206.10037231445312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_2_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9463342428207397,
+          "bbox": [
+            244.0660400390625,
+            136.42242431640625,
+            391.28302001953125,
+            199.50582885742188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_2_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.946727991104126,
+          "bbox": [
+            271.031494140625,
+            152.41424560546875,
+            367.15625,
+            191.63619995117188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_3_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9440821409225464,
+          "bbox": [
+            216.0467987060547,
+            137.99188232421875,
+            424.38909912109375,
+            190.08273315429688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_3_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9666153192520142,
+          "bbox": [
+            243.89483642578125,
+            140.891845703125,
+            396.45452880859375,
+            196.578125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_3_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9413543939590454,
+          "bbox": [
+            272.173583984375,
+            154.71234130859375,
+            368.36431884765625,
+            190.84149169921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_4_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9610351920127869,
+          "bbox": [
+            217.90350341796875,
+            122.260986328125,
+            348.230224609375,
+            205.51168823242188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_4_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9540321230888367,
+          "bbox": [
+            248.63632202148438,
+            136.406494140625,
+            396.3326110839844,
+            199.65847778320312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_4_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9353103041648865,
+          "bbox": [
+            273.00189208984375,
+            152.42193603515625,
+            369.1451110839844,
+            191.66885375976562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_5_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9672152996063232,
+          "bbox": [
+            241.2885284423828,
+            122.28485107421875,
+            349.79449462890625,
+            205.42648315429688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_5_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9567744731903076,
+          "bbox": [
+            268.7132568359375,
+            132.48785400390625,
+            388.67181396484375,
+            201.25747680664062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_5_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9483337998390198,
+          "bbox": [
+            285.2049560546875,
+            150.8280029296875,
+            362.5413513183594,
+            193.16079711914062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_6_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9779857993125916,
+          "bbox": [
+            278.44549560546875,
+            122.40692138671875,
+            361.3177795410156,
+            205.17636108398438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_6_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9572231769561768,
+          "bbox": [
+            284.9566650390625,
+            131.27743530273438,
+            355.3687438964844,
+            201.96701049804688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_6_2",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9417741894721985,
+          "bbox": [
+            299.062744140625,
+            150.80426025390625,
+            341.0848083496094,
+            192.67218017578125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_7_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9693838357925415,
+          "bbox": [
+            289.7430419921875,
+            122.1837158203125,
+            398.75921630859375,
+            205.82928466796875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_7_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9609348177909851,
+          "bbox": [
+            251.7685546875,
+            132.5010986328125,
+            370.81756591796875,
+            201.13577270507812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_7_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9461142420768738,
+          "bbox": [
+            277.7830810546875,
+            151.46337890625,
+            354.5722961425781,
+            192.90310668945312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_8_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9612652063369751,
+          "bbox": [
+            292.350341796875,
+            121.64532470703125,
+            422.18756103515625,
+            205.96377563476562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_8_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9477510452270508,
+          "bbox": [
+            243.7913818359375,
+            136.96218872070312,
+            391.4755859375,
+            199.66262817382812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_8_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9463673830032349,
+          "bbox": [
+            271.0530090332031,
+            152.40753173828125,
+            367.3891296386719,
+            191.84735107421875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_9_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9425368309020996,
+          "bbox": [
+            215.8181915283203,
+            137.5843505859375,
+            424.95025634765625,
+            190.0277099609375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_9_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9673302173614502,
+          "bbox": [
+            243.7833709716797,
+            139.77294921875,
+            397.04364013671875,
+            196.74774169921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_9_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9407272338867188,
+          "bbox": [
+            272.0745849609375,
+            155.0809326171875,
+            368.7995300292969,
+            191.07925415039062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_10_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9631305932998657,
+          "bbox": [
+            218.3257598876953,
+            122.2340087890625,
+            348.15325927734375,
+            205.89102172851562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_10_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9464151859283447,
+          "bbox": [
+            248.476806640625,
+            134.71652221679688,
+            396.5794677734375,
+            199.47994995117188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_10_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9371682405471802,
+          "bbox": [
+            272.61627197265625,
+            152.66043090820312,
+            369.1840515136719,
+            191.46188354492188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_11_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9650384187698364,
+          "bbox": [
+            240.88978576660156,
+            122.35452270507812,
+            350.12841796875,
+            205.89053344726562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_11_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9509931802749634,
+          "bbox": [
+            268.5197448730469,
+            132.520263671875,
+            389.0810852050781,
+            201.16119384765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_0_11_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9456857442855835,
+          "bbox": [
+            285.3082275390625,
+            150.89825439453125,
+            361.62225341796875,
+            192.61822509765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_0_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9764012694358826,
+          "bbox": [
+            278.75775146484375,
+            122.38214111328125,
+            360.8334045410156,
+            205.42098999023438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_0_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9524682760238647,
+          "bbox": [
+            285.0927429199219,
+            130.7525634765625,
+            355.4981994628906,
+            202.1783447265625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_1_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9684756994247437,
+          "bbox": [
+            289.8277587890625,
+            122.1131591796875,
+            398.94744873046875,
+            206.00302124023438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_1_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9598886966705322,
+          "bbox": [
+            251.71609497070312,
+            132.13717651367188,
+            370.9931335449219,
+            201.20571899414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_1_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9498330354690552,
+          "bbox": [
+            277.98883056640625,
+            151.752685546875,
+            354.8454895019531,
+            193.06051635742188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_2_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.966991662979126,
+          "bbox": [
+            292.38934326171875,
+            122.380859375,
+            422.4263610839844,
+            206.11981201171875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_2_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9603157043457031,
+          "bbox": [
+            244.71202087402344,
+            136.87786865234375,
+            391.22119140625,
+            199.167724609375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_2_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.949052095413208,
+          "bbox": [
+            270.78289794921875,
+            152.84698486328125,
+            367.0846252441406,
+            191.69766235351562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_3_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9462462663650513,
+          "bbox": [
+            216.34796142578125,
+            137.79510498046875,
+            425.51080322265625,
+            189.84796142578125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_3_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9621111154556274,
+          "bbox": [
+            244.6541290283203,
+            139.7708740234375,
+            396.03204345703125,
+            196.76046752929688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_3_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9409763813018799,
+          "bbox": [
+            272.2200927734375,
+            154.60726928710938,
+            368.7059631347656,
+            190.90713500976562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_4_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9601885080337524,
+          "bbox": [
+            218.537109375,
+            121.83612060546875,
+            347.9532470703125,
+            206.49545288085938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_4_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9540491104125977,
+          "bbox": [
+            248.45021057128906,
+            136.1455078125,
+            396.6842041015625,
+            199.92514038085938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_4_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9365246295928955,
+          "bbox": [
+            273.02484130859375,
+            152.6541748046875,
+            368.47998046875,
+            191.85470581054688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_5_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9637980461120605,
+          "bbox": [
+            240.5848388671875,
+            122.26702880859375,
+            349.885986328125,
+            206.59439086914062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_5_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9540275931358337,
+          "bbox": [
+            268.4569091796875,
+            132.59478759765625,
+            389.1799011230469,
+            201.33975219726562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_5_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.7690534591674805,
+          "bbox": [
+            285.5113830566406,
+            157.85693359375,
+            301.3618469238281,
+            190.11026000976562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_6_0",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9743242859840393,
+          "bbox": [
+            279.396484375,
+            122.23846435546875,
+            360.5228576660156,
+            205.77047729492188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_6_1",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9550379514694214,
+          "bbox": [
+            285.08868408203125,
+            131.6275634765625,
+            356.1956787109375,
+            201.64865112304688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_6_2",
+        "group": "pipe_end",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8898861408233643,
+          "bbox": [
+            299.50494384765625,
+            151.83966064453125,
+            339.8687438964844,
+            193.92697143554688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_7_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.970670223236084,
+          "bbox": [
+            290.35186767578125,
+            122.14138793945312,
+            399.4963684082031,
+            205.86239624023438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_7_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9546981453895569,
+          "bbox": [
+            251.20126342773438,
+            132.77581787109375,
+            370.57061767578125,
+            201.5419921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_7_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.947777509689331,
+          "bbox": [
+            278.31231689453125,
+            151.1796875,
+            354.3091125488281,
+            192.91995239257812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_8_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9529682397842407,
+          "bbox": [
+            292.15283203125,
+            121.20269775390625,
+            423.3110046386719,
+            207.141357421875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_8_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9568172693252563,
+          "bbox": [
+            244.18087768554688,
+            136.97137451171875,
+            392.3367004394531,
+            199.6915283203125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_8_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.947428286075592,
+          "bbox": [
+            271.1468811035156,
+            152.72613525390625,
+            366.8648376464844,
+            192.53536987304688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_9_0",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9398527145385742,
+          "bbox": [
+            216.52786254882812,
+            137.92498779296875,
+            424.46771240234375,
+            190.05438232421875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_9_1",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9615345597267151,
+          "bbox": [
+            244.05894470214844,
+            140.57525634765625,
+            396.318115234375,
+            197.16323852539062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_9_2",
+        "group": "pipe_side",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9391893148422241,
+          "bbox": [
+            271.75799560546875,
+            154.6856689453125,
+            368.5791931152344,
+            191.43283081054688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_10_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9616013169288635,
+          "bbox": [
+            218.04612731933594,
+            122.128173828125,
+            348.2764892578125,
+            206.25015258789062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_10_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9505688548088074,
+          "bbox": [
+            248.28375244140625,
+            135.89849853515625,
+            396.1978759765625,
+            199.75906372070312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_10_2",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.936285138130188,
+          "bbox": [
+            273.3985595703125,
+            151.6756591796875,
+            369.1252136230469,
+            192.73135375976562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_11_0",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.9666712880134583,
+          "bbox": [
+            241.0537109375,
+            122.216796875,
+            350.0877685546875,
+            215.12301635742188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_11_1",
+        "group": "pipe_oblique",
+        "outcome": "correct",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.948727011680603,
+          "bbox": [
+            267.38751220703125,
+            132.33831787109375,
+            389.2340393066406,
+            201.53570556640625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_1_11_2",
+        "group": "pipe_oblique",
+        "outcome": "miss",
+        "prediction": {
+          "category": "pipe",
+          "detector_score": 0.8528675436973572,
+          "bbox": [
+            142.26113891601562,
+            129.83535766601562,
+            218.51536560058594,
+            164.55636596679688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_0_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9644383192062378,
+          "bbox": [
+            259.1953430175781,
+            102.55380249023438,
+            381.4160461425781,
+            225.10281372070312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_0_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9723268747329712,
+          "bbox": [
+            273.90545654296875,
+            121.3988037109375,
+            366.1716613769531,
+            214.15350341796875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_1_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9677562117576599,
+          "bbox": [
+            267.97149658203125,
+            103.51594543457031,
+            385.95208740234375,
+            224.44219970703125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_1_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9753485918045044,
+          "bbox": [
+            262.040283203125,
+            118.00289916992188,
+            372.8747253417969,
+            216.12283325195312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_1_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9596108198165894,
+          "bbox": [
+            283.3289794921875,
+            142.033935546875,
+            355.1770935058594,
+            201.82894897460938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_2_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9703879952430725,
+          "bbox": [
+            253.92694091796875,
+            103.56793212890625,
+            372.1513671875,
+            224.3824462890625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_2_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9753910303115845,
+          "bbox": [
+            266.92376708984375,
+            118.03912353515625,
+            378.2599792480469,
+            215.91897583007812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_2_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9621601104736328,
+          "bbox": [
+            285.28875732421875,
+            142.12115478515625,
+            356.94384765625,
+            201.9774169921875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_3_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9651534557342529,
+          "bbox": [
+            259.3963623046875,
+            102.731201171875,
+            381.3147888183594,
+            224.48876953125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_3_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9710760116577148,
+          "bbox": [
+            274.1976318359375,
+            121.44793701171875,
+            365.3727111816406,
+            214.35940551757812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_3_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9582793712615967,
+          "bbox": [
+            291.28192138671875,
+            143.70730590820312,
+            348.8710632324219,
+            200.76132202148438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_4_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9702159762382507,
+          "bbox": [
+            268.20306396484375,
+            103.65806579589844,
+            386.0947265625,
+            224.3905029296875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_4_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9735862016677856,
+          "bbox": [
+            262.16796875,
+            118.21533203125,
+            372.9029846191406,
+            216.01022338867188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_4_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.957198977470398,
+          "bbox": [
+            283.4643249511719,
+            142.00381469726562,
+            355.1784362792969,
+            201.85098266601562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_5_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.971651554107666,
+          "bbox": [
+            253.94668579101562,
+            104.1678466796875,
+            372.2279357910156,
+            225.93017578125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_5_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.971143364906311,
+          "bbox": [
+            266.69488525390625,
+            118.12704467773438,
+            378.5679626464844,
+            216.79409790039062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_5_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9489379525184631,
+          "bbox": [
+            285.32025146484375,
+            142.32244873046875,
+            356.9747619628906,
+            201.97335815429688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_6_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9582959413528442,
+          "bbox": [
+            254.13800048828125,
+            102.2144775390625,
+            381.12298583984375,
+            226.6182861328125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_6_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9705168008804321,
+          "bbox": [
+            272.2228088378906,
+            119.90692138671875,
+            365.8410339355469,
+            215.53182983398438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_6_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9542124271392822,
+          "bbox": [
+            290.21624755859375,
+            143.9967041015625,
+            348.5976867675781,
+            200.58917236328125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_7_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9661056995391846,
+          "bbox": [
+            268.11572265625,
+            102.8218994140625,
+            386.35858154296875,
+            224.3775634765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_7_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.974561870098114,
+          "bbox": [
+            262.05255126953125,
+            118.19512939453125,
+            372.8450622558594,
+            215.84622192382812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_7_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.957186758518219,
+          "bbox": [
+            283.2047424316406,
+            141.64715576171875,
+            355.2361755371094,
+            202.05740356445312
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_8_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9702869653701782,
+          "bbox": [
+            254.2299041748047,
+            103.87667846679688,
+            372.12286376953125,
+            224.5843505859375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_8_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.975292444229126,
+          "bbox": [
+            266.82958984375,
+            118.04364013671875,
+            378.2182312011719,
+            216.23699951171875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_8_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9636254906654358,
+          "bbox": [
+            285.35687255859375,
+            142.27972412109375,
+            356.860595703125,
+            202.017578125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_9_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9621150493621826,
+          "bbox": [
+            259.2545166015625,
+            102.92381286621094,
+            381.549560546875,
+            226.0338134765625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_9_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9680392146110535,
+          "bbox": [
+            273.0921630859375,
+            121.09646606445312,
+            366.3767395019531,
+            215.11856079101562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_9_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9570111632347107,
+          "bbox": [
+            291.4424133300781,
+            143.1025390625,
+            348.7927551269531,
+            201.61172485351562
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_10_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9663342237472534,
+          "bbox": [
+            267.677490234375,
+            103.65879821777344,
+            386.2278137207031,
+            225.2601318359375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_10_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9746270179748535,
+          "bbox": [
+            261.7861022949219,
+            117.91827392578125,
+            373.4868469238281,
+            216.08099365234375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_10_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9573517441749573,
+          "bbox": [
+            282.8018798828125,
+            141.48809814453125,
+            355.1518249511719,
+            202.67922973632812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_11_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.970138669013977,
+          "bbox": [
+            254.12429809570312,
+            102.88243103027344,
+            372.1603698730469,
+            224.4833984375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_11_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9755533337593079,
+          "bbox": [
+            267.0037536621094,
+            117.8076171875,
+            378.7066345214844,
+            216.27389526367188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_2_11_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9610052704811096,
+          "bbox": [
+            285.5016174316406,
+            142.3653564453125,
+            350.9765930175781,
+            201.944091796875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_0_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9649902582168579,
+          "bbox": [
+            259.18597412109375,
+            102.71989440917969,
+            381.5045471191406,
+            224.63323974609375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_0_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9726208448410034,
+          "bbox": [
+            274.0044250488281,
+            121.40374755859375,
+            365.4318542480469,
+            214.05047607421875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_0_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9585331678390503,
+          "bbox": [
+            291.1180419921875,
+            143.24493408203125,
+            348.9471435546875,
+            201.25338745117188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_1_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9692156314849854,
+          "bbox": [
+            267.7619934082031,
+            103.40740966796875,
+            386.2618713378906,
+            224.5638427734375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_1_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9753397703170776,
+          "bbox": [
+            261.96405029296875,
+            117.71722412109375,
+            372.7591247558594,
+            216.12826538085938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_1_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9618074893951416,
+          "bbox": [
+            283.3585205078125,
+            142.5023193359375,
+            355.1099853515625,
+            201.90499877929688
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_2_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9689390659332275,
+          "bbox": [
+            253.84683227539062,
+            103.35096740722656,
+            371.9501647949219,
+            224.598876953125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_2_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9769915342330933,
+          "bbox": [
+            266.732666015625,
+            117.6151123046875,
+            378.1148681640625,
+            216.08981323242188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_2_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9639917612075806,
+          "bbox": [
+            285.1743469238281,
+            142.30303955078125,
+            356.8876037597656,
+            202.10897827148438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_3_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9627780318260193,
+          "bbox": [
+            260.1031494140625,
+            103.3221435546875,
+            380.9114074707031,
+            224.8099365234375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_3_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9711575508117676,
+          "bbox": [
+            273.96697998046875,
+            121.79595947265625,
+            366.0667724609375,
+            214.06332397460938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_3_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9599801898002625,
+          "bbox": [
+            291.17047119140625,
+            143.06103515625,
+            348.9715270996094,
+            201.2694091796875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_4_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9718866348266602,
+          "bbox": [
+            267.703369140625,
+            103.29302978515625,
+            386.17779541015625,
+            224.79998779296875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_4_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9756404757499695,
+          "bbox": [
+            261.80181884765625,
+            117.97061157226562,
+            372.9040832519531,
+            216.17880249023438
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_4_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9563431739807129,
+          "bbox": [
+            282.9788818359375,
+            141.73394775390625,
+            354.89874267578125,
+            202.22467041015625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_5_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9682837724685669,
+          "bbox": [
+            254.07717895507812,
+            102.74591064453125,
+            372.3538818359375,
+            225.24896240234375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_5_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9760380983352661,
+          "bbox": [
+            267.2984619140625,
+            117.6278076171875,
+            378.18017578125,
+            215.71878051757812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_5_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.963141918182373,
+          "bbox": [
+            285.041259765625,
+            141.82757568359375,
+            357.0191650390625,
+            202.29251098632812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_6_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9628446102142334,
+          "bbox": [
+            259.8081970214844,
+            103.13636779785156,
+            381.1044006347656,
+            224.536865234375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_6_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9708735942840576,
+          "bbox": [
+            274.1495056152344,
+            121.64990234375,
+            365.6970520019531,
+            214.59616088867188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_6_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9615088701248169,
+          "bbox": [
+            291.59954833984375,
+            143.480224609375,
+            349.2998962402344,
+            201.1007080078125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_7_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9708584547042847,
+          "bbox": [
+            268.0282897949219,
+            103.649658203125,
+            385.9026794433594,
+            224.712158203125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_7_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.975744366645813,
+          "bbox": [
+            262.14898681640625,
+            117.9984130859375,
+            372.9550476074219,
+            216.01400756835938
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_8_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9699265956878662,
+          "bbox": [
+            254.0433807373047,
+            102.63444519042969,
+            372.39263916015625,
+            224.96954345703125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_8_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9772875308990479,
+          "bbox": [
+            266.96405029296875,
+            117.52825927734375,
+            378.1597900390625,
+            216.08795166015625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_8_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9410004019737244,
+          "bbox": [
+            307.5984802246094,
+            142.571533203125,
+            356.9234924316406,
+            201.85415649414062
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_9_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9651107788085938,
+          "bbox": [
+            259.65191650390625,
+            102.54731750488281,
+            380.9817810058594,
+            224.63568115234375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_9_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9679559469223022,
+          "bbox": [
+            273.8919982910156,
+            121.08770751953125,
+            365.5387268066406,
+            214.51800537109375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_9_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9442082047462463,
+          "bbox": [
+            291.8076171875,
+            143.5335693359375,
+            348.9613037109375,
+            201.73895263671875
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_10_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9703287482261658,
+          "bbox": [
+            267.814453125,
+            103.60307312011719,
+            385.4846496582031,
+            224.40570068359375
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_10_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9756035804748535,
+          "bbox": [
+            262.13836669921875,
+            117.94500732421875,
+            373.0496520996094,
+            216.2823486328125
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_10_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9608039259910583,
+          "bbox": [
+            283.3871154785156,
+            141.9716796875,
+            355.1785583496094,
+            202.20407104492188
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_11_0",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9711271524429321,
+          "bbox": [
+            254.068603515625,
+            102.7445068359375,
+            372.3707275390625,
+            224.60504150390625
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_11_1",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.9759855270385742,
+          "bbox": [
+            266.832763671875,
+            117.73095703125,
+            377.9911193847656,
+            215.97903442382812
+          ]
+        }
+      },
+      {
+        "id": "wrong_hint_box_3_11_2",
+        "group": "box",
+        "outcome": "correct",
+        "prediction": {
+          "category": "box",
+          "detector_score": 0.938539445400238,
+          "bbox": [
+            284.468505859375,
+            143.46054077148438,
+            356.8691101074219,
+            201.97598266601562
+          ]
+        }
+      }
+    ]
+  }
+}

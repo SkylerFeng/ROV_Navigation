@@ -1,0 +1,3640 @@
+[
+  {
+    "sim_time": 0.300000015,
+    "event": "llm_request",
+    "observation_id": 1,
+    "agent_memory": {
+      "phase": "REGION_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 0,
+      "search_events": [],
+      "visited_viewpoints": [],
+      "viewpoint_attempts": {},
+      "recent_results": [],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 1.900000099,
+    "tool_id": 1,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 1.900000099,
+    "observation_id": 1,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 1.900000099,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 16.900000881,
+    "tool_id": 1,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 1.900000099,
+    "observation_id": 1,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "scan_completed",
+    "ended_s": 16.900000881,
+    "duration_s": 15.000000782
+  },
+  {
+    "sim_time": 17.000000886,
+    "event": "llm_request",
+    "observation_id": 3,
+    "agent_memory": {
+      "phase": "REGION_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 16.700000871,
+      "search_expansion": 0,
+      "search_events": [],
+      "visited_viewpoints": [],
+      "viewpoint_attempts": {},
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 18.900000985,
+    "tool_id": 2,
+    "action": "explore",
+    "candidate_id": "frontier_44_32",
+    "object_id": null,
+    "started_s": 18.900000985,
+    "observation_id": 3,
+    "position": [
+      -1.125,
+      0.07500000000000018,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 18.900000985,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_44_32",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 40.200002096,
+    "tool_id": 2,
+    "action": "explore",
+    "candidate_id": "frontier_44_32",
+    "object_id": null,
+    "started_s": 18.900000985,
+    "observation_id": 3,
+    "position": [
+      -1.125,
+      0.07500000000000018,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 40.200002096,
+    "duration_s": 21.300001111
+  },
+  {
+    "sim_time": 40.300002101,
+    "event": "llm_request",
+    "observation_id": 5,
+    "agent_memory": {
+      "phase": "REGION_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 40.000002085999995,
+      "search_expansion": 0,
+      "search_events": [],
+      "visited_viewpoints": [
+        "frontier_44_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 41.900002185,
+    "tool_id": 3,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 41.900002185,
+    "observation_id": 5,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 41.900002185,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 64.600003369,
+    "tool_id": 3,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 41.900002185,
+    "observation_id": 5,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "scan_completed",
+    "ended_s": 64.600003369,
+    "duration_s": 22.70000118400001
+  },
+  {
+    "event": "agent_search_expanded",
+    "sim_time": 64.700003374,
+    "time_s": 64.700003374,
+    "reason": "search_budget_exhausted",
+    "expansion": 1,
+    "global_search": false
+  },
+  {
+    "sim_time": 64.700003374,
+    "event": "llm_request",
+    "observation_id": 7,
+    "agent_memory": {
+      "phase": "EXPANDED_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -0.5,
+        -3.5,
+        5.5,
+        4.0
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 1,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 66.833336818,
+    "tool_id": 4,
+    "action": "explore",
+    "candidate_id": "frontier_60_32",
+    "object_id": null,
+    "started_s": 66.833336818,
+    "observation_id": 7,
+    "position": [
+      1.2749999999999995,
+      0.07500000000000018,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 66.833336818,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_60_32",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 96.866671718,
+    "tool_id": 4,
+    "action": "explore",
+    "candidate_id": "frontier_60_32",
+    "object_id": null,
+    "started_s": 66.833336818,
+    "observation_id": 7,
+    "position": [
+      1.2749999999999995,
+      0.07500000000000018,
+      1.0
+    ],
+    "status": "FAILED",
+    "reason": "no_progress_choose_another_viewpoint",
+    "ended_s": 96.866671718,
+    "duration_s": 30.0333349
+  },
+  {
+    "sim_time": 96.966671723,
+    "event": "llm_request",
+    "observation_id": 9,
+    "agent_memory": {
+      "phase": "EXPANDED_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -0.5,
+        -3.5,
+        5.5,
+        4.0
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 32.266668349,
+      "search_expansion": 1,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 99.000005163,
+    "tool_id": 5,
+    "action": "explore",
+    "candidate_id": "frontier_66_32",
+    "object_id": null,
+    "started_s": 99.000005163,
+    "observation_id": 9,
+    "position": [
+      2.175,
+      0.07500000000000018,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 99.000005163,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_66_32",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 128.700006712,
+    "tool_id": 5,
+    "action": "explore",
+    "candidate_id": "frontier_66_32",
+    "object_id": null,
+    "started_s": 99.000005163,
+    "observation_id": 9,
+    "position": [
+      2.175,
+      0.07500000000000018,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 128.700006712,
+    "duration_s": 29.700001549000007
+  },
+  {
+    "event": "agent_search_expanded",
+    "sim_time": 128.833340052,
+    "time_s": 128.833340052,
+    "reason": "search_budget_exhausted",
+    "expansion": 2,
+    "global_search": false
+  },
+  {
+    "sim_time": 128.833340052,
+    "event": "llm_request",
+    "observation_id": 11,
+    "agent_memory": {
+      "phase": "EXPANDED_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -2.0,
+        -5.0,
+        7.0,
+        5.5
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 2,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 131.100006837,
+    "tool_id": 6,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 131.100006837,
+    "observation_id": 11,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 131.100006837,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 11,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 151.700007911,
+    "tool_id": 6,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 131.100006837,
+    "observation_id": 11,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "scan_completed",
+    "ended_s": 151.700007911,
+    "duration_s": 20.600001074000005
+  },
+  {
+    "sim_time": 151.800007916,
+    "event": "llm_request",
+    "observation_id": 13,
+    "agent_memory": {
+      "phase": "EXPANDED_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -2.0,
+        -5.0,
+        7.0,
+        5.5
+      ],
+      "alternative_region_index": -1,
+      "search_elapsed_s": 22.966667863999987,
+      "search_expansion": 2,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 154.300008047,
+    "tool_id": 7,
+    "action": "explore",
+    "candidate_id": "frontier_78_32",
+    "object_id": null,
+    "started_s": 154.300008047,
+    "observation_id": 13,
+    "position": [
+      3.9750000000000005,
+      0.07500000000000018,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 154.300008047,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 13,
+      "action": "explore",
+      "candidate_id": "frontier_78_32",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 187.300009768,
+    "tool_id": 7,
+    "action": "explore",
+    "candidate_id": "frontier_78_32",
+    "object_id": null,
+    "started_s": 154.300008047,
+    "observation_id": 13,
+    "position": [
+      3.9750000000000005,
+      0.07500000000000018,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 187.300009768,
+    "duration_s": 33.00000172099999
+  },
+  {
+    "event": "agent_search_expanded",
+    "sim_time": 187.400009773,
+    "time_s": 187.400009773,
+    "reason": "prior_exhausted_try_alternative",
+    "region": "西侧设备区"
+  },
+  {
+    "sim_time": 187.400009773,
+    "event": "llm_request",
+    "observation_id": 15,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 189.700009893,
+    "tool_id": 8,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 189.700009893,
+    "observation_id": 15,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 189.700009893,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 15,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 212.300011072,
+    "tool_id": 8,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 189.700009893,
+    "observation_id": 15,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "scan_completed",
+    "ended_s": 212.300011072,
+    "duration_s": 22.600001179000003
+  },
+  {
+    "sim_time": 212.400011077,
+    "event": "llm_request",
+    "observation_id": 17,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 214.900011207,
+    "tool_id": 9,
+    "action": "explore",
+    "candidate_id": "transfer_64_32",
+    "object_id": null,
+    "started_s": 214.900011207,
+    "observation_id": 17,
+    "position": [
+      1.8749999999999991,
+      0.07500000000000018,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 214.900011207,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 17,
+      "action": "explore",
+      "candidate_id": "transfer_64_32",
+      "reason_code": "transit_to_unsearched_region"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 247.500012908,
+    "tool_id": 9,
+    "action": "explore",
+    "candidate_id": "transfer_64_32",
+    "object_id": null,
+    "started_s": 214.900011207,
+    "observation_id": 17,
+    "position": [
+      1.8749999999999991,
+      0.07500000000000018,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 247.500012908,
+    "duration_s": 32.600001701
+  },
+  {
+    "sim_time": 247.600012913,
+    "event": "llm_request",
+    "observation_id": 19,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 250.300013054,
+    "tool_id": 10,
+    "action": "explore",
+    "candidate_id": "transfer_52_32",
+    "object_id": null,
+    "started_s": 250.300013054,
+    "observation_id": 19,
+    "position": [
+      0.07500000000000018,
+      0.07500000000000018,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 250.300013054,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 19,
+      "action": "explore",
+      "candidate_id": "transfer_52_32",
+      "reason_code": "transit_to_unsearched_region"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 271.90001418,
+    "tool_id": 10,
+    "action": "explore",
+    "candidate_id": "transfer_52_32",
+    "object_id": null,
+    "started_s": 250.300013054,
+    "observation_id": 19,
+    "position": [
+      0.07500000000000018,
+      0.07500000000000018,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 271.90001418,
+    "duration_s": 21.600001126000024
+  },
+  {
+    "sim_time": 272.000014185,
+    "event": "llm_request",
+    "observation_id": 21,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 274.500014316,
+    "tool_id": 11,
+    "action": "explore",
+    "candidate_id": "transfer_41_30",
+    "object_id": null,
+    "started_s": 274.500014316,
+    "observation_id": 21,
+    "position": [
+      -1.5750000000000002,
+      -0.22499999999999964,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 274.500014316,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 21,
+      "action": "explore",
+      "candidate_id": "transfer_41_30",
+      "reason_code": "transit_to_unsearched_region"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 294.700015369,
+    "tool_id": 11,
+    "action": "explore",
+    "candidate_id": "transfer_41_30",
+    "object_id": null,
+    "started_s": 274.500014316,
+    "observation_id": 21,
+    "position": [
+      -1.5750000000000002,
+      -0.22499999999999964,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 294.700015369,
+    "duration_s": 20.20000105300005
+  },
+  {
+    "sim_time": 294.800015375,
+    "event": "llm_request",
+    "observation_id": 23,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32",
+        "transfer_41_30"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_41_30": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        },
+        {
+          "tool_id": 11,
+          "action": "explore",
+          "candidate_id": "transfer_41_30",
+          "object_id": null,
+          "started_s": 274.500014316,
+          "observation_id": 21,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 294.700015369,
+          "duration_s": 20.20000105300005
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 297.300015505,
+    "tool_id": 12,
+    "action": "explore",
+    "candidate_id": "transfer_34_27",
+    "object_id": null,
+    "started_s": 297.300015505,
+    "observation_id": 23,
+    "position": [
+      -2.625,
+      -0.6749999999999998,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 297.300015505,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 23,
+      "action": "explore",
+      "candidate_id": "transfer_34_27",
+      "reason_code": "transit_to_unsearched_region"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 309.900016162,
+    "tool_id": 12,
+    "action": "explore",
+    "candidate_id": "transfer_34_27",
+    "object_id": null,
+    "started_s": 297.300015505,
+    "observation_id": 23,
+    "position": [
+      -2.625,
+      -0.6749999999999998,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 309.900016162,
+    "duration_s": 12.60000065700001
+  },
+  {
+    "sim_time": 310.000016167,
+    "event": "llm_request",
+    "observation_id": 25,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32",
+        "transfer_41_30",
+        "transfer_34_27"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_41_30": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_34_27": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.900000099,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 16.900000881,
+          "duration_s": 15.000000782
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        },
+        {
+          "tool_id": 11,
+          "action": "explore",
+          "candidate_id": "transfer_41_30",
+          "object_id": null,
+          "started_s": 274.500014316,
+          "observation_id": 21,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 294.700015369,
+          "duration_s": 20.20000105300005
+        },
+        {
+          "tool_id": 12,
+          "action": "explore",
+          "candidate_id": "transfer_34_27",
+          "object_id": null,
+          "started_s": 297.300015505,
+          "observation_id": 23,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 309.900016162,
+          "duration_s": 12.60000065700001
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 312.300016287,
+    "tool_id": 13,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 312.300016287,
+    "observation_id": 25,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 312.300016287,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 25,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 328.500017132,
+    "tool_id": 13,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 312.300016287,
+    "observation_id": 25,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "scan_completed",
+    "ended_s": 328.500017132,
+    "duration_s": 16.200000844999977
+  },
+  {
+    "sim_time": 328.600017137,
+    "event": "llm_request",
+    "observation_id": 27,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32",
+        "transfer_41_30",
+        "transfer_34_27"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_41_30": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_34_27": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_44_32",
+          "object_id": null,
+          "started_s": 18.900000985,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 40.200002096,
+          "duration_s": 21.300001111
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        },
+        {
+          "tool_id": 11,
+          "action": "explore",
+          "candidate_id": "transfer_41_30",
+          "object_id": null,
+          "started_s": 274.500014316,
+          "observation_id": 21,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 294.700015369,
+          "duration_s": 20.20000105300005
+        },
+        {
+          "tool_id": 12,
+          "action": "explore",
+          "candidate_id": "transfer_34_27",
+          "object_id": null,
+          "started_s": 297.300015505,
+          "observation_id": 23,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 309.900016162,
+          "duration_s": 12.60000065700001
+        },
+        {
+          "tool_id": 13,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 312.300016287,
+          "observation_id": 25,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 328.500017132,
+          "duration_s": 16.200000844999977
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 331.100017268,
+    "tool_id": 14,
+    "action": "explore",
+    "candidate_id": "frontier_36_42",
+    "object_id": null,
+    "started_s": 331.100017268,
+    "observation_id": 27,
+    "position": [
+      -2.325,
+      1.5750000000000002,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 331.100017268,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 27,
+      "action": "explore",
+      "candidate_id": "frontier_36_42",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 363.700018968,
+    "tool_id": 14,
+    "action": "explore",
+    "candidate_id": "frontier_36_42",
+    "object_id": null,
+    "started_s": 331.100017268,
+    "observation_id": 27,
+    "position": [
+      -2.325,
+      1.5750000000000002,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 363.700018968,
+    "duration_s": 32.60000170000001
+  },
+  {
+    "sim_time": 363.800018973,
+    "event": "llm_request",
+    "observation_id": 29,
+    "agent_memory": {
+      "phase": "ALTERNATIVE_SEARCH",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32",
+        "transfer_41_30",
+        "transfer_34_27",
+        "frontier_36_42"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_41_30": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_34_27": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_36_42": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 41.900002185,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 64.600003369,
+          "duration_s": 22.70000118400001
+        },
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        },
+        {
+          "tool_id": 11,
+          "action": "explore",
+          "candidate_id": "transfer_41_30",
+          "object_id": null,
+          "started_s": 274.500014316,
+          "observation_id": 21,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 294.700015369,
+          "duration_s": 20.20000105300005
+        },
+        {
+          "tool_id": 12,
+          "action": "explore",
+          "candidate_id": "transfer_34_27",
+          "object_id": null,
+          "started_s": 297.300015505,
+          "observation_id": 23,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 309.900016162,
+          "duration_s": 12.60000065700001
+        },
+        {
+          "tool_id": 13,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 312.300016287,
+          "observation_id": 25,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 328.500017132,
+          "duration_s": 16.200000844999977
+        },
+        {
+          "tool_id": 14,
+          "action": "explore",
+          "candidate_id": "frontier_36_42",
+          "object_id": null,
+          "started_s": 331.100017268,
+          "observation_id": 27,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 363.700018968,
+          "duration_s": 32.60000170000001
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 365.900019083,
+    "tool_id": 15,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 365.900019083,
+    "observation_id": 29,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 365.900019083,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 29,
+      "action": "scan",
+      "reason_code": "scan_uncompleted"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 376.700019646,
+    "tool_id": 15,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 365.900019083,
+    "observation_id": 29,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "target_observed",
+    "ended_s": 376.700019646,
+    "duration_s": 10.80000056299997
+  },
+  {
+    "sim_time": 376.833352986,
+    "event": "llm_request",
+    "observation_id": 31,
+    "agent_memory": {
+      "phase": "VERIFY",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32",
+        "transfer_41_30",
+        "transfer_34_27",
+        "frontier_36_42"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_41_30": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_34_27": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_36_42": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 4,
+          "action": "explore",
+          "candidate_id": "frontier_60_32",
+          "object_id": null,
+          "started_s": 66.833336818,
+          "observation_id": 7,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 96.866671718,
+          "duration_s": 30.0333349
+        },
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        },
+        {
+          "tool_id": 11,
+          "action": "explore",
+          "candidate_id": "transfer_41_30",
+          "object_id": null,
+          "started_s": 274.500014316,
+          "observation_id": 21,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 294.700015369,
+          "duration_s": 20.20000105300005
+        },
+        {
+          "tool_id": 12,
+          "action": "explore",
+          "candidate_id": "transfer_34_27",
+          "object_id": null,
+          "started_s": 297.300015505,
+          "observation_id": 23,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 309.900016162,
+          "duration_s": 12.60000065700001
+        },
+        {
+          "tool_id": 13,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 312.300016287,
+          "observation_id": 25,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 328.500017132,
+          "duration_s": 16.200000844999977
+        },
+        {
+          "tool_id": 14,
+          "action": "explore",
+          "candidate_id": "frontier_36_42",
+          "object_id": null,
+          "started_s": 331.100017268,
+          "observation_id": 27,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 363.700018968,
+          "duration_s": 32.60000170000001
+        },
+        {
+          "tool_id": 15,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 365.900019083,
+          "observation_id": 29,
+          "status": "SUCCEEDED",
+          "reason": "target_observed",
+          "ended_s": 376.700019646,
+          "duration_s": 10.80000056299997
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 379.300019782,
+    "tool_id": 16,
+    "action": "explore",
+    "candidate_id": "frontier_48_24",
+    "object_id": null,
+    "started_s": 379.300019782,
+    "observation_id": 31,
+    "position": [
+      -0.5250000000000004,
+      -1.125,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 379.300019782,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 31,
+      "action": "explore",
+      "candidate_id": "frontier_48_24",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 410.400021404,
+    "tool_id": 16,
+    "action": "explore",
+    "candidate_id": "frontier_48_24",
+    "object_id": null,
+    "started_s": 379.300019782,
+    "observation_id": 31,
+    "position": [
+      -0.5250000000000004,
+      -1.125,
+      1.0
+    ],
+    "status": "FAILED",
+    "reason": "no_progress_choose_another_viewpoint",
+    "ended_s": 410.400021404,
+    "duration_s": 31.10000162199998
+  },
+  {
+    "sim_time": 411.533354796,
+    "event": "llm_request",
+    "observation_id": 57,
+    "agent_memory": {
+      "phase": "VERIFY",
+      "coarse_region_xyxy": [
+        1.0,
+        -2.0,
+        4.0,
+        2.5
+      ],
+      "region_name": "东侧设备区",
+      "effective_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "alternative_region_index": 0,
+      "search_elapsed_s": 0.0,
+      "search_expansion": 3,
+      "search_events": [
+        {
+          "time_s": 64.700003374,
+          "reason": "search_budget_exhausted",
+          "expansion": 1,
+          "global_search": false
+        },
+        {
+          "time_s": 128.833340052,
+          "reason": "search_budget_exhausted",
+          "expansion": 2,
+          "global_search": false
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "search_budget_exhausted",
+          "expansion": 3,
+          "global_search": true
+        },
+        {
+          "time_s": 187.400009773,
+          "reason": "prior_exhausted_try_alternative",
+          "region": "西侧设备区"
+        }
+      ],
+      "visited_viewpoints": [
+        "frontier_44_32",
+        "frontier_66_32",
+        "frontier_78_32",
+        "transfer_64_32",
+        "transfer_52_32",
+        "transfer_41_30",
+        "transfer_34_27",
+        "frontier_36_42"
+      ],
+      "viewpoint_attempts": {
+        "frontier_44_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_60_32": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 96.866671718
+        },
+        "frontier_66_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_78_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_64_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_52_32": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_41_30": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "transfer_34_27": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_36_42": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        },
+        "frontier_48_24": {
+          "attempts": 1,
+          "failures": 1,
+          "visited": false,
+          "last_failure_s": 410.400021404
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 5,
+          "action": "explore",
+          "candidate_id": "frontier_66_32",
+          "object_id": null,
+          "started_s": 99.000005163,
+          "observation_id": 9,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 128.700006712,
+          "duration_s": 29.700001549000007
+        },
+        {
+          "tool_id": 6,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 131.100006837,
+          "observation_id": 11,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 151.700007911,
+          "duration_s": 20.600001074000005
+        },
+        {
+          "tool_id": 7,
+          "action": "explore",
+          "candidate_id": "frontier_78_32",
+          "object_id": null,
+          "started_s": 154.300008047,
+          "observation_id": 13,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 187.300009768,
+          "duration_s": 33.00000172099999
+        },
+        {
+          "tool_id": 8,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 189.700009893,
+          "observation_id": 15,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 212.300011072,
+          "duration_s": 22.600001179000003
+        },
+        {
+          "tool_id": 9,
+          "action": "explore",
+          "candidate_id": "transfer_64_32",
+          "object_id": null,
+          "started_s": 214.900011207,
+          "observation_id": 17,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 247.500012908,
+          "duration_s": 32.600001701
+        },
+        {
+          "tool_id": 10,
+          "action": "explore",
+          "candidate_id": "transfer_52_32",
+          "object_id": null,
+          "started_s": 250.300013054,
+          "observation_id": 19,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 271.90001418,
+          "duration_s": 21.600001126000024
+        },
+        {
+          "tool_id": 11,
+          "action": "explore",
+          "candidate_id": "transfer_41_30",
+          "object_id": null,
+          "started_s": 274.500014316,
+          "observation_id": 21,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 294.700015369,
+          "duration_s": 20.20000105300005
+        },
+        {
+          "tool_id": 12,
+          "action": "explore",
+          "candidate_id": "transfer_34_27",
+          "object_id": null,
+          "started_s": 297.300015505,
+          "observation_id": 23,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 309.900016162,
+          "duration_s": 12.60000065700001
+        },
+        {
+          "tool_id": 13,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 312.300016287,
+          "observation_id": 25,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 328.500017132,
+          "duration_s": 16.200000844999977
+        },
+        {
+          "tool_id": 14,
+          "action": "explore",
+          "candidate_id": "frontier_36_42",
+          "object_id": null,
+          "started_s": 331.100017268,
+          "observation_id": 27,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 363.700018968,
+          "duration_s": 32.60000170000001
+        },
+        {
+          "tool_id": 15,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 365.900019083,
+          "observation_id": 29,
+          "status": "SUCCEEDED",
+          "reason": "target_observed",
+          "ended_s": 376.700019646,
+          "duration_s": 10.80000056299997
+        },
+        {
+          "tool_id": 16,
+          "action": "explore",
+          "candidate_id": "frontier_48_24",
+          "object_id": null,
+          "started_s": 379.300019782,
+          "observation_id": 31,
+          "status": "FAILED",
+          "reason": "no_progress_choose_another_viewpoint",
+          "ended_s": 410.400021404,
+          "duration_s": 31.10000162199998
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 413.900021586,
+    "tool_id": 17,
+    "action": "explore",
+    "candidate_id": "frontier_58_12",
+    "object_id": null,
+    "started_s": 413.900021586,
+    "observation_id": 57,
+    "position": [
+      0.9750000000000005,
+      -2.925,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 413.900021586,
+    "action": {
+      "task_id": "483d9f3b079d",
+      "observation_id": 57,
+      "action": "explore",
+      "candidate_id": "frontier_58_12",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 421.366688642,
+    "tool_id": 17,
+    "action": "explore",
+    "candidate_id": "frontier_58_12",
+    "object_id": null,
+    "started_s": 413.900021586,
+    "observation_id": 57,
+    "position": [
+      0.9750000000000005,
+      -2.925,
+      1.0
+    ],
+    "status": "FAILED",
+    "reason": "task_timeout",
+    "ended_s": 421.366688642,
+    "duration_s": 7.466667056000006
+  },
+  {
+    "event": "result",
+    "sim_time": 421.366688642,
+    "status": "FAILED",
+    "reason": "task_timeout",
+    "policy": "qwen",
+    "frames": 1861,
+    "llm_calls": 17,
+    "simulation_seconds": 421.06668862699996
+  }
+]

@@ -15,6 +15,8 @@ def snapshot(node):
         position=[p.x,p.y,p.z]
         yaw=math.atan2(2*(q.w*q.z+q.x*q.y),1-2*(q.y*q.y+q.z*q.z))
     return {'sim_time':node.now(),'policy':node.args.policy,'instruction':node.cfg['instruction'],
+            'vision':getattr(node,'vision_metadata',None),
+            'agent':node.agent.summary() if getattr(node,'agent',None) else None,
             'state':node.mode,'reason':node.last_result,'planner_state':node.planner_state,
             'position':position,'yaw':yaw,'active':node.active,'decision':node.debug_decision,
             'objects':node.memory.observe(node.now()),'path':node.path[-2000:],

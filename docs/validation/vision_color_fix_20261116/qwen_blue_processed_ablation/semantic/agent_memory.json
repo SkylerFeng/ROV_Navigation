@@ -1,0 +1,34 @@
+{
+  "phase": "DONE",
+  "coarse_region_xyxy": null,
+  "visited_viewpoints": [],
+  "viewpoint_attempts": {},
+  "recent_results": [
+    {
+      "tool_id": 1,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 1.700000088,
+      "observation_id": 1,
+      "status": "SUCCEEDED",
+      "reason": "target_observed",
+      "ended_s": 14.500000756,
+      "duration_s": 12.800000668000001
+    },
+    {
+      "tool_id": 2,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "started_s": 16.70000087,
+      "observation_id": 3,
+      "status": "SUCCEEDED",
+      "reason": "visual_identity_range_heading_and_hold_verified",
+      "ended_s": 29.200001522,
+      "duration_s": 12.500000652
+    }
+  ],
+  "consecutive_holds": 0,
+  "max_consecutive_holds": 3
+}

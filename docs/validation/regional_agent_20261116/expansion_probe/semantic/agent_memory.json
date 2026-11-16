@@ -1,0 +1,90 @@
+{
+  "phase": "DONE",
+  "coarse_region_xyxy": [
+    1.0,
+    -2.0,
+    4.0,
+    2.5
+  ],
+  "region_name": "东侧设备区",
+  "effective_region_xyxy": null,
+  "search_elapsed_s": 2.5000001299999965,
+  "search_expansion": 2,
+  "search_events": [
+    {
+      "time_s": 17.600000917,
+      "reason": "search_budget_exhausted",
+      "expansion": 1,
+      "global_search": false
+    },
+    {
+      "time_s": 40.900002133,
+      "reason": "search_budget_exhausted",
+      "expansion": 2,
+      "global_search": true
+    }
+  ],
+  "visited_viewpoints": [
+    "frontier_44_32"
+  ],
+  "viewpoint_attempts": {
+    "frontier_44_32": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    }
+  },
+  "recent_results": [
+    {
+      "tool_id": 1,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 2.100000109,
+      "observation_id": 1,
+      "status": "SUCCEEDED",
+      "reason": "scan_completed",
+      "ended_s": 17.500000912,
+      "duration_s": 15.400000803000001
+    },
+    {
+      "tool_id": 2,
+      "action": "explore",
+      "candidate_id": "frontier_44_32",
+      "object_id": null,
+      "started_s": 20.100001048,
+      "observation_id": 3,
+      "status": "SUCCEEDED",
+      "reason": "exploration_waypoint_reached",
+      "ended_s": 40.800002127,
+      "duration_s": 20.700001079
+    },
+    {
+      "tool_id": 3,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 43.400002263,
+      "observation_id": 5,
+      "status": "SUCCEEDED",
+      "reason": "target_observed",
+      "ended_s": 58.900003071,
+      "duration_s": 15.500000808000003
+    },
+    {
+      "tool_id": 4,
+      "action": "approach",
+      "candidate_id": "approach_obj_009",
+      "object_id": "obj_009",
+      "started_s": 62.500003259,
+      "observation_id": 7,
+      "status": "SUCCEEDED",
+      "reason": "visual_identity_range_heading_and_hold_verified",
+      "ended_s": 87.100004542,
+      "duration_s": 24.60000128299999
+    }
+  ],
+  "consecutive_holds": 0,
+  "max_consecutive_holds": 3
+}

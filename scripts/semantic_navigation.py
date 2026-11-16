@@ -29,13 +29,20 @@ class SemanticNavigation(Node):
         from semantic_config import load_task,load_runtime,load_providers
         self.cfg=load_task(args.task_config)
         self.runtime=load_runtime(args.runtime_config)
+        from semantic_vision import VisionFrontend,load_vision
+        from semantic_agent import TaskAgent,load_agent
+        self.vision=VisionFrontend(load_vision(getattr(args,'vision_config',None)))
+        agent_cfg=load_agent(getattr(args,'agent_config',None))
+        self.agent=TaskAgent(agent_cfg) if agent_cfg['enabled'] else None
         self.task_id=uuid.uuid4().hex[:12];self.sequence=0;self.frame=None;self.odom=None
         self.buffers={};self.last_sensor=-math.inf;self.last_processed=-math.inf
         self.detector=Detector(args.model,self.cfg['detector_confidence'])
         self.color_model=ColorModel(ROOT/'config/semantic/color_model.npz')
-        self.memory=ObjectMemory(self.cfg['confirmation_frames'])
+        self.memory=ObjectMemory(self.cfg['confirmation_frames'],agent_cfg['category_conflict_radius_m'])
         c=load_experiment('platform_semantic')
         self.grid=ExplorationGrid(json.loads((ROOT/c['water_boundary']).read_text()),self.cfg['grid_resolution_m'],self.cfg['clearance_m'],inspection_range=self.runtime['exploration']['inspection_range_m'])
+        from static_collision_prior import load_static_xy,seed_grid
+        seed_grid(self.grid,load_static_xy(c))
         self.mode='WAITING';self.scan_completed=False;self.scan_accum=0.;self.previous_yaw=None
         self.next_scan_center=None;self.scan_direction=-1.
         self.anchor=None;self.hold_yaw=0.;self.started=None;self.active=None;self.action_started=0
@@ -60,6 +67,7 @@ class SemanticNavigation(Node):
         self.events=0;self.llm_calls=0;self.llm_errors=0;self.scans_at_viewpoint=0;self.failed_approaches=[];self.failed_explores=[];self.last_verify_log=-100.;self.target_anchor=None;self.target_seen=-math.inf;self.recovery_attempts=0;self.recovery_until=-math.inf;self.cooldown_until=-math.inf
         self.debug_publisher=self.create_publisher(String,'/rov/semantic/debug',1)
         self.debug_decision=None;self.debug_stages=[]
+        self.debug_preview_source=None;self.debug_preview_cache=None
         self.debug_camera_source=None;self.debug_camera_cache=None;self.debug_camera_error=None
         self.create_timer(.5,self.publish_debug)
         self.record('start',{'policy':args.policy,'model':str(args.model),'task':self.cfg,'task_id':self.task_id})
@@ -79,6 +87,14 @@ class SemanticNavigation(Node):
             except Exception as exc:
                 # Debug imagery must never stop navigation or show stale boxes on a new image.
                 self.debug_camera_error=type(exc).__name__
+        if self.debug_preview_source is not None:
+            preview,t=self.debug_preview_source
+            try:
+                if self.debug_preview_cache is None or self.debug_preview_cache['sim_time']!=t:
+                    from semantic_debug_camera import encode_frame
+                    self.debug_preview_cache=encode_frame(preview,t,[])
+                payload['camera_preview']=self.debug_preview_cache
+            except Exception as exc:payload['preview_error']=type(exc).__name__
         payload['camera_error']=self.debug_camera_error
         self.debug_publisher.publish(String(data=json.dumps(payload,ensure_ascii=False,allow_nan=False)))
     def record(self,kind,data):
@@ -116,21 +132,30 @@ class SemanticNavigation(Node):
         depth=np.frombuffer(dmsg.data,np.float32).reshape(dmsg.height,dmsg.step//4)[:,:dmsg.width]
         if depth.shape!=rgb.shape[:2]:raise ValueError('unaligned RGB/depth')
         cp=xyz(frame['pose'].pose.position);q=frame['pose'].pose.orientation;cq=[q.w,q.x,q.y,q.z];k=np.array(frame['info'].k).reshape(3,3)
+        raw_sensor_rgb=rgb.copy()
+        raw_rgb,rgb,depth,k,vision_meta=self.vision.process(rgb,depth,k,frame['info'].d,frame['info'].distortion_model)
+        self.vision_metadata=vision_meta
+        color_rgb=raw_rgb if self.vision.cfg['color_source']=='raw' else rgb
+        color_model=self.color_model if self.vision.cfg['color_source']=='raw' else None
+        processed_rgb=rgb
+        if self.vision.cfg['detector_source']=='raw':rgb=raw_rgb
         found=[];boxes=self.detector.predict(rgb)
         for d in boxes:
-            location=localize_detection(rgb,depth,k,cp,cq,d['bbox'],self.color_model)
+            location=localize_detection(color_rgb,depth,k,cp,cq,d['bbox'],color_model)
             if location is not None:found.append({**d,**location})
         from semantic_debug_camera import detection_rows
         self.debug_camera_source=(rgb,t,detection_rows(boxes,found))
+        self.debug_preview_source=(processed_rgb,t) if self.vision.cfg['method']!='none' else None
         self.memory.update(found,t);self.grid.update(depth,k,cp,cq,xyz(self.odom.pose.pose.position))
         self.last_sensor=t;self.last_processed=t;self.last_frame_wall=time.monotonic();self.frames+=1
         self.path.append([t,*xyz(self.odom.pose.pose.position)])
         if self.frames==1:self.record('initial_observation',{'detections':found})
         if t-self.last_snapshot>=self.runtime['execution']['snapshot_interval_s']:
-            self.record('perception',{'detections':found,'objects':self.memory.observe(t),'free_cells':int(self.grid.free.sum()),'occupied_cells':int(self.grid.occupied.sum()),'inspected_cells':int(self.grid.inspected.sum())})
+            self.record('perception',{'vision':vision_meta,'detections':found,'objects':self.memory.observe(t),'free_cells':int(self.grid.free.sum()),'occupied_cells':int(self.grid.occupied.sum()),'inspected_cells':int(self.grid.inspected.sum())})
             self.last_snapshot=t
-            np.savez_compressed(self.args.output/'latest_sensor.npz',rgb=rgb,depth=depth,k=k,cp=cp,cq=cq)
+            np.savez_compressed(self.args.output/'latest_sensor.npz',rgb=rgb,raw_rgb=raw_sensor_rgb,rectified_raw_rgb=raw_rgb,processed_rgb=processed_rgb,depth=depth,k=k,cp=cp,cq=cq)
             import cv2
+            cv2.imwrite(str(self.args.output/'latest_processed.jpg'),cv2.cvtColor(processed_rgb,cv2.COLOR_RGB2BGR))
             canvas=cv2.cvtColor(rgb,cv2.COLOR_RGB2BGR)
             for d in found:
                 x0,y0,x1,y1=map(int,d['bbox']);cv2.rectangle(canvas,(x0,y0),(x1,y1),(0,255,0),2)
@@ -138,15 +163,26 @@ class SemanticNavigation(Node):
             cv2.imwrite(str(self.args.output/'latest_detection.jpg'),canvas)
     def observation(self,position):
         self.sequence+=1;objects=self.memory.observe(self.now())
-        candidates=self.grid.candidates(position,objects,self.cfg['surface_standoff_m'],settings=self.runtime['exploration'],max_age=self.cfg['max_observation_age_s'],excluded_approaches=self.failed_approaches,excluded_explores=self.failed_explores)
-        targets={o['id'] for o in objects if o['category']==self.cfg['category'] and o['color']==self.cfg['color']}
+        exploration=dict(self.runtime['exploration'])
+        agent=getattr(self,'agent',None)
+        if agent:
+            for obj in objects:
+                obj['localization_stable']=obj.get('position_spread_m',0.)<=agent.cfg['localization_max_spread_m']
+                obj['confirmed']=obj['confirmed'] and obj['localization_stable']
+            previous=len(agent.search_events)
+            exploration.update(agent.search_settings(self.now(),objects,self.cfg,position))
+            if len(agent.search_events)>previous:self.record('agent_search_expanded',agent.search_events[-1])
+            agent.update_phase(self.mode,objects,self.cfg)
+        candidates=self.grid.candidates(position,objects,self.cfg['surface_standoff_m'],settings=exploration,max_age=self.cfg['max_observation_age_s'],excluded_approaches=self.failed_approaches,excluded_explores=self.failed_explores)
+        targets={o['id'] for o in objects if o.get('confirmed',False) and o['category']==self.cfg['category'] and o['color']==self.cfg['color']}
         candidates=[c for c in candidates if c['kind']=='explore' or c.get('object_id') in targets]
+        if agent:candidates=agent.constrain(candidates,self.now())
         if not candidates and self.scan_completed and self.scans_at_viewpoint<self.runtime['scan']['max_sectors_per_viewpoint']:
             self.scan_completed=False  # a 120-degree sector is not complete coverage when frontiers run out
         return {'task_id':self.task_id,'observation_id':self.sequence,'instruction':self.cfg['instruction'],
             'target':{'category':self.cfg['category'],'color':self.cfg['color']},'state':self.mode,
             'scan_completed':self.scan_completed,'objects':objects,'candidates':candidates,'last_action_result':self.last_result,
-            'max_observation_age_s':self.cfg['max_observation_age_s']}
+            'max_observation_age_s':self.cfg['max_observation_age_s'],**({'agent_memory':agent.summary()} if agent else {})}
     def remember_target(self,objects):
         obj=matching_target(objects,self.cfg,self.now(),self.cfg['max_observation_age_s'],
                             self.target_anchor,self.runtime['recovery']['association_radius_m'])
@@ -170,12 +206,20 @@ class SemanticNavigation(Node):
         self.motion.publish(String(data=json.dumps({'mode':mode,'position':self.anchor,'yaw':self.hold_yaw if yaw is None else yaw,'stamp':self.now()})))
     def finish(self,status,reason):
         self.mode=status;self.last_result=reason
+        if getattr(self,'agent',None):
+            self.agent_complete('SUCCEEDED' if status=='SUCCEEDED' else 'FAILED',reason)
+            self.agent.update_phase(status,[],self.cfg)
+            (self.args.output/'agent_memory.json').write_text(json.dumps(self.agent.summary(),ensure_ascii=False,indent=2))
         result={'status':status,'reason':reason,'policy':self.args.policy,'frames':self.frames,'llm_calls':self.llm_calls,
             'simulation_seconds':self.now()-(self.started or self.now()),'last_objects':self.memory.observe(self.now()),'path':self.path}
         (self.args.output/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));self.record('result',result)
         np.savez_compressed(self.args.output/'map.npz',free=self.grid.free,occupied=self.grid.occupied,inspected=self.grid.inspected,origin=self.grid.origin,res=self.grid.res)
     def execute(self,action,obs,position,yaw):
-        validate_action(action,obs);self.record('decision',{'observation':obs,'action':action});self.action_started=self.now()
+        validate_action(action,obs)
+        if getattr(self,'agent',None):
+            self.agent.validate(action,self.now())
+            self.record('agent_tool_started',self.agent.start(action,obs,self.now()))
+        self.record('decision',{'observation':obs,'action':action});self.action_started=self.now()
         kind=action['action'];self.active=None
         if kind=='scan':
             self.scans_at_viewpoint+=1
@@ -190,6 +234,9 @@ class SemanticNavigation(Node):
                 self.next_scan_center=None
         elif kind in ('approach','explore'):
             c=next(c for c in obs['candidates'] if c['id']==action['candidate_id'])
+            if kind=='approach':
+                obj=next(o for o in obs['objects'] if o['id']==c['object_id'])
+                c={**c,'target_surface_at_issue':list(obj['surface_world'])}
             self.active={**c,'issued_at':self.now(),'progress_time':self.now(),'progress_distance':math.dist(position,c['position'])};self.mode='APPROACHING' if kind=='approach' else 'EXPLORING'
             msg=PoseStamped();msg.header.frame_id='world';msg.header.stamp=self.get_clock().now().to_msg()
             msg.pose.position.x,msg.pose.position.y,msg.pose.position.z=c['position'];msg.pose.orientation.w=1.
@@ -201,8 +248,8 @@ class SemanticNavigation(Node):
             self.scan_completed=False
         elif kind=='hold':self.mode='HOLD';self.hold(position,yaw)
         else:self.finish('FAILED',action['reason_code'])
-    def decide(self,position,yaw):
-        obs=self.observation(position);self.hold(position,yaw)
+    def decide(self,position,yaw,observation=None):
+        obs=observation if observation is not None else self.observation(position);self.hold(position,yaw)
         obj=self.remember_target(obs['objects'])
         if obj and self.now()>=self.cooldown_until:self.hold_yaw=bearing(position,obj['surface_world'])
         if self.policy:
@@ -211,7 +258,25 @@ class SemanticNavigation(Node):
             self.pending_observation=obs;self.future=self.executor_pool.submit(self.policy.decide,obs)
             self.llm_calls+=1;self.mode='DECIDING';self.record('llm_request',{'observation':obs})
         else:self.execute(rule_action(obs),obs,position,yaw)
+    def agent_complete(self,status,reason):
+        agent=getattr(self,'agent',None)
+        if agent:
+            result=agent.complete(status,reason,self.now())
+            if result:self.record('agent_tool_result',result)
     def tick(self):
+        SemanticNavigation._tick(self)
+        agent=getattr(self,'agent',None)
+        if not agent:return
+        agent.update_phase(self.mode,self.memory.observe(self.now()),self.cfg)
+        if self.mode=='READY' and agent.current:
+            reason=self.last_result
+            status=('TIMEOUT' if 'timeout' in reason or 'bounded_scan' in reason else
+                    'FAILED' if any(x in reason for x in ('blocked','no_progress','failed','stale')) else
+                    'ABORTED' if reason=='target_observed_while_exploring' else 'SUCCEEDED')
+            self.agent_complete(status,reason)
+        elif self.mode=='RECOVERING' and agent.current:
+            self.agent_complete('FAILED','local_recovery_started')
+    def _tick(self):
         now=self.now()
         if not self.odom or not self.planner_ready:return
         p=xyz(self.odom.pose.pose.position);q=self.odom.pose.pose.orientation
@@ -234,6 +299,17 @@ class SemanticNavigation(Node):
             return
         if self.started is None:self.started=now
         if now-self.started>self.cfg['timeout_sim_s']:self.hold(p,yaw);self.finish('FAILED','task_timeout');self.lease('hold');return
+        agent=getattr(self,'agent',None)
+        if agent:
+            loop=agent.loop(now,p,yaw,self.mode)
+            if loop:
+                self.record('agent_motion_loop',loop)
+                if self.active:
+                    (self.failed_explores if self.mode=='EXPLORING' else self.failed_approaches).append(list(self.active['position']))
+                self.agent_complete('FAILED','rotation_without_translation')
+                self.hold(p,yaw);self.mode='READY';self.active=None;self.scan_completed=True
+                self.last_result='rotation_without_translation_choose_another_viewpoint'
+                self.lease('hold');return
         if self.mode in ('WAITING','READY'):self.decide(p,yaw)
         elif self.mode=='DECIDING':
             if self.target_anchor is not None and now-self.target_seen<self.runtime['recovery']['target_memory_s'] and now>=self.cooldown_until:
@@ -245,6 +321,19 @@ class SemanticNavigation(Node):
                     action,meta=self.future.result();self.record('llm_response',{'action':action,**meta})
                     # Re-evaluate candidate geometry and target freshness before execution.
                     current=self.observation(p);current['observation_id']=self.pending_observation['observation_id']
+                    if (action['action']=='explore' and
+                        any(c['kind']=='approach' for c in current['candidates']) and
+                        not any(c['kind']=='approach' for c in self.pending_observation.get('candidates',[]))):
+                        # A newly confirmed target supersedes a search request made before
+                        # confirmation. Reuse this fresh snapshot instead of rebuilding the
+                        # expensive grid and resetting confirmation across another frame gap.
+                        current['observation_id']=self.sequence
+                        self.record('decision_superseded_by_target',{'previous_action':action,
+                                    'fresh_observation_id':current['observation_id']})
+                        self.last_result='target_confirmed_during_api_request'
+                        self.decide(p,yaw,current)
+                        self.lease('hold')
+                        return
                     if refresh_selected_explore(action,self.pending_observation,current,self.grid,p):
                         self.record('explore_candidate_revalidated',{'candidate_id':action['candidate_id']})
                     validate_action(action,current);self.execute(action,current,p,yaw);self.llm_errors=0
@@ -295,7 +384,24 @@ class SemanticNavigation(Node):
             if self.active['progress_distance']-distance_to_goal>=self.runtime['execution']['progress_distance_m']:
                 self.active['progress_distance']=distance_to_goal;self.active['progress_time']=now
             objects=self.memory.observe(now)
+            selected=next((o for o in objects if o['id']==self.active.get('object_id')),None)
+            if self.mode=='APPROACHING' and selected and (selected.get('category_conflict') or selected['category']!=self.cfg['category']):
+                self.record('approach_category_conflict',{'object_id':selected['id'],'category':selected['category']})
+                self.agent_complete('ABORTED','category_conflict_reobserve')
+                self.hold(p,yaw);self.mode='READY';self.last_result='category_conflict_reobserve'
+                self.scan_completed=False;self.target_anchor=None;self.lease('hold');return
             seen_target=any(o['confirmed'] and o['category']==self.cfg['category'] and o['color']==self.cfg['color'] and o['visible_now'] for o in objects)
+            agent=getattr(self,'agent',None)
+            if self.mode=='APPROACHING' and agent and 'target_surface_at_issue' in self.active:
+                obj=next((o for o in objects if o['id']==self.active['object_id']),None)
+                if (obj and obj['confirmed'] and obj['visible_now'] and
+                    obj.get('position_spread_m',0.)<=agent.cfg['localization_max_spread_m'] and
+                    now-self.active['issued_at']>=agent.cfg['approach_update_interval_s'] and
+                    math.dist(obj['surface_world'],self.active['target_surface_at_issue'])>=agent.cfg['approach_update_distance_m']):
+                    self.record('target_local_refinement',{'previous':self.active['target_surface_at_issue'],'observed':obj['surface_world']})
+                    self.agent_complete('ABORTED','target_position_updated')
+                    self.hold(p,yaw);self.mode='READY';self.last_result='target_position_updated';self.scan_completed=True
+                    return
             if self.mode=='EXPLORING' and now>=self.cooldown_until and now-self.action_started>=self.runtime['recovery']['explore_commit_s'] and seen_target and any(c['kind']=='approach' and any(o['id']==c.get('object_id') and o['category']==self.cfg['category'] and o['color']==self.cfg['color'] for o in objects) for c in self.observation(p)['candidates']):
                 self.hold(p,yaw);self.mode='READY';self.last_result='target_observed_while_exploring';self.scan_completed=True
             elif self.planner_state in ('BLOCKED_GOAL','EMERGENCY_STOP') and now-self.action_started>self.runtime['execution']['blocked_grace_s']:
@@ -319,6 +425,8 @@ class SemanticNavigation(Node):
                     self.mode='VERIFYING';self.hold(self.active['position'],self.active['yaw']);self.action_started=now;self.verified_since=None
                 else:
                     self.next_scan_center=self.active.get('inspection_yaw')
+                    if self.active.get('transfer_continue'):
+                        self.scan_completed=True;self.next_scan_center=None
                     self.hold(p,yaw);self.mode='READY';self.last_result='exploration_waypoint_reached'
         elif self.mode=='VERIFYING':
             obj=self.memory.objects.get(self.active['object_id']);speed=math.sqrt(sum(getattr(self.odom.twist.twist.linear,a)**2 for a in 'xyz'))
@@ -347,7 +455,7 @@ class SemanticNavigation(Node):
                     'visible':bool(visible),'distance_m':distance,'speed_m_s':speed,'heading_error_deg':math.degrees(error)})
                 self.hold(p,yaw);self.last_result='verification_failed_reobserve_locally';self.scan_completed=True;self.mode='READY'
                 self.begin_recovery(p,yaw,'verification_failed')
-        elif self.mode=='HOLD' and now-self.action_started>self.runtime['execution']['hold_s']:self.mode='READY'
+        elif self.mode=='HOLD' and now-self.action_started>self.runtime['execution']['hold_s']:self.mode='READY';self.last_result='hold_completed'
         self.lease('navigate' if self.mode in ('APPROACHING','EXPLORING') else 'scan' if self.mode=='SCANNING' else 'hold',yaw+self.scan_direction*self.runtime['scan']['yaw_step_rad'] if self.mode=='SCANNING' else None)
         self.status.publish(String(data=json.dumps({'state':self.mode,'reason':self.last_result,'objects':len(self.memory.objects),'frames':self.frames})))
     def close(self):
@@ -356,6 +464,7 @@ class SemanticNavigation(Node):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--model',type=Path,default=ROOT/'logs/semantic_detector_lit/train/weights/best.onnx')
+    parser.add_argument('--vision-config',type=Path);parser.add_argument('--agent-config',type=Path)
     parser.add_argument('--task-config',type=Path);parser.add_argument('--runtime-config',type=Path);parser.add_argument('--providers-config',type=Path)
     parser.add_argument('--policy',choices=['rule','qwen','deepseek'],default='rule');parser.add_argument('--output',type=Path,required=True)
     args,ros=parser.parse_known_args();rclpy.init(args=ros);node=SemanticNavigation(args)

@@ -15,7 +15,7 @@ def main():
              '--env-file',str(a.env_file.resolve()),'--instruction',case['instruction'],
              '--scene-file',case['scene'],'--domain',str(a.domain),'--output',str(directory.resolve())]
         if a.gui:cmd.append('--gui')
-        for option in ('task_config','runtime_config','navigation_config'):
+        for option in ('task_config','runtime_config','navigation_config','agent_config','vision_config','search_region','regions_config','overrides','model'):
             if case.get(option):cmd.extend(['--'+option.replace('_','-'),case[option]])
         if case.get('wall_limit'):cmd.extend(['--wall-limit',str(case['wall_limit'])])
         completed=subprocess.run(cmd,cwd=root)

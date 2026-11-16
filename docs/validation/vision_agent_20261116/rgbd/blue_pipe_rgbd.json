@@ -1,0 +1,258 @@
+{
+  "source": "logs/meeting_report_20261111/blue_pipe/semantic/latest_sensor.npz",
+  "note": "Re-inference preview, not a new navigation trial or labeled detection benchmark.",
+  "results": [
+    {
+      "method": "none",
+      "preprocessing_ms": 0.0564580004720483,
+      "detections": [
+        {
+          "detector": {
+            "category": "pipe",
+            "detector_score": 0.9415160417556763,
+            "bbox": [
+              292.43505859375,
+              104.36903381347656,
+              412.9830627441406,
+              216.8126220703125
+            ]
+          },
+          "raw_color_model": {
+            "color": "blue",
+            "color_score": 0.9472730755805969,
+            "surface_world": [
+              -3.3174811226148613,
+              -1.2478491808223655,
+              1.1221504682370051
+            ],
+            "range_m": 0.7492688298225403,
+            "depth_samples": 4843,
+            "depth_mad_m": 0.019733309745788574,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "blue",
+            "color_score": 1.0,
+            "surface_world": [
+              -3.3183107955507087,
+              -1.245872874670465,
+              1.120726115091705
+            ],
+            "range_m": 0.7531818747520447,
+            "depth_samples": 4989,
+            "depth_mad_m": 0.01972728967666626,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "white_balance",
+      "preprocessing_ms": 4.9625430001469795,
+      "detections": [
+        {
+          "detector": {
+            "category": "pipe",
+            "detector_score": 0.8205990791320801,
+            "bbox": [
+              291.8990783691406,
+              106.2384033203125,
+              412.8551940917969,
+              216.50433349609375
+            ]
+          },
+          "raw_color_model": {
+            "color": "blue",
+            "color_score": 0.9467938542366028,
+            "surface_world": [
+              -3.317509345423692,
+              -1.2478491808223655,
+              1.12059098128644
+            ],
+            "range_m": 0.7490454912185669,
+            "depth_samples": 4817,
+            "depth_mad_m": 0.01983928680419922,
+            "localization_valid": true
+          },
+          "processed_hsv": null
+        }
+      ]
+    },
+    {
+      "method": "clahe",
+      "preprocessing_ms": 2.9469359997165157,
+      "detections": [
+        {
+          "detector": {
+            "category": "pipe",
+            "detector_score": 0.9384723901748657,
+            "bbox": [
+              292.26336669921875,
+              104.48104858398438,
+              413.1258239746094,
+              216.98480224609375
+            ]
+          },
+          "raw_color_model": {
+            "color": "blue",
+            "color_score": 0.9472730755805969,
+            "surface_world": [
+              -3.3174811226148613,
+              -1.2478491808223655,
+              1.1221504682370051
+            ],
+            "range_m": 0.7492688298225403,
+            "depth_samples": 4843,
+            "depth_mad_m": 0.019733309745788574,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "blue",
+            "color_score": 1.0,
+            "surface_world": [
+              -3.3184024280762103,
+              -1.2458236639775768,
+              1.1205984319317417
+            ],
+            "range_m": 0.7548214197158813,
+            "depth_samples": 5096,
+            "depth_mad_m": 0.019603490829467773,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "wb_clahe",
+      "preprocessing_ms": 7.098894000591827,
+      "detections": [
+        {
+          "detector": {
+            "category": "pipe",
+            "detector_score": 0.7050402760505676,
+            "bbox": [
+              297.416015625,
+              105.25651550292969,
+              413.3685302734375,
+              216.77789306640625
+            ]
+          },
+          "raw_color_model": {
+            "color": "blue",
+            "color_score": 0.9477177858352661,
+            "surface_world": [
+              -3.320422872068,
+              -1.2414625972989355,
+              1.1207488730068325
+            ],
+            "range_m": 0.7474212646484375,
+            "depth_samples": 4636,
+            "depth_mad_m": 0.01883387565612793,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "blue",
+            "color_score": 0.9961218836565097,
+            "surface_world": [
+              -3.3310744789773246,
+              -1.2184262231576994,
+              1.0941592062793812
+            ],
+            "range_m": 0.739018440246582,
+            "depth_samples": 3592,
+            "depth_mad_m": 0.013860851526260376,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "fusion",
+      "preprocessing_ms": 49.41118200076744,
+      "detections": [
+        {
+          "detector": {
+            "category": "pipe",
+            "detector_score": 0.8113912343978882,
+            "bbox": [
+              292.20556640625,
+              107.89683532714844,
+              412.3597412109375,
+              216.2396240234375
+            ]
+          },
+          "raw_color_model": {
+            "color": "blue",
+            "color_score": 0.9473779201507568,
+            "surface_world": [
+              -3.317793489240453,
+              -1.2470711249521778,
+              1.1185858956513346
+            ],
+            "range_m": 0.7486770153045654,
+            "depth_samples": 4771,
+            "depth_mad_m": 0.019858181476593018,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "blue",
+            "color_score": 0.997887323943662,
+            "surface_world": [
+              -3.3178149999089523,
+              -1.24713413567263,
+              1.1184627170416088
+            ],
+            "range_m": 0.7537531852722168,
+            "depth_samples": 5150,
+            "depth_mad_m": 0.020109832286834717,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "range_restore",
+      "preprocessing_ms": 12.043003999679058,
+      "detections": [
+        {
+          "detector": {
+            "category": "pipe",
+            "detector_score": 0.6010443568229675,
+            "bbox": [
+              292.2564697265625,
+              104.85552978515625,
+              414.1308898925781,
+              217.01611328125
+            ]
+          },
+          "raw_color_model": {
+            "color": "blue",
+            "color_score": 0.9472730755805969,
+            "surface_world": [
+              -3.3174811226148613,
+              -1.2478491808223655,
+              1.1221504682370051
+            ],
+            "range_m": 0.7492688298225403,
+            "depth_samples": 4843,
+            "depth_mad_m": 0.019733309745788574,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "blue",
+            "color_score": 1.0,
+            "surface_world": [
+              -3.317736417759574,
+              -1.2471271077132455,
+              1.1228449207135631
+            ],
+            "range_m": 0.7501507997512817,
+            "depth_samples": 4815,
+            "depth_mad_m": 0.01979362964630127,
+            "localization_valid": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "logs/hardening_20261116/detector/train/weights/best.pt": "0375bca8490df1b365c7c9ce28d494216c870b50defedd69822a1d4569734f3d",
+    "logs/hardening_20261116/detector/train/weights/best.onnx": "9538df1b1f64d4ea8e760878aef6adbaaf4bf0f0c7a2c06bdb0db74a22b597b0",
+    "logs/hardening_20261116/detector/metrics.json": "810291eff97c097fa431599a1315ac181c3c3b3268997252a53dedeaa557f13a",
+    "logs/hardening_20261116/data_west/manifest.json": "bf02ae1fdae6a4bd7f7e17861c72b967c148dca6b522aab2b22ccdea4df56eba",
+    "logs/hardening_20261116/data_east/manifest.json": "1062e30fbb8b4bf517b7c2d063e7e538bcb75e3df6e5e7f6d24d7ed93a165af1",
+    "logs/hardening_20261116/data_heldout/manifest.json": "5e060662c9e28d8bea613c37e8dafd40bd26fc57aa081804298642f57b96c593"
+  },
+  "weights_not_committed": true
+}

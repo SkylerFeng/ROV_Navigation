@@ -1,0 +1,23 @@
+{
+  "old_east_contact_center": {
+    "xy": [
+      4.18956,
+      -1.58394
+    ],
+    "nearest_static_cell_distance_m": 0.05212405586674905
+  },
+  "start": {
+    "xy": [
+      -2,
+      0
+    ],
+    "nearest_static_cell_distance_m": 1.7392527130926088
+  },
+  "yellow_box_center": {
+    "xy": [
+      -4.5,
+      0.7
+    ],
+    "nearest_static_cell_distance_m": 1.450861812854691
+  }
+}

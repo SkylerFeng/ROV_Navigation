@@ -1,0 +1,10 @@
+[
+  {
+    "name": "east_equipment",
+    "scene": "scenes/pool_platform_semantic_complex_east_equipment.usda",
+    "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+    "search_region": "东侧设备区",
+    "task_config": "config/semantic/complex_task.json",
+    "wall_limit": 850
+  }
+]

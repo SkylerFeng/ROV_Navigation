@@ -1,0 +1,14 @@
+{
+  "run": "logs/vision_color_fix_20261116/qwen_blue_safe_preview",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 29.600001544,
+  "path_length_m": 0.9506514680751406,
+  "stationary_turn_seconds": 15.000000782310963,
+  "total_yaw_travel_deg": 138.66751540242058,
+  "yaw_acceleration_p95_rad_s2": 0.2075524150926429,
+  "llm_calls": 2,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

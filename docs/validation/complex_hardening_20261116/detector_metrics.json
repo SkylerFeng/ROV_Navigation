@@ -1,0 +1,16 @@
+{
+  "weights": "/home/ache/Coding/rov_navigation/logs/hardening_20261116/detector/train/weights/best.pt",
+  "sha256": "0375bca8490df1b365c7c9ce28d494216c870b50defedd69822a1d4569734f3d",
+  "onnx": "/home/ache/Coding/rov_navigation/logs/hardening_20261116/detector/train/weights/best.onnx",
+  "test_metrics": {
+    "metrics/precision(B)": 0.9851393670943827,
+    "metrics/recall(B)": 0.911584969217309,
+    "metrics/mAP50(B)": 0.9591116473722263,
+    "metrics/mAP50-95(B)": 0.888201698999698,
+    "fitness": 0.888201698999698
+  },
+  "classes": {
+    "0": "pipe",
+    "1": "box"
+  }
+}

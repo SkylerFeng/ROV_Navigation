@@ -14,7 +14,10 @@ from sensor_msgs.msg import PointCloud2, PointField
 class LocalMap(Node):
     def __init__(self):
         super().__init__("rov_local_map")
-        self.occupied = set()
+        from experiment import load_experiment
+        from static_collision_prior import load_static_xy
+        xy=load_static_xy(load_experiment())
+        self.occupied = set(map(tuple,np.floor(xy/.1).astype(int)))
         self.publisher = self.create_publisher(PointCloud2, "/rov/cloud_navigation", 10)
         self.create_subscription(PointCloud2, "/rov/cloud_world", self.receive, 10)
         x, y = np.meshgrid(np.arange(-8, 8, .1), np.arange(-6, 6, .1))

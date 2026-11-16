@@ -1,0 +1,161 @@
+{
+  "target": {
+    "id": "BluePipe",
+    "category": "pipe",
+    "color": "blue",
+    "position": [
+      3.8,
+      0.6,
+      1.12
+    ],
+    "yaw": 90
+  },
+  "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_east_equipment",
+  "runtime_status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.000021905,
+  "frames": 2023,
+  "path_length_m": 17.41008740900384,
+  "actual_ego_updates": 53,
+  "contact_pairs": 1,
+  "contact_min_separation_m": 2.4527311325073242e-05,
+  "max_contact_impulse_norm": 0.01504473201930523,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.900000099,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required_before_search"
+    },
+    {
+      "sim_time": 18.700000975,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_44_32",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 41.100002143,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 63.10000329,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_58_36",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 113.90000594,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 9,
+      "action": "scan",
+      "reason_code": "scan_uncompleted"
+    },
+    {
+      "sim_time": 136.900007139,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_66_24",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 199.700010415,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 13,
+      "action": "explore",
+      "candidate_id": "transfer_52_35",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 230.700012031,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 15,
+      "action": "explore",
+      "candidate_id": "transfer_40_35",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 249.700013022,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 17,
+      "action": "explore",
+      "candidate_id": "transfer_31_35",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 264.700013805,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 19,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 289.900015119,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 21,
+      "action": "explore",
+      "candidate_id": "frontier_24_34",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 313.50001635,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 23,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    },
+    {
+      "sim_time": 338.700017664,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 25,
+      "action": "explore",
+      "candidate_id": "frontier_30_22",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 367.700019177,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 27,
+      "action": "scan",
+      "reason_code": "scan_required_before_approach"
+    },
+    {
+      "sim_time": 391.100020397,
+      "task_id": "bae06f5aa9cf",
+      "observation_id": 29,
+      "action": "explore",
+      "candidate_id": "frontier_74_28",
+      "reason_code": "search_unseen_area"
+    }
+  ],
+  "target_surface_error_median_m": null,
+  "target_surface_error_p95_m": null,
+  "llm_calls": 15,
+  "evidence_directory": "logs/hardening_20261116/trials_v5/east_equipment",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 3.4539101341012053,
+  "final_target_surface_distance_xy_m": 3.3239044380187988,
+  "offline_verified": false,
+  "exploration_verified": false,
+  "contact_evidence": "penetration_or_impulse_recorded"
+}

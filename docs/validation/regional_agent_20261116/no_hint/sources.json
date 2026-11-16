@@ -1,0 +1,6 @@
+{
+  "logs/regional_agent_20261116/no_hint/semantic/events.jsonl": "d08d72c1b88c938b523831953120ec044dc944646d4d1c90979fa31afaa209ad",
+  "logs/regional_agent_20261116/no_hint/semantic/latest_sensor.npz": "d3f8ddd01fea7ff702d0daa696bd13911d19bb725b14f912c9a93d54ae25d4b9",
+  "logs/regional_agent_20261116/no_hint/sim/run.json": "d98c5a4c99afafef7a358bf6da88919583d1c297d31f5a7759c9c6e6ea5eeac3",
+  "logs/regional_agent_20261116/no_hint/manifest.json": "c71998712bebabbdc0e8dd6c71636f055aeaaa1cf8306d63c5eedcb70138ca18"
+}

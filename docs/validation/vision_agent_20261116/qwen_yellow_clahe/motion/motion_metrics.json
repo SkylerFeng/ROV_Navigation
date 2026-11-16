@@ -1,0 +1,14 @@
+{
+  "run": "logs/agent_vision_20261116/qwen_yellow_clahe",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 67.1000035,
+  "path_length_m": 2.1226972675266094,
+  "stationary_turn_seconds": 29.800001554191113,
+  "total_yaw_travel_deg": 276.6657726655243,
+  "yaw_acceleration_p95_rad_s2": 0.1554922868736514,
+  "llm_calls": 4,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

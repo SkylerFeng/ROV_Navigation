@@ -1,0 +1,6 @@
+{
+  "logs/agent_vision_20261116/qwen_yellow_baseline/semantic/events.jsonl": "65b38497fe77d61a26d38b9fa956c6a0f19591b80c2cdabfad53589e450da293",
+  "logs/agent_vision_20261116/qwen_yellow_baseline/semantic/latest_sensor.npz": "9459c8fd5b0cc0ce70dee740c007e47fb8eac594bdd8c898c3c1b9360f5a7322",
+  "logs/agent_vision_20261116/qwen_yellow_baseline/sim/run.json": "2962eabb2b93831713d6e0f1837cdd569f01a24d39987e6ca7adbba47b91b91e",
+  "logs/agent_vision_20261116/qwen_yellow_baseline/manifest.json": "bf9a3d41089287f9647265a98fcfe804934cf24fb5e8d58f33a990f42f587a0b"
+}

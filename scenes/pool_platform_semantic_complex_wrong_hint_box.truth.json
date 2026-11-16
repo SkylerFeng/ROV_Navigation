@@ -1,0 +1,77 @@
+{
+  "runtime_access": "forbidden: offline evaluation labels only",
+  "objects": [
+    {
+      "id": "YellowPipe",
+      "category": "pipe",
+      "color": "yellow",
+      "position": [
+        0.4,
+        0.9,
+        1.12
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "BluePipe",
+      "category": "pipe",
+      "color": "blue",
+      "position": [
+        -2.2,
+        -1.7,
+        1.12
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "YellowBox",
+      "category": "box",
+      "color": "yellow",
+      "position": [
+        -4.5,
+        0.7,
+        1.05
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "RedBox",
+      "category": "box",
+      "color": "red",
+      "position": [
+        -3.4,
+        -1.25,
+        1.05
+      ],
+      "yaw": 15
+    }
+  ],
+  "obstacles": [
+    {
+      "name": "BoxScreen",
+      "position": [
+        -3.2,
+        0.6,
+        1.1
+      ],
+      "size": [
+        0.25,
+        1.1,
+        0.85
+      ]
+    },
+    {
+      "name": "SidePillar",
+      "position": [
+        -1.0,
+        1.65,
+        1.1
+      ],
+      "size": [
+        0.45,
+        0.45,
+        0.85
+      ]
+    }
+  ]
+}

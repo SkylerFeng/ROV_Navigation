@@ -1,0 +1,194 @@
+[
+  {
+    "case": "blue_pipe",
+    "method": "reference",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 0.0,
+    "chromaticity_l1_lit": 0.0,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 0.00023000029614195228,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 0.0,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 0.0,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "unknown"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "none",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 7.908884548611111,
+    "chromaticity_l1_lit": 0.09284020960330963,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 0.03652600025816355,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 3.8276025289921223,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 2.9193358421325684,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "unknown"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "white_balance",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 5.767689525462963,
+    "chromaticity_l1_lit": 0.27727818489074707,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 5.114294000122754,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 3.927511241843324,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 13.042442321777344,
+        "hsv_color_on_offline_mask": "unknown",
+        "trained_color_on_offline_mask": "unknown"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "fusion",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 26.55812210648148,
+    "chromaticity_l1_lit": 0.3679282069206238,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 127.60618599986628,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 20.799438753085166,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 17.283130645751953,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "clahe",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 15.754008969907407,
+    "chromaticity_l1_lit": 0.22703859210014343,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 2.7162810001755133,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 11.45352807925077,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 7.649670600891113,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "blue"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "range_restore",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 0.4767115162037037,
+    "chromaticity_l1_lit": 0.029779251664876938,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 10.891570999774558,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 0.7320215031950502,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 0.009545200504362583,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "unknown"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "range_preserve",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 2.8009085648148146,
+    "chromaticity_l1_lit": 0.02854371815919876,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 20.382349000101385,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 3.410927409811678,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 0.29617953300476074,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "blue"
+      }
+    ]
+  },
+  {
+    "case": "blue_pipe",
+    "method": "exposure_only",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 52242,
+    "rgb_mae_0_255": 15.138405671296296,
+    "chromaticity_l1_lit": 0.09457872062921524,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 8.696636000422586,
+    "objects": [
+      {
+        "id": "BluePipe",
+        "expected_color": "blue",
+        "mask_pixels": 9859,
+        "rgb_mae": 9.723805659803226,
+        "hue_valid_pixels": 4960,
+        "hue_error_deg": 2.941730260848999,
+        "hsv_color_on_offline_mask": "blue",
+        "trained_color_on_offline_mask": "blue"
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "west_baffles",
+    "description": "Offset screens hide a west-side yellow pipe; yellow box and blue pipe distractors.",
+    "objects": [
+      ["YellowPipe", "pipe", "yellow", [-4.75, 0.3, 1.12], 90],
+      ["BluePipe", "pipe", "blue", [-2.0, 1.5, 1.12], 25],
+      ["YellowBox", "box", "yellow", [-3.2, -1.5, 1.05], 0],
+      ["RedBox", "box", "red", [0.5, 0.8, 1.05], 15]
+    ],
+    "obstacles": [
+      {"name":"BaffleA", "position":[-3.35,0.15,1.1], "size":[0.25,1.2,0.85]},
+      {"name":"BaffleB", "position":[-4.1,1.45,1.1], "size":[0.25,0.7,0.85]}
+    ],
+    "instruction": "请找到黄色管子，不要黄色方块，停在管子表面一米处。",
+    "search_region": "西侧设备区"
+  },
+  {
+    "name": "east_equipment",
+    "description": "Longer cross-pool search with occluding equipment and two pillars.",
+    "objects": [
+      ["YellowPipe", "pipe", "yellow", [-0.3,-1.3,1.12], 0],
+      ["BluePipe", "pipe", "blue", [3.8,0.6,1.12], 90],
+      ["YellowBox", "box", "yellow", [1.2,1.7,1.05], 0],
+      ["RedBox", "box", "red", [-1.1,1.4,1.05], 15]
+    ],
+    "obstacles": [
+      {"name":"EquipmentScreen", "position":[2.4,0.5,1.1], "size":[0.3,1.4,0.85]},
+      {"name":"PillarA", "position":[0.6,-0.35,1.1], "size":[0.45,0.45,0.85]},
+      {"name":"PillarB", "position":[1.0,-2.1,1.1], "size":[0.45,0.45,0.85]}
+    ],
+    "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+    "search_region": "东侧设备区"
+  },
+  {
+    "name": "wrong_hint_box",
+    "description": "West-side hidden yellow box with pipe and red-box distractors, but an incorrect east-side hint.",
+    "objects": [
+      ["YellowPipe", "pipe", "yellow", [0.4,0.9,1.12], 25],
+      ["BluePipe", "pipe", "blue", [-2.2,-1.7,1.12], 0],
+      ["YellowBox", "box", "yellow", [-4.5,0.7,1.05], 0],
+      ["RedBox", "box", "red", [-3.4,-1.25,1.05], 15]
+    ],
+    "obstacles": [
+      {"name":"BoxScreen", "position":[-3.2,0.6,1.1], "size":[0.25,1.1,0.85]},
+      {"name":"SidePillar", "position":[-1.0,1.65,1.1], "size":[0.45,0.45,0.85]}
+    ],
+    "instruction": "请找到黄色方块，不要管子，距方块表面保持一米。",
+    "search_region": "东侧设备区"
+  }
+]

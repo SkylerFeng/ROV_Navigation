@@ -1,0 +1,32 @@
+[
+  {
+    "name": "wrong_hint_box",
+    "scene": "scenes/pool_platform_semantic_complex_wrong_hint_box.usda",
+    "instruction": "请找到黄色方块，不要管子，距方块表面保持一米。",
+    "search_region": "东侧设备区",
+    "task_config": "config/semantic/complex_task.json",
+    "wall_limit": 850,
+    "overrides": "config/experiments/hydro_components_known_pool.json",
+    "model": "logs/hardening_20261116/detector/train/weights/best.onnx"
+  },
+  {
+    "name": "west_baffles",
+    "scene": "scenes/pool_platform_semantic_complex_west_baffles.usda",
+    "instruction": "请找到黄色管子，不要黄色方块，停在管子表面一米处。",
+    "search_region": "西侧设备区",
+    "task_config": "config/semantic/complex_task.json",
+    "wall_limit": 850,
+    "overrides": "config/experiments/hydro_components_known_pool.json",
+    "model": "logs/hardening_20261116/detector/train/weights/best.onnx"
+  },
+  {
+    "name": "east_equipment",
+    "scene": "scenes/pool_platform_semantic_complex_east_equipment.usda",
+    "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+    "search_region": "东侧设备区",
+    "task_config": "config/semantic/complex_task.json",
+    "wall_limit": 850,
+    "overrides": "config/experiments/hydro_components_known_pool.json",
+    "model": "logs/hardening_20261116/detector/train/weights/best.onnx"
+  }
+]

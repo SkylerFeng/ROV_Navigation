@@ -1,0 +1,60 @@
+usage: python3 -m unittest [-h] --output OUTPUT
+python3 -m unittest: error: the following arguments are required: --output
+E......E..................E...................................................................................................................
+======================================================================
+ERROR: test_clock (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_clock
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/home/ache/Coding/rov_navigation/scripts/test_clock.py", line 11, in <module>
+    from quadrotor_msgs.msg import PositionCommand
+ModuleNotFoundError: No module named 'quadrotor_msgs'
+
+
+======================================================================
+ERROR: test_heading_execution (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_heading_execution
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/home/ache/Coding/rov_navigation/scripts/test_heading_execution.py", line 17, in <module>
+    from traj_utils.msg import Bspline
+ModuleNotFoundError: No module named 'traj_utils'
+
+
+======================================================================
+ERROR: test_hydrodynamics_isaac (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_hydrodynamics_isaac
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/home/ache/Coding/rov_navigation/scripts/test_hydrodynamics_isaac.py", line 12, in <module>
+    args = parser.parse_args()
+  File "/usr/lib/python3.10/argparse.py", line 1845, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+  File "/usr/lib/python3.10/argparse.py", line 1878, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File "/usr/lib/python3.10/argparse.py", line 2119, in _parse_known_args
+    self.error(_('the following arguments are required: %s') %
+  File "/usr/lib/python3.10/argparse.py", line 2606, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "/usr/lib/python3.10/argparse.py", line 2593, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+
+----------------------------------------------------------------------
+Ran 142 tests in 10.855s
+
+FAILED (errors=3)
+Passed: occupied-goal hold, responsive replacement goal, measured-state recovery, no phantom arrival

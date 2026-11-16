@@ -1,0 +1,92 @@
+[
+  {
+    "time": 96.733338378,
+    "goal": [
+      1.2749999999999995,
+      0.07500000000000018,
+      1.0
+    ],
+    "reason": "no_progress_choose_another_viewpoint",
+    "status": "FAILED"
+  },
+  {
+    "time": 282.800014749,
+    "goal": [
+      -4.125,
+      1.5750000000000002,
+      1.0
+    ],
+    "reason": "blocked_goal",
+    "status": "FAILED"
+  },
+  {
+    "time": 301.300015714,
+    "goal": [
+      -2.625,
+      -0.8250000000000002,
+      1.0
+    ],
+    "reason": "blocked_goal",
+    "status": "FAILED"
+  },
+  {
+    "time": 305.700015943,
+    "goal": [
+      -2.625,
+      1.5750000000000002,
+      1.0
+    ],
+    "reason": "blocked_goal",
+    "status": "FAILED"
+  },
+  {
+    "time": 338.100017633,
+    "goal": [
+      -0.5250000000000004,
+      -2.025,
+      1.0
+    ],
+    "reason": "no_progress_choose_another_viewpoint",
+    "status": "FAILED"
+  },
+  {
+    "time": 342.500017862,
+    "goal": [
+      -0.8250000000000002,
+      -1.125,
+      1.0
+    ],
+    "reason": "blocked_goal",
+    "status": "FAILED"
+  },
+  {
+    "time": 350.233351599,
+    "goal": [
+      -0.5250000000000004,
+      -2.925,
+      1.0
+    ],
+    "reason": "sensor_stale_replan",
+    "status": "FAILED"
+  },
+  {
+    "time": 369.833352621,
+    "goal": [
+      0.3749999999999991,
+      -2.625,
+      1.0
+    ],
+    "reason": "sensor_stale_replan",
+    "status": "FAILED"
+  },
+  {
+    "time": 420.100021909,
+    "goal": [
+      1.2749999999999995,
+      -2.625,
+      1.0
+    ],
+    "reason": "no_progress_choose_another_viewpoint",
+    "status": "FAILED"
+  }
+]

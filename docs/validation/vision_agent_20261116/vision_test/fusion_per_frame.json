@@ -1,0 +1,434 @@
+[
+  {
+    "image": "layout030_view00.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view01.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 3
+  },
+  {
+    "image": "layout030_view02.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout030_view03.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view04.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view05.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view06.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout030_view07.png",
+    "tp": 3,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "image": "layout030_view08.png",
+    "tp": 4,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view09.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view10.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout030_view11.png",
+    "tp": 0,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view00.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout031_view01.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view02.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout031_view03.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view04.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view05.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view06.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view07.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view08.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view09.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view10.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout031_view11.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view00.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout032_view01.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout032_view02.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view03.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view04.png",
+    "tp": 2,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "image": "layout032_view05.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view06.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view07.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view08.png",
+    "tp": 2,
+    "fp": 1,
+    "fn": 1
+  },
+  {
+    "image": "layout032_view09.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view10.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout032_view11.png",
+    "tp": 0,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view00.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view01.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view02.png",
+    "tp": 3,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view03.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view04.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view05.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view06.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view07.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout033_view08.png",
+    "tp": 4,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view09.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view10.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout033_view11.png",
+    "tp": 0,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view00.png",
+    "tp": 3,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view01.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view02.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view03.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view04.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view05.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view06.png",
+    "tp": 4,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view07.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view08.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view09.png",
+    "tp": 2,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view10.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout034_view11.png",
+    "tp": 0,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout035_view00.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout035_view01.png",
+    "tp": 3,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout035_view02.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout035_view03.png",
+    "tp": 4,
+    "fp": 1,
+    "fn": 0
+  },
+  {
+    "image": "layout035_view04.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout035_view05.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout035_view06.png",
+    "tp": 1,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout035_view07.png",
+    "tp": 4,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout035_view08.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 1
+  },
+  {
+    "image": "layout035_view09.png",
+    "tp": 1,
+    "fp": 1,
+    "fn": 2
+  },
+  {
+    "image": "layout035_view10.png",
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  {
+    "image": "layout035_view11.png",
+    "tp": 0,
+    "fp": 0,
+    "fn": 0
+  }
+]

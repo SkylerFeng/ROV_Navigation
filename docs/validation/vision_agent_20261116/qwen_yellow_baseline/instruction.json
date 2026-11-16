@@ -1,0 +1,21 @@
+{
+  "instruction": "在水池西侧区域寻找黄色方块，靠近它并保持一米。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "yellow",
+    "surface_standoff_m": 1.0,
+    "reason": "明确指定单一目标：黄色方块（'方块'是'box'的同义词）；'靠近并保持一米'对应合法surface_standoff_m=1.0（在[0.6,1.5]范围内）；无歧义、无否定嵌套、无 unsupported 操作。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.9155494890001137,
+  "usage": {
+    "total_tokens": 510,
+    "completion_tokens": 109,
+    "prompt_tokens": 401,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    }
+  }
+}

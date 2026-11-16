@@ -1,0 +1,135 @@
+[
+  {
+    "sim_time": 0.300000015,
+    "event": "llm_request",
+    "observation_id": 1,
+    "agent_memory": {
+      "phase": "SEARCH",
+      "coarse_region_xyxy": null,
+      "visited_viewpoints": [],
+      "viewpoint_attempts": {},
+      "recent_results": [],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 1.700000088,
+    "tool_id": 1,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 1.700000088,
+    "observation_id": 1,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 1.700000088,
+    "action": {
+      "task_id": "7de154f3816d",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 14.500000756,
+    "tool_id": 1,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 1.700000088,
+    "observation_id": 1,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "target_observed",
+    "ended_s": 14.500000756,
+    "duration_s": 12.800000668000001
+  },
+  {
+    "sim_time": 14.600000761,
+    "event": "llm_request",
+    "observation_id": 3,
+    "agent_memory": {
+      "phase": "VERIFY",
+      "coarse_region_xyxy": null,
+      "visited_viewpoints": [],
+      "viewpoint_attempts": {},
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 1.700000088,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "target_observed",
+          "ended_s": 14.500000756,
+          "duration_s": 12.800000668000001
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 16.70000087,
+    "tool_id": 2,
+    "action": "approach",
+    "candidate_id": "approach_obj_004",
+    "object_id": "obj_004",
+    "started_s": 16.70000087,
+    "observation_id": 3,
+    "position": [
+      -2.325,
+      -0.5250000000000004,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 16.70000087,
+    "action": {
+      "task_id": "7de154f3816d",
+      "observation_id": 3,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "reason_code": "target_visible"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 29.200001522,
+    "tool_id": 2,
+    "action": "approach",
+    "candidate_id": "approach_obj_004",
+    "object_id": "obj_004",
+    "started_s": 16.70000087,
+    "observation_id": 3,
+    "position": [
+      -2.325,
+      -0.5250000000000004,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "ended_s": 29.200001522,
+    "duration_s": 12.500000652
+  },
+  {
+    "event": "result",
+    "sim_time": 29.200001522,
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "policy": "qwen",
+    "frames": 139,
+    "llm_calls": 2,
+    "simulation_seconds": 28.900001507000002
+  }
+]

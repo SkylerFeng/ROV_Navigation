@@ -1,0 +1,14 @@
+{
+  "source": "known static pool collider prior, not sensor-derived",
+  "scene": "scenes/pool_platform_semantic_complex_wrong_hint_box.usda",
+  "prim": "/World/Environment/Platform/Collision/Platform_collision_clean/mesh",
+  "cells": 21154,
+  "clipped_triangles": 33136,
+  "z_slab": [
+    0.84,
+    1.28
+  ],
+  "resolution_m": 0.1,
+  "collider_world_geometry_sha256": "f6454da922d4caf3f387b9435bd31b922d50a1d3d5b710f04d15dd9d34269673",
+  "semantic_objects_included": false
+}

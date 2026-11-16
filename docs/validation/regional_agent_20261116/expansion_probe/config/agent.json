@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "coarse_region_xyxy": [
+    1.0,
+    -2.0,
+    4.0,
+    2.5
+  ],
+  "region_weight": 2.0,
+  "repeat_penalty": 4.0,
+  "memory_limit": 12,
+  "max_viewpoint_attempts": 2,
+  "failure_cooldown_s": 45.0,
+  "max_consecutive_holds": 3,
+  "loop_window_s": 20.0,
+  "loop_yaw_deg": 240.0,
+  "loop_max_displacement_m": 0.15,
+  "region_name": "东侧设备区",
+  "region_search_budget_s": 10.0,
+  "region_expand_step_m": 1.5,
+  "region_max_expansions": 1,
+  "localization_max_spread_m": 0.2,
+  "approach_update_distance_m": 0.35,
+  "approach_update_interval_s": 8.0
+}

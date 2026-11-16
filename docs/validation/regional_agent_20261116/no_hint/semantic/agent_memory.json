@@ -1,0 +1,72 @@
+{
+  "phase": "DONE",
+  "coarse_region_xyxy": null,
+  "region_name": null,
+  "effective_region_xyxy": null,
+  "search_elapsed_s": 31.600001648000003,
+  "search_expansion": 0,
+  "search_events": [],
+  "visited_viewpoints": [
+    "frontier_34_28"
+  ],
+  "viewpoint_attempts": {
+    "frontier_34_28": {
+      "attempts": 1,
+      "failures": 0,
+      "visited": true,
+      "last_failure_s": null
+    }
+  },
+  "recent_results": [
+    {
+      "tool_id": 1,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 1.800000093,
+      "observation_id": 1,
+      "status": "SUCCEEDED",
+      "reason": "scan_completed",
+      "ended_s": 16.900000881,
+      "duration_s": 15.100000788000001
+    },
+    {
+      "tool_id": 2,
+      "action": "explore",
+      "candidate_id": "frontier_34_28",
+      "object_id": null,
+      "started_s": 19.300001006,
+      "observation_id": 3,
+      "status": "SUCCEEDED",
+      "reason": "exploration_waypoint_reached",
+      "ended_s": 29.600001543,
+      "duration_s": 10.300000537000003
+    },
+    {
+      "tool_id": 3,
+      "action": "scan",
+      "candidate_id": null,
+      "object_id": null,
+      "started_s": 31.900001663,
+      "observation_id": 5,
+      "status": "SUCCEEDED",
+      "reason": "target_observed",
+      "ended_s": 45.700002383,
+      "duration_s": 13.800000719999996
+    },
+    {
+      "tool_id": 4,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "started_s": 48.700002539,
+      "observation_id": 7,
+      "status": "SUCCEEDED",
+      "reason": "visual_identity_range_heading_and_hold_verified",
+      "ended_s": 62.90000328,
+      "duration_s": 14.200000740999997
+    }
+  ],
+  "consecutive_holds": 0,
+  "max_consecutive_holds": 3
+}

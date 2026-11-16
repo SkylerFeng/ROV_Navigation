@@ -1,0 +1,4187 @@
+{
+  "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_complex_east_equipment.usda",
+  "scene_sha256": "0abd4da26089d3ec534afbf2e11edb2682553ccf33517230ff41504b6ca3468b",
+  "note": "Fixed scene; offline camera sweeps can include blocked/non-navigable viewpoints. Wrong-hint layout is held-out test only; training/validation views share layouts, not independent generalization.",
+  "rows": [
+    {
+      "id": "east_equipment_0_0_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.6000000000000001,
+        -1.3,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_0_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.2,
+        -1.3,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_0_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.9999999999999998,
+        -1.3,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 980,
+          "bbox": [
+            300,
+            151,
+            341,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_1_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.4794228634059949,
+        -0.8500000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_1_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.999038105676658,
+        -0.5500000000000002,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_1_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.6918584287042089,
+        -0.15000000000000036,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2459,
+          "bbox": [
+            278,
+            151,
+            348,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_2_0",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.15000000000000013,
+        -0.5205771365940053,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_2_1",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.45000000000000023,
+        -0.0009618943233420385,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_2_2",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.8500000000000001,
+        0.6918584287042087,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1891,
+          "bbox": [
+            311,
+            155,
+            367,
+            191
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_3_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.29999999999999993,
+        -0.4,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_3_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.2999999999999999,
+        0.19999999999999996,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_3_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.2999999999999998,
+        0.9999999999999998,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3416,
+          "bbox": [
+            272,
+            155,
+            368,
+            191
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_4_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.7499999999999998,
+        -0.5205771365940052,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_4_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.0499999999999996,
+        -0.0009618943233420385,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_4_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.4499999999999995,
+        0.6918584287042089,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_5_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.0794228634059948,
+        -0.8500000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_5_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.599038105676658,
+        -0.5500000000000002,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_5_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.291858428704209,
+        -0.15000000000000036,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2595,
+          "bbox": [
+            285,
+            151,
+            362,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_6_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.2,
+        -1.3,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_6_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.8,
+        -1.2999999999999998,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1546,
+          "bbox": [
+            0,
+            161,
+            38,
+            204
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_6_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.5999999999999996,
+        -1.2999999999999998,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1925,
+          "bbox": [
+            37,
+            165,
+            95,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_7_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.079422863405995,
+        -1.7499999999999998,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 84,
+          "bbox": [
+            359,
+            169,
+            365,
+            185
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1737,
+          "bbox": [
+            134,
+            164,
+            185,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_7_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.5990381056766583,
+        -2.05,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1248,
+          "bbox": [
+            161,
+            167,
+            204,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_7_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.291858428704209,
+        -2.4499999999999993,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1006,
+          "bbox": [
+            304,
+            153,
+            355,
+            192
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 885,
+          "bbox": [
+            186,
+            169,
+            222,
+            194
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2597,
+          "bbox": [
+            0,
+            160,
+            61,
+            205
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_8_0",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.7500000000000004,
+        -2.079422863405995,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 495,
+          "bbox": [
+            286,
+            167,
+            320,
+            197
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2751,
+          "bbox": [
+            59,
+            159,
+            120,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_8_1",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.0500000000000007,
+        -2.599038105676658,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1846,
+          "bbox": [
+            105,
+            163,
+            155,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_8_2",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.450000000000001,
+        -3.291858428704208,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            271,
+            153,
+            367,
+            192
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 378,
+          "bbox": [
+            451,
+            170,
+            479,
+            184
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 881,
+          "bbox": [
+            145,
+            166,
+            178,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_9_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.30000000000000016,
+        -2.2,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 363,
+          "bbox": [
+            231,
+            190,
+            268,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_9_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.30000000000000027,
+        -2.8,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_9_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.30000000000000043,
+        -3.5999999999999996,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3416,
+          "bbox": [
+            272,
+            155,
+            368,
+            191
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 443,
+          "bbox": [
+            256,
+            169,
+            283,
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_10_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.15000000000000013,
+        -2.079422863405995,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1276,
+          "bbox": [
+            359,
+            164,
+            395,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_10_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.45000000000000023,
+        -2.599038105676658,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 927,
+          "bbox": [
+            593,
+            162,
+            617,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_10_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.8500000000000001,
+        -3.2918584287042085,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 217,
+          "bbox": [
+            348,
+            169,
+            375,
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_11_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.47942286340599455,
+        -1.7500000000000004,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2521,
+          "bbox": [
+            502,
+            160,
+            560,
+            205
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_11_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.9990381056766575,
+        -2.0500000000000007,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1712,
+          "bbox": [
+            471,
+            163,
+            519,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_0_11_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.691858428704208,
+        -2.450000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 753,
+          "bbox": [
+            443,
+            167,
+            469,
+            196
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_0_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        3.8,
+        1.5,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_0_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        3.8,
+        2.1,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_0_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        3.8,
+        2.9,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_1_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        3.35,
+        1.3794228634059948,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_1_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        3.0500000000000003,
+        1.899038105676658,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_1_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.6500000000000004,
+        2.591858428704209,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            278,
+            151,
+            355,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_2_0",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        3.0205771365940053,
+        1.0500000000000003,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_2_1",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        2.500961894323342,
+        1.3500000000000005,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_2_2",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.8081415712957916,
+        1.7500000000000004,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3363,
+          "bbox": [
+            271,
+            153,
+            367,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_3_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        2.9,
+        0.6000000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_3_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        2.3,
+        0.6000000000000002,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_3_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.5,
+        0.6000000000000003,
+        1.07
+      ],
+      "visible": []
+    },
+    {
+      "id": "east_equipment_1_4_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        3.020577136594005,
+        0.15000000000000024,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_4_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        2.500961894323342,
+        -0.14999999999999958,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_4_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.8081415712957907,
+        -0.5499999999999993,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_5_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        3.35,
+        -0.179422863405995,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_5_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        3.0500000000000003,
+        -0.6990381056766583,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_5_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.650000000000001,
+        -1.391858428704209,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            285,
+            151,
+            362,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_6_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        3.8,
+        -0.30000000000000004,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_6_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        3.7999999999999994,
+        -0.9,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_6_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        3.7999999999999994,
+        -1.6999999999999997,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_7_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        4.249999999999999,
+        -0.17942286340599523,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_7_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        4.549999999999999,
+        -0.6990381056766585,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_7_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        4.949999999999998,
+        -1.3918584287042095,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            278,
+            151,
+            355,
+            193
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 276,
+          "bbox": [
+            74,
+            170,
+            86,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_8_0",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        4.579422863405995,
+        0.14999999999999958,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 117,
+          "bbox": [
+            0,
+            166,
+            8,
+            185
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 75,
+          "bbox": [
+            305,
+            186,
+            312,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_8_1",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        5.099038105676657,
+        -0.1500000000000007,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 699,
+          "bbox": [
+            9,
+            165,
+            50,
+            187
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_8_2",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        5.791858428704208,
+        -0.550000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 334,
+          "bbox": [
+            64,
+            168,
+            92,
+            186
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 3363,
+          "bbox": [
+            271,
+            153,
+            367,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_9_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        4.7,
+        0.5999999999999998,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 309,
+          "bbox": [
+            181,
+            168,
+            201,
+            185
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 906,
+          "bbox": [
+            409,
+            164,
+            445,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_9_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        5.3,
+        0.5999999999999996,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 364,
+          "bbox": [
+            197,
+            169,
+            224,
+            185
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 970,
+          "bbox": [
+            391,
+            166,
+            426,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_9_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        6.1,
+        0.5999999999999994,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 259,
+          "bbox": [
+            213,
+            171,
+            236,
+            184
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 3416,
+          "bbox": [
+            272,
+            155,
+            368,
+            191
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 800,
+          "bbox": [
+            377,
+            168,
+            408,
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_10_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        4.579422863405995,
+        1.05,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 3615,
+          "bbox": [
+            564,
+            157,
+            637,
+            209
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 378,
+          "bbox": [
+            538,
+            168,
+            552,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_10_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        5.099038105676658,
+        1.35,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2040,
+          "bbox": [
+            522,
+            162,
+            573,
+            203
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 680,
+          "bbox": [
+            493,
+            169,
+            522,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_10_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        5.7918584287042085,
+        1.75,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1169,
+          "bbox": [
+            482,
+            165,
+            519,
+            198
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 220,
+          "bbox": [
+            471,
+            171,
+            482,
+            191
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_11_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        4.25,
+        1.3794228634059946,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_11_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        4.550000000000001,
+        1.8990381056766577,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_1_11_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        4.950000000000001,
+        2.591858428704208,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            285,
+            151,
+            362,
+            193
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 960,
+          "bbox": [
+            619,
+            159,
+            640,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_0_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        2.1,
+        1.7,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_0_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        2.7,
+        1.7,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_0_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        3.5,
+        1.7,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 191,
+          "bbox": [
+            284,
+            162,
+            291,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_1_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.9794228634059947,
+        2.15,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 381,
+          "bbox": [
+            172,
+            159,
+            191,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1923,
+          "bbox": [
+            392,
+            153,
+            437,
+            196
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_1_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        2.499038105676658,
+        2.4499999999999997,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 130,
+          "bbox": [
+            200,
+            162,
+            209,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1261,
+          "bbox": [
+            380,
+            157,
+            416,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_1_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        3.191858428704209,
+        2.8499999999999996,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1914,
+          "bbox": [
+            283,
+            143,
+            317,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_2_0",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.6500000000000001,
+        2.4794228634059947,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4155,
+          "bbox": [
+            538,
+            142,
+            612,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_2_1",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.9500000000000002,
+        2.999038105676658,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 142,
+          "bbox": [
+            505,
+            161,
+            548,
+            179
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_2_2",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.35,
+        3.691858428704209,
+        1.0
+      ],
+      "visible": []
+    },
+    {
+      "id": "east_equipment_2_3_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.2,
+        2.6,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1247,
+          "bbox": [
+            417,
+            159,
+            475,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_3_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.2,
+        3.2,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 973,
+          "bbox": [
+            401,
+            162,
+            454,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1387,
+          "bbox": [
+            0,
+            149,
+            50,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_3_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.2000000000000002,
+        4.0,
+        1.0
+      ],
+      "visible": []
+    },
+    {
+      "id": "east_equipment_2_4_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.7500000000000002,
+        2.4794228634059947,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1342,
+          "bbox": [
+            593,
+            151,
+            640,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1820,
+          "bbox": [
+            105,
+            152,
+            174,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_4_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.4500000000000003,
+        2.999038105676658,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2119,
+          "bbox": [
+            548,
+            155,
+            634,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 150,
+          "bbox": [
+            141,
+            160,
+            205,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_4_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.05000000000000049,
+        3.691858428704209,
+        1.0
+      ],
+      "visible": []
+    },
+    {
+      "id": "east_equipment_2_5_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.4205771365940051,
+        2.15,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_5_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.09903810567665805,
+        2.4499999999999997,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_5_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.791858428704209,
+        2.8499999999999996,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1113,
+          "bbox": [
+            337,
+            144,
+            357,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_6_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.29999999999999993,
+        1.7,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_6_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.30000000000000004,
+        1.7000000000000002,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_6_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.0999999999999999,
+        1.7000000000000002,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_7_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.420577136594005,
+        1.2500000000000002,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_7_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.09903810567665827,
+        0.9500000000000004,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_7_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.7918584287042092,
+        0.5500000000000007,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_8_0",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.7499999999999996,
+        0.9205771365940054,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_8_1",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.4499999999999993,
+        0.4009618943233424,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_8_2",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.049999999999998934,
+        -0.2918584287042081,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_9_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.1999999999999997,
+        0.7999999999999999,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_9_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.1999999999999997,
+        0.19999999999999996,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_9_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.1999999999999995,
+        -0.5999999999999999,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 556,
+          "bbox": [
+            0,
+            144,
+            10,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_10_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.6500000000000001,
+        0.9205771365940052,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_10_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.9500000000000002,
+        0.40096189432334195,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4151,
+          "bbox": [
+            0,
+            144,
+            78,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_10_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.35,
+        -0.29185842870420875,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2583,
+          "bbox": [
+            71,
+            154,
+            136,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_11_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.9794228634059945,
+        1.2499999999999996,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2948,
+          "bbox": [
+            124,
+            149,
+            187,
+            198
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_11_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        2.4990381056766573,
+        0.9499999999999993,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1974,
+          "bbox": [
+            159,
+            155,
+            211,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_2_11_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        3.191858428704208,
+        0.5499999999999989,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 1275,
+          "bbox": [
+            190,
+            160,
+            232,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_0_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.23066675633983857,
+        1.6329371405922686,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_0_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.34888873943360244,
+        1.788228567653781,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_0_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.1216294004648568,
+        1.9952838037357976,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_1_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.46360389693210724,
+        2.0363961030678928,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1043,
+          "bbox": [
+            0,
+            146,
+            31,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_1_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.039339828220178674,
+        2.4606601717798213,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2564,
+          "bbox": [
+            0,
+            150,
+            89,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_1_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.5263455967290591,
+        3.026345596729059,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1656,
+          "bbox": [
+            65,
+            157,
+            138,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2500,
+          "bbox": [
+            283,
+            143,
+            354,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_2_0",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.8670628594077312,
+        2.2693332436601614,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1811,
+          "bbox": [
+            139,
+            155,
+            211,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_2_1",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.7117714323462186,
+        2.848888739433602,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1259,
+          "bbox": [
+            168,
+            159,
+            227,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_2_2",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.5047161962642019,
+        3.621629400464857,
+        1.0
+      ],
+      "visible": []
+    },
+    {
+      "id": "east_equipment_3_3_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.3329371405922688,
+        2.2693332436601614,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_3_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.488228567653781,
+        2.8488887394336024,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_3_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.6952838037357973,
+        3.621629400464857,
+        1.0
+      ],
+      "visible": []
+    },
+    {
+      "id": "east_equipment_3_4_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.736396103067893,
+        2.0363961030678928,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1717,
+          "bbox": [
+            413,
+            155,
+            485,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 4145,
+          "bbox": [
+            29,
+            142,
+            103,
+            202
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_4_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.1606601717798215,
+        2.4606601717798213,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1210,
+          "bbox": [
+            400,
+            159,
+            459,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2593,
+          "bbox": [
+            89,
+            151,
+            148,
+            197
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_4_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.7263455967290593,
+        3.026345596729059,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 822,
+          "bbox": [
+            387,
+            162,
+            435,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1446,
+          "bbox": [
+            324,
+            142,
+            355,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_5_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.9693332436601616,
+        1.6329371405922684,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1712,
+          "bbox": [
+            584,
+            147,
+            640,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1879,
+          "bbox": [
+            204,
+            153,
+            248,
+            196
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_5_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.5488887394336026,
+        1.7882285676537808,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2545,
+          "bbox": [
+            536,
+            150,
+            630,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1296,
+          "bbox": [
+            224,
+            157,
+            261,
+            193
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_5_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.321629400464857,
+        1.9952838037357972,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1397,
+          "bbox": [
+            493,
+            157,
+            559,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 857,
+          "bbox": [
+            242,
+            162,
+            272,
+            191
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_6_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.9693332436601616,
+        1.1670628594077312,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_6_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.5488887394336026,
+        1.0117714323462188,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_6_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.321629400464857,
+        0.8047161962642021,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 193,
+          "bbox": [
+            349,
+            162,
+            356,
+            190
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_7_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.736396103067893,
+        0.7636038969321072,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 2952,
+          "bbox": [
+            454,
+            149,
+            517,
+            198
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_7_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.1606601717798215,
+        0.3393398282201787,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1941,
+          "bbox": [
+            430,
+            155,
+            481,
+            195
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_7_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.7263455967290597,
+        -0.22634559672905907,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1245,
+          "bbox": [
+            409,
+            160,
+            450,
+            192
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_8_0",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.3329371405922694,
+        0.5306667563398386,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_8_1",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.4882285676537823,
+        -0.04888873943360217,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4109,
+          "bbox": [
+            563,
+            144,
+            640,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_8_2",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.6952838037357996,
+        -0.8216294004648566,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 2585,
+          "bbox": [
+            504,
+            154,
+            569,
+            195
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_9_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.8670628594077319,
+        0.5306667563398383,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_9_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.7117714323462196,
+        -0.04888873943360261,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_9_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.5047161962642035,
+        -0.8216294004648574,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 502,
+          "bbox": [
+            631,
+            144,
+            640,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_10_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.46360389693210746,
+        0.763603896932107,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_10_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.03933982822017912,
+        0.3393398282201785,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_10_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.5263455967290587,
+        -0.22634559672905974,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_11_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.2306667563398388,
+        1.1670628594077306,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_11_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.348888739433602,
+        1.0117714323462175,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_equipment_3_11_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.1216294004648564,
+        0.8047161962642003,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    }
+  ]
+}

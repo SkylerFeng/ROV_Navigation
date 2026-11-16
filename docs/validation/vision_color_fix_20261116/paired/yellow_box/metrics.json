@@ -1,0 +1,194 @@
+[
+  {
+    "case": "yellow_box",
+    "method": "reference",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 0.0,
+    "chromaticity_l1_lit": 0.0,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 0.00039000042306724936,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 0.0,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 0.0,
+        "hsv_color_on_offline_mask": "yellow",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "none",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 6.8475564236111115,
+    "chromaticity_l1_lit": 0.13095161318778992,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 0.031147000299824867,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 3.868188875004733,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 2.700467586517334,
+        "hsv_color_on_offline_mask": "yellow",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "white_balance",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 7.962361111111111,
+    "chromaticity_l1_lit": 0.2234174758195877,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 3.112621000582294,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 12.203554343847426,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 25.54234504699707,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "fusion",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 27.606244212962963,
+    "chromaticity_l1_lit": 0.28418606519699097,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 39.631564999581315,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 36.01637068171204,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 21.877962112426758,
+        "hsv_color_on_offline_mask": "red",
+        "trained_color_on_offline_mask": "red"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "clahe",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 18.29060474537037,
+    "chromaticity_l1_lit": 0.19273705780506134,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 2.7809680004793336,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 13.931147209915812,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 3.9081339836120605,
+        "hsv_color_on_offline_mask": "yellow",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "range_restore",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 0.7080844907407408,
+    "chromaticity_l1_lit": 0.018399681895971298,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 12.178426999525982,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 0.9764726671463011,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 0.08254718780517578,
+        "hsv_color_on_offline_mask": "yellow",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "range_preserve",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 6.001436631944444,
+    "chromaticity_l1_lit": 0.018584948033094406,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 20.111279000047944,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 9.346195110252818,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 0.43146249651908875,
+        "hsv_color_on_offline_mask": "yellow",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  },
+  {
+    "case": "yellow_box",
+    "method": "exposure_only",
+    "valid_pixels": 230400,
+    "reference_lit_pixels": 108617,
+    "rgb_mae_0_255": 15.13588107638889,
+    "chromaticity_l1_lit": 0.13105180859565735,
+    "detector_tp": 1,
+    "detector_fp": 0,
+    "detector_fn": 0,
+    "preprocessing_ms": 8.177364999937708,
+    "objects": [
+      {
+        "id": "YellowBox",
+        "expected_color": "yellow",
+        "mask_pixels": 26409,
+        "rgb_mae": 14.305830083178714,
+        "hue_valid_pixels": 24666,
+        "hue_error_deg": 2.8200151920318604,
+        "hsv_color_on_offline_mask": "yellow",
+        "trained_color_on_offline_mask": "yellow"
+      }
+    ]
+  }
+]

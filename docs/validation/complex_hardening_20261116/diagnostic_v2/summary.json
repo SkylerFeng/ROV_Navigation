@@ -1,0 +1,40 @@
+[
+  {
+    "runtime_status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "path_length_m": 16.864090797764334,
+    "contact_pairs": 1,
+    "contact_evidence": "penetration_or_impulse_recorded",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "target_initially_detected": false,
+    "llm_calls": 17,
+    "final_target_surface_distance_xy_m": 0.9839436253464126,
+    "name": "wrong_hint_box",
+    "search_expansions": [
+      {
+        "sim_time": 65.800003431,
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "sim_time": 130.800006821,
+        "expansion": 2,
+        "global_search": false
+      },
+      {
+        "sim_time": 192.200010024,
+        "expansion": null,
+        "global_search": null
+      }
+    ],
+    "superseded_search_decisions": 1,
+    "local_refinements": 0,
+    "llm_rejections": 0,
+    "recovery_events": 0,
+    "scan_seconds": 102.900005368,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": 345.90001804
+  }
+]

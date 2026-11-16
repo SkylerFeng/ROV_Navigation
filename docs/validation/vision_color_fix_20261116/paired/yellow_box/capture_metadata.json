@@ -1,0 +1,45 @@
+{
+  "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_yellow_box_turn.usda",
+  "source_run": "logs/meeting_report_20261111/yellow_box",
+  "view_time": 63.300003301,
+  "objects": [
+    {
+      "id": "YellowBox",
+      "category": "box",
+      "color": "yellow",
+      "pixels": 26409,
+      "bbox": [
+        280,
+        118,
+        444,
+        297
+      ]
+    }
+  ],
+  "rigid_body_disabled_for_static_capture": true,
+  "robot_position": [
+    -3.2233290672302246,
+    0.36848774552345276,
+    0.9997235536575317
+  ],
+  "reference": "Same rendered LdrColor before OceanSim UW_render; not an in-air ground-truth photograph. Re-rendered historical viewpoint, not identical historical exposure.",
+  "attenuation_rgb": [
+    0.05000000074505806,
+    0.05000000074505806,
+    0.05000000074505806
+  ],
+  "backscatter_rgb": [
+    0.05000000074505806,
+    0.05000000074505806,
+    0.20000000298023224
+  ],
+  "veiling_rgb": [
+    0.0,
+    0.3100000023841858,
+    0.23999999463558197
+  ],
+  "sha256": {
+    "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_yellow_box_turn.usda": "66d2380513e865a8e7a6437cf9e362ef82ac80730575025cd83b3a0b76b51c9b",
+    "/home/ache/Coding/rov_navigation/scripts/capture_vision_reference.py": "0363fac948dc768c4c6d4cc79caa1a61abe21c5498b2a3b6bf31fb421c121f15"
+  }
+}

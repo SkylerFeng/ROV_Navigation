@@ -1,0 +1,34 @@
+{
+  "baseline": {
+    "original": {
+      "metrics/precision(B)": 0.9833215157617456,
+      "metrics/recall(B)": 0.9116129032258065,
+      "metrics/mAP50(B)": 0.9569616894116959,
+      "metrics/mAP50-95(B)": 0.8825882993360002,
+      "fitness": 0.8825882993360002
+    },
+    "hard": {
+      "metrics/precision(B)": 0.9708457921227918,
+      "metrics/recall(B)": 0.8757433043147329,
+      "metrics/mAP50(B)": 0.9355078311853887,
+      "metrics/mAP50-95(B)": 0.8868578828982245,
+      "fitness": 0.8868578828982245
+    }
+  },
+  "candidate": {
+    "original": {
+      "metrics/precision(B)": 0.9851393670943827,
+      "metrics/recall(B)": 0.911584969217309,
+      "metrics/mAP50(B)": 0.9591116473722263,
+      "metrics/mAP50-95(B)": 0.888201698999698,
+      "fitness": 0.888201698999698
+    },
+    "hard": {
+      "metrics/precision(B)": 0.9908739147115805,
+      "metrics/recall(B)": 0.9440366677803249,
+      "metrics/mAP50(B)": 0.9660206716973067,
+      "metrics/mAP50-95(B)": 0.929949707070177,
+      "fitness": 0.929949707070177
+    }
+  }
+}

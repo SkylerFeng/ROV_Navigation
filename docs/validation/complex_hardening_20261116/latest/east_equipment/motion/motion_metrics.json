@@ -1,0 +1,14 @@
+{
+  "run": "logs/hardening_20261116/trials_v5/east_equipment",
+  "status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.000021905,
+  "path_length_m": 17.41008740900384,
+  "stationary_turn_seconds": 216.00001126527786,
+  "total_yaw_travel_deg": 2092.8548121826907,
+  "yaw_acceleration_p95_rad_s2": 0.17039048895103034,
+  "llm_calls": 15,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

@@ -1,0 +1,45 @@
+{
+  "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_blue_search.usda",
+  "source_run": "logs/meeting_report_20261111/blue_pipe",
+  "view_time": 28.300001475,
+  "objects": [
+    {
+      "id": "BluePipe",
+      "category": "pipe",
+      "color": "blue",
+      "pixels": 9859,
+      "bbox": [
+        288,
+        104,
+        412,
+        217
+      ]
+    }
+  ],
+  "rigid_body_disabled_for_static_capture": true,
+  "robot_position": [
+    -2.5224056243896484,
+    -0.578548789024353,
+    0.9966306686401367
+  ],
+  "reference": "Same rendered LdrColor before OceanSim UW_render; not an in-air ground-truth photograph. Re-rendered historical viewpoint, not identical historical exposure.",
+  "attenuation_rgb": [
+    0.05000000074505806,
+    0.05000000074505806,
+    0.05000000074505806
+  ],
+  "backscatter_rgb": [
+    0.05000000074505806,
+    0.05000000074505806,
+    0.20000000298023224
+  ],
+  "veiling_rgb": [
+    0.0,
+    0.3100000023841858,
+    0.23999999463558197
+  ],
+  "sha256": {
+    "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_blue_search.usda": "8f72e7b4490ae4d19c3f70287d006ab7f70e729c9c59c5f938fd188f2e2e627a",
+    "/home/ache/Coding/rov_navigation/scripts/capture_vision_reference.py": "0363fac948dc768c4c6d4cc79caa1a61abe21c5498b2a3b6bf31fb421c121f15"
+  }
+}

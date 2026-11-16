@@ -1,0 +1,270 @@
+{
+  "source": "logs/meeting_report_20261111/yellow_box/semantic/latest_sensor.npz",
+  "note": "Re-inference preview, not a new navigation trial or labeled detection benchmark.",
+  "results": [
+    {
+      "method": "none",
+      "preprocessing_ms": 0.052850000429316424,
+      "detections": [
+        {
+          "detector": {
+            "category": "box",
+            "detector_score": 0.9374279975891113,
+            "bbox": [
+              284.5150146484375,
+              119.74993896484375,
+              447.3374938964844,
+              292.0435485839844
+            ]
+          },
+          "raw_color_model": {
+            "color": "yellow",
+            "color_score": 0.9923394918441772,
+            "surface_world": [
+              -3.5589195504879436,
+              1.365732462206024,
+              1.0550628357402614
+            ],
+            "range_m": 0.7686487436294556,
+            "depth_samples": 23783,
+            "depth_mad_m": 0.02487635612487793,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "yellow",
+            "color_score": 1.0,
+            "surface_world": [
+              -3.496239080598658,
+              1.3652904368462317,
+              1.0704952212967562
+            ],
+            "range_m": 0.7511616349220276,
+            "depth_samples": 14641,
+            "depth_mad_m": 0.0122452974319458,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "white_balance",
+      "preprocessing_ms": 3.7539940003625816,
+      "detections": [
+        {
+          "detector": {
+            "category": "box",
+            "detector_score": 0.9095504283905029,
+            "bbox": [
+              284.17333984375,
+              121.50302124023438,
+              442.4346618652344,
+              291.7425231933594
+            ]
+          },
+          "raw_color_model": {
+            "color": "yellow",
+            "color_score": 0.9923955202102661,
+            "surface_world": [
+              -3.559018682532952,
+              1.3657357814202915,
+              1.0549867330940765
+            ],
+            "range_m": 0.7687218189239502,
+            "depth_samples": 23725,
+            "depth_mad_m": 0.024916529655456543,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "red",
+            "color_score": 0.9953524399690162,
+            "surface_world": [
+              -3.4718099604504755,
+              1.365087940816289,
+              1.0989170047761123
+            ],
+            "range_m": 0.7406388521194458,
+            "depth_samples": 6369,
+            "depth_mad_m": 0.007353782653808594,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "clahe",
+      "preprocessing_ms": 3.0618760001743794,
+      "detections": [
+        {
+          "detector": {
+            "category": "box",
+            "detector_score": 0.9128633737564087,
+            "bbox": [
+              282.14569091796875,
+              121.7069091796875,
+              447.7900390625,
+              296.7393493652344
+            ]
+          },
+          "raw_color_model": {
+            "color": "yellow",
+            "color_score": 0.9920986890792847,
+            "surface_world": [
+              -3.5589167958271584,
+              1.365732462206024,
+              1.0544304578732393
+            ],
+            "range_m": 0.7686946392059326,
+            "depth_samples": 23801,
+            "depth_mad_m": 0.024819374084472656,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "yellow",
+            "color_score": 1.0,
+            "surface_world": [
+              -3.5590043027252665,
+              1.3657176106583437,
+              1.0540139023100208
+            ],
+            "range_m": 0.7685487866401672,
+            "depth_samples": 23466,
+            "depth_mad_m": 0.024583518505096436,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "wb_clahe",
+      "preprocessing_ms": 7.467894000001252,
+      "detections": [
+        {
+          "detector": {
+            "category": "box",
+            "detector_score": 0.8960859775543213,
+            "bbox": [
+              284.096923828125,
+              122.9222412109375,
+              444.4580993652344,
+              297.6286926269531
+            ]
+          },
+          "raw_color_model": {
+            "color": "yellow",
+            "color_score": 0.9923433661460876,
+            "surface_world": [
+              -3.5589684769487557,
+              1.3657342264861736,
+              1.0541509579647268
+            ],
+            "range_m": 0.76872718334198,
+            "depth_samples": 23763,
+            "depth_mad_m": 0.024843215942382812,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "red",
+            "color_score": 0.9942541057416063,
+            "surface_world": [
+              -3.5542142917201227,
+              1.3656833043012868,
+              1.0542945120017453
+            ],
+            "range_m": 0.767087459564209,
+            "depth_samples": 22583,
+            "depth_mad_m": 0.023560285568237305,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "fusion",
+      "preprocessing_ms": 49.007046000042465,
+      "detections": [
+        {
+          "detector": {
+            "category": "box",
+            "detector_score": 0.9275932908058167,
+            "bbox": [
+              285.03271484375,
+              121.52911376953125,
+              446.7619323730469,
+              296.4345397949219
+            ]
+          },
+          "raw_color_model": {
+            "color": "yellow",
+            "color_score": 0.9924811124801636,
+            "surface_world": [
+              -3.5568488139936285,
+              1.3657299212961092,
+              1.0542224217623413
+            ],
+            "range_m": 0.7684081196784973,
+            "depth_samples": 23747,
+            "depth_mad_m": 0.024658799171447754,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "blue",
+            "color_score": 0.7601613403661185,
+            "surface_world": [
+              -3.9860698251219966,
+              2.246295646877324,
+              0.5477693099976122
+            ],
+            "range_m": 1.780550241470337,
+            "depth_samples": 2180,
+            "depth_mad_m": 0.04055684804916382,
+            "localization_valid": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "range_restore",
+      "preprocessing_ms": 12.495601000409806,
+      "detections": [
+        {
+          "detector": {
+            "category": "box",
+            "detector_score": 0.6381828188896179,
+            "bbox": [
+              278.899658203125,
+              120.4820556640625,
+              449.4005432128906,
+              293.3671569824219
+            ]
+          },
+          "raw_color_model": {
+            "color": "yellow",
+            "color_score": 0.9921184182167053,
+            "surface_world": [
+              -3.5589167958271584,
+              1.365732462206024,
+              1.0547491525714308
+            ],
+            "range_m": 0.7686910629272461,
+            "depth_samples": 23801,
+            "depth_mad_m": 0.024863481521606445,
+            "localization_valid": true
+          },
+          "processed_hsv": {
+            "color": "yellow",
+            "color_score": 1.0,
+            "surface_world": [
+              -3.496184057439379,
+              1.3652852869076777,
+              1.0685270897113812
+            ],
+            "range_m": 0.7510783076286316,
+            "depth_samples": 14585,
+            "depth_mad_m": 0.012194812297821045,
+            "localization_valid": true
+          }
+        }
+      ]
+    }
+  ]
+}

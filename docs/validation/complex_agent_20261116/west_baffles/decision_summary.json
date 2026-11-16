@@ -1,0 +1,173 @@
+[
+  {
+    "sim_time": 1.700000088,
+    "action": {
+      "task_id": "febf07ac111b",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "initial_scan"
+    },
+    "phase": "REGION_SEARCH",
+    "last_action_result": "startup",
+    "observed_objects": []
+  },
+  {
+    "sim_time": 22.100001152,
+    "action": {
+      "task_id": "febf07ac111b",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_34_28",
+      "reason_code": "search_unseen_area"
+    },
+    "phase": "REGION_SEARCH",
+    "last_action_result": "previous_decision_rejected: invalid candidate",
+    "observed_objects": [
+      {
+        "category": "box",
+        "color": "red",
+        "confirmed": false,
+        "age_s": 16.066667505
+      },
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 0.06666667000000004
+      }
+    ]
+  },
+  {
+    "sim_time": 34.100001778,
+    "action": {
+      "task_id": "febf07ac111b",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    "phase": "REGION_SEARCH",
+    "last_action_result": "exploration_waypoint_reached",
+    "observed_objects": [
+      {
+        "category": "box",
+        "color": "red",
+        "confirmed": false,
+        "age_s": 28.066668131
+      },
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 0.06666666999999649
+      }
+    ]
+  },
+  {
+    "sim_time": 56.500002946,
+    "action": {
+      "task_id": "febf07ac111b",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_28_26",
+      "reason_code": "search_unseen_area"
+    },
+    "phase": "EXPANDED_SEARCH",
+    "last_action_result": "scan_completed",
+    "observed_objects": [
+      {
+        "category": "box",
+        "color": "red",
+        "confirmed": false,
+        "age_s": 50.466669299
+      },
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 17.066667557000002
+      },
+      {
+        "category": "pipe",
+        "color": "blue",
+        "confirmed": true,
+        "age_s": 0.06666667000000359
+      }
+    ]
+  },
+  {
+    "sim_time": 86.700004521,
+    "action": {
+      "task_id": "febf07ac111b",
+      "observation_id": 11,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    "phase": "VERIFY",
+    "last_action_result": "exploration_waypoint_reached",
+    "observed_objects": [
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 47.266669132
+      },
+      {
+        "category": "pipe",
+        "color": "blue",
+        "confirmed": true,
+        "age_s": 22.266667827999996
+      },
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 7.066667034999995
+      },
+      {
+        "category": "pipe",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 0.06666667000000359
+      }
+    ]
+  },
+  {
+    "sim_time": 90.500004719,
+    "action": {
+      "task_id": "febf07ac111b",
+      "observation_id": 13,
+      "action": "approach",
+      "candidate_id": "approach_obj_005",
+      "object_id": "obj_005",
+      "reason_code": "target_visible"
+    },
+    "phase": "VERIFY",
+    "last_action_result": "target_observed",
+    "observed_objects": [
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 51.06666933
+      },
+      {
+        "category": "pipe",
+        "color": "blue",
+        "confirmed": true,
+        "age_s": 26.066668026000002
+      },
+      {
+        "category": "box",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 10.866667233000001
+      },
+      {
+        "category": "pipe",
+        "color": "yellow",
+        "confirmed": true,
+        "age_s": 0.06666667000000359
+      }
+    ]
+  }
+]

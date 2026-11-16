@@ -1,0 +1,6 @@
+{
+  "logs/hardening_20261116/trials_v3/wrong_hint_box/semantic/events.jsonl": "cd31bbee8176f37b6f1ea5ee96edd251e56402146b7d707e2a452311b1a58fbb",
+  "logs/hardening_20261116/trials_v3/wrong_hint_box/semantic/latest_sensor.npz": "ad2b451fe0063bb54319842f90b2b0750d25fa8ee8ffbf9161fa788350fe7dbc",
+  "logs/hardening_20261116/trials_v3/wrong_hint_box/sim/run.json": "485d847aacc74be98059c8359159a6c2e57187aaae5d4a7a000af7b174703190",
+  "logs/hardening_20261116/trials_v3/wrong_hint_box/manifest.json": "5e7a7356fbf1871b8fca323cac2b2c48eaefd7b014c04ba33829849dec73bac3"
+}

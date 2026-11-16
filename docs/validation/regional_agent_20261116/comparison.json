@@ -1,0 +1,26 @@
+[
+  {
+    "case": "no_hint",
+    "status": "SUCCEEDED",
+    "simulation_seconds": 62.600003265,
+    "path_length_m": 1.9829415590748924,
+    "expansion_events": [],
+    "local_refinements": 0
+  },
+  {
+    "case": "correct_hint",
+    "status": "SUCCEEDED",
+    "simulation_seconds": 64.70000337500001,
+    "path_length_m": 2.1027992172928385,
+    "expansion_events": [],
+    "local_refinements": 0
+  },
+  {
+    "case": "incorrect_hint",
+    "status": "SUCCEEDED",
+    "simulation_seconds": 83.800004371,
+    "path_length_m": 2.5694102524862923,
+    "expansion_events": [],
+    "local_refinements": 0
+  }
+]

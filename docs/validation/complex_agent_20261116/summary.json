@@ -1,0 +1,101 @@
+[
+  {
+    "runtime_status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 100.100005221,
+    "path_length_m": 2.67880867917326,
+    "contact_pairs": 0,
+    "contact_evidence": "no_reports",
+    "offline_verified": true,
+    "exploration_verified": true,
+    "target_initially_detected": false,
+    "llm_calls": 7,
+    "final_target_surface_distance_xy_m": 1.0227049322322588,
+    "name": "west_baffles",
+    "search_expansions": [
+      {
+        "sim_time": 54.300002831,
+        "expansion": 1,
+        "global_search": false
+      }
+    ],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 1,
+    "recovery_events": 0,
+    "scan_seconds": 36.20000188800001,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": 85.833337809
+  },
+  {
+    "runtime_status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 308.00001606399996,
+    "path_length_m": 6.522441206160173,
+    "contact_pairs": 0,
+    "contact_evidence": "no_reports",
+    "offline_verified": true,
+    "exploration_verified": true,
+    "target_initially_detected": false,
+    "llm_calls": 21,
+    "final_target_surface_distance_xy_m": 0.9928571059560507,
+    "name": "east_equipment",
+    "search_expansions": [
+      {
+        "sim_time": 60.80000317,
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "sim_time": 107.700005616,
+        "expansion": 2,
+        "global_search": false
+      }
+    ],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 0,
+    "recovery_events": 0,
+    "scan_seconds": 58.800003068000024,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": 163.900008548
+  },
+  {
+    "runtime_status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "path_length_m": 9.783943396092146,
+    "contact_pairs": 1,
+    "contact_evidence": "penetration_or_impulse_recorded",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "target_initially_detected": false,
+    "llm_calls": 15,
+    "final_target_surface_distance_xy_m": 8.75774981519283,
+    "name": "wrong_hint_box",
+    "search_expansions": [
+      {
+        "sim_time": 64.600003369,
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "sim_time": 117.000006102,
+        "expansion": 2,
+        "global_search": false
+      },
+      {
+        "sim_time": 185.600009679,
+        "expansion": 3,
+        "global_search": true
+      }
+    ],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 0,
+    "recovery_events": 0,
+    "scan_seconds": 164.70000858900002,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": 359.600018754
+  }
+]

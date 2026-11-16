@@ -1,0 +1,126 @@
+[
+  {
+    "runtime_status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "path_length_m": 15.668769821238133,
+    "contact_pairs": 1,
+    "contact_evidence": "positive_separation_zero_impulse_only",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "target_initially_detected": false,
+    "llm_calls": 17,
+    "final_target_surface_distance_xy_m": 7.981882688338756,
+    "name": "west_baffles",
+    "search_expansions": [
+      {
+        "sim_time": 53.200002774,
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "sim_time": 145.000007562,
+        "expansion": 2,
+        "global_search": false
+      },
+      {
+        "sim_time": 203.300010602,
+        "expansion": null,
+        "global_search": null
+      },
+      {
+        "sim_time": 276.30001441,
+        "expansion": null,
+        "global_search": null
+      }
+    ],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 1,
+    "recovery_events": 0,
+    "scan_seconds": 161.30000841300009,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": null
+  },
+  {
+    "runtime_status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "path_length_m": 17.41008740900384,
+    "contact_pairs": 1,
+    "contact_evidence": "penetration_or_impulse_recorded",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "target_initially_detected": false,
+    "llm_calls": 15,
+    "final_target_surface_distance_xy_m": 3.3239044380187988,
+    "name": "east_equipment",
+    "search_expansions": [
+      {
+        "sim_time": 61.000003181,
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "sim_time": 111.500005815,
+        "expansion": 2,
+        "global_search": false
+      },
+      {
+        "sim_time": 197.000010274,
+        "expansion": null,
+        "global_search": null
+      },
+      {
+        "sim_time": 365.700019072,
+        "expansion": null,
+        "global_search": null
+      }
+    ],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 0,
+    "recovery_events": 0,
+    "scan_seconds": 121.60000634099997,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": null
+  },
+  {
+    "runtime_status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 421.06668862699996,
+    "path_length_m": 15.659579509304088,
+    "contact_pairs": 0,
+    "contact_evidence": "no_reports",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "target_initially_detected": false,
+    "llm_calls": 17,
+    "final_target_surface_distance_xy_m": 1.9954460179114137,
+    "name": "wrong_hint_box",
+    "search_expansions": [
+      {
+        "sim_time": 64.700003374,
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "sim_time": 128.833340052,
+        "expansion": 2,
+        "global_search": false
+      },
+      {
+        "sim_time": 187.400009773,
+        "expansion": null,
+        "global_search": null
+      }
+    ],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 0,
+    "recovery_events": 0,
+    "scan_seconds": 107.90000562699996,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": 235.700012292
+  }
+]

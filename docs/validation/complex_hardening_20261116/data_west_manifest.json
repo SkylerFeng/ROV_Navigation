@@ -1,0 +1,4447 @@
+{
+  "scene": "/home/ache/Coding/rov_navigation/scenes/pool_platform_semantic_complex_west_baffles.usda",
+  "scene_sha256": "fe86255963222259ae8d099539c986c1ab884bdb28341d8236e4445bd33b62af",
+  "note": "Fixed scene; offline camera sweeps can include blocked/non-navigable viewpoints. Wrong-hint layout is held-out test only; training/validation views share layouts, not independent generalization.",
+  "rows": [
+    {
+      "id": "west_baffles_0_0_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        -4.75,
+        1.2,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 3396,
+          "bbox": [
+            98,
+            158,
+            169,
+            207
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_0_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        -4.75,
+        1.8,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2076,
+          "bbox": [
+            141,
+            163,
+            195,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_0_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        -4.75,
+        2.5999999999999996,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 328,
+          "bbox": [
+            208,
+            166,
+            219,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_1_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        -5.2,
+        1.0794228634059948,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1863,
+          "bbox": [
+            249,
+            162,
+            302,
+            203
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_1_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        -5.5,
+        1.599038105676658,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_1_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        -5.8999999999999995,
+        2.291858428704209,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2595,
+          "bbox": [
+            278,
+            151,
+            355,
+            193
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 332,
+          "bbox": [
+            271,
+            168,
+            308,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_2_0",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        -5.529422863405995,
+        0.7500000000000002,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1114,
+          "bbox": [
+            25,
+            157,
+            65,
+            190
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1140,
+          "bbox": [
+            386,
+            161,
+            429,
+            203
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 487,
+          "bbox": [
+            115,
+            169,
+            135,
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_2_1",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        -6.049038105676658,
+        1.0500000000000005,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 842,
+          "bbox": [
+            364,
+            165,
+            411,
+            199
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 652,
+          "bbox": [
+            136,
+            170,
+            166,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_2_2",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        -6.741858428704209,
+        1.4500000000000006,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            271,
+            153,
+            367,
+            192
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 864,
+          "bbox": [
+            356,
+            167,
+            395,
+            196
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_3_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        -5.65,
+        0.3000000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 224,
+          "bbox": [
+            200,
+            163,
+            216,
+            187
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 4564,
+          "bbox": [
+            515,
+            156,
+            602,
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_3_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        -6.25,
+        0.30000000000000016,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 426,
+          "bbox": [
+            216,
+            165,
+            244,
+            186
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2646,
+          "bbox": [
+            479,
+            161,
+            543,
+            203
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_3_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        -7.05,
+        0.30000000000000027,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3416,
+          "bbox": [
+            272,
+            155,
+            368,
+            191
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 289,
+          "bbox": [
+            237,
+            168,
+            257,
+            185
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1503,
+          "bbox": [
+            448,
+            165,
+            494,
+            198
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_4_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        -5.529422863405995,
+        -0.14999999999999974,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 141,
+          "bbox": [
+            339,
+            164,
+            356,
+            187
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_4_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        -6.049038105676658,
+        -0.44999999999999957,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_4_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        -6.741858428704209,
+        -0.8499999999999992,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 3228,
+          "bbox": [
+            561,
+            158,
+            630,
+            207
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_5_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        -5.199999999999999,
+        -0.479422863405995,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_5_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -5.499999999999999,
+        -0.9990381056766582,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_5_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -5.899999999999999,
+        -1.691858428704209,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2595,
+          "bbox": [
+            285,
+            151,
+            362,
+            193
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 747,
+          "bbox": [
+            561,
+            169,
+            593,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_6_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        -4.75,
+        -0.6000000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_6_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -4.75,
+        -1.2,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_6_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -4.75,
+        -1.9999999999999998,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_7_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        -4.300000000000001,
+        -0.4794228634059952,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_7_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -4.000000000000001,
+        -0.9990381056766584,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_7_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.6000000000000014,
+        -1.6918584287042095,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2595,
+          "bbox": [
+            278,
+            151,
+            355,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_8_0",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.9705771365940055,
+        -0.1500000000000004,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_8_1",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.4509618943233424,
+        -0.4500000000000007,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_8_2",
+      "split": "val",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.758141571295792,
+        -0.850000000000001,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            271,
+            153,
+            367,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_9_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.85,
+        0.29999999999999977,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_9_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.25,
+        0.2999999999999996,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_9_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.45,
+        0.29999999999999943,
+        1.07
+      ],
+      "visible": []
+    },
+    {
+      "id": "west_baffles_0_10_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.970577136594005,
+        0.75,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_10_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.450961894323342,
+        1.05,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_10_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.7581415712957913,
+        1.45,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_11_0",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        -4.3,
+        1.0794228634059946,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_11_1",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.999999999999999,
+        1.5990381056766576,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2171,
+          "bbox": [
+            7,
+            155,
+            47,
+            211
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_0_11_2",
+      "split": "train",
+      "focus": "YellowPipe",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.5999999999999988,
+        2.291858428704208,
+        1.07
+      ],
+      "visible": []
+    },
+    {
+      "id": "west_baffles_1_0_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.184322991667015,
+        1.8803564355666296,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 593,
+          "bbox": [
+            313,
+            165,
+            343,
+            187
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2406,
+          "bbox": [
+            71,
+            162,
+            133,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_0_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.6405383194450252,
+        2.1339273926110494,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 372,
+          "bbox": [
+            314,
+            167,
+            336,
+            186
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1663,
+          "bbox": [
+            110,
+            165,
+            161,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_0_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.08450791018429449,
+        2.4720220020036088,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 309,
+          "bbox": [
+            315,
+            169,
+            346,
+            185
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1099,
+          "bbox": [
+            147,
+            168,
+            188,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_1_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.4837812072840584,
+        2.237236839860093,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1636,
+          "bbox": [
+            431,
+            162,
+            502,
+            188
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1249,
+          "bbox": [
+            242,
+            166,
+            282,
+            198
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_1_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.1396353454734307,
+        2.7287280664334874,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1085,
+          "bbox": [
+            416,
+            165,
+            470,
+            187
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 80,
+          "bbox": [
+            252,
+            176,
+            262,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_1_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.680774196392594,
+        3.384049701864681,
+        1.07
+      ],
+      "visible": []
+    },
+    {
+      "id": "west_baffles_1_2_0",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.9215598315271074,
+        2.396575228282571,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 552,
+          "bbox": [
+            619,
+            158,
+            640,
+            190
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 573,
+          "bbox": [
+            386,
+            166,
+            415,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_2_1",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.8692663858785123,
+        2.9942920471376184,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1423,
+          "bbox": [
+            564,
+            160,
+            619,
+            189
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 401,
+          "bbox": [
+            379,
+            168,
+            403,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_2_2",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.7995417916803857,
+        3.7912478056110146,
+        1.07
+      ],
+      "visible": []
+    },
+    {
+      "id": "west_baffles_1_3_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.3803564355666293,
+        2.315677008332985,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 2413,
+          "bbox": [
+            535,
+            161,
+            594,
+            203
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4142,
+          "bbox": [
+            32,
+            157,
+            116,
+            208
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_3_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.633927392611049,
+        2.859461680554975,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1434,
+          "bbox": [
+            503,
+            164,
+            545,
+            199
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2528,
+          "bbox": [
+            89,
+            162,
+            153,
+            203
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_3_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.9720220020036083,
+        3.584507910184295,
+        1.07
+      ],
+      "visible": []
+    },
+    {
+      "id": "west_baffles_1_4_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.7372368398600924,
+        2.0162187927159416,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1068,
+          "bbox": [
+            211,
+            162,
+            254,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_4_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.2287280664334874,
+        2.3603646545265695,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 805,
+          "bbox": [
+            228,
+            165,
+            272,
+            198
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_4_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.8840497018646802,
+        2.8192258036074067,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2048,
+          "bbox": [
+            313,
+            153,
+            369,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_5_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.896575228282571,
+        1.5784401684728924,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1638,
+          "bbox": [
+            341,
+            163,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_5_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.4942920471376184,
+        1.6307336141214872,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_5_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -4.291247805611015,
+        1.7004582083196138,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            285,
+            151,
+            362,
+            193
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 296,
+          "bbox": [
+            335,
+            168,
+            369,
+            195
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_6_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.815677008332985,
+        1.1196435644333707,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3686,
+          "bbox": [
+            278,
+            122,
+            362,
+            206
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2842,
+          "bbox": [
+            479,
+            159,
+            543,
+            205
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_6_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.359461680554975,
+        0.8660726073889511,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3130,
+          "bbox": [
+            285,
+            131,
+            355,
+            202
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1800,
+          "bbox": [
+            453,
+            163,
+            502,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_6_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -4.0845079101842945,
+        0.5279779979963918,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1016,
+          "bbox": [
+            299,
+            151,
+            341,
+            193
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1053,
+          "bbox": [
+            430,
+            167,
+            466,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_7_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.5162187927159416,
+        0.7627631601399075,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            290,
+            122,
+            399,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_7_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.8603646545265695,
+        0.2712719335665126,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            251,
+            133,
+            371,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1309,
+          "bbox": [
+            615,
+            156,
+            640,
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_7_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.3192258036074067,
+        -0.38404970186468046,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            278,
+            151,
+            355,
+            193
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 2065,
+          "bbox": [
+            543,
+            161,
+            594,
+            203
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_8_0",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.0784401684728926,
+        0.603424771717429,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            292,
+            122,
+            422,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_8_1",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.130733614121487,
+        0.005707952862381571,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            244,
+            137,
+            392,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_8_2",
+      "split": "val",
+      "focus": "BluePipe",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.200458208319614,
+        -0.7912478056110146,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3363,
+          "bbox": [
+            271,
+            153,
+            367,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_9_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.6196435644333702,
+        0.684322991667015,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 10816,
+          "bbox": [
+            216,
+            138,
+            424,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_9_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.3660726073889506,
+        0.14053831944502515,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 8356,
+          "bbox": [
+            244,
+            141,
+            396,
+            197
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_9_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.027977997996391,
+        -0.5845079101842945,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3416,
+          "bbox": [
+            272,
+            155,
+            368,
+            191
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_10_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.2627631601399072,
+        0.9837812072840588,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7618,
+          "bbox": [
+            218,
+            122,
+            348,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_10_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.7712719335665119,
+        0.6396353454734314,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 7963,
+          "bbox": [
+            248,
+            137,
+            396,
+            199
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_10_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.11595029813531843,
+        0.18077419639259507,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 3363,
+          "bbox": [
+            273,
+            153,
+            369,
+            192
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_11_0",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        -1.103424771717429,
+        1.4215598315271074,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 557,
+          "bbox": [
+            198,
+            164,
+            223,
+            187
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 6131,
+          "bbox": [
+            241,
+            122,
+            350,
+            206
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_11_1",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.5057079528623816,
+        1.3692663858785126,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 237,
+          "bbox": [
+            224,
+            166,
+            236,
+            186
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 6365,
+          "bbox": [
+            269,
+            133,
+            389,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_1_11_2",
+      "split": "train",
+      "focus": "BluePipe",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        0.2912478056110146,
+        1.299541791680386,
+        1.07
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2595,
+          "bbox": [
+            285,
+            151,
+            362,
+            193
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 1848,
+          "bbox": [
+            0,
+            162,
+            48,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_0_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.3000000000000003,
+        -1.5,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 3414,
+          "bbox": [
+            503,
+            147,
+            606,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_0_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.7000000000000002,
+        -1.5,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1059,
+          "bbox": [
+            468,
+            154,
+            509,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_0_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.9000000000000004,
+        -1.5,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 227,
+          "bbox": [
+            439,
+            159,
+            450,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_1_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.420577136594005,
+        -1.05,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_1_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.9009618943233422,
+        -0.7500000000000001,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_1_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.2081415712957913,
+        -0.3500000000000003,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_2_0",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.75,
+        -0.7205771365940052,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_2_1",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.45,
+        -0.200961894323342,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_2_2",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.05,
+        0.4918584287042087,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_3_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.2,
+        -0.6,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_3_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.2,
+        0.0,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_3_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.2,
+        0.7999999999999998,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1995,
+          "bbox": [
+            291,
+            144,
+            326,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_4_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.65,
+        -0.7205771365940051,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_4_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.9499999999999997,
+        -0.200961894323342,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_4_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        -4.35,
+        0.4918584287042089,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_5_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.979422863405995,
+        -1.05,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_5_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -4.499038105676658,
+        -0.7500000000000001,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_5_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -5.191858428704209,
+        -0.3500000000000003,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_6_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        -4.1000000000000005,
+        -1.5,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 946,
+          "bbox": [
+            142,
+            162,
+            177,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_6_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -4.7,
+        -1.4999999999999998,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 694,
+          "bbox": [
+            163,
+            165,
+            192,
+            189
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_6_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -5.5,
+        -1.4999999999999998,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 502,
+          "bbox": [
+            185,
+            167,
+            209,
+            188
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_7_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.979422863405995,
+        -1.9499999999999997,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1227,
+          "bbox": [
+            110,
+            154,
+            163,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_7_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -4.499038105676658,
+        -2.2499999999999996,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 185,
+          "bbox": [
+            173,
+            161,
+            185,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_7_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -5.19185842870421,
+        -2.6499999999999995,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1227,
+          "bbox": [
+            283,
+            144,
+            305,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_8_0",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.6500000000000004,
+        -2.2794228634059945,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 983,
+          "bbox": [
+            440,
+            163,
+            477,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_8_1",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.950000000000001,
+        -2.7990381056766576,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1238,
+          "bbox": [
+            0,
+            143,
+            41,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 755,
+          "bbox": [
+            427,
+            165,
+            459,
+            189
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_8_2",
+      "split": "val",
+      "focus": "YellowBox",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        -4.350000000000001,
+        -3.491858428704208,
+        1.0
+      ],
+      "visible": []
+    },
+    {
+      "id": "west_baffles_2_9_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        -3.2,
+        -2.4,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 2177,
+          "bbox": [
+            94,
+            146,
+            170,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1138,
+          "bbox": [
+            390,
+            159,
+            446,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_9_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        -3.2000000000000006,
+        -3.0,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1280,
+          "bbox": [
+            139,
+            153,
+            195,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 866,
+          "bbox": [
+            381,
+            162,
+            430,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1235,
+          "bbox": [
+            602,
+            158,
+            640,
+            193
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_9_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        -3.2000000000000006,
+        -3.8,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 630,
+          "bbox": [
+            372,
+            165,
+            413,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 1240,
+          "bbox": [
+            554,
+            162,
+            600,
+            190
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_10_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.75,
+        -2.279422863405995,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 603,
+          "bbox": [
+            244,
+            153,
+            268,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 2433,
+          "bbox": [
+            553,
+            152,
+            640,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_10_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        -2.45,
+        -2.799038105676658,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1795,
+          "bbox": [
+            515,
+            157,
+            593,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_10_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        -2.05,
+        -3.4918584287042087,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 254,
+          "bbox": [
+            268,
+            162,
+            283,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1159,
+          "bbox": [
+            480,
+            161,
+            540,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_11_0",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        -2.4205771365940056,
+        -1.9500000000000004,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 1562,
+          "bbox": [
+            372,
+            153,
+            433,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_11_1",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        -1.9009618943233426,
+        -2.250000000000001,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 784,
+          "bbox": [
+            378,
+            158,
+            415,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_2_11_2",
+      "split": "train",
+      "focus": "YellowBox",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.2081415712957921,
+        -2.6500000000000012,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 750,
+          "bbox": [
+            357,
+            162,
+            399,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_0_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 0,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.3693332436601615,
+        1.0329371405922687,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1577,
+          "bbox": [
+            426,
+            152,
+            490,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 842,
+          "bbox": [
+            223,
+            164,
+            257,
+            189
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_0_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 0,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.9488887394336025,
+        1.1882285676537812,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1028,
+          "bbox": [
+            410,
+            157,
+            460,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 657,
+          "bbox": [
+            233,
+            166,
+            263,
+            188
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_0_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 0,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.721629400464857,
+        1.3952838037357977,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 651,
+          "bbox": [
+            395,
+            161,
+            434,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 494,
+          "bbox": [
+            244,
+            168,
+            270,
+            187
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_1_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 30,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.1363961030678928,
+        1.4363961030678927,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 120,
+          "bbox": [
+            557,
+            163,
+            564,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1013,
+          "bbox": [
+            606,
+            145,
+            640,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 291,
+          "bbox": [
+            386,
+            164,
+            398,
+            189
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_1_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 30,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.5606601717798214,
+        1.8606601717798212,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 201,
+          "bbox": [
+            524,
+            165,
+            537,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 1879,
+          "bbox": [
+            551,
+            148,
+            620,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 372,
+          "bbox": [
+            373,
+            166,
+            390,
+            188
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_1_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 30,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.126345596729059,
+        2.426345596729059,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowPipe",
+          "pixels": 172,
+          "bbox": [
+            493,
+            167,
+            508,
+            181
+          ]
+        },
+        {
+          "id": "BluePipe",
+          "pixels": 840,
+          "bbox": [
+            504,
+            156,
+            546,
+            181
+          ]
+        },
+        {
+          "id": "YellowBox",
+          "pixels": 513,
+          "bbox": [
+            355,
+            168,
+            382,
+            187
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_2_0",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 60,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.7329371405922689,
+        1.6693332436601613,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1572,
+          "bbox": [
+            529,
+            160,
+            580,
+            192
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_2_1",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 60,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.8882285676537814,
+        2.2488887394336023,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1147,
+          "bbox": [
+            503,
+            163,
+            546,
+            190
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_2_2",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 60,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.0952838037357981,
+        3.0216294004648567,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 788,
+          "bbox": [
+            477,
+            165,
+            512,
+            189
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_3_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 90,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.26706285940773145,
+        1.6693332436601616,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_3_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 90,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.11177143234621906,
+        2.2488887394336023,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_3_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 90,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.09528380373579737,
+        3.0216294004648567,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_4_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 120,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.13639610306789274,
+        1.436396103067893,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_4_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 120,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.5606601717798212,
+        1.8606601717798215,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_4_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 120,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.126345596729059,
+        2.4263455967290595,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_5_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 150,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.3693332436601615,
+        1.0329371405922685,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_5_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 150,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.9488887394336025,
+        1.188228567653781,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_5_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 150,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.721629400464857,
+        1.3952838037357973,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_6_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 180,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.3693332436601615,
+        0.5670628594077314,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_6_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 180,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.9488887394336025,
+        0.4117714323462188,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_6_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 180,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.721629400464857,
+        0.20471619626420223,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_7_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 210,
+      "radius_m": 0.9,
+      "camera_position": [
+        -0.13639610306789296,
+        0.1636038969321073,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_7_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 210,
+      "radius_m": 1.5,
+      "camera_position": [
+        -0.5606601717798214,
+        -0.26066017177982115,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_7_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 210,
+      "radius_m": 2.3,
+      "camera_position": [
+        -1.1263455967290597,
+        -0.8263455967290589,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_8_0",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 240,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.26706285940773067,
+        -0.06933324366016125,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_8_1",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 240,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.11177143234621773,
+        -0.648888739433602,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_8_2",
+      "split": "val",
+      "focus": "RedBox",
+      "angle_relative_deg": 240,
+      "radius_m": 2.3,
+      "camera_position": [
+        -0.09528380373579948,
+        -1.4216294004648564,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 825,
+          "bbox": [
+            0,
+            147,
+            25,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_9_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 270,
+      "radius_m": 0.9,
+      "camera_position": [
+        0.7329371405922682,
+        -0.06933324366016158,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2194,
+          "bbox": [
+            0,
+            144,
+            63,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14884,
+          "bbox": [
+            259,
+            103,
+            381,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_9_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 270,
+      "radius_m": 1.5,
+      "camera_position": [
+        0.8882285676537804,
+        -0.6488887394336025,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 2856,
+          "bbox": [
+            13,
+            151,
+            114,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 8556,
+          "bbox": [
+            274,
+            121,
+            366,
+            214
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_9_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 270,
+      "radius_m": 2.3,
+      "camera_position": [
+        1.0952838037357966,
+        -1.4216294004648573,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1624,
+          "bbox": [
+            84,
+            158,
+            157,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 3306,
+          "bbox": [
+            291,
+            144,
+            349,
+            201
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_10_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 300,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.1363961030678926,
+        0.16360389693210708,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1781,
+          "bbox": [
+            155,
+            154,
+            227,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            268,
+            103,
+            386,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_10_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 300,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.560660171779821,
+        -0.26066017177982137,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 1269,
+          "bbox": [
+            182,
+            158,
+            242,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            262,
+            118,
+            373,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_10_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 300,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.1263455967290588,
+        -0.8263455967290596,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "BluePipe",
+          "pixels": 871,
+          "bbox": [
+            206,
+            162,
+            255,
+            181
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            283,
+            142,
+            355,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_11_0",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 330,
+      "radius_m": 0.9,
+      "camera_position": [
+        1.3693332436601613,
+        0.5670628594077306,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1752,
+          "bbox": [
+            29,
+            159,
+            83,
+            192
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 14396,
+          "bbox": [
+            254,
+            103,
+            372,
+            225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_11_1",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 330,
+      "radius_m": 1.5,
+      "camera_position": [
+        1.948888739433602,
+        0.4117714323462177,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 1201,
+          "bbox": [
+            70,
+            162,
+            113,
+            191
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 10028,
+          "bbox": [
+            267,
+            118,
+            378,
+            216
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west_baffles_3_11_2",
+      "split": "train",
+      "focus": "RedBox",
+      "angle_relative_deg": 330,
+      "radius_m": 2.3,
+      "camera_position": [
+        2.7216294004648565,
+        0.20471619626420046,
+        1.0
+      ],
+      "visible": [
+        {
+          "id": "YellowBox",
+          "pixels": 785,
+          "bbox": [
+            110,
+            165,
+            143,
+            189
+          ]
+        },
+        {
+          "id": "RedBox",
+          "pixels": 4071,
+          "bbox": [
+            285,
+            142,
+            357,
+            202
+          ]
+        }
+      ]
+    }
+  ]
+}

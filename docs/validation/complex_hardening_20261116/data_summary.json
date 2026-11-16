@@ -1,0 +1,13 @@
+{
+  "merged_counts": {
+    "train": 540,
+    "val": 108,
+    "test": 72
+  },
+  "heldout_frames": 144,
+  "sources": [
+    "/home/ache/Coding/rov_navigation/logs/semantic_dataset_lit",
+    "/home/ache/Coding/rov_navigation/logs/hardening_20261116/data_west",
+    "/home/ache/Coding/rov_navigation/logs/hardening_20261116/data_east"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "collision_hull_dimensions_m": [
+    0.48,
+    0.57,
+    0.26
+  ],
+  "circumscribed_xy_radius_m": 0.3725922704512266,
+  "old_inflation_m": 0.25,
+  "new_trial_inflation_m": 0.4,
+  "closest_center_to_prior_cell_in_contact_interval_m": 0.275465573008201,
+  "time_s": 347.633351463,
+  "position": [
+    -2.964005708694458,
+    1.9748907089233398,
+    0.999390721321106
+  ]
+}

@@ -1,0 +1,344 @@
+[
+  {
+    "sim_time": 0.300000015,
+    "event": "llm_request",
+    "observation_id": 1,
+    "agent_memory": {
+      "phase": "SEARCH",
+      "coarse_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "visited_viewpoints": [],
+      "viewpoint_attempts": {},
+      "recent_results": [],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 2.100000109,
+    "tool_id": 1,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 2.100000109,
+    "observation_id": 1,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 2.100000109,
+    "action": {
+      "task_id": "fc1b6b442ef8",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 17.400000907,
+    "tool_id": 1,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 2.100000109,
+    "observation_id": 1,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "scan_completed",
+    "ended_s": 17.400000907,
+    "duration_s": 15.300000798
+  },
+  {
+    "sim_time": 17.500000912,
+    "event": "llm_request",
+    "observation_id": 3,
+    "agent_memory": {
+      "phase": "SEARCH",
+      "coarse_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "visited_viewpoints": [],
+      "viewpoint_attempts": {},
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 2.100000109,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 17.400000907,
+          "duration_s": 15.300000798
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 20.100001048,
+    "tool_id": 2,
+    "action": "explore",
+    "candidate_id": "frontier_32_28",
+    "object_id": null,
+    "started_s": 20.100001048,
+    "observation_id": 3,
+    "position": [
+      -2.925,
+      -0.5250000000000004,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 20.100001048,
+    "action": {
+      "task_id": "fc1b6b442ef8",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_32_28",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 34.000001773,
+    "tool_id": 2,
+    "action": "explore",
+    "candidate_id": "frontier_32_28",
+    "object_id": null,
+    "started_s": 20.100001048,
+    "observation_id": 3,
+    "position": [
+      -2.925,
+      -0.5250000000000004,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "exploration_waypoint_reached",
+    "ended_s": 34.000001773,
+    "duration_s": 13.900000725000002
+  },
+  {
+    "sim_time": 34.100001778,
+    "event": "llm_request",
+    "observation_id": 5,
+    "agent_memory": {
+      "phase": "SEARCH",
+      "coarse_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "visited_viewpoints": [
+        "frontier_32_28"
+      ],
+      "viewpoint_attempts": {
+        "frontier_32_28": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 2.100000109,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 17.400000907,
+          "duration_s": 15.300000798
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_32_28",
+          "object_id": null,
+          "started_s": 20.100001048,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 34.000001773,
+          "duration_s": 13.900000725000002
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 36.700001914,
+    "tool_id": 3,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 36.700001914,
+    "observation_id": 5,
+    "position": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 36.700001914,
+    "action": {
+      "task_id": "fc1b6b442ef8",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 50.300002623,
+    "tool_id": 3,
+    "action": "scan",
+    "candidate_id": null,
+    "object_id": null,
+    "started_s": 36.700001914,
+    "observation_id": 5,
+    "position": null,
+    "status": "SUCCEEDED",
+    "reason": "target_observed",
+    "ended_s": 50.300002623,
+    "duration_s": 13.600000709
+  },
+  {
+    "sim_time": 50.400002628,
+    "event": "llm_request",
+    "observation_id": 7,
+    "agent_memory": {
+      "phase": "VERIFY",
+      "coarse_region_xyxy": [
+        -6.0,
+        -2.0,
+        -3.0,
+        2.5
+      ],
+      "visited_viewpoints": [
+        "frontier_32_28"
+      ],
+      "viewpoint_attempts": {
+        "frontier_32_28": {
+          "attempts": 1,
+          "failures": 0,
+          "visited": true,
+          "last_failure_s": null
+        }
+      },
+      "recent_results": [
+        {
+          "tool_id": 1,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 2.100000109,
+          "observation_id": 1,
+          "status": "SUCCEEDED",
+          "reason": "scan_completed",
+          "ended_s": 17.400000907,
+          "duration_s": 15.300000798
+        },
+        {
+          "tool_id": 2,
+          "action": "explore",
+          "candidate_id": "frontier_32_28",
+          "object_id": null,
+          "started_s": 20.100001048,
+          "observation_id": 3,
+          "status": "SUCCEEDED",
+          "reason": "exploration_waypoint_reached",
+          "ended_s": 34.000001773,
+          "duration_s": 13.900000725000002
+        },
+        {
+          "tool_id": 3,
+          "action": "scan",
+          "candidate_id": null,
+          "object_id": null,
+          "started_s": 36.700001914,
+          "observation_id": 5,
+          "status": "SUCCEEDED",
+          "reason": "target_observed",
+          "ended_s": 50.300002623,
+          "duration_s": 13.600000709
+        }
+      ],
+      "consecutive_holds": 0,
+      "max_consecutive_holds": 3
+    }
+  },
+  {
+    "event": "agent_tool_started",
+    "sim_time": 53.50000279,
+    "tool_id": 4,
+    "action": "approach",
+    "candidate_id": "approach_obj_004",
+    "object_id": "obj_004",
+    "started_s": 53.50000279,
+    "observation_id": 7,
+    "position": [
+      -3.075,
+      0.22499999999999964,
+      1.0
+    ]
+  },
+  {
+    "event": "decision",
+    "sim_time": 53.50000279,
+    "action": {
+      "task_id": "fc1b6b442ef8",
+      "observation_id": 7,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "reason_code": "target_visible"
+    }
+  },
+  {
+    "event": "agent_tool_result",
+    "sim_time": 67.400003515,
+    "tool_id": 4,
+    "action": "approach",
+    "candidate_id": "approach_obj_004",
+    "object_id": "obj_004",
+    "started_s": 53.50000279,
+    "observation_id": 7,
+    "position": [
+      -3.075,
+      0.22499999999999964,
+      1.0
+    ],
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "ended_s": 67.400003515,
+    "duration_s": 13.900000724999991
+  },
+  {
+    "event": "result",
+    "sim_time": 67.400003515,
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "policy": "qwen",
+    "frames": 303,
+    "llm_calls": 4,
+    "simulation_seconds": 67.1000035
+  }
+]

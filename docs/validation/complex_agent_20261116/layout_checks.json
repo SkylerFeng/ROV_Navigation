@@ -1,0 +1,20 @@
+[
+  {
+    "scene": "west_baffles",
+    "start_safe": true,
+    "reachable_standoff_cells": 786,
+    "clearance_disk_m": 0.4
+  },
+  {
+    "scene": "east_equipment",
+    "start_safe": true,
+    "reachable_standoff_cells": 920,
+    "clearance_disk_m": 0.4
+  },
+  {
+    "scene": "wrong_hint_box",
+    "start_safe": true,
+    "reachable_standoff_cells": 907,
+    "clearance_disk_m": 0.4
+  }
+]

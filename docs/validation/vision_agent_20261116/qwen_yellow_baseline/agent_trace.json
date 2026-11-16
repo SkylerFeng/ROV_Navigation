@@ -1,0 +1,79 @@
+[
+  {
+    "sim_time": 0.300000015,
+    "event": "llm_request",
+    "observation_id": 1,
+    "agent_memory": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 2.900000151,
+    "action": {
+      "task_id": "0d2fe84618b6",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "sim_time": 18.300000954,
+    "event": "llm_request",
+    "observation_id": 3,
+    "agent_memory": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 20.90000109,
+    "action": {
+      "task_id": "0d2fe84618b6",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_34_28",
+      "reason_code": "search_unseen_area"
+    }
+  },
+  {
+    "sim_time": 31.300001632,
+    "event": "llm_request",
+    "observation_id": 5,
+    "agent_memory": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 33.700001757,
+    "action": {
+      "task_id": "0d2fe84618b6",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    }
+  },
+  {
+    "sim_time": 47.400002472,
+    "event": "llm_request",
+    "observation_id": 7,
+    "agent_memory": null
+  },
+  {
+    "event": "decision",
+    "sim_time": 50.500002633,
+    "action": {
+      "task_id": "0d2fe84618b6",
+      "observation_id": 7,
+      "action": "approach",
+      "candidate_id": "approach_obj_005",
+      "object_id": "obj_005",
+      "reason_code": "target_visible"
+    }
+  },
+  {
+    "event": "result",
+    "sim_time": 64.700003374,
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "policy": "qwen",
+    "frames": 291,
+    "llm_calls": 4,
+    "simulation_seconds": 64.40000335900001
+  }
+]

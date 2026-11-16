@@ -1,0 +1,9 @@
+{
+  "source": "logs/hardening_20261116/detector/train/weights",
+  "status": "Experimental detector; improved offline metrics, three latest navigation trials timed out. Not a stable navigation release.",
+  "files": {
+    "best.onnx": "9538df1b1f64d4ea8e760878aef6adbaaf4bf0f0c7a2c06bdb0db74a22b597b0",
+    "best.pt": "0375bca8490df1b365c7c9ce28d494216c870b50defedd69822a1d4569734f3d"
+  },
+  "restore": "Copy best.onnx and best.pt to source directory to reproduce archived suite paths."
+}

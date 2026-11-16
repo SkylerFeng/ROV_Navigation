@@ -1,0 +1,19 @@
+{
+  "layout_changed": false,
+  "task_timeout_sim_s": 420,
+  "cloud_policy": "qwen",
+  "detector_test_layout": "wrong_hint_box",
+  "training_layouts": [
+    "west_baffles",
+    "east_equipment"
+  ],
+  "camera_data": "OceanSim simulated RGB with offline visible instance annotations",
+  "static_prior": "known pool collider, no target truth",
+  "limitations": [
+    "single real API run per configuration",
+    "fixed depth and ideal range/pose",
+    "no real underwater dataset validation",
+    "mask occupancy is not measured occlusion fraction",
+    "different occupancy grid resolutions remain"
+  ]
+}

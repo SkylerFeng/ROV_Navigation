@@ -1,0 +1,17 @@
+{
+  "calibration": {
+    "url": "https://mdpi-res.com/d_attachment/sensors/sensors-15-29831/article_deploy/sensors-15-29831.pdf",
+    "sha256": "99d413193cf2a2490c482af3fc4f52d80bb46ea1b97061460dece5440a3e1e61",
+    "accessed": "2026-11-16"
+  },
+  "fusion": {
+    "url": "https://research.dial.uclouvain.be/bitstreams/8de9f627-a15d-4c7d-8f9a-0f963a912416/download",
+    "sha256": "91ba2d545739d5042a0b4c8ad23ebbcfb7d335387cd9b36ad159061ce3b1ad3b",
+    "accessed": "2026-11-16"
+  },
+  "sea_thru": {
+    "url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Akkaynak_Sea-Thru_A_Method_for_Removing_Water_From_Underwater_Images_CVPR_2019_paper.pdf",
+    "sha256": "c676a53a4969b84e5895dc6018c800388b6bf7ffded226b634d8d7d6cb75c54e",
+    "accessed": "2026-11-16"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "logs/agent_vision_20261116/qwen_yellow_clahe/semantic/events.jsonl": "677611fb5d85c611d94d75f283fb4071c1a83e0a8faadca27b9b02f74bdb7275",
+  "logs/agent_vision_20261116/qwen_yellow_clahe/semantic/latest_sensor.npz": "879bd4f2d3e82a9c36034a74588f643bef5849988d8635781a7b158345e20f39",
+  "logs/agent_vision_20261116/qwen_yellow_clahe/sim/run.json": "9ee310760e7975ada858dda384fa5f790af8f8d6fde8e3656b6bc87e100a2002",
+  "logs/agent_vision_20261116/qwen_yellow_clahe/manifest.json": "ac48635a9bb914f2874dca19268c1adbc345f6df246b2c3231720cc2efa6bdcd"
+}

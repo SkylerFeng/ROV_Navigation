@@ -1,0 +1,14 @@
+{
+  "run": "logs/complex_agent_20261116/wrong_hint_box",
+  "status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.000021905,
+  "path_length_m": 9.783943396092146,
+  "stationary_turn_seconds": 157.80000822991133,
+  "total_yaw_travel_deg": 1520.1785055506207,
+  "yaw_acceleration_p95_rad_s2": 0.10674213017099846,
+  "llm_calls": 15,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

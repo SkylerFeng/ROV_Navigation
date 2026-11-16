@@ -1,0 +1,39 @@
+#usda 1.0
+(
+ defaultPrim = "World"
+ subLayers = [@pool_platform_semantic.usda@]
+)
+over "World" {
+ over "SemanticObjects" {
+  over "YellowPipe" {
+   double3 xformOp:translate = (0.4, 0.9, 1.12)
+   float xformOp:rotateZ = 25.0
+  }
+  over "BluePipe" {
+   double3 xformOp:translate = (-2.2, -1.7, 1.12)
+   float xformOp:rotateZ = 0.0
+  }
+  over "YellowBox" {
+   double3 xformOp:translate = (-4.5, 0.7, 1.05)
+   float xformOp:rotateZ = 0.0
+  }
+  over "RedBox" {
+   double3 xformOp:translate = (-3.4, -1.25, 1.05)
+   float xformOp:rotateZ = 15.0
+  }
+  def Cube "BoxScreen" (prepend apiSchemas = ["PhysicsCollisionAPI"]) {
+   double size = 1
+   color3f[] primvars:displayColor = [(0.25, 0.28, 0.3)]
+   double3 xformOp:translate = (-3.2, 0.6, 1.1)
+   float3 xformOp:scale = (0.25, 1.1, 0.85)
+   uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+  }
+  def Cube "SidePillar" (prepend apiSchemas = ["PhysicsCollisionAPI"]) {
+   double size = 1
+   color3f[] primvars:displayColor = [(0.25, 0.28, 0.3)]
+   double3 xformOp:translate = (-1.0, 1.65, 1.1)
+   float3 xformOp:scale = (0.45, 0.45, 0.85)
+   uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+  }
+ }
+}
