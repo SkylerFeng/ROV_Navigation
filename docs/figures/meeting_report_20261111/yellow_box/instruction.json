@@ -1,0 +1,21 @@
+{
+  "instruction": "靠近黄色方块，不要找管子。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "yellow",
+    "surface_standoff_m": null,
+    "reason": "明确指定目标为黄色方块（'方块'是'box'的中文同义词），并排除管子，符合单目标找寻与接近任务要求。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.154486673000065,
+  "usage": {
+    "total_tokens": 469,
+    "completion_tokens": 75,
+    "prompt_tokens": 394,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "instruction": "请找到红色箱子，在它旁边停住。",
+  "category": "box",
+  "color": "red",
+  "surface_standoff_m": 0.8
+}

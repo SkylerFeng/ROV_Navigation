@@ -1,0 +1,14 @@
+{
+  "run": "logs/meeting_report_20261111/red_box",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 223.60001166200001,
+  "path_length_m": 3.887657179950802,
+  "stationary_turn_seconds": 107.6000056117773,
+  "total_yaw_travel_deg": 1015.0133743598736,
+  "yaw_acceleration_p95_rad_s2": 0.14853403119122896,
+  "llm_calls": 9,
+  "recovery_attempts": 2,
+  "verification_failures": 2,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

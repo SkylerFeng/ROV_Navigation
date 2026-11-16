@@ -1,0 +1,5 @@
+{
+  "source": "logs/meeting_report_20261111/blue_pipe/semantic/latest_sensor.npz",
+  "snapshot_event_sim_s": 28.300001475,
+  "note": "Last saved RGB snapshot, nominal 2s interval; event timestamp is processing time, not exact camera exposure or terminal frame. Detection overlay is original saved pipeline output, not re-inference."
+}

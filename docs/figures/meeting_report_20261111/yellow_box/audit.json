@@ -1,0 +1,78 @@
+{
+  "target": {
+    "id": "YellowBox",
+    "category": "box",
+    "color": "yellow",
+    "position": [
+      -3.6,
+      1.55,
+      1.05
+    ],
+    "yaw": 0
+  },
+  "instruction": "靠近黄色方块，不要找管子。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_yellow_box_turn",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 64.50000336400001,
+  "frames": 299,
+  "path_length_m": 2.189097073653782,
+  "actual_ego_updates": 2,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.900000099,
+      "task_id": "a8189aad9ada",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 19.500001017,
+      "task_id": "a8189aad9ada",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_34_28",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 31.900001663,
+      "task_id": "a8189aad9ada",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required_before_approach"
+    },
+    {
+      "sim_time": 48.300002519,
+      "task_id": "a8189aad9ada",
+      "observation_id": 7,
+      "action": "approach",
+      "candidate_id": "approach_obj_005",
+      "object_id": "obj_005",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.005732462206024025,
+  "target_surface_error_p95_m": 0.01530224281534408,
+  "llm_calls": 4,
+  "evidence_directory": "logs/meeting_report_20261111/yellow_box",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.2174685143190866,
+  "final_target_surface_distance_xy_m": 0.987574478092967,
+  "offline_verified": true,
+  "exploration_verified": true,
+  "contact_evidence": "no_reports"
+}

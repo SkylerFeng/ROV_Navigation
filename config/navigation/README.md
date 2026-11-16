@@ -42,7 +42,7 @@ python3 scripts/run_semantic_trial.py --gui --policy qwen --env-file .env.semant
 | no_replan_distance_m | 0.2 m | 接近目标时的“不再重规划”距离阈值 |
 | planning_horizon_m | 3 m | 规划视距，同时设置 FSM 和 manager |
 | map_resolution_m | 0.05 m | EGO 栅格分辨率，越小内存与计算负担越大 |
-| obstacle_inflation_m | 0.5 m | EGO 障碍膨胀距离，影响通道是否可通过 |
+| obstacle_inflation_m | 0.25 m | EGO 障碍膨胀距离，影响通道是否可通过 |
 | collision_distance_m | 0.35 m | 优化器障碍距离代价参数，不等于严格安全保证 |
 | collision_weight | 3 | 碰撞代价权重 |
 | trajectory_lookahead_s | 0.5 s | 轨迹服务前瞻时间 |

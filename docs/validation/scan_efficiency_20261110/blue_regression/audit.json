@@ -1,0 +1,63 @@
+{
+  "target": {
+    "id": "BluePipe",
+    "category": "pipe",
+    "color": "blue",
+    "position": [
+      -3.6,
+      -1.4,
+      1.12
+    ],
+    "yaw": 25
+  },
+  "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。",
+  "policy": "rule",
+  "scene": "pool_platform_semantic_blue_search",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 23.800001241,
+  "frames": 119,
+  "path_length_m": 0.8023401301446054,
+  "actual_ego_updates": 1,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 0.300000015,
+      "task_id": "b889b2f04bc6",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "observe_unknown"
+    },
+    {
+      "sim_time": 11.600000604,
+      "task_id": "b889b2f04bc6",
+      "observation_id": 2,
+      "action": "approach",
+      "object_id": "obj_004",
+      "candidate_id": "approach_obj_004",
+      "reason_code": "confirmed_target"
+    }
+  ],
+  "target_surface_error_median_m": 0.06327570803379312,
+  "target_surface_error_p95_m": 0.07359221519165621,
+  "llm_calls": 0,
+  "evidence_directory": "logs/scan_efficiency_20261110/blue_regression",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.4789235924314605,
+  "final_target_surface_distance_xy_m": 1.1409775407816334,
+  "offline_verified": true,
+  "exploration_verified": true,
+  "contact_evidence": "no_reports"
+}

@@ -11,7 +11,7 @@ CONFIG = ROOT / 'config/semantic'
 TASK_KEYS = set('instruction category color depth_m surface_standoff_m arrival_tolerance_m hold_seconds max_speed_at_completion max_observation_age_s detector_confidence confirmation_frames grid_resolution_m clearance_m timeout_sim_s action_timeout_sim_s'.split())
 RUNTIME_KEYS = {
     'recovery': 'timeout_s look_s sweep_deg max_attempts association_radius_m target_memory_s cooldown_s explore_commit_s',
-    'scan': 'sweep_deg timeout_s yaw_step_rad max_sectors_per_viewpoint',
+    'scan': 'sweep_deg timeout_s yaw_step_rad max_sectors_per_viewpoint nearest_endpoint',
     'verification': 'timeout_s freshness_s heading_tolerance_deg distance_near_margin_m distance_far_margin_m',
     'execution': 'tick_s snapshot_interval_s hold_s blocked_grace_s max_llm_calls progress_timeout_s progress_distance_m',
     'motion': 'hold_max_speed_m_s position_kp yaw_kp max_yaw_rate_rad_s lease_timeout_s',
@@ -77,6 +77,9 @@ def load_runtime(path=None):
     value = merge_known(base, read_object(path), 'runtime') if path else base
     for group, entries in value.items():
         for key, item in entries.items():
+            if key == 'nearest_endpoint':
+                if not isinstance(item,bool):raise ValueError('scan.nearest_endpoint must be boolean')
+                continue
             if key == 'enable_thinking':
                 if item is not False:
                     raise ValueError('llm.enable_thinking must be false for the current JSON action contract')

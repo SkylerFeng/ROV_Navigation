@@ -1,0 +1,5 @@
+{
+  "source": "logs/meeting_report_20261111/red_box/semantic/latest_sensor.npz",
+  "snapshot_event_sim_s": 222.100011583,
+  "note": "Last saved RGB snapshot, nominal 2s interval; event timestamp is processing time, not exact camera exposure or terminal frame. Detection overlay is original saved pipeline output, not re-inference."
+}

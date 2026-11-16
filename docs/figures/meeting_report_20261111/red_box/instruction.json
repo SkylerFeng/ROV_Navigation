@@ -1,0 +1,21 @@
+{
+  "instruction": "请找到红色箱子，在距离它表面八十厘米的位置停住。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "red",
+    "surface_standoff_m": 0.8,
+    "reason": ""
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 1.4667078290003701,
+  "usage": {
+    "total_tokens": 438,
+    "completion_tokens": 40,
+    "prompt_tokens": 398,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}

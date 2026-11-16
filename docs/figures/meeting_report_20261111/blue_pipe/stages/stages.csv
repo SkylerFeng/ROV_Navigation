@@ -1,0 +1,4 @@
+sim_time_s,event,action_or_state,reason,object_id,waypoint
+1.900000099,decision,scan,scan_required_before_detect,,null
+17.100000891,decision,approach,target_visible,obj_003,"[-2.4749999999999996, -0.5250000000000004, 1.0]"
+29.800001554,result,SUCCEEDED,visual_identity_range_heading_and_hold_verified,,

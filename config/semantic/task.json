@@ -11,7 +11,7 @@
   "detector_confidence": 0.45,
   "confirmation_frames": 3,
   "grid_resolution_m": 0.15,
-  "clearance_m": 0.5,
+  "clearance_m": 0.25,
   "timeout_sim_s": 300,
   "action_timeout_sim_s": 75
 }

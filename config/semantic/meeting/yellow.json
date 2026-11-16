@@ -1,0 +1,6 @@
+{
+  "instruction": "靠近黄色方块，不要找管子。",
+  "category": "box",
+  "color": "yellow",
+  "surface_standoff_m": 0.8
+}

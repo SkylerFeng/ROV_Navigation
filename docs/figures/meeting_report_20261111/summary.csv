@@ -1,0 +1,4 @@
+name,instruction,run,status,reason,strict_pass,seconds,path_m,contact_pairs,decision_calls,surface_distance_m,last_snapshot_event_sim_s
+blue_pipe,不要黄色管子，请靠近蓝色管子，距它表面保持一米。,logs/meeting_report_20261111/blue_pipe,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,29.500001539000003,0.9502056570145021,0,2,0.9946624506953172,28.300001475
+yellow_box,靠近黄色方块，不要找管子。,logs/meeting_report_20261111/yellow_box,SUCCEEDED,visual_identity_range_heading_and_hold_verified,True,64.50000336400001,2.189097073653782,0,4,0.987574478092967,63.300003301
+red_box,请找到红色箱子，在距离它表面八十厘米的位置停住。,logs/meeting_report_20261111/red_box,SUCCEEDED,visual_identity_range_heading_and_hold_verified,False,223.60001166200001,3.887657179950802,1,9,0.7382615653127055,222.100011583

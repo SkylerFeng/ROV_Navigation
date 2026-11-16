@@ -1,0 +1,112 @@
+{
+  "target": {
+    "id": "RedBox",
+    "category": "box",
+    "color": "red",
+    "position": [
+      -4.35,
+      0.25,
+      1.05
+    ],
+    "yaw": 15
+  },
+  "instruction": "请找到红色箱子，在距离它表面八十厘米的位置停住。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_red_screened",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 223.60001166200001,
+  "frames": 946,
+  "path_length_m": 3.887657179950802,
+  "actual_ego_updates": 8,
+  "contact_pairs": 1,
+  "contact_min_separation_m": -0.00026469974545761943,
+  "max_contact_impulse_norm": 0.09953174334217275,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.900000099,
+      "task_id": "7c05e252773a",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 19.300001006,
+      "task_id": "7c05e252773a",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_34_28",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 31.500001642,
+      "task_id": "7c05e252773a",
+      "observation_id": 5,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 54.300002831,
+      "task_id": "7c05e252773a",
+      "observation_id": 7,
+      "action": "explore",
+      "candidate_id": "frontier_26_28",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 84.300004396,
+      "task_id": "7c05e252773a",
+      "observation_id": 10,
+      "action": "approach",
+      "candidate_id": "approach_obj_009",
+      "object_id": "obj_009",
+      "reason_code": "target_visible"
+    },
+    {
+      "sim_time": 129.700006764,
+      "task_id": "7c05e252773a",
+      "observation_id": 26,
+      "action": "explore",
+      "candidate_id": "frontier_20_28",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 150.90000787,
+      "task_id": "7c05e252773a",
+      "observation_id": 35,
+      "action": "approach",
+      "candidate_id": "approach_obj_010",
+      "object_id": "obj_010",
+      "reason_code": "target_visible"
+    },
+    {
+      "sim_time": 194.300010133,
+      "task_id": "7c05e252773a",
+      "observation_id": 37,
+      "action": "approach",
+      "candidate_id": "approach_obj_011",
+      "object_id": "obj_011",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.0009623960192266662,
+  "target_surface_error_p95_m": 0.01230092500681673,
+  "llm_calls": 9,
+  "evidence_directory": "logs/meeting_report_20261111/red_box",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.003464973086697,
+  "final_target_surface_distance_xy_m": 0.7382615653127055,
+  "offline_verified": false,
+  "exploration_verified": false,
+  "contact_evidence": "penetration_or_impulse_recorded"
+}

@@ -1,6 +1,6 @@
 import math
 import unittest
-from semantic_recovery import matching_target, recovery_heading
+from semantic_recovery import matching_target, recovery_heading, scan_entry
 from tracking_control import smooth_yaw_rate
 from semantic_config import load_runtime
 
@@ -30,5 +30,24 @@ class RecoveryTests(unittest.TestCase):
             previous=new
         self.assertAlmostEqual(previous,-.3)
         self.assertEqual(smooth_yaw_rate(.3,-.3,-1,.4),0)
+
+class ScanEntryTests(unittest.TestCase):
+    def test_shortest_entry_and_same_sector(self):
+        for center_deg in range(-180,181,30):
+            center=math.radians(center_deg)
+            for yaw_deg in range(-180,181,5):
+                yaw=math.radians(yaw_deg)
+                entry,direction=scan_entry(yaw,center,120)
+                distance=lambda a:abs(math.atan2(math.sin(a-yaw),math.cos(a-yaw)))
+                self.assertLessEqual(distance(entry),distance(center+math.pi/3)+1e-9)
+                end=entry+direction*2*math.pi/3
+                self.assertAlmostEqual((entry+end)/2,center)
+
+    def test_near_low_endpoint_sweeps_positive(self):
+        entry,direction=scan_entry(math.radians(55),math.radians(120),120)
+        self.assertAlmostEqual(entry,math.radians(60));self.assertEqual(direction,1.)
+
+    def test_tie_retains_clockwise(self):
+        self.assertEqual(scan_entry(0,0,120)[1],-1.)
 
 if __name__=='__main__':unittest.main()

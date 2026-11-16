@@ -12,7 +12,7 @@ class RecoveryStateTests(unittest.TestCase):
     def fixture(self):
         n=NS(time=10.,runtime=load_runtime(),cfg=load_task(),target_anchor=[1,0,1],
              target_seen=9.,recovery_attempts=0,cooldown_until=-100.,mode='READY',
-             anchor=None,hold_yaw=0.,started=1.,last_sensor=10.,last_frame_wall=0.,
+             anchor=None,hold_yaw=0.,scan_direction=-1.,started=1.,last_sensor=10.,last_frame_wall=0.,
              grid=None,planner_ready=True,last_result='',llm_errors=0,failed_approaches=[],failed_explores=[],
              frames=0,memory=NS(observe=lambda t:[],objects={}),status=NS(publish=Mock()))
         n.now=lambda:n.time
@@ -99,6 +99,18 @@ class RecoveryStateTests(unittest.TestCase):
         n.grid=NS(candidates=lambda *a,**k:[{'kind':'approach','object_id':'blue'}])
         obs=SemanticNavigation.observation(n,[0,0,1])
         self.assertEqual(obs['candidates'],[]);self.assertFalse(obs['scan_completed'])
+
+    def test_reverse_motion_does_not_complete_sweep(self):
+        import math
+        n=self.fixture();n.mode='SCANNING';n.scan_direction=1.;n.scan_accum=math.radians(115)
+        n.previous_yaw=math.radians(10);n.action_started=10.;n.scans_at_viewpoint=1
+        self.tick(n)  # yaw moved backwards from 10 degrees to zero
+        self.assertEqual(n.mode,'SCANNING')
+        self.assertAlmostEqual(n.scan_accum,math.radians(105))
+        self.assertGreater(n.lease.call_args.args[1],0.)
+        n.scan_direction=-1.;n.previous_yaw=0.
+        self.tick(n)
+        self.assertLess(n.lease.call_args.args[1],0.)
 
     def test_scan_alignment_is_bounded(self):
         n=self.fixture();n.mode='SCAN_ALIGN';n.anchor=[0,0,1];n.hold_yaw=2.;n.action_started=10.

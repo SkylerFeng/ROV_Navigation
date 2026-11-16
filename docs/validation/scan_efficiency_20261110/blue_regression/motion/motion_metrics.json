@@ -1,0 +1,14 @@
+{
+  "run": "logs/scan_efficiency_20261110/blue_regression",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 23.800001241,
+  "path_length_m": 0.8023401301446054,
+  "stationary_turn_seconds": 12.800000667572021,
+  "total_yaw_travel_deg": 141.38018797783133,
+  "yaw_acceleration_p95_rad_s2": 0.1849934114109954,
+  "llm_calls": 0,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

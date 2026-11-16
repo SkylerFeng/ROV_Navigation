@@ -1,0 +1,7 @@
+{
+  "source": "logs/meeting_blue_qwen_20261111_124352",
+  "kind": "offline re-inference on recorded frame, not live GUI verification",
+  "detections": 1,
+  "localized": 1,
+  "packet_bytes": 62489
+}

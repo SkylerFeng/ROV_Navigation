@@ -1,0 +1,20 @@
+[
+  {
+    "name": "blue_pipe",
+    "scene": "scenes/pool_platform_semantic_blue_search.usda",
+    "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。",
+    "wall_limit": 600
+  },
+  {
+    "name": "yellow_box",
+    "scene": "scenes/pool_platform_semantic_yellow_box_turn.usda",
+    "instruction": "靠近黄色方块，不要找管子。",
+    "wall_limit": 600
+  },
+  {
+    "name": "red_box",
+    "scene": "scenes/pool_platform_semantic_red_screened.usda",
+    "instruction": "请找到红色箱子，在距离它表面八十厘米的位置停住。",
+    "wall_limit": 600
+  }
+]

@@ -5,7 +5,7 @@
     "no_replan_distance_m": 0.2,
     "planning_horizon_m": 3.0,
     "map_resolution_m": 0.05,
-    "obstacle_inflation_m": 0.5,
+    "obstacle_inflation_m": 0.25,
     "collision_distance_m": 0.35,
     "collision_weight": 3.0,
     "trajectory_lookahead_s": 0.5

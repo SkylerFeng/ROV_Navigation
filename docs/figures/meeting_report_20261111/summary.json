@@ -1,0 +1,44 @@
+[
+  {
+    "name": "blue_pipe",
+    "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。",
+    "run": "logs/meeting_report_20261111/blue_pipe",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "strict_pass": true,
+    "seconds": 29.500001539000003,
+    "path_m": 0.9502056570145021,
+    "contact_pairs": 0,
+    "decision_calls": 2,
+    "surface_distance_m": 0.9946624506953172,
+    "last_snapshot_event_sim_s": 28.300001475
+  },
+  {
+    "name": "yellow_box",
+    "instruction": "靠近黄色方块，不要找管子。",
+    "run": "logs/meeting_report_20261111/yellow_box",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "strict_pass": true,
+    "seconds": 64.50000336400001,
+    "path_m": 2.189097073653782,
+    "contact_pairs": 0,
+    "decision_calls": 4,
+    "surface_distance_m": 0.987574478092967,
+    "last_snapshot_event_sim_s": 63.300003301
+  },
+  {
+    "name": "red_box",
+    "instruction": "请找到红色箱子，在距离它表面八十厘米的位置停住。",
+    "run": "logs/meeting_report_20261111/red_box",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "strict_pass": false,
+    "seconds": 223.60001166200001,
+    "path_m": 3.887657179950802,
+    "contact_pairs": 1,
+    "decision_calls": 9,
+    "surface_distance_m": 0.7382615653127055,
+    "last_snapshot_event_sim_s": 222.100011583
+  }
+]

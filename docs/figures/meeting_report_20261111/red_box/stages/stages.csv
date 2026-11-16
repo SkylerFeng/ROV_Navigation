@@ -1,0 +1,14 @@
+sim_time_s,event,action_or_state,reason,object_id,waypoint
+1.900000099,decision,scan,scan_required,,null
+19.300001006,decision,explore,search_unseen_area,,"[-2.625, -0.5250000000000004, 1.0]"
+31.500001642,decision,scan,scan_required,,null
+54.300002831,decision,explore,search_unseen_area,,"[-3.825, -0.5250000000000004, 1.0]"
+84.300004396,decision,approach,target_visible,obj_009,"[-3.675, -0.5250000000000004, 1.0]"
+109.000005684,verification_failed,,,obj_009,
+109.000005684,recovery_started,,verification_failed,,
+129.700006764,decision,explore,search_unseen_area,,"[-4.725, -0.5250000000000004, 1.0]"
+141.70000739,recovery_started,,approach_became_invalid,,
+150.90000787,decision,approach,target_visible,obj_010,"[-4.125, -0.8250000000000002, 1.0]"
+191.300009977,verification_failed,,,obj_010,
+194.300010133,decision,approach,target_visible,obj_011,"[-4.725, -0.6749999999999998, 1.0]"
+223.900011677,result,SUCCEEDED,visual_identity_range_heading_and_hold_verified,,

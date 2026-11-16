@@ -1,0 +1,23 @@
+[
+  {
+    "target": "blue",
+    "ego_inflation_m": 0.25,
+    "semantic_clearance_m": 0.25,
+    "semantic_resolution_m": 0.15,
+    "optimizer_collision_distance_m": 0.35
+  },
+  {
+    "target": "yellow",
+    "ego_inflation_m": 0.25,
+    "semantic_clearance_m": 0.25,
+    "semantic_resolution_m": 0.15,
+    "optimizer_collision_distance_m": 0.35
+  },
+  {
+    "target": "red",
+    "ego_inflation_m": 0.25,
+    "semantic_clearance_m": 0.25,
+    "semantic_resolution_m": 0.15,
+    "optimizer_collision_distance_m": 0.35
+  }
+]

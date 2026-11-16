@@ -15,7 +15,7 @@ from nav_msgs.msg import Odometry
 from std_msgs.msg import String
 from experiment import ROOT,load_experiment
 from semantic_core import ObjectMemory,ExplorationGrid,localize_detection,rule_action,validate_action,refresh_selected_explore
-from semantic_recovery import matching_target,bearing,recovery_heading
+from semantic_recovery import matching_target,bearing,recovery_heading,scan_entry
 from semantic_detector import Detector
 from semantic_color import ColorModel
 
@@ -37,7 +37,7 @@ class SemanticNavigation(Node):
         c=load_experiment('platform_semantic')
         self.grid=ExplorationGrid(json.loads((ROOT/c['water_boundary']).read_text()),self.cfg['grid_resolution_m'],self.cfg['clearance_m'],inspection_range=self.runtime['exploration']['inspection_range_m'])
         self.mode='WAITING';self.scan_completed=False;self.scan_accum=0.;self.previous_yaw=None
-        self.next_scan_center=None
+        self.next_scan_center=None;self.scan_direction=-1.
         self.anchor=None;self.hold_yaw=0.;self.started=None;self.active=None;self.action_started=0
         self.last_result='startup';self.verified_since=None;self.last_tick=-math.inf;self.last_frame_wall=time.monotonic()
         self.goal=self.create_publisher(PoseStamped,'/move_base_simple/goal',10)
@@ -58,8 +58,37 @@ class SemanticNavigation(Node):
         args.output.mkdir(parents=True,exist_ok=True)
         self.log=(args.output/'events.jsonl').open('w');self.frames=0;self.path=[];self.last_snapshot=-100
         self.events=0;self.llm_calls=0;self.llm_errors=0;self.scans_at_viewpoint=0;self.failed_approaches=[];self.failed_explores=[];self.last_verify_log=-100.;self.target_anchor=None;self.target_seen=-math.inf;self.recovery_attempts=0;self.recovery_until=-math.inf;self.cooldown_until=-math.inf
+        self.debug_publisher=self.create_publisher(String,'/rov/semantic/debug',1)
+        self.debug_decision=None;self.debug_stages=[]
+        self.debug_camera_source=None;self.debug_camera_cache=None;self.debug_camera_error=None
+        self.create_timer(.5,self.publish_debug)
         self.record('start',{'policy':args.policy,'model':str(args.model),'task':self.cfg,'task_id':self.task_id})
+    def publish_debug(self):
+        # Read-only view: never call observation(), which mutates decision state.
+        if self.debug_publisher.get_subscription_count()==0:return
+        from semantic_debug import snapshot
+        payload=snapshot(self)
+        if self.debug_camera_source is not None:
+            rgb,t,detections=self.debug_camera_source
+            try:
+                if self.debug_camera_cache is None or self.debug_camera_cache['sim_time']!=t:
+                    from semantic_debug_camera import encode_frame
+                    self.debug_camera_cache=encode_frame(rgb,t,detections)
+                payload['camera']=self.debug_camera_cache
+                self.debug_camera_error=None
+            except Exception as exc:
+                # Debug imagery must never stop navigation or show stale boxes on a new image.
+                self.debug_camera_error=type(exc).__name__
+        payload['camera_error']=self.debug_camera_error
+        self.debug_publisher.publish(String(data=json.dumps(payload,ensure_ascii=False,allow_nan=False)))
     def record(self,kind,data):
+        if kind=='decision':self.debug_decision={'sim_time':self.now(),**data}
+        if kind in ('decision','recovery_started','navigation_no_progress','verification_failed','result'):
+            action=data.get('action',{})
+            self.debug_stages.append({'t':self.now(),'event':kind,'action':action.get('action',data.get('status','')),
+                                      'reason':action.get('reason_code',data.get('reason',''))})
+            self.debug_stages=self.debug_stages[-6:]
+
         self.log.write(json.dumps({'event':kind,'sim_time':self.now(),**data},ensure_ascii=False,allow_nan=False)+chr(10));self.log.flush();self.events+=1
     def now(self):return self.get_clock().now().nanoseconds/1e9
     def receive_odom(self,msg):self.odom=msg
@@ -91,6 +120,8 @@ class SemanticNavigation(Node):
         for d in boxes:
             location=localize_detection(rgb,depth,k,cp,cq,d['bbox'],self.color_model)
             if location is not None:found.append({**d,**location})
+        from semantic_debug_camera import detection_rows
+        self.debug_camera_source=(rgb,t,detection_rows(boxes,found))
         self.memory.update(found,t);self.grid.update(depth,k,cp,cq,xyz(self.odom.pose.pose.position))
         self.last_sensor=t;self.last_processed=t;self.last_frame_wall=time.monotonic();self.frames+=1
         self.path.append([t,*xyz(self.odom.pose.pose.position)])
@@ -148,10 +179,14 @@ class SemanticNavigation(Node):
         kind=action['action'];self.active=None
         if kind=='scan':
             self.scans_at_viewpoint+=1
-            self.mode='SCANNING';self.hold(position,yaw);self.scan_accum=0.;self.previous_yaw=yaw
+            self.mode='SCANNING';self.hold(position,yaw);self.scan_accum=0.;self.previous_yaw=yaw;self.scan_direction=-1.
             if self.next_scan_center is not None:
                 self.mode='SCAN_ALIGN'
-                self.hold(position,self.next_scan_center+math.radians(self.runtime['scan']['sweep_deg'])/2)
+                entry=self.next_scan_center+math.radians(self.runtime['scan']['sweep_deg'])/2
+                if self.runtime['scan']['nearest_endpoint']:
+                    entry,self.scan_direction=scan_entry(yaw,self.next_scan_center,self.runtime['scan']['sweep_deg'])
+                self.hold(position,entry)
+                self.record('scan_entry',{'entry_yaw':entry,'sweep_direction':self.scan_direction,'current_yaw':yaw})
                 self.next_scan_center=None
         elif kind in ('approach','explore'):
             c=next(c for c in obs['candidates'] if c['id']==action['candidate_id'])
@@ -248,7 +283,7 @@ class SemanticNavigation(Node):
                 self.record('scan_alignment_finished',{'heading_error_deg':math.degrees(error)})
                 self.mode='SCANNING';self.scan_accum=0.;self.previous_yaw=yaw;self.action_started=now
         elif self.mode=='SCANNING':
-            delta=math.atan2(math.sin(yaw-self.previous_yaw),math.cos(yaw-self.previous_yaw));self.scan_accum+=abs(delta);self.previous_yaw=yaw
+            delta=math.atan2(math.sin(yaw-self.previous_yaw),math.cos(yaw-self.previous_yaw));self.scan_accum+=self.scan_direction*delta;self.previous_yaw=yaw
             objs=self.memory.observe(now)
             found=any(o['confirmed'] and o['color']==self.cfg['color'] and o['category']==self.cfg['category'] and o['visible_now'] for o in objs)
             if found or self.scan_accum>=math.radians(self.runtime['scan']['sweep_deg']):
@@ -313,7 +348,7 @@ class SemanticNavigation(Node):
                 self.hold(p,yaw);self.last_result='verification_failed_reobserve_locally';self.scan_completed=True;self.mode='READY'
                 self.begin_recovery(p,yaw,'verification_failed')
         elif self.mode=='HOLD' and now-self.action_started>self.runtime['execution']['hold_s']:self.mode='READY'
-        self.lease('navigate' if self.mode in ('APPROACHING','EXPLORING') else 'scan' if self.mode=='SCANNING' else 'hold',yaw-self.runtime['scan']['yaw_step_rad'] if self.mode=='SCANNING' else None)
+        self.lease('navigate' if self.mode in ('APPROACHING','EXPLORING') else 'scan' if self.mode=='SCANNING' else 'hold',yaw+self.scan_direction*self.runtime['scan']['yaw_step_rad'] if self.mode=='SCANNING' else None)
         self.status.publish(String(data=json.dumps({'state':self.mode,'reason':self.last_result,'objects':len(self.memory.objects),'frames':self.frames})))
     def close(self):
         if self.mode not in ('SUCCEEDED','FAILED'):self.finish('FAILED','interrupted')

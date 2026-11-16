@@ -1,0 +1,6 @@
+{
+  "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。",
+  "category": "pipe",
+  "color": "blue",
+  "surface_standoff_m": 1.0
+}

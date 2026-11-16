@@ -1,0 +1,71 @@
+{
+  "target": {
+    "id": "BluePipe",
+    "category": "pipe",
+    "color": "blue",
+    "position": [
+      -3.6,
+      -1.4,
+      1.12
+    ],
+    "yaw": 25
+  },
+  "instruction": "不要黄色管子，请靠近蓝色管子，距它表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_blue_search",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 49.000002556,
+  "frames": 210,
+  "path_length_m": 1.0242647849783288,
+  "actual_ego_updates": 7,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.700000088,
+      "task_id": "79b23ccc3bfc",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 19.100000996,
+      "task_id": "79b23ccc3bfc",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "frontier_34_28",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 39.90000208,
+      "task_id": "79b23ccc3bfc",
+      "observation_id": 14,
+      "action": "approach",
+      "candidate_id": "approach_obj_007",
+      "object_id": "obj_007",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.002606983540074312,
+  "target_surface_error_p95_m": 0.003230052949577222,
+  "llm_calls": 4,
+  "evidence_directory": "logs/meeting_blue_qwen_20261111_122528",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.2939300170277932,
+  "final_target_surface_distance_xy_m": 0.9457065233020551,
+  "offline_verified": true,
+  "exploration_verified": true,
+  "contact_evidence": "no_reports"
+}

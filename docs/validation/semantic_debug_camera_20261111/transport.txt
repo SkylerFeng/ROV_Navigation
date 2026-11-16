@@ -1,0 +1,1 @@
+ROS image JSON transport passed; bytes: 206712

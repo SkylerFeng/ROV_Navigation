@@ -103,7 +103,7 @@ python3 scripts/run_semantic_trial.py --gui --policy rule \
 
 ### 完成验证与 API 调用
 
-- verification：heading_tolerance_deg=12、freshness_s=0.6、timeout_s=20、distance_near_margin_m=0.12、distance_far_margin_m=0.35。距离判定为 standoff−near 到 standoff+far。
+- verification：heading_tolerance_deg=12、freshness_s=0.6、timeout_s=20、distance_near_margin_m=0.12、distance_far_margin_m=0.30。距离判定为 standoff−near 到 standoff+far。
 - execution.max_llm_calls=30：每任务调用次数上限；tick_s=0.1、snapshot_interval_s=2 控制状态更新与快照间隔。
 - llm.timeout_s=15：HTTP 墙钟超时；temperature=0、max_tokens=350、enable_thinking=false。当前 JSON 协议只支持关闭 thinking。
 - 模型/服务地址在 providers.json，不把密钥写入这里。ROV_LLM_MODEL / ROV_LLM_BASE_URL 环境变量优先于文件；如之前设置过 DeepSeek 的覆盖，切换 Qwen 前应检查或 unset。
@@ -155,3 +155,11 @@ max_velocity、max_acceleration、max_heading_error_deg 等导航参数也可放
 探索评分的 `gain_power`（默认 0.5）控制信息收益递减程度，`travel_cost_weight`（默认 2.0）控制旅行距离代价。提高前者更偏向大块未检查区域，提高后者更偏向附近视点。最小视点间距和失败点排除仍独立生效。
 
 导航 `tracker.near_track_crab_deg`（默认 15°，上限 30°）限制近轨迹范围内的横向修正角，避免厘米级横向误差让 ROV 追着目标航向原地转圈。该参数和 `tracker.position_kp` 同时传到 C++ 的轨迹暂停判定；修改 C++ 后先运行 `bash scripts/build_planner.sh`。
+
+### 定向扫描效率
+
+`scan.nearest_endpoint`（默认 true）选择距离当前朝向较近的扫描端点，同一扇区可顺时针或逆时针扫描；false 保持旧的固定端点选择。扫描进度采用有方向的累计值，反向摆动不计为新增覆盖。
+
+`config/semantic/profiles/efficient_scan.json` 是可选对照配置，将语义转向上限从 0.25 调至 0.30 rad/s，影响扫描、保持朝向和恢复；不会提高导航平移速度。使用 `--runtime-config` 指定。实测与限制见 `docs/semantic_scan_efficiency_20261110.md`。
+
+水动力控制器另有 `hydrodynamics.max_yaw_rate_rad_s` 指令限幅。较快扫描需同时指定 `--overrides config/experiments/hydro_components_fast_scan.json`，否则仍被原0.25 rad/s限幅截断。配套配置保留原部件水动力系数，仅将这个控制指令上限调至0.30。

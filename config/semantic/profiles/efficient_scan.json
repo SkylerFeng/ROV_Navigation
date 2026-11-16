@@ -1,0 +1,8 @@
+{
+  "scan": {
+    "nearest_endpoint": true
+  },
+  "motion": {
+    "max_yaw_rate_rad_s": 0.3
+  }
+}

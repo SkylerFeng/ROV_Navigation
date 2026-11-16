@@ -18,3 +18,15 @@ def recovery_heading(position, target, elapsed, settings):
                        max(.1,settings['timeout_s']-settings['look_s'])))
     offset=math.radians(settings['sweep_deg'])*math.sin(2*math.pi*fraction)
     return center+offset
+
+
+def scan_entry(yaw, center, sweep_deg):
+    """Enter the same observed-space inspection sector from its nearest endpoint.
+
+    Return entry yaw and signed sweep direction; never use target ground truth.
+    Ties preserve the legacy clockwise sweep.
+    """
+    half=math.radians(sweep_deg)/2
+    high,low=center+half,center-half
+    distance=lambda a:abs(math.atan2(math.sin(a-yaw),math.cos(a-yaw)))
+    return (low,1.) if distance(low)+1e-9<distance(high) else (high,-1.)
