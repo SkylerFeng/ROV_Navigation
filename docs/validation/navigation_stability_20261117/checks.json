@@ -1,0 +1,21 @@
+{
+  "semantic_tests": 116,
+  "additional_tests": 25,
+  "additional_suites": [
+    "cloud_inflation",
+    "tracker_phase",
+    "navigation_config",
+    "regional_agent",
+    "tracking_control"
+  ],
+  "cpp": [
+    "observed_guide: passed",
+    "terminal_velocity: passed"
+  ],
+  "planner_build": "plan_env + ego_planner passed; dependency deprecation/unused-parameter warnings remain",
+  "scene_layouts_unchanged_from": "74879eb",
+  "git_push": "74879ebed880d63fa38064da9aa2b379785efe6d verified against origin/main",
+  "candidate_changes_committed": false,
+  "runtime_test_scope": "116 semantic Python tests + 25 other Python tests (141 total) and 2 C++ executables; real-API results separate",
+  "v9_planner_build": "plan_env + ego_planner passed after exact intermediate endpoint change; integration suite logged separately"
+}

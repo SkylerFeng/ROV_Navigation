@@ -197,3 +197,36 @@ max_velocity、max_acceleration、max_heading_error_deg 等导航参数也可放
 - 本次候选检测器通过 `--model logs/hardening_20261116/detector/train/weights/best.onnx` 显式选择；默认旧模型尚未替换。
 - 回归套件：`semantic/complex_hardening_suite.json`。完整说明见 `docs/complex_hardening_20261116.md`。
 - `navigation/profiles/complex_hull_clearance.json` 与 `semantic/complex_hull_task.json` 配套使用，两个规划层均设 0.40m，匹配 0.48×0.57m 碰撞盒的旋转外廓（半径约0.373m）。启用池体先验时，语义层改为与 EGO 点云一致的方形 XY 膨胀；这是复杂场景专用候选配置，不改变旧默认0.25m。
+
+## 2026-11-17 稳定性候选配置（需结合验证记录）
+
+- `semantic/stability_suite.json`：原三种复杂布局，真实 Qwen 串行测试；使用归档 ONNX。
+- `semantic/stability_task.json`：420 s 总任务时限、0.4 m 安全膨胀、0.1 m 语义栅格，对齐传感器占据格。
+- `semantic/agent.json`：`evidence_region_search` 启用观测证据驱动的区域切换；`region_coverage_threshold` 为近距离几何覆盖比例，不是目标不存在的置信度。至少还需要两个不同位置的当地扫描。
+- `semantic/runtime.json`：`execution.heading_progress_deg` 表示对准误差改善多少度才视为转向进展；反复摆动不能重复刷新同一最小误差。`recovery.escape_hull_radius_m` 是刚体碰撞盒的水平外接圆半径，改 ROV 外形后必须重新测量；`escape_max_distance_m`、`escape_timeout_s` 限制从膨胀区内退让的范围和时间。恢复使用现有 `motion.hold_max_speed_m_s` 限速，每次传感器更新重新检查短路径。
+
+结果及限制见 `docs/navigation_stability_20261117.md`；不能把参数存在理解为全部压力场景已通过。
+
+后续候选 `navigation/profiles/stability_circular.json`：`circular_xy_inflation` 控制 EGO 点云地图的水平圆形膨胀，需先 `bash scripts/build_planner.sh` 编译本地 plan_env 覆盖包。`cloud_resolution_m`、`semantic/stability_task.json` 的语义格、对应静态先验使用同一 0.05 m 分辨率。`obstacle_inflation_m=0.4` 是硬地图包络；`collision_distance_m=0.1` 是已膨胀边界之外的额外软距离，两者含义不同。
+
+`runtime.execution.entry_align_*`：路径入口对准触发角、释放角、前视路径距离与最大对准时间。取向来自观测可达路径，不直接指向可能被挡板遮挡的目标。
+
+`runtime.perception.min_depth_samples` 与 `min_foreground_fraction` 限制有效彩色测距支撑，防止一个小亮斑被当成完整导航目标。门槛与相机分辨率有关，切换相机时需重新验证。
+
+`agent.landmark_memory_s` 和 `landmark_class_lock_frames` 用于静态地标的跨次观察类别一致性；不依靠离线真值，也不适用于未经验证的移动目标。遇到锁定类别冲突会停止接近并继续观察，不自动接受最新一帧的新类别。
+
+`planner.terminal_velocity_deadband_m_s=0.025`（稳定性候选）只处理低速悬停残余速度，防止新终点曲线继承反向毫米/厘米级漂移后要求整圈对准；超过阈值保留实测速度。`runtime.exploration.viewpoint_sampling_m=0.4` 控制候选视点采样密度，地图和碰撞检查仍使用 5 cm 格，不把地图降采样成 40 cm。
+
+`planner.preinflate_cloud=true` 时 0.4 m XY 膨胀在 local_map 一次完成，EGO 不再重复 XY 膨胀；必须使用相同 cloud/map 分辨率。看到 EGO `obstacles_inflation=0` 不代表取消障碍安全区，调试地图与冻结配置需结合上游膨胀一起解释。
+
+稳定性候选限制速度 0.18 m/s、加速度 0.15 m/s²，以降低水动力滞后下的转角滑移。`runtime.execution.alignment_progress_timeout_s=8`、`alignment_progress_deg=3` 用于检测有指令但朝向不改善的卡住；无安全退让路径则停止任务，不持续顶墙重试。
+
+## 2026-11-18 西侧挡板修复与调参
+
+- `semantic/agent.json` 的 `region_min_gain_area_m2=0.05`：剩余可达观察点的最低未知面积收益；区域覆盖率和独立扫描次数达标后，还需确认没有有效视点才释放区域。不是目标不存在的概率。
+- `semantic/runtime.json` 的 `perception.sparse_*`：细管、管口或遮挡框的替代支撑条件，默认至少 200 深度像素、2% 前景、0.85 检测置信度、0.025 m 深度 MAD 和八帧类别一致确认。普通支撑仍用原 100 像素/8%，类别冲突和定位稳定性仍检查。像素门槛需随相机分辨率重新验证。
+- `semantic_support.py` 负责支撑检查；`ObjectMemory` 保留同一轨迹窗口中的严格确认帧数，单个正常帧不能跳过稀疏观测的待确认窗口。
+- `observed_guide.h` 不再对已膨胀地图添加隐含 0.1 m 硬偏移；0.4 m 机体包络和整段碰撞检查保留。中间引导点从实测状态交接下一段，最终目标验证不变。
+- 周期 `perception` 事件含所有采样 YOLO 框的支撑模式与拒绝原因；有框时保存 `sensor_snapshot`；决策/失败事件含 `map_snapshot` 与规划/跟踪反馈。它们是周期采样，不是完整录像。
+
+真实 Qwen + Isaac 三场原布局本轮均通过严格离线审核；每场一次，不代表成功率。详情与轨迹见 [本轮工作记录](../docs/navigation_stability_20261118.md)。未自动提交 GitHub。

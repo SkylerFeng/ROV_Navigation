@@ -1,0 +1,93 @@
+{
+  "target": {
+    "id": "YellowPipe",
+    "category": "pipe",
+    "color": "yellow",
+    "position": [
+      -4.75,
+      0.3,
+      1.12
+    ],
+    "yaw": 90
+  },
+  "instruction": "请找到黄色管子，不要黄色方块，停在管子表面一米处。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_west_baffles",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 103.60000540300001,
+  "frames": 519,
+  "path_length_m": 4.045397240189235,
+  "actual_ego_updates": 5,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.433333408,
+      "task_id": "153c580e0516",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "initial_scan"
+    },
+    {
+      "sim_time": 19.700001027,
+      "task_id": "153c580e0516",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_96_80",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 33.300001736,
+      "task_id": "153c580e0516",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required_before_identify"
+    },
+    {
+      "sim_time": 50.300002623,
+      "task_id": "153c580e0516",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_88_120",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 82.700004313,
+      "task_id": "153c580e0516",
+      "observation_id": 11,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 93.300004865,
+      "task_id": "153c580e0516",
+      "observation_id": 13,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.006769290614190807,
+  "target_surface_error_p95_m": 0.01621317012882016,
+  "llm_calls": 7,
+  "evidence_directory": "logs/stability_20261118/v13/west_baffles",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.5057035995711434,
+  "final_target_surface_distance_xy_m": 1.218645216931137,
+  "offline_verified": true,
+  "exploration_verified": true,
+  "contact_evidence": "no_reports"
+}

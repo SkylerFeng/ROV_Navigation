@@ -58,6 +58,7 @@ namespace ego_planner
 
   private:
     rclcpp::Clock::SharedPtr clock_;
+    double terminal_velocity_deadband_{0.0};
     /* main planning algorithms & modules */
     PlanningVisualization::Ptr visualization_;
 

@@ -1,0 +1,16 @@
+{
+  "grid_shape": [
+    320,
+    160
+  ],
+  "resolution_m": 0.05,
+  "viewpoint_sampling_m": 0.4,
+  "seconds": [
+    0.538268662,
+    0.464393601,
+    0.459955527,
+    0.446304567,
+    0.430983512
+  ],
+  "note": "CPU microbenchmark; observed free rectangle [-7,-3]..[7,3], uninspected cells; east region [1,-2,4,2.5]. Not a real-time guarantee."
+}

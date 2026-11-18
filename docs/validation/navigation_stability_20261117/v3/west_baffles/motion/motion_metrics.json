@@ -1,0 +1,14 @@
+{
+  "run": "logs/stability_20261117/v3/west_baffles",
+  "status": "FAILED",
+  "reason": "search_exhausted",
+  "simulation_seconds": 238.13334575300001,
+  "path_length_m": 5.501679465024987,
+  "stationary_turn_seconds": 151.40000789612532,
+  "total_yaw_travel_deg": 1373.1463263286541,
+  "yaw_acceleration_p95_rad_s2": 0.22046830673461118,
+  "llm_calls": 14,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

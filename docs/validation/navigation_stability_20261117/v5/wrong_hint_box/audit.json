@@ -1,0 +1,139 @@
+{
+  "target": {
+    "id": "YellowBox",
+    "category": "box",
+    "color": "yellow",
+    "position": [
+      -4.5,
+      0.7,
+      1.05
+    ],
+    "yaw": 0
+  },
+  "instruction": "请找到黄色方块，不要管子，距方块表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_wrong_hint_box",
+  "runtime_status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.000021905,
+  "frames": 2058,
+  "path_length_m": 8.322404867688029,
+  "actual_ego_updates": 25,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.700000088,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required_before_search"
+    },
+    {
+      "sim_time": 18.466667629,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "transfer_151_94",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 63.10000329,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_174_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 83.700004365,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 107.300005596,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_192_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 184.300009611,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_210_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 237.300012376,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 13,
+      "action": "scan",
+      "reason_code": "scan_uncompleted"
+    },
+    {
+      "sim_time": 260.900013606,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 15,
+      "action": "explore",
+      "candidate_id": "transfer_170_92",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 313.70001636,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 17,
+      "action": "explore",
+      "candidate_id": "transfer_140_106",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 316.500016506,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 19,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 334.100017424,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 21,
+      "action": "explore",
+      "candidate_id": "frontier_78_120",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 411.10002144,
+      "task_id": "2fa17d5639e2",
+      "observation_id": 23,
+      "action": "explore",
+      "candidate_id": "transfer_130_109",
+      "reason_code": "transit_to_unsearched_region"
+    }
+  ],
+  "target_surface_error_median_m": 4.995740954411057,
+  "target_surface_error_p95_m": 5.041652902641757,
+  "llm_calls": 12,
+  "evidence_directory": "logs/stability_20261117/v5/wrong_hint_box",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 5.072086077856701,
+  "final_target_surface_distance_xy_m": 4.859209397421689,
+  "offline_verified": false,
+  "exploration_verified": false,
+  "contact_evidence": "no_reports"
+}

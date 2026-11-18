@@ -1,0 +1,21 @@
+{
+  "instruction": "请找到黄色管子，不要黄色方块，停在管子表面一米处。",
+  "resolution": {
+    "status": "accepted",
+    "category": "pipe",
+    "color": "yellow",
+    "surface_standoff_m": 1.0,
+    "reason": "明确指定目标为黄色管子（category=pipe, color=yellow），排除黄色方块不影响目标唯一性；'停在管子表面一米处'对应 surface_standoff_m=1.0，符合[0.6,1.5]m范围。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.7560133619990665,
+  "usage": {
+    "total_tokens": 503,
+    "completion_tokens": 99,
+    "prompt_tokens": 404,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    }
+  }
+}

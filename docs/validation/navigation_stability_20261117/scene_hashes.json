@@ -1,0 +1,20 @@
+[
+  {
+    "path": "scenes/pool_platform_semantic_complex_east_equipment.usda",
+    "sha256": "0abd4da26089d3ec534afbf2e11edb2682553ccf33517230ff41504b6ca3468b",
+    "archived_sha256": "0abd4da26089d3ec534afbf2e11edb2682553ccf33517230ff41504b6ca3468b",
+    "unchanged": true
+  },
+  {
+    "path": "scenes/pool_platform_semantic_complex_west_baffles.usda",
+    "sha256": "fe86255963222259ae8d099539c986c1ab884bdb28341d8236e4445bd33b62af",
+    "archived_sha256": "fe86255963222259ae8d099539c986c1ab884bdb28341d8236e4445bd33b62af",
+    "unchanged": true
+  },
+  {
+    "path": "scenes/pool_platform_semantic_complex_wrong_hint_box.usda",
+    "sha256": "02c75d4c634f99420c41def1bd1c6cafda5af35c3ecb99744788f3a8819d5bb1",
+    "archived_sha256": "02c75d4c634f99420c41def1bd1c6cafda5af35c3ecb99744788f3a8819d5bb1",
+    "unchanged": true
+  }
+]

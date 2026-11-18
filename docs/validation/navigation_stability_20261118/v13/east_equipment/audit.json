@@ -1,0 +1,94 @@
+{
+  "target": {
+    "id": "BluePipe",
+    "category": "pipe",
+    "color": "blue",
+    "position": [
+      3.8,
+      0.6,
+      1.12
+    ],
+    "yaw": 90
+  },
+  "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_east_equipment",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 171.70000895500002,
+  "frames": 859,
+  "path_length_m": 7.209331531401,
+  "actual_ego_updates": 7,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.700000088,
+      "task_id": "ed5cde00d281",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    },
+    {
+      "sim_time": 18.100000943,
+      "task_id": "ed5cde00d281",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "transfer_149_98",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 57.100002977,
+      "task_id": "ed5cde00d281",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_184_88",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 96.300005022,
+      "task_id": "ed5cde00d281",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 119.500006232,
+      "task_id": "ed5cde00d281",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_208_80",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 155.500008109,
+      "task_id": "ed5cde00d281",
+      "observation_id": 12,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.05094834945237644,
+  "target_surface_error_p95_m": 0.07701975320897336,
+  "llm_calls": 6,
+  "evidence_directory": "logs/stability_20261118/v13/east_equipment",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.4505454973741565,
+  "final_target_surface_distance_xy_m": 1.1043835016323278,
+  "offline_verified": true,
+  "exploration_verified": true,
+  "contact_evidence": "no_reports"
+}

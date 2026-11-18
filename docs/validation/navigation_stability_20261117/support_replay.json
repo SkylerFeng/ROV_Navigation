@@ -1,0 +1,397 @@
+[
+  {
+    "run": "logs/stability_20261117/v4/west_baffles/semantic/events.jsonl",
+    "detections": [
+      {
+        "t": 322.300016809,
+        "samples": 14,
+        "foreground_fraction": 0.015158612349831116,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.645146493053776,
+          0.1905846442319964,
+          1.060978466076199
+        ]
+      },
+      {
+        "t": 324.300016913,
+        "samples": 25,
+        "foreground_fraction": 0.03662412827619327,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -3.00773521142256,
+          -1.3146743189579289,
+          1.1158116270083174
+        ]
+      },
+      {
+        "t": 328.300017122,
+        "samples": 28,
+        "foreground_fraction": 0.043735783385446994,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.626932248287794,
+          0.5755669299261625,
+          1.1104904429247626
+        ]
+      },
+      {
+        "t": 334.300017435,
+        "samples": 65,
+        "foreground_fraction": 0.10325321267198155,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.630140681229063,
+          0.5812371084242001,
+          1.1017206149448107
+        ]
+      },
+      {
+        "t": 346.633351411,
+        "samples": 42,
+        "foreground_fraction": 0.06608637445129076,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.628584323253055,
+          0.3158267092292806,
+          1.1155525741166137
+        ]
+      },
+      {
+        "t": 348.733351521,
+        "samples": 36,
+        "foreground_fraction": 0.05447503308466808,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.627486315180695,
+          0.6006239490327994,
+          1.1128405477533518
+        ]
+      },
+      {
+        "t": 350.733351625,
+        "samples": 21,
+        "foreground_fraction": 0.035671938521127745,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.631634904391433,
+          0.3170161908121911,
+          1.0933558613720968
+        ]
+      },
+      {
+        "t": 352.633351724,
+        "samples": 27,
+        "foreground_fraction": 0.05027491937790093,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -3.01208465418299,
+          -1.3124530792596745,
+          1.1086688296444498
+        ]
+      },
+      {
+        "t": 358.966685388,
+        "samples": 30,
+        "foreground_fraction": 0.05321092582295765,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.631210867367219,
+          0.6083074938350108,
+          1.1476511745100095
+        ]
+      },
+      {
+        "t": 360.633352141,
+        "samples": 16,
+        "foreground_fraction": 0.02694876374589593,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.635102989609307,
+          0.31332036316612566,
+          1.117545316927232
+        ]
+      },
+      {
+        "t": 362.700018916,
+        "samples": 31,
+        "foreground_fraction": 0.05461914058966559,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.636132343826079,
+          0.5836878211620298,
+          1.133500632938657
+        ]
+      },
+      {
+        "t": 370.700019333,
+        "samples": 22,
+        "foreground_fraction": 0.07633843405491117,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -3.0055570237090548,
+          -1.3057410366166629,
+          1.1122690810195008
+        ]
+      },
+      {
+        "t": 372.800019443,
+        "samples": 49,
+        "foreground_fraction": 0.10742605718591097,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.617397882257533,
+          0.5927005495964428,
+          1.119580555661255
+        ]
+      },
+      {
+        "t": 374.866686217,
+        "samples": 21,
+        "foreground_fraction": 0.03195705156593076,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.626645097816025,
+          0.2990752489857047,
+          1.0910522754112686
+        ]
+      },
+      {
+        "t": 376.800019651,
+        "samples": 16,
+        "foreground_fraction": 0.02496887079636986,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.643328054089399,
+          0.609556627988671,
+          1.1481013813409522
+        ]
+      },
+      {
+        "t": 378.966686431,
+        "samples": 26,
+        "foreground_fraction": 0.04202953169732791,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.637546614904915,
+          0.29604855468126146,
+          1.1248377758384474
+        ]
+      },
+      {
+        "t": 380.966686535,
+        "samples": 38,
+        "foreground_fraction": 0.06591054009272668,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.634141743734919,
+          0.34287899321398374,
+          1.1233380905031638
+        ]
+      },
+      {
+        "t": 382.933353304,
+        "samples": 38,
+        "foreground_fraction": 0.07364555327480228,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.63816277434454,
+          0.375607055450609,
+          1.1267397444302492
+        ]
+      },
+      {
+        "t": 384.900020074,
+        "samples": 25,
+        "foreground_fraction": 0.051047024703703196,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.627804689493042,
+          0.6044229730086195,
+          1.1324246803679945
+        ]
+      },
+      {
+        "t": 386.700020167,
+        "samples": 38,
+        "foreground_fraction": 0.06776506267193998,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.6214496655176855,
+          0.3627186090773078,
+          1.1204626011825352
+        ]
+      },
+      {
+        "t": 388.700020272,
+        "samples": 27,
+        "foreground_fraction": 0.03304767041771605,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.632834102433404,
+          0.23100094711961772,
+          1.1248293387979844
+        ]
+      },
+      {
+        "t": 394.700020585,
+        "samples": 14,
+        "foreground_fraction": 0.007187865496958969,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.672551018633281,
+          -0.006941226427160663,
+          1.055809675354379
+        ]
+      },
+      {
+        "t": 402.700021002,
+        "samples": 73,
+        "foreground_fraction": 0.14433544324656117,
+        "accepted_by_support_gate": false,
+        "surface": [
+          -4.603435817393186,
+          0.6116052319084275,
+          1.113293011091936
+        ]
+      }
+    ]
+  },
+  {
+    "run": "logs/stability_20261117/v1/east_equipment/semantic/events.jsonl",
+    "detections": [
+      {
+        "t": 138.800007238,
+        "samples": 4499,
+        "foreground_fraction": 0.7318202240146201,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.69451887241342,
+          0.414048500543867,
+          1.1254093669223397
+        ]
+      },
+      {
+        "t": 140.800007343,
+        "samples": 3126,
+        "foreground_fraction": 0.4944692104151924,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.665317100147459,
+          0.49564843379530854,
+          1.1140679938749596
+        ]
+      },
+      {
+        "t": 142.700007442,
+        "samples": 2854,
+        "foreground_fraction": 0.4985550493820893,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.6927723855260433,
+          0.458706382150447,
+          1.1134260531625089
+        ]
+      },
+      {
+        "t": 144.700007546,
+        "samples": 2825,
+        "foreground_fraction": 0.4868809360467355,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.6835487093897585,
+          0.4768876953698531,
+          1.1118333879405118
+        ]
+      },
+      {
+        "t": 146.700007651,
+        "samples": 2629,
+        "foreground_fraction": 0.47194318352635173,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.6981225939501963,
+          0.46274996913669497,
+          1.1126898908456693
+        ]
+      },
+      {
+        "t": 148.700007755,
+        "samples": 2867,
+        "foreground_fraction": 0.45091709662948976,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.710828712835819,
+          0.4498412533128118,
+          1.1126341500048145
+        ]
+      },
+      {
+        "t": 150.700007859,
+        "samples": 3472,
+        "foreground_fraction": 0.40152590764928053,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.7209938187543856,
+          0.43826248375744026,
+          1.1170444148888827
+        ]
+      },
+      {
+        "t": 152.700007963,
+        "samples": 4736,
+        "foreground_fraction": 0.3520085226133009,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.740371579118225,
+          0.41979032487509693,
+          1.118303057112735
+        ]
+      },
+      {
+        "t": 154.700008068,
+        "samples": 7928,
+        "foreground_fraction": 0.5572782036482559,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.757347192274917,
+          0.3232094019557804,
+          1.1199631416762414
+        ]
+      },
+      {
+        "t": 156.700008172,
+        "samples": 8026,
+        "foreground_fraction": 0.5845455125041703,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.8615699358849414,
+          0.28950424219671494,
+          1.1252167586183508
+        ]
+      },
+      {
+        "t": 158.700008276,
+        "samples": 11482,
+        "foreground_fraction": 0.39378753321604903,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.7828057552474057,
+          0.2936705093036454,
+          1.1226084958832083
+        ]
+      },
+      {
+        "t": 160.700008381,
+        "samples": 8524,
+        "foreground_fraction": 0.3578854361816965,
+        "accepted_by_support_gate": true,
+        "surface": [
+          3.8146441555520534,
+          0.308444006665546,
+          1.1219274293842627
+        ]
+      }
+    ]
+  }
+]

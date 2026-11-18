@@ -92,8 +92,8 @@ def main():
     experiment_override={k:v for k,v in experiment.items() if k not in ('scenario','scene_file','overrides_file')}
     (snapshots/'experiment.json').write_text(json.dumps(experiment_override,ensure_ascii=False,indent=2)+'\n')
     sources=[*ROOT.glob('scripts/*semantic*'),*ROOT.glob('config/semantic/*'),ROOT/'scripts/run_sim.py',ROOT/'scripts/tracker.py',ROOT/'scripts/experiment.py',ROOT/'config/scenarios_semantic.json',ROOT/'config/experiments/hydro_components.json',ROOT/'scenes/pool_platform_semantic.usda',ROOT/'scenes/pool_platform_ego.usda',a.scene_file,ROOT/'logs/semantic_detector_lit/train/weights/best.onnx']
-    sources += [ROOT/'scripts/navigation_config.py',ROOT/'scripts/navigation.launch.py',ROOT/'scripts/tracking_control.py',ROOT/'scripts/local_map.py',*ROOT.glob('config/navigation/*.json')]
-    sources += [*ROOT.glob('ros_ws/src/plan_manage/src/*.cpp'),*ROOT.glob('ros_ws/src/plan_manage/include/**/*.h'),
+    sources += [ROOT/'scripts/navigation_config.py',ROOT/'scripts/navigation.launch.py',ROOT/'scripts/tracking_control.py',ROOT/'scripts/local_map.py',ROOT/'scripts/cloud_inflation.py',*ROOT.glob('config/navigation/*.json')]
+    sources += [*ROOT.glob('ros_ws/src/plan_env/src/*.cpp'),*ROOT.glob('ros_ws/src/plan_env/include/**/*.h'),*ROOT.glob('ros_ws/install/plan_env/lib/*.so'),*ROOT.glob('ros_ws/src/plan_manage/src/*.cpp'),*ROOT.glob('ros_ws/src/plan_manage/include/**/*.h'),
                 ROOT/'ros_ws/install/ego_planner/lib/ego_planner/ego_planner_node',
                 *ROOT.glob('ros_ws/install/ego_planner/lib/*.so')]
     sources += [a.model,a.overrides,*snapshots.glob('*.json'),ROOT/'scripts/static_collision_prior.py']

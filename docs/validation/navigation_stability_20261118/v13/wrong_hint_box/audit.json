@@ -1,0 +1,140 @@
+{
+  "target": {
+    "id": "YellowBox",
+    "category": "box",
+    "color": "yellow",
+    "position": [
+      -4.5,
+      0.7,
+      1.05
+    ],
+    "yaw": 0
+  },
+  "instruction": "请找到黄色方块，不要管子，距方块表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_wrong_hint_box",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 307.800016053,
+  "frames": 1538,
+  "path_length_m": 12.971410321480626,
+  "actual_ego_updates": 15,
+  "contact_pairs": 0,
+  "contact_min_separation_m": null,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.700000088,
+      "task_id": "733dc1e65985",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    },
+    {
+      "sim_time": 18.300000954,
+      "task_id": "733dc1e65985",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "transfer_151_94",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 58.10000303,
+      "task_id": "733dc1e65985",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_176_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 74.300003875,
+      "task_id": "733dc1e65985",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required_before_approach"
+    },
+    {
+      "sim_time": 97.700005095,
+      "task_id": "733dc1e65985",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_200_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 124.300006482,
+      "task_id": "733dc1e65985",
+      "observation_id": 11,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 148.900007765,
+      "task_id": "733dc1e65985",
+      "observation_id": 13,
+      "action": "explore",
+      "candidate_id": "frontier_184_56",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 194.700010154,
+      "task_id": "733dc1e65985",
+      "observation_id": 15,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 211.700011041,
+      "task_id": "733dc1e65985",
+      "observation_id": 17,
+      "action": "explore",
+      "candidate_id": "transfer_158_81",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 241.700012605,
+      "task_id": "733dc1e65985",
+      "observation_id": 19,
+      "action": "explore",
+      "candidate_id": "transfer_122_82",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 267.700013961,
+      "task_id": "733dc1e65985",
+      "observation_id": 21,
+      "action": "explore",
+      "candidate_id": "frontier_72_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 294.533348694,
+      "task_id": "733dc1e65985",
+      "observation_id": 24,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.01408500458932721,
+  "target_surface_error_p95_m": 4.994961347612659,
+  "llm_calls": 12,
+  "evidence_directory": "logs/stability_20261118/v13/wrong_hint_box",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.4604636979267847,
+  "final_target_surface_distance_xy_m": 1.1937233097571114,
+  "offline_verified": true,
+  "exploration_verified": true,
+  "contact_evidence": "no_reports"
+}

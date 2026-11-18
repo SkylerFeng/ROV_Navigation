@@ -1,0 +1,14 @@
+{
+  "planner": {
+    "obstacle_inflation_m": 0.4,
+    "collision_distance_m": 0.1,
+    "cloud_resolution_m": 0.05,
+    "circular_xy_inflation": true,
+    "terminal_velocity_deadband_m_s": 0.025,
+    "preinflate_cloud": true
+  },
+  "limits": {
+    "max_velocity": 0.18,
+    "max_acceleration": 0.15
+  }
+}

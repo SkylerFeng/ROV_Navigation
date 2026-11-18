@@ -19,5 +19,10 @@
   "approach_update_interval_s": 8.0,
   "alternative_regions": [],
   "alternative_region_weight": 12.0,
-  "category_conflict_radius_m": 0.65
+  "category_conflict_radius_m": 0.65,
+  "evidence_region_search": true,
+  "region_coverage_threshold": 0.65,
+  "region_min_gain_area_m2": 0.05,
+  "landmark_memory_s": 900.0,
+  "landmark_class_lock_frames": 8
 }

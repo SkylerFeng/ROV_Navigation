@@ -1,0 +1,62 @@
+[
+  {
+    "repo": "patrykcieslak/stonefish",
+    "url": "https://github.com/patrykcieslak/stonefish",
+    "description": "Stonefish - an advanced C++ simulation library designed for (but not limited to) marine robotics.",
+    "license": "GPL-3.0",
+    "sha": "63651ff2cec5f5cd825860fb378a1d97ff7daeaf",
+    "branch": "master",
+    "files_read": [
+      "README.md"
+    ]
+  },
+  {
+    "repo": "robo-friends/m-explore-ros2",
+    "url": "https://github.com/robo-friends/m-explore-ros2",
+    "description": "Explore_lite port to ROS2",
+    "license": "NOASSERTION",
+    "sha": "326cf8a0b487c34246bb8f3326afbcd69576dc60",
+    "branch": "main",
+    "files_read": [
+      "explore/src/explore.cpp",
+      "explore/src/frontier_search.cpp"
+    ]
+  },
+  {
+    "repo": "ros-navigation/navigation2",
+    "url": "https://github.com/ros-navigation/navigation2",
+    "description": "ROS 2 Navigation Framework and System",
+    "license": "NOASSERTION",
+    "sha": "0445cc056f217a4c3181f8dd6fb72e18f6e327a2",
+    "branch": "main",
+    "files_read": [
+      "nav2_controller/plugins/simple_progress_checker.cpp",
+      "nav2_controller/plugins/pose_progress_checker.cpp",
+      "nav2_bt_navigator/behavior_trees/navigate_to_pose_w_replanning_and_recovery.xml",
+      "nav2_rotation_shim_controller/README.md"
+    ]
+  },
+  {
+    "repo": "uuvsimulator/uuv_simulator",
+    "url": "https://github.com/uuvsimulator/uuv_simulator",
+    "description": "Gazebo/ROS packages for underwater robotics simulation",
+    "license": "NOASSERTION",
+    "sha": "bfb40cb153684a0703173117b6bbf4258e8e71c5",
+    "branch": "master",
+    "files_read": [
+      "README.md",
+      "uuv_control/uuv_trajectory_control/src/uuv_control_interfaces/dp_controller_base.py"
+    ]
+  },
+  {
+    "repo": "ZJU-FAST-Lab/ego-planner-swarm",
+    "url": "https://github.com/ZJU-FAST-Lab/ego-planner-swarm",
+    "local_dependency_head": "23a8d5a191711dd65633df689bd00f55d4dea8f9",
+    "license": "GPL-3.0",
+    "files_read": [
+      "src/planner/plan_env/src/grid_map.cpp",
+      "src/planner/bspline_opt/src/bspline_optimizer.cpp"
+    ],
+    "note": "Existing local ROS2 dependency, inspected during diagnosis. plan_env copied locally with license and ROV_CHANGES provenance."
+  }
+]

@@ -19,5 +19,10 @@ int main() {
   auto clear=[](const Vector3d&) {return true;};
   auto direct=ego_planner::observedGuide(start,goal,clear);
   assert(direct.size()==1 && (direct.front()-goal).norm()<1e-8);
+  // Input is configuration space, already inflated by the full hull radius.
+  // A narrow but free centerline must not acquire an undocumented 0.1 m band.
+  auto inflated_corridor=[](const Vector3d &p) {return std::abs(p.y())<.075;};
+  auto narrow=ego_planner::observedGuide(start,goal,inflated_corridor);
+  assert(narrow.size()==1 && (narrow.front()-goal).norm()<1e-8);
   std::cout << "Passed: planar detour, collision-free segments, blocked start, disconnected map, direct route\n";
 }

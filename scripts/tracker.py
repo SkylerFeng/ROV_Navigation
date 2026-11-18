@@ -58,6 +58,9 @@ class Tracker(Node):
         if self.odom and self.reference and now-self.last_odom < self.tuning["input_timeout_s"] and now-self.last_reference < self.tuning["input_timeout_s"]:
             p = self.odom.pose.pose.position
             ref = self.reference
+            # A stale spline phase is not a fresh zero-velocity waypoint.
+            # Do not rotate back toward its old reference position.
+            phase_valid=ref.trajectory_flag==PositionCommand.TRAJECTORY_STATUS_READY
             q = self.odom.pose.pose.orientation
             yaw = math.atan2(2*(q.w*q.z+q.x*q.y), 1-2*(q.y*q.y+q.z*q.z))
             position = [getattr(p,a) for a in "xyz"]
@@ -72,6 +75,8 @@ class Tracker(Node):
             if detail["mode"] != "INVALID_REFERENCE":
                 status.update(position=position, reference_position=ref_position, reference_velocity=ref_velocity,
                               command_velocity=values, yaw=yaw, trajectory_id=ref.trajectory_id)
+            if not phase_valid:
+                out=Twist();status.update(mode='STALE_PHASE')
         if self.semantic_enabled:
             if self.odom and now-self.last_odom < self.tuning["input_timeout_s"]:
                 p=self.odom.pose.pose.position;q=self.odom.pose.pose.orientation
@@ -83,7 +88,7 @@ class Tracker(Node):
                     status.update(mode=mode)
             else:
                 out=Twist();status.update(mode="SEMANTIC_STALE_ODOM")
-        safe_mode=status['mode'] in ('STALE_INPUT','INVALID_REFERENCE','SEMANTIC_STALE','SEMANTIC_STALE_ODOM')
+        safe_mode=status['mode'] in ('STALE_INPUT','STALE_PHASE','INVALID_REFERENCE','SEMANTIC_STALE','SEMANTIC_STALE_ODOM')
         dt=now-self.previous_update if self.previous_update is not None else 1/self.tuning['update_hz']
         if not safe_mode:
             out.angular.z=smooth_yaw_rate(self.previous_rate,out.angular.z,dt,self.tuning['yaw_acceleration_rad_s2'])

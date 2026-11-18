@@ -10,7 +10,8 @@ def load_static_xy(config):
     with np.load(ROOT/path,allow_pickle=False) as data:
         xy=np.asarray(data['xy'],float)
         if xy.ndim!=2 or xy.shape[1]!=2 or not np.isfinite(xy).all():raise ValueError('Invalid static collision prior')
-        if not np.isclose(float(data['res']),.1):raise ValueError('Static prior must use 0.1 m cells')
+        expected=config.get('navigation',{}).get('planner',{}).get('cloud_resolution_m',.1)
+        if not np.isclose(float(data['res']),expected):raise ValueError('Static prior resolution must match cloud_resolution_m')
     return xy[(np.abs(xy[:,0])<8)&(np.abs(xy[:,1])<6)]
 def seed_grid(grid,xy):
     # EGO cloudCallback uses a square XY dilation, not a circular one.

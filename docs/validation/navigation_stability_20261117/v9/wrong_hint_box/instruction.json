@@ -1,0 +1,21 @@
+{
+  "instruction": "请找到黄色方块，不要管子，距方块表面保持一米。",
+  "resolution": {
+    "status": "accepted",
+    "category": "box",
+    "color": "yellow",
+    "surface_standoff_m": 1.0,
+    "reason": "明确指定单一目标：黄色方块（'方块'是'box'的同义词）；排除管子不构成歧义；距离'一米'在允许区间[0.6, 1.5]m内。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.5592373679992306,
+  "usage": {
+    "total_tokens": 495,
+    "completion_tokens": 93,
+    "prompt_tokens": 402,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    }
+  }
+}

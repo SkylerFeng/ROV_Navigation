@@ -17,25 +17,23 @@ inline std::vector<Eigen::Vector3d> observedGuide(
   constexpr double step=.1;
   auto point=[&](int id) { return Eigen::Vector3d(start.x()+(id%nx-cx)*step,
       start.y()+(id/nx-cy)*step, start.z()); };
-  auto segment=[&](const Eigen::Vector3d &a,const Eigen::Vector3d &b,bool margin) {
+  auto segment=[&](const Eigen::Vector3d &a,const Eigen::Vector3d &b) {
     int n=std::max(1,int(std::ceil((b-a).norm()/.025)));
     for(int i=0;i<=n;++i) {
       Eigen::Vector3d p=a+(b-a)*(double(i)/n);
       if(!free(p)) return false;
-      if(margin && (p-start).norm()>.2 && (p-goal).norm()>.2)
-        for(const Eigen::Vector3d &d : {Eigen::Vector3d(.1,0,0),Eigen::Vector3d(-.1,0,0),
-                                      Eigen::Vector3d(0,.1,0),Eigen::Vector3d(0,-.1,0)})
-          if(!free(p+d)) return false;
+      // free() already checks the hull-inflated map. Adding another hard
+      // offset here rejects routes accepted by A* and the trajectory checker.
     }
     return true;
   };
   if(!free(start)||!free(goal)) return {};
-  if(segment(start,goal,true)) return {goal};
+  if(segment(start,goal)) return {goal};
   int gx=cx+int(std::round((goal.x()-start.x())/step));
   int gy=cy+int(std::round((goal.y()-start.y())/step));
   if(gx<0||gx>=nx||gy<0||gy>=ny) return {};
   int source=cy*nx+cx, target=gy*nx+gx;
-  if(!segment(point(target),goal,false)) return {};
+  if(!segment(point(target),goal)) return {};
   std::vector<double> dist(nx*ny,std::numeric_limits<double>::infinity());
   std::vector<int> parent(nx*ny,-1);
   std::vector<signed char> occupancy(nx*ny,-1),closed(nx*ny,0);
@@ -56,7 +54,7 @@ inline std::vector<Eigen::Vector3d> observedGuide(
       if((dx==0&&dy==0)||x+dx<0||x+dx>=nx||y+dy<0||y+dy>=ny) continue;
       int next=(y+dy)*nx+x+dx;
       if(closed[next]||!available(next)) continue;
-      if(!segment(point(id),point(next),false)) continue;
+      if(!segment(point(id),point(next))) continue;
       bool near=false;
       for(int ox=-2;ox<=2&&!near;ox+=2) for(int oy=-2;oy<=2;oy+=2) {
         int xx=x+dx+ox,yy=y+dy+oy;
@@ -77,7 +75,7 @@ inline std::vector<Eigen::Vector3d> observedGuide(
     size_t next=i+1;
     for(size_t j=i+2;j<raw.size();++j) {
       if((raw[j]-raw[i]).norm()>.8) break;
-      if(segment(raw[i],raw[j],true)) next=j;
+      if(segment(raw[i],raw[j])) next=j;
     }
     result.push_back(raw[next]);i=next;
   }

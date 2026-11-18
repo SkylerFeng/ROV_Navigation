@@ -1,0 +1,14 @@
+{
+  "run": "logs/stability_20261117/v8/wrong_hint_box",
+  "status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.000021905,
+  "path_length_m": 10.334431713404634,
+  "stationary_turn_seconds": 221.200011536479,
+  "total_yaw_travel_deg": 1937.8473214351618,
+  "yaw_acceleration_p95_rad_s2": 0.19279168936444077,
+  "llm_calls": 11,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

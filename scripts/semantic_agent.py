@@ -9,10 +9,14 @@ ROOT=Path(__file__).resolve().parents[1]
 def load_agent(path=None):
     c=read_object(ROOT/'config/semantic/agent.json')
     if path:c=merge_known(c,read_object(path),'agent')
+    if type(c['evidence_region_search']) is not bool:raise ValueError('evidence_region_search must be boolean')
+    number(c['region_coverage_threshold'],'region_coverage_threshold')
+    number(c['region_min_gain_area_m2'],'region_min_gain_area_m2')
+    if c['region_coverage_threshold']>1:raise ValueError('region_coverage_threshold must be <=1')
     if type(c['enabled']) is not bool:raise ValueError('agent.enabled must be boolean')
-    for k in ('memory_limit','max_viewpoint_attempts','max_consecutive_holds','region_max_expansions'):
+    for k in ('landmark_class_lock_frames','memory_limit','max_viewpoint_attempts','max_consecutive_holds','region_max_expansions'):
         number(c[k],k,integer=True)
-    for k in ('category_conflict_radius_m','alternative_region_weight','region_weight','repeat_penalty','failure_cooldown_s','loop_window_s','loop_yaw_deg','loop_max_displacement_m','region_search_budget_s','region_expand_step_m','localization_max_spread_m','approach_update_distance_m','approach_update_interval_s'):
+    for k in ('landmark_memory_s','category_conflict_radius_m','alternative_region_weight','region_weight','repeat_penalty','failure_cooldown_s','loop_window_s','loop_yaw_deg','loop_max_displacement_m','region_search_budget_s','region_expand_step_m','localization_max_spread_m','approach_update_distance_m','approach_update_interval_s'):
         number(c[k],k,allow_zero=k=='region_weight')
     if c['region_name'] is not None and not isinstance(c['region_name'],str):raise ValueError('region_name must be string or null')
     r=c['coarse_region_xyxy']
@@ -39,8 +43,10 @@ class TaskAgent:
         self.cfg=cfg;self.history=deque(maxlen=cfg['memory_limit']);self.current=None
         self.viewpoints={};self.samples=deque();self.holds=0;self.phase='SEARCH';self.counter=0
         self.search_elapsed=0.;self.search_clock=None;self.expansion=0;self.search_events=[];self.target_confirmed=False;self.alternative_index=-1
-    def search_settings(self,now,objects,target,position=None):
+    def search_settings(self,now,objects,target,position=None,grid=None,candidates=None):
         """Budget only unconfirmed search time; hint is never an obstacle mask."""
+        if grid is not None and self.cfg.get('evidence_region_search',False):
+            return self.evidence_search_settings(now,objects,target,position,grid,candidates)
         confirmed=any(o.get('confirmed') and o.get('visible_now') and
                       o['category']==target['category'] and o['color']==target['color'] for o in objects)
         self.target_confirmed=confirmed
@@ -71,6 +77,43 @@ class TaskAgent:
             region=alternatives[self.alternative_index]['bounds'] if 0<=self.alternative_index<len(alternatives) else None
         self.effective_region=region
         return {'coarse_region_xyxy':region,'region_transfer':region is not None and self.alternative_index>=0,'region_weight':self.cfg['alternative_region_weight'] if region is not None and self.alternative_index>=0 else self.cfg['region_weight']}
+    def evidence_search_settings(self,now,objects,target,position,grid,candidates=None):
+        """Local observations, not travel/API waiting time, justify releasing a hint."""
+        regions=([{'name':self.cfg['region_name'],'bounds':self.cfg['coarse_region_xyxy']}]
+                 if self.cfg['coarse_region_xyxy'] is not None else [])+self.cfg.get('alternative_regions',[])
+        index=getattr(self,'region_index',0)
+        region=regions[index]['bounds'] if index<len(regions) else None
+        self.target_confirmed=any(o.get('confirmed') and o.get('visible_now') and
+            o['category']==target['category'] and o['color']==target['color'] for o in objects)
+        if region is not None:
+            cells=np.indices(grid.shape).reshape(2,-1).T
+            points=grid.origin+(cells+.5)*grid.res
+            mask=(((points>=region[:2])&(points<=region[2:])).all(1)).reshape(grid.shape)&grid.inside&~grid.occupied
+            coverage=float((grid.inspected&mask).sum()/max(1,mask.sum())) if grid.inspected is not None else 0.
+            scans=[p for p in grid.scan_positions[getattr(self,'region_scan_start',0):]
+                   if np.all(np.asarray(p)>=np.asarray(region[:2])-.5) and np.all(np.asarray(p)<=np.asarray(region[2:])+.5)]
+            remaining=int((mask&~grid.inspected).sum()) if grid.inspected is not None else int(mask.sum())
+            productive=None if candidates is None else [c for c in candidates if c['kind']=='explore' and
+                c.get('information_gain_score',0)*grid.res**2>=self.cfg['region_min_gain_area_m2']]
+            self.region_evidence={'coverage':coverage,'local_scans':len(scans),'region':regions[index]['name'],
+                'uninspected_cells':remaining,'productive_viewpoints':None if productive is None else len(productive)}
+            # Never abandon an occluded region merely because the robot spent time
+            # aligning or moving there. At least two spatially distinct views and
+            # substantial close-range coverage are required.
+            distinct=[]
+            for p in scans:
+                if all(np.linalg.norm(p-q)>.7 for q in distinct):distinct.append(p)
+            # Coverage is only a prerequisite. Assess the actual reachable,
+            # novelty- and failure-filtered views before giving up a region.
+            exhausted=remaining==0 or (productive is not None and not productive)
+            if not self.target_confirmed and len(distinct)>=2 and coverage>=self.cfg['region_coverage_threshold'] and exhausted:
+                index+=1;self.region_index=index;self.alternative_index=index-1
+                self.region_scan_start=len(grid.scan_positions)
+                self.search_events.append({'time_s':now,'reason':'regional_viewpoints_exhausted','evidence':dict(self.region_evidence)})
+                region=regions[index]['bounds'] if index<len(regions) else None
+        self.effective_region=region
+        return {'coarse_region_xyxy':region,'region_transfer':region is not None,
+                'region_weight':self.cfg['alternative_region_weight'],'regional_information':region is not None}
     def expand_search(self,now,reason):
         if self.cfg['coarse_region_xyxy'] is None or self.expansion>self.cfg['region_max_expansions']:return False
         self.expansion+=1;self.search_elapsed=0.
@@ -78,6 +121,9 @@ class TaskAgent:
                                    'global_search':self.expansion>self.cfg['region_max_expansions']})
         return True
     def search_phase(self):
+        if self.cfg.get('evidence_region_search') and hasattr(self,'region_index'):
+            if self.region_index>=1+len(self.cfg.get('alternative_regions',[])):return 'GLOBAL_SEARCH'
+            if self.region_index>0:return 'ALTERNATIVE_SEARCH'
         if 0<=self.alternative_index<len(self.cfg.get('alternative_regions',[])):return 'ALTERNATIVE_SEARCH'
         if self.cfg['coarse_region_xyxy'] is None or self.expansion>self.cfg['region_max_expansions']:return 'GLOBAL_SEARCH'
         return 'EXPANDED_SEARCH' if self.expansion else 'REGION_SEARCH'
@@ -134,7 +180,7 @@ class TaskAgent:
                 'alternative_region_index':self.alternative_index,'search_elapsed_s':self.search_elapsed,'search_expansion':self.expansion,'search_events':list(self.search_events),
                 'visited_viewpoints':[k for k,v in self.viewpoints.items() if v['visited']],
                 'viewpoint_attempts':{k:dict(v) for k,v in self.viewpoints.items()},
-                'recent_results':[{k:v for k,v in r.items() if k!='position'} for r in self.history],
+                'region_evidence':getattr(self,'region_evidence',None),'recent_results':[{k:v for k,v in r.items() if k!='position'} for r in self.history],
                 'consecutive_holds':self.holds,'max_consecutive_holds':self.cfg['max_consecutive_holds']}
     def loop(self,now,position,yaw,mode):
         if mode not in ('EXPLORING','APPROACHING'):

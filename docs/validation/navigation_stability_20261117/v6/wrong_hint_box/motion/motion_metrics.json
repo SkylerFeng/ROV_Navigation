@@ -1,0 +1,14 @@
+{
+  "run": "logs/stability_20261117/v6/wrong_hint_box",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 416.600021728,
+  "path_length_m": 12.243282639859919,
+  "stationary_turn_seconds": 166.40000867843628,
+  "total_yaw_travel_deg": 1701.7722591308673,
+  "yaw_acceleration_p95_rad_s2": 0.21982707643923172,
+  "llm_calls": 11,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

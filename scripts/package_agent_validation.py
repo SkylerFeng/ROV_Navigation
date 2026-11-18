@@ -8,6 +8,8 @@ from analyze_navigation_motion import analyze as motion
 
 def package(run,output):
     audit=analyze(run,output);motion(run,output/'motion')
+    diagnostics=run/'semantic/diagnostics'
+    if diagnostics.exists():shutil.copytree(diagnostics,output/'semantic/diagnostics',dirs_exist_ok=True)
     for name in ['semantic/events.jsonl','semantic/result.json','semantic/agent_memory.json','instruction.json','manifest.json','config/agent.json','config/vision.json','config/task.json','config/runtime.json','config/experiment.json','sim/run.json']:
         p=run/name
         if p.exists():

@@ -1,0 +1,29 @@
+[
+  {
+    "case": "west_baffles",
+    "known_map_all_free_assumed": true,
+    "radius_m": 0.4,
+    "resolution_m": 0.05,
+    "reachable_standoff_ring_cells": 2,
+    "nearest_reachable_target_surface_m": 1.2486092262994055,
+    "limitations": "Offline conservative fixture XY rectangles and pool collider raster. Not runtime observations; no orientation-dependent footprint; not a proof of physical impossibility."
+  },
+  {
+    "case": "east_equipment",
+    "known_map_all_free_assumed": true,
+    "radius_m": 0.4,
+    "resolution_m": 0.05,
+    "reachable_standoff_ring_cells": 412,
+    "nearest_reachable_target_surface_m": 0.44274710614525703,
+    "limitations": "Offline conservative fixture XY rectangles and pool collider raster. Not runtime observations; no orientation-dependent footprint; not a proof of physical impossibility."
+  },
+  {
+    "case": "wrong_hint_box",
+    "known_map_all_free_assumed": true,
+    "radius_m": 0.4,
+    "resolution_m": 0.05,
+    "reachable_standoff_ring_cells": 363,
+    "nearest_reachable_target_surface_m": 0.4849999999999996,
+    "limitations": "Offline conservative fixture XY rectangles and pool collider raster. Not runtime observations; no orientation-dependent footprint; not a proof of physical impossibility."
+  }
+]

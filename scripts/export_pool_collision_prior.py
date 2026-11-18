@@ -6,11 +6,12 @@ import argparse,json,hashlib
 from pathlib import Path
 import numpy as np
 from pxr import Usd,UsdGeom
-p=argparse.ArgumentParser();p.add_argument('--scene',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--resolution',type=float,default=.1);p.add_argument('--scene',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
 prim_path='/World/Environment/Platform/Collision/Platform_collision_clean/mesh';stage=Usd.Stage.Open(str(a.scene));prim=stage.GetPrimAtPath(prim_path);mesh=UsdGeom.Mesh(prim)
 pts=np.asarray(mesh.GetPointsAttr().Get());matrix=np.asarray(UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(Usd.TimeCode.Default()));pts=(np.c_[pts,np.ones(len(pts))]@matrix)[:,:3]
 indices=np.asarray(mesh.GetFaceVertexIndicesAttr().Get());counts=np.asarray(mesh.GetFaceVertexCountsAttr().Get());assert np.all(counts==3)
-triangles=pts[indices.reshape(-1,3)];zmin,zmax=.84,1.28;res=.1
+triangles=pts[indices.reshape(-1,3)];zmin,zmax=.84,1.28;res=a.resolution
+if res<=0:raise ValueError("resolution must be positive")
 triangles=triangles[(triangles[:,:,2].max(1)>=zmin)&(triangles[:,:,2].min(1)<=zmax)]
 def clip(poly,z,above):
  out=[]

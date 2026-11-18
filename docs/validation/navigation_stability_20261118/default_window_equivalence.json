@@ -1,0 +1,7 @@
+{
+  "purpose": "Post-v13 configurable window >8 extension; active default requirements remain 3/8",
+  "streams": 100,
+  "updates_compared": 10000,
+  "same_default_outputs": true,
+  "note": "Synthetic equivalence regression, not a new Isaac trial"
+}

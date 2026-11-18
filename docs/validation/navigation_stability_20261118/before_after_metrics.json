@@ -1,0 +1,53 @@
+[
+  {
+    "case": "west_baffles",
+    "v9": {
+      "runtime_status": "FAILED",
+      "simulation_seconds": 390.60002037199996,
+      "path_length_m": 12.676200410548079,
+      "contact_pairs": 0,
+      "offline_verified": false
+    },
+    "v13": {
+      "runtime_status": "SUCCEEDED",
+      "simulation_seconds": 103.60000540300001,
+      "path_length_m": 4.045397240189235,
+      "contact_pairs": 0,
+      "offline_verified": true
+    }
+  },
+  {
+    "case": "east_equipment",
+    "v9": {
+      "runtime_status": "SUCCEEDED",
+      "simulation_seconds": 200.600010462,
+      "path_length_m": 7.422690351164778,
+      "contact_pairs": 1,
+      "offline_verified": false
+    },
+    "v13": {
+      "runtime_status": "SUCCEEDED",
+      "simulation_seconds": 171.70000895500002,
+      "path_length_m": 7.209331531401,
+      "contact_pairs": 0,
+      "offline_verified": true
+    }
+  },
+  {
+    "case": "wrong_hint_box",
+    "v9": {
+      "runtime_status": "SUCCEEDED",
+      "simulation_seconds": 374.600019537,
+      "path_length_m": 14.250179718589038,
+      "contact_pairs": 1,
+      "offline_verified": false
+    },
+    "v13": {
+      "runtime_status": "SUCCEEDED",
+      "simulation_seconds": 307.800016053,
+      "path_length_m": 12.971410321480626,
+      "contact_pairs": 0,
+      "offline_verified": true
+    }
+  }
+]

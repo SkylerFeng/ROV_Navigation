@@ -224,7 +224,9 @@ void cmdCallback()
 
   cmd.header.stamp = time_now;
   cmd.header.frame_id = "world";
-  cmd.trajectory_flag = quadrotor_msgs::msg::PositionCommand::TRAJECTORY_STATUS_READY;
+  cmd.trajectory_flag = use_execution_phase_ && !phase_ready ?
+      quadrotor_msgs::msg::PositionCommand::TRAJECTORY_STATUS_EMPTY :
+      quadrotor_msgs::msg::PositionCommand::TRAJECTORY_STATUS_READY;
   cmd.trajectory_id = traj_id_;
 
   cmd.position.x = pos(0);

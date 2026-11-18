@@ -1,0 +1,24 @@
+[
+  {
+    "runtime_status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "path_length_m": 5.912467287761755,
+    "contact_pairs": 0,
+    "contact_evidence": "no_reports",
+    "offline_verified": false,
+    "exploration_verified": false,
+    "target_initially_detected": false,
+    "llm_calls": 13,
+    "final_target_surface_distance_xy_m": 2.937713276916071,
+    "name": "west_baffles",
+    "search_expansions": [],
+    "superseded_search_decisions": 0,
+    "local_refinements": 0,
+    "llm_rejections": 2,
+    "recovery_events": 2,
+    "scan_seconds": 48.40000252399999,
+    "navigation_spin_events": 0,
+    "first_target_detection_s": 322.300016809
+  }
+]

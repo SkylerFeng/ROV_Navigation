@@ -1,0 +1,5 @@
+{
+  "timeout_sim_s": 420,
+  "clearance_m": 0.4,
+  "grid_resolution_m": 0.05
+}

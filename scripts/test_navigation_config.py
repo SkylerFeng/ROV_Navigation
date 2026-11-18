@@ -42,6 +42,12 @@ class NavigationConfigTests(unittest.TestCase):
                     p.write_text(json.dumps(value))
                     with self.assertRaises(ValueError):load_navigation(p)
 
+    def test_circular_inflation_is_explicit_and_defaults_to_legacy_square(self):
+        self.assertFalse(planner_parameters(load_navigation())['grid_map/circular_xy_inflation'])
+        c=load_navigation(Path(__file__).resolve().parents[1]/'config/navigation/profiles/stability_circular.json')
+        self.assertTrue(planner_parameters(c)['grid_map/circular_xy_inflation'])
+        self.assertEqual(c['planner']['obstacle_inflation_m'],.4)
+        self.assertEqual(c['planner']['cloud_resolution_m'],.05)
     def test_tracker_tuning_changes_output(self):
         settings={'position_kp':.1,'depth_kp':.2,'yaw_kp':.3,'max_yaw_rate_rad_s':.07}
         v,rate,_=control([0,0,.9],[1,0,1],[0,0,0],0,1,align=False,settings=settings)

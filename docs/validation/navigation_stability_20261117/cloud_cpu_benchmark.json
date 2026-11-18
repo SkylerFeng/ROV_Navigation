@@ -1,0 +1,6 @@
+{
+  "input_xy_cells": 6598,
+  "inflated_xy_cells": 32502,
+  "xy_dilation_seconds": 0.012817224000173155,
+  "note": "Static pool prior only; independent CPU microbenchmark, not total ROS callback timing."
+}

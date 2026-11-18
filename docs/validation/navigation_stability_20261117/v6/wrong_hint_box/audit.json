@@ -1,0 +1,133 @@
+{
+  "target": {
+    "id": "YellowBox",
+    "category": "box",
+    "color": "yellow",
+    "position": [
+      -4.5,
+      0.7,
+      1.05
+    ],
+    "yaw": 0
+  },
+  "instruction": "请找到黄色方块，不要管子，距方块表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_wrong_hint_box",
+  "runtime_status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 416.600021728,
+  "frames": 2077,
+  "path_length_m": 12.243282639859919,
+  "actual_ego_updates": 72,
+  "contact_pairs": 1,
+  "contact_min_separation_m": 0.14219118654727936,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.600000083,
+      "task_id": "086faa243c41",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_required_before_search"
+    },
+    {
+      "sim_time": 18.300000954,
+      "task_id": "086faa243c41",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "transfer_151_94",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 72.900003802,
+      "task_id": "086faa243c41",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_176_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 98.900005158,
+      "task_id": "086faa243c41",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required_before_approach"
+    },
+    {
+      "sim_time": 120.100006263,
+      "task_id": "086faa243c41",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_200_96",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 153.900008026,
+      "task_id": "086faa243c41",
+      "observation_id": 11,
+      "action": "scan",
+      "reason_code": "scan_required_before_explore"
+    },
+    {
+      "sim_time": 176.900009226,
+      "task_id": "086faa243c41",
+      "observation_id": 13,
+      "action": "explore",
+      "candidate_id": "transfer_160_92",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 252.300013158,
+      "task_id": "086faa243c41",
+      "observation_id": 15,
+      "action": "explore",
+      "candidate_id": "transfer_127_85",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 290.700015161,
+      "task_id": "086faa243c41",
+      "observation_id": 17,
+      "action": "explore",
+      "candidate_id": "frontier_80_120",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 356.633351933,
+      "task_id": "086faa243c41",
+      "observation_id": 19,
+      "action": "explore",
+      "candidate_id": "frontier_64_120",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 400.900020908,
+      "task_id": "086faa243c41",
+      "observation_id": 22,
+      "action": "approach",
+      "candidate_id": "approach_obj_004",
+      "object_id": "obj_004",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.017840575371535827,
+  "target_surface_error_p95_m": 4.955730424380542,
+  "llm_calls": 11,
+  "evidence_directory": "logs/stability_20261117/v6/wrong_hint_box",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.4738906837877364,
+  "final_target_surface_distance_xy_m": 1.2074608221894536,
+  "offline_verified": false,
+  "exploration_verified": false,
+  "contact_evidence": "positive_separation_zero_impulse_only"
+}

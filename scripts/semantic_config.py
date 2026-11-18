@@ -10,12 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / 'config/semantic'
 TASK_KEYS = set('instruction category color depth_m surface_standoff_m arrival_tolerance_m hold_seconds max_speed_at_completion max_observation_age_s detector_confidence confirmation_frames grid_resolution_m clearance_m timeout_sim_s action_timeout_sim_s'.split())
 RUNTIME_KEYS = {
-    'recovery': 'timeout_s look_s sweep_deg max_attempts association_radius_m target_memory_s cooldown_s explore_commit_s',
+    'perception': 'min_depth_samples min_foreground_fraction sparse_min_depth_samples sparse_min_foreground_fraction sparse_detector_confidence sparse_max_depth_mad_m sparse_confirmation_frames',
+    'recovery': 'timeout_s look_s sweep_deg max_attempts association_radius_m target_memory_s cooldown_s explore_commit_s escape_hull_radius_m escape_max_distance_m escape_timeout_s',
     'scan': 'sweep_deg timeout_s yaw_step_rad max_sectors_per_viewpoint nearest_endpoint',
     'verification': 'timeout_s freshness_s heading_tolerance_deg distance_near_margin_m distance_far_margin_m',
-    'execution': 'tick_s snapshot_interval_s hold_s blocked_grace_s max_llm_calls progress_timeout_s progress_distance_m',
+    'execution': 'tick_s snapshot_interval_s hold_s blocked_grace_s max_llm_calls progress_timeout_s progress_distance_m heading_progress_deg entry_align_trigger_deg entry_align_release_deg entry_align_lookahead_m entry_align_timeout_s alignment_progress_timeout_s alignment_progress_deg',
     'motion': 'hold_max_speed_m_s position_kp yaw_kp max_yaw_rate_rad_s lease_timeout_s',
-    'exploration': 'max_candidates min_travel_m min_viewpoint_separation_m candidate_separation_m viewpoint_radius_m min_unknown_cells approach_retry_separation_m explore_retry_separation_m inspection_range_m gain_power travel_cost_weight',
+    'exploration': 'max_candidates min_travel_m min_viewpoint_separation_m candidate_separation_m viewpoint_radius_m min_unknown_cells approach_retry_separation_m explore_retry_separation_m inspection_range_m gain_power travel_cost_weight viewpoint_sampling_m',
     'llm': 'timeout_s temperature max_tokens enable_thinking max_consecutive_errors',
 }
 
@@ -84,8 +85,14 @@ def load_runtime(path=None):
                 if item is not False:
                     raise ValueError('llm.enable_thinking must be false for the current JSON action contract')
                 continue
-            number(item, group+'.'+key, integer=key in ('max_llm_calls','max_candidates','min_unknown_cells','max_tokens','max_consecutive_errors','max_attempts','max_sectors_per_viewpoint'),
+            number(item, group+'.'+key, integer=key in ('max_llm_calls','max_candidates','min_unknown_cells','max_tokens','max_consecutive_errors','max_attempts','max_sectors_per_viewpoint','min_depth_samples','sparse_min_depth_samples','sparse_confirmation_frames'),
                    allow_zero=key=='temperature')
+    if value['perception']['min_foreground_fraction']>1:raise ValueError('min_foreground_fraction must be <=1')
+    perception=value['perception']
+    if perception['sparse_min_depth_samples']<perception['min_depth_samples']:raise ValueError('Sparse detections require at least normal absolute support')
+    if perception['sparse_min_foreground_fraction']>perception['min_foreground_fraction']:raise ValueError('Sparse fraction must not exceed normal fraction')
+    if perception['sparse_detector_confidence']>1:raise ValueError('Sparse confidence must be <=1')
+    if perception['sparse_confirmation_frames']<3:raise ValueError('Sparse detections require at least three frames')
     if value['recovery']['look_s']>=value['recovery']['timeout_s'] or value['recovery']['sweep_deg']>90:
         raise ValueError('recovery requires look_s < timeout_s and sweep_deg <= 90')
     if value['scan']['sweep_deg'] > 360 or value['verification']['heading_tolerance_deg'] > 180:

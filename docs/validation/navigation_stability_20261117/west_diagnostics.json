@@ -1,0 +1,27 @@
+[
+  {
+    "entry_alignment_durations_s": [
+      15.80000082399998,
+      4.5000002349999875,
+      4.200000219000003
+    ],
+    "run": "logs/stability_20261117/v9/west_baffles",
+    "status": "FAILED",
+    "reason": "search_exhausted",
+    "simulation_seconds": 390.60002037199996,
+    "llm_calls": 15,
+    "contacts": 0,
+    "physical_contact_pairs": 0,
+    "action_timeouts": 2,
+    "stale_phase_samples": 0,
+    "semantic_stale_samples": 0,
+    "no_progress_events": 0,
+    "spin_guard_events": 0,
+    "category_conflict_aborts": 0,
+    "blocked_tools": 0,
+    "max_alignment_episode_s": 18.000000939000003,
+    "alignment_sample_span_total_s": 74.00000385900003,
+    "region_switches": [],
+    "limitations": "Sampled tracking log; alignment is not necessarily a spin failure; contact pairs use raw PhysX reports. Older versions did not expose STALE_PHASE explicitly, so zero old samples cannot prove no stale phase. No statistical success claim."
+  }
+]

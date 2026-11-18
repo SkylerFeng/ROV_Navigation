@@ -20,7 +20,14 @@
     "blocked_grace_s": 2.0,
     "max_llm_calls": 30,
     "progress_timeout_s": 30.0,
-    "progress_distance_m": 0.15
+    "progress_distance_m": 0.15,
+    "heading_progress_deg": 8.0,
+    "entry_align_trigger_deg": 25.0,
+    "entry_align_release_deg": 12.0,
+    "entry_align_lookahead_m": 0.6,
+    "entry_align_timeout_s": 35.0,
+    "alignment_progress_timeout_s": 8.0,
+    "alignment_progress_deg": 3.0
   },
   "motion": {
     "hold_max_speed_m_s": 0.12,
@@ -40,7 +47,8 @@
     "explore_retry_separation_m": 0.6,
     "inspection_range_m": 2.5,
     "gain_power": 0.5,
-    "travel_cost_weight": 2.0
+    "travel_cost_weight": 2.0,
+    "viewpoint_sampling_m": 0.4
   },
   "llm": {
     "timeout_s": 15.0,
@@ -57,6 +65,18 @@
     "association_radius_m": 0.7,
     "target_memory_s": 30.0,
     "cooldown_s": 12.0,
-    "explore_commit_s": 4.0
+    "explore_commit_s": 4.0,
+    "escape_hull_radius_m": 0.373,
+    "escape_max_distance_m": 0.65,
+    "escape_timeout_s": 12.0
+  },
+  "perception": {
+    "min_depth_samples": 100,
+    "min_foreground_fraction": 0.08,
+    "sparse_min_depth_samples": 200,
+    "sparse_min_foreground_fraction": 0.02,
+    "sparse_detector_confidence": 0.85,
+    "sparse_max_depth_mad_m": 0.025,
+    "sparse_confirmation_frames": 8
   }
 }

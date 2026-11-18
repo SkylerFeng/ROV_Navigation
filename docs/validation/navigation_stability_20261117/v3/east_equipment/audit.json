@@ -1,0 +1,145 @@
+{
+  "target": {
+    "id": "BluePipe",
+    "category": "pipe",
+    "color": "blue",
+    "position": [
+      3.8,
+      0.6,
+      1.12
+    ],
+    "yaw": 90
+  },
+  "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+  "policy": "qwen",
+  "scene": "pool_platform_semantic_complex_east_equipment",
+  "runtime_status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.03335524,
+  "frames": 2010,
+  "path_length_m": 11.606124963772498,
+  "actual_ego_updates": 66,
+  "contact_pairs": 1,
+  "contact_min_separation_m": 0.10409853607416153,
+  "max_contact_impulse_norm": 0,
+  "physics_mode": "hydrodynamics",
+  "component_model_file": "config/hydrodynamic_components/bluerov_mesh.json",
+  "target_initially_detected": false,
+  "actions": [
+    {
+      "sim_time": 1.900000099,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 1,
+      "action": "scan",
+      "reason_code": "scan_initial"
+    },
+    {
+      "sim_time": 18.700000975,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 3,
+      "action": "explore",
+      "candidate_id": "transfer_74_49",
+      "reason_code": "transit_to_unsearched_region"
+    },
+    {
+      "sim_time": 52.100002717,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 5,
+      "action": "explore",
+      "candidate_id": "frontier_87_51",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 98.300005126,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 7,
+      "action": "scan",
+      "reason_code": "scan_required"
+    },
+    {
+      "sim_time": 121.300006326,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 9,
+      "action": "explore",
+      "candidate_id": "frontier_99_39",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 170.700008902,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 11,
+      "action": "explore",
+      "candidate_id": "frontier_108_42",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 197.100010279,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 14,
+      "action": "approach",
+      "candidate_id": "approach_obj_010",
+      "object_id": "obj_010",
+      "reason_code": "target_visible"
+    },
+    {
+      "sim_time": 240.100012522,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 16,
+      "action": "explore",
+      "candidate_id": "frontier_108_51",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 274.100014295,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 18,
+      "action": "explore",
+      "candidate_id": "frontier_108_60",
+      "reason_code": "search_unseen_area"
+    },
+    {
+      "sim_time": 323.500016871,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 21,
+      "action": "approach",
+      "candidate_id": "approach_obj_014",
+      "object_id": "obj_014",
+      "reason_code": "target_visible"
+    },
+    {
+      "sim_time": 361.100018832,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 24,
+      "action": "approach",
+      "candidate_id": "approach_obj_014",
+      "object_id": "obj_014",
+      "reason_code": "target_visible"
+    },
+    {
+      "sim_time": 409.700021367,
+      "task_id": "fba1c2314e4d",
+      "observation_id": 26,
+      "action": "approach",
+      "candidate_id": "approach_obj_015",
+      "object_id": "obj_015",
+      "reason_code": "target_visible"
+    }
+  ],
+  "target_surface_error_median_m": 0.054162684911104285,
+  "target_surface_error_p95_m": 0.08081249695386458,
+  "llm_calls": 13,
+  "evidence_directory": "logs/stability_20261117/v3/east_equipment",
+  "recorded_clock_valid": true,
+  "limitations": [
+    "single trial per scene; not a success-rate estimate",
+    "ideal range and true camera/robot pose",
+    "visible-surface centroid, not complete object reconstruction",
+    "fixture ground truth used offline only",
+    "horizontal surface distance is distance to rotated projected footprint; not optical range"
+  ],
+  "final_target_center_distance_xy_m": 1.2673288984078679,
+  "final_target_surface_distance_xy_m": 0.9309666961052953,
+  "offline_verified": false,
+  "exploration_verified": false,
+  "contact_evidence": "positive_separation_zero_impulse_only"
+}

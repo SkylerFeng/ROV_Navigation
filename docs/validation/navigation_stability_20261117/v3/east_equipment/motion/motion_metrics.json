@@ -1,0 +1,14 @@
+{
+  "run": "logs/stability_20261117/v3/east_equipment",
+  "status": "FAILED",
+  "reason": "task_timeout",
+  "simulation_seconds": 420.03335524,
+  "path_length_m": 11.606124963772498,
+  "stationary_turn_seconds": 259.8000135496259,
+  "total_yaw_travel_deg": 2527.148740749774,
+  "yaw_acceleration_p95_rad_s2": 0.17823336608814752,
+  "llm_calls": 13,
+  "recovery_attempts": 1,
+  "verification_failures": 2,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

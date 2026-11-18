@@ -63,8 +63,8 @@ def localize_detection(rgb,depth,k,position,q,box,color_model=None):
 
 
 class ObjectMemory:
-    def __init__(self,confirmation_frames=3,conflict_radius=.65):
-        self.objects={};self.next_id=1;self.confirmation_frames=confirmation_frames;self.conflict_radius=conflict_radius
+    def __init__(self,confirmation_frames=3,conflict_radius=.65,memory_seconds=60.,class_lock_frames=0):
+        self.objects={};self.next_id=1;self.confirmation_frames=confirmation_frames;self.conflict_radius=conflict_radius;self.memory_seconds=memory_seconds;self.class_lock_frames=class_lock_frames
     def update(self,detections,now):
         matched=set();processed=[]
         for d in sorted(detections,key=lambda x:x['detector_score'],reverse=True):
@@ -72,7 +72,7 @@ class ObjectMemory:
             if any(x['category']!=d['category'] and x['color']==d['color'] and math.dist(x['surface_world'],d['surface_world'])<.15 for x in processed):continue
             processed.append(d)
             choices=[(math.dist(o['surface_world'],d['surface_world']),key) for key,o in self.objects.items()
-                     if key not in matched and o['color']==d['color'] and (o['category']==d['category'] or math.dist(o['surface_world'],d['surface_world'])<self.conflict_radius) and now-o['last_seen']<15]
+                     if key not in matched and o['color']==d['color'] and (o['category']==d['category'] or math.dist(o['surface_world'],d['surface_world'])<self.conflict_radius) and now-o['last_seen']<self.memory_seconds]
             dist,key=min(choices,default=(float('inf'),None))
             if dist>max(.55,self.conflict_radius):
                 key=f'obj_{self.next_id:03d}';self.next_id+=1
@@ -81,32 +81,40 @@ class ObjectMemory:
             # Same-colour, spatially overlapping contradictory labels belong to
             # one uncertain track, not two independently confirmed objects.
             evidence=old.get('category_evidence',[]) if now-old.get('last_seen',now)<1.5 else []
-            evidence=(evidence+(['ambiguous'] if ambiguous else [d['category']]))[-max(8,self.confirmation_frames):]
+            window=max(8,self.confirmation_frames,d.get('required_confirmation_frames',self.confirmation_frames),
+                       max(old.get('support_requirements',[]),default=0))
+            evidence=(evidence+(['ambiguous'] if ambiguous else [d['category']]))[-window:]
             conflict='ambiguous' in evidence or len(set(evidence))>1
             streak=0
             for category in reversed(evidence):
                 if category!=d['category']:break
                 streak+=1
+            if old.get('class_lock') and old['class_lock']!=d['category']:conflict=True
+            if self.class_lock_frames and streak>=self.class_lock_frames and not conflict:
+                old['class_lock']=d['category']
             hits=old['hits']+1 if now-old.get('last_seen',now)<1.5 else 1
+            requirements=old.get('support_requirements',[]) if hits>1 else []
+            requirements=(requirements+[d.get('required_confirmation_frames',self.confirmation_frames)])[-window:]
+            required=max(self.confirmation_frames,*requirements)
             smoothed=(.65*np.asarray(old['surface_world'])+.35*np.asarray(d['surface_world'])).tolist() if 'surface_world' in old else d['surface_world']
             samples=old.get('position_samples',[]) if hits>1 else []
             samples=(samples+[list(d['surface_world'])])[-8:]
             spread=float(np.max(np.linalg.norm(np.asarray(samples)-np.median(samples,axis=0),axis=1)))
-            old.update(d);old.update(surface_world=smoothed,hits=hits,last_seen=now,confirmed=streak>=self.confirmation_frames and not conflict,
+            old.update(d);old.update(surface_world=smoothed,hits=hits,last_seen=now,confirmed=streak>=required and not conflict,
                                      category_evidence=evidence,category_conflict=conflict,category_streak=streak,
-                                     position_samples=samples,position_spread_m=spread)
+                                     support_requirements=requirements,position_samples=samples,position_spread_m=spread)
             matched.add(key)
-        self.objects={k:o for k,o in self.objects.items() if now-o['last_seen']<60}
+        self.objects={k:o for k,o in self.objects.items() if now-o['last_seen']<self.memory_seconds}
     def observe(self,now):
-        return [{**{k:v for k,v in o.items() if k not in ('position_samples','category_evidence')},'observation_age_s':max(0,now-o['last_seen']),'visible_now':now-o['last_seen']<1.,'approach_candidate_ids':[]} for o in self.objects.values()]
+        return [{**{k:v for k,v in o.items() if k not in ('position_samples','category_evidence','support_requirements')},'observation_age_s':max(0,now-o['last_seen']),'visible_now':now-o['last_seen']<1.,'approach_candidate_ids':[]} for o in self.objects.values()]
 
 
 class ExplorationGrid:
-    def __init__(self,boundary,resolution=.15,clearance=.5,inspection_range=None,inflation_metric="euclidean"):
+    def __init__(self,boundary,resolution=.15,clearance=.5,inspection_range=None,inflation_metric="euclidean",obstacle_resolution=.1):
         from matplotlib.path import Path
         self.res=float(resolution);self.clearance=float(clearance)
         if inflation_metric not in ("euclidean","chessboard"):raise ValueError("Invalid inflation metric")
-        self.inflation_metric=inflation_metric
+        self.inflation_metric=inflation_metric;self.obstacle_resolution=float(obstacle_resolution)
         boundary=np.asarray(boundary);self.origin=np.floor((boundary.min(0)-1)/self.res)*self.res
         shape=np.ceil((boundary.max(0)+1-self.origin)/self.res).astype(int)
         self.shape=tuple(shape);cells=np.indices(self.shape).reshape(2,-1).T
@@ -143,7 +151,7 @@ class ExplorationGrid:
         # and proposed goals that EGO then rejected as occupied.
         dense,_=range_points(depth,k,cp,cq,stride=1)
         ends=dense[(dense[:,2]>.84)&(dense[:,2]<1.28)].copy()
-        ends[:,:2]=(np.floor(ends[:,:2]/.1)+.5)*.1  # same occupied XY cells as local_map.py
+        ends[:,:2]=(np.floor(ends[:,:2]/self.obstacle_resolution)+.5)*self.obstacle_resolution  # same occupied XY cells as local_map.py
         cells=np.floor((ends[:,:2]-self.origin)/self.res).astype(int)
         if len(cells):
             ok=(cells>=0).all(1)&(cells<self.shape).all(1);cells=cells[ok]
@@ -166,49 +174,14 @@ class ExplorationGrid:
             self._safe=self.free&(clear>self.clearance+self.res*.71)
         return self._safe
     def reachable(self,start):
-        root=self.cell(start);safe=self.safe();cost={};parent={}
-        if not self.valid(root) or not self.free[root] or self.occupied[root]:return cost,parent
-        # Newly observed geometry can put the current pose inside inflation.
-        # Permit only monotonic-clearance escape in observed free cells, never
-        # a new destination inside inflation or a route cutting through it.
-        clearance=self.obstacle_clearance()
-        def allowed(a,b):
-            if not self.valid(b) or not self.free[b] or self.occupied[b] or not self.inside[b]:return False
-            if safe[b]:return True
-            return not safe[a] and clearance[b]>=clearance[a]-1e-9
-        cost[root]=0.;queue=[(0.,root)]
-        while queue:
-            d,c=heapq.heappop(queue)
-            if d>cost[c]:continue
-            for dx,dy in [(1,0),(-1,0),(0,1),(0,-1),(1,1),(-1,1),(1,-1),(-1,-1)]:
-                v=(c[0]+dx,c[1]+dy)
-                if not allowed(c,v):continue
-                if dx and dy and not(allowed(c,(c[0]+dx,c[1])) and allowed(c,(c[0],c[1]+dy))):continue
-                nd=d+math.hypot(dx,dy)*self.res
-                if nd<cost.get(v,float('inf')):cost[v]=nd;parent[v]=c;heapq.heappush(queue,(nd,v))
-        return {c:d for c,d in cost.items() if safe[c]},parent
+        from semantic_reachability import reachable
+        return reachable(self,start)
     def mark_scanned(self,position):
         self.scan_positions.append(np.asarray(position[:2],float))
 
     def visible_unknown_gain(self,cell,meaningful,with_heading=False):
-        # Count unknown cells reachable by sight without crossing an observed wall.
-        visible=set();angles=np.linspace(-np.pi,np.pi,48,endpoint=False);ray_gains=[]
-        for angle in angles:
-            ray_cells=set()
-            direction=np.array([np.cos(angle),np.sin(angle)])
-            for distance in np.arange(self.res,(self.inspection_range or 3.)+.01,self.res):
-                c=self.cell(self.xy(cell)+direction*distance)
-                if not self.valid(c) or not self.inside[c] or self.occupied[c]:break
-                if meaningful[c]:visible.add(c);ray_cells.add(c)
-                # Uninspected free space also needs a close visual observation.
-                # Unknown space is potential information, not an observed wall.
-            ray_gains.append(len(ray_cells))
-        if with_heading:
-            scores=[sum(g for a,g in zip(angles,ray_gains) if abs(math.atan2(math.sin(a-center),math.cos(a-center)))<=math.pi/2) for center in angles]
-            preferred=math.atan2(sum(g*math.sin(a) for a,g in zip(angles,ray_gains)),sum(g*math.cos(a) for a,g in zip(angles,ray_gains)))
-            best=max(range(len(angles)),key=lambda i:(scores[i],math.cos(angles[i]-preferred)))
-            return len(visible),float(angles[best])
-        return len(visible)
+        from semantic_visibility import visible_gain
+        return visible_gain(self,cell,meaningful,with_heading)
 
     def candidates(self,robot,objects,standoff=.8,settings=None,max_age=2.,excluded_approaches=(),excluded_explores=()):
         settings=settings or {}
@@ -232,17 +205,26 @@ class ExplorationGrid:
         unknown=self.inside & ~self.occupied & ~(self.free if self.inspected is None else self.inspected)
         regions,_=label(unknown)
         sizes=np.bincount(regions.ravel());meaningful=unknown&(sizes[regions]>=settings.get('min_unknown_cells',10))
+        region=settings.get('coarse_region_xyxy')
+        if region is not None and settings.get('regional_information',False):
+            indices=np.indices(self.shape).reshape(2,-1).T
+            points=self.origin+(indices+.5)*self.res
+            mask=((points>=region[:2])&(points<=region[2:])).all(1).reshape(self.shape)
+            meaningful &= mask
         # Observed viewpoints can stand back from a frontier inflation band.
         front=self.safe() & (distance_transform_edt(~meaningful)*self.res<=settings.get('viewpoint_radius_m',3.0))
         viable=[c for c in cells if front[c] and cost[c]>settings.get('min_travel_m',.45)]
         ranked=[]
-        sample_step=max(1,int(math.ceil(.3/self.res)))
+        sample_step=max(1,int(math.ceil(settings.get('viewpoint_sampling_m',.3)/self.res)))
         for c in viable:
             # Subsample spatially for bounded CPU cost; exact geometry rechecked.
             if c[0]%sample_step or c[1]%sample_step:continue
             if any(np.linalg.norm(self.xy(c)-np.asarray(previous)[:2])<settings.get('explore_retry_separation_m',.6) for previous in excluded_explores):continue
             novelty=min((np.linalg.norm(self.xy(c)-p) for p in self.scan_positions),default=3.)
             if novelty < settings.get('min_viewpoint_separation_m',.7):continue
+            if region is not None and settings.get('regional_information',False):
+                point=self.xy(c)
+                if np.linalg.norm(np.maximum(np.maximum(np.asarray(region[:2])-point,point-np.asarray(region[2:])),0))>(self.inspection_range or 3.):continue
             gain,heading=self.visible_unknown_gain(c,meaningful,with_heading=True)
             if gain==0:continue
             visited=sum(n for other,n in self.visits.items() if np.linalg.norm(self.xy(c)-self.xy(other))<.8)
@@ -267,7 +249,7 @@ class ExplorationGrid:
             current_distance=region_distance(np.asarray(robot[:2]))
             possible=[c for c in cells if region_distance(self.xy(c))<current_distance-.5 and
                       all(np.linalg.norm(self.xy(c)-np.asarray(p)[:2])>=settings.get('explore_retry_separation_m',.6) for p in excluded_explores)]
-            if current_distance>.5 and possible:
+            if current_distance>.5 and possible and (not ranked or current_distance>(self.inspection_range or 2.5)):
                 best=min(possible,key=lambda c:(region_distance(self.xy(c)),cost[c]))
                 route=[best]
                 while route[-1] in parent:route.append(parent[route[-1]])

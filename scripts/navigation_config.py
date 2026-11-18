@@ -8,7 +8,7 @@ DEFAULT = Path(__file__).resolve().parents[1] / 'config/navigation/default.json'
 LIMITS = {'max_velocity', 'max_acceleration', 'max_heading_error_deg',
           'tracking_error_limit', 'planner_goal_tolerance', 'align_before_translation',
           'observed_global_guide'}
-BOOLEANS = {'align_before_translation', 'observed_global_guide'}
+BOOLEANS = {'align_before_translation', 'observed_global_guide', 'circular_xy_inflation', 'preinflate_cloud'}
 
 def load_navigation(path=None):
     config = json.loads(DEFAULT.read_text())
@@ -38,6 +38,8 @@ def validate_navigation(config):
                 if type(value) is not bool:raise ValueError(key+': expected boolean')
             elif isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or value<=0:
                 raise ValueError(key+': expected positive finite number')
+    if config['planner']['preinflate_cloud'] and config['planner']['cloud_resolution_m']!=config['planner']['map_resolution_m']:
+        raise ValueError('preinflate_cloud requires equal cloud/map resolutions')
     if config['limits'].get('max_heading_error_deg',20)>90:
         raise ValueError('max_heading_error_deg must be <= 90')
     if config['tracker']['near_track_crab_deg']>30:
@@ -54,7 +56,9 @@ def planner_parameters(config):
             'fsm/thresh_no_replan_meter':p['no_replan_distance_m'],
             'fsm/planning_horizon':p['planning_horizon_m'],
             'manager/planning_horizon':p['planning_horizon_m'],
+            'manager/terminal_velocity_deadband':p['terminal_velocity_deadband_m_s'],
             'grid_map/resolution':p['map_resolution_m'],
-            'grid_map/obstacles_inflation':p['obstacle_inflation_m'],
+            'grid_map/obstacles_inflation':0.0 if p['preinflate_cloud'] else p['obstacle_inflation_m'],
+            'grid_map/circular_xy_inflation':p['circular_xy_inflation'],
             'optimization/dist0':p['collision_distance_m'],
             'optimization/lambda_collision':p['collision_weight']}

@@ -1,5 +1,6 @@
 // #include <fstream>
 #include <ego_planner/planner_manager.h>
+#include <ego_planner/terminal_velocity.h>
 #include <thread>
 #include "visualization_msgs/msg/marker.hpp" // zx-todo
 
@@ -13,6 +14,7 @@ namespace ego_planner
   void EGOPlannerManager::initPlanModules(rclcpp::Node::SharedPtr &node, PlanningVisualization::Ptr vis)
   {
     clock_ = node->get_clock();
+    terminal_velocity_deadband_ = node->declare_parameter("manager/terminal_velocity_deadband", 0.0);
     node->declare_parameter("manager/max_vel", -1.0);
     node->declare_parameter("manager/max_acc", -1.0);
     node->declare_parameter("manager/max_jerk", -1.0);
@@ -55,6 +57,7 @@ namespace ego_planner
     if ((goal-start).norm()>pp_.planning_horizen_+1e-6 || velocity.norm()>pp_.max_vel_+1e-6) return false;
     // Search from a short interval: a large initial dt with nonzero velocity
     // can place the initial tangent control point beyond the goal.
+    const Eigen::Vector3d initial_velocity=terminalStartVelocity(velocity,terminal_velocity_deadband_);
     double dt=.2;
     // Leave tracking headroom for the lagged force controller. The initial
     // measured speed is preserved even when it exceeds the cruise target.
@@ -63,9 +66,9 @@ namespace ego_planner
     for(int attempt=0;attempt<20;++attempt,dt*=1.25)
     {
       Eigen::MatrixXd points(3,6);
-      points.col(0)=start-velocity*dt;
+      points.col(0)=start-initial_velocity*dt;
       points.col(1)=start;
-      points.col(2)=start+velocity*dt;
+      points.col(2)=start+initial_velocity*dt;
       points.col(3)=points.col(4)=points.col(5)=goal;
       UniformBspline pos(points,3,dt),vel=pos.getDerivative(),acc=vel.getDerivative();
       bool valid=true;

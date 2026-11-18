@@ -625,7 +625,6 @@ namespace ego_planner
 
     case EXEC_TRAJ:
     {
-      if (heading_paused_) break;
       /* determine if need to replan */
       LocalTrajData *info = &planner_manager_->local_data_;
       rclcpp::Time time_now = node_->now();
@@ -633,6 +632,23 @@ namespace ego_planner
       t_cur = std::min(info->duration_, t_cur);
 
       Eigen::Vector3d pos = info->position_traj_.evaluateDeBoorT(t_cur);
+      // A guide corner is not an inspection stop. Once the checked segment
+      // has almost finished and the measured hull is near its endpoint,
+      // generate the next segment from measured state. Otherwise inertia can
+      // carry the hull past a near-zero reference and trigger a full turn
+      // back toward an intermediate point. Final-goal verification is unchanged.
+      if (observed_guide_ && terminal_approach_ &&
+          (local_target_pt_-end_pt_).norm()>.2 &&
+          (local_target_pt_-odom_pos_).norm()<.16 &&
+          (local_target_pt_-pos).norm()<.10 &&
+          info->velocity_traj_.evaluateDeBoorT(t_cur).norm()<.06)
+      {
+        heading_paused_=false;
+        last_guide_time_=-1.;
+        changeFSMExecState(GEN_NEW_TRAJ, "GUIDE_HANDOFF");
+        break;
+      }
+      if (heading_paused_) break;
 
       /* && (end_pt_ - pos).norm() < 0.5 */
       if ((target_type_ == TARGET_TYPE::PRESET_TARGET) &&
@@ -669,7 +685,8 @@ namespace ego_planner
           changeFSMExecState(REPLAN_TRAJ, "FSM");
         }
       }
-      else if (t_cur > replan_thresh_)
+      else if ((terminal_approach_ && t_cur > info->duration_ - 1e-2) ||
+               (!terminal_approach_ && t_cur > replan_thresh_))
       {
         changeFSMExecState(REPLAN_TRAJ, "FSM");
       }
@@ -789,7 +806,15 @@ namespace ego_planner
          << ",\"tracking_recoveries\":" << tracking_recoveries_
          << ",\"local_target\":[" << local_target_pt_.x() << "," << local_target_pt_.y() << "," << local_target_pt_.z() << "]"
          << ",\"observed_guide_valid\":" << (observed_guide_valid_ ? "true" : "false")
-         << ",\"heading_paused\":" << (heading_paused_ ? "true" : "false") << "}";
+         << ",\"heading_paused\":" << (heading_paused_ ? "true" : "false")
+         << ",\"guide_time\":" << last_guide_time_
+         << ",\"runtime_revision\":\"measured_guide_handoff_v11\",\"observed_path\":[";
+    for (size_t i=0;i<observed_waypoints_.size();++i) {
+      const auto &p=observed_waypoints_[i];
+      if(i) data << ",";
+      data << "[" << p.x() << "," << p.y() << "," << p.z() << "]";
+    }
+    data << "]}";
     std_msgs::msg::String msg; msg.data = data.str(); status_pub_->publish(msg);
   }
 
@@ -981,8 +1006,13 @@ namespace ego_planner
     // horizon. Waiting until 0.6 m can leave a free-endpoint spline active:
     // near-goal replanning is suppressed and that spline may overshoot.
     bool terminal = observed_guide_ &&
-                    odom_vel_.norm()<=planner_manager_->pp_.max_vel_+1e-6 && (local_target_pt_-end_pt_).norm()<1e-3;
-    bool plan_and_refine_success = terminal && planner_manager_->planTerminalApproach(odom_pos_,odom_vel_,end_pt_);
+                    odom_vel_.norm()<=planner_manager_->pp_.max_vel_+1e-6;
+    // Use the same checked, exact endpoint curve for visible intermediate
+    // guide points. A free rebound endpoint can drift around a corner while
+    // repeated replans keep resetting its acceleration at near-zero speed.
+    // Finish this segment before advancing the guide; collision/deviation
+    // checks remain active and can interrupt it at any time.
+    bool plan_and_refine_success = terminal && planner_manager_->planTerminalApproach(odom_pos_,odom_vel_,local_target_pt_);
     // Let a validated exact approach finish accelerating. Rebuilding its
     // zero-velocity start every 0.5 s can prevent it from ever moving.
     // Safety-map and measured tracking-deviation replans remain active.

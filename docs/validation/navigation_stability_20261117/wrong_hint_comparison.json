@@ -1,0 +1,83 @@
+[
+  {
+    "entry_alignment_durations_s": [
+      13.80000072,
+      9.400000489999996,
+      11.600000604999991,
+      6.800000355000009,
+      18.40000096,
+      18.800000980999982
+    ],
+    "run": "logs/stability_20261117/v8/wrong_hint_box",
+    "status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "llm_calls": 11,
+    "contacts": 0,
+    "physical_contact_pairs": 0,
+    "action_timeouts": 2,
+    "stale_phase_samples": 0,
+    "semantic_stale_samples": 0,
+    "no_progress_events": 0,
+    "spin_guard_events": 0,
+    "category_conflict_aborts": 0,
+    "blocked_tools": 0,
+    "max_alignment_episode_s": 19.000000991000036,
+    "alignment_sample_span_total_s": 51.00000266000005,
+    "region_switches": [
+      {
+        "event": "agent_search_expanded",
+        "sim_time": 145.900007609,
+        "time_s": 145.900007609,
+        "reason": "regional_observation_coverage",
+        "evidence": {
+          "coverage": 0.980319563522993,
+          "local_scans": 2,
+          "region": "东侧设备区"
+        }
+      }
+    ],
+    "limitations": "Sampled tracking log; alignment is not necessarily a spin failure; contact pairs use raw PhysX reports. Older versions did not expose STALE_PHASE explicitly, so zero old samples cannot prove no stale phase. No statistical success claim.",
+    "actual_ego_updates": 213
+  },
+  {
+    "entry_alignment_durations_s": [
+      13.80000072,
+      9.500000495999998,
+      11.500000600000021,
+      3.4000001769999812,
+      13.100000684000008
+    ],
+    "run": "logs/stability_20261117/v9/wrong_hint_box",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 374.600019537,
+    "llm_calls": 12,
+    "contacts": 1,
+    "physical_contact_pairs": 0,
+    "action_timeouts": 0,
+    "stale_phase_samples": 0,
+    "semantic_stale_samples": 0,
+    "no_progress_events": 1,
+    "spin_guard_events": 0,
+    "category_conflict_aborts": 0,
+    "blocked_tools": 0,
+    "max_alignment_episode_s": 19.00000098999999,
+    "alignment_sample_span_total_s": 43.166668915999935,
+    "region_switches": [
+      {
+        "event": "agent_search_expanded",
+        "sim_time": 146.800007656,
+        "time_s": 146.800007656,
+        "reason": "regional_observation_coverage",
+        "evidence": {
+          "coverage": 0.9797349961028838,
+          "local_scans": 2,
+          "region": "东侧设备区"
+        }
+      }
+    ],
+    "limitations": "Sampled tracking log; alignment is not necessarily a spin failure; contact pairs use raw PhysX reports. Older versions did not expose STALE_PHASE explicitly, so zero old samples cannot prove no stale phase. No statistical success claim.",
+    "actual_ego_updates": 13
+  }
+]

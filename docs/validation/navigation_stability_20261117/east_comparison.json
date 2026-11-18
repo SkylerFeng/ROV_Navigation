@@ -1,0 +1,74 @@
+[
+  {
+    "entry_alignment_durations_s": [
+      13.900000725000002,
+      5.80000030299999
+    ],
+    "run": "logs/stability_20261117/v5/east_equipment",
+    "status": "SUCCEEDED",
+    "reason": "visual_identity_range_heading_and_hold_verified",
+    "simulation_seconds": 197.600010306,
+    "llm_calls": 6,
+    "contacts": 0,
+    "physical_contact_pairs": 0,
+    "action_timeouts": 1,
+    "no_progress_events": 0,
+    "spin_guard_events": 0,
+    "category_conflict_aborts": 0,
+    "blocked_tools": 0,
+    "max_alignment_episode_s": 16.000000834000005,
+    "alignment_sample_span_total_s": 35.066668498000006,
+    "region_switches": [],
+    "limitations": "Sampled tracking log; alignment is not necessarily a spin failure; contact pairs use raw PhysX reports. No statistical success claim."
+  },
+  {
+    "entry_alignment_durations_s": [],
+    "run": "logs/hardening_20261116/trials_v5/east_equipment",
+    "status": "FAILED",
+    "reason": "task_timeout",
+    "simulation_seconds": 420.000021905,
+    "llm_calls": 15,
+    "contacts": 1,
+    "physical_contact_pairs": 1,
+    "action_timeouts": 0,
+    "no_progress_events": 1,
+    "spin_guard_events": 0,
+    "category_conflict_aborts": 0,
+    "blocked_tools": 0,
+    "max_alignment_episode_s": 36.00000187699999,
+    "alignment_sample_span_total_s": 82.20000428600004,
+    "region_switches": [
+      {
+        "event": "agent_search_expanded",
+        "sim_time": 61.000003181,
+        "time_s": 61.000003181,
+        "reason": "search_budget_exhausted",
+        "expansion": 1,
+        "global_search": false
+      },
+      {
+        "event": "agent_search_expanded",
+        "sim_time": 111.500005815,
+        "time_s": 111.500005815,
+        "reason": "search_budget_exhausted",
+        "expansion": 2,
+        "global_search": false
+      },
+      {
+        "event": "agent_search_expanded",
+        "sim_time": 197.000010274,
+        "time_s": 197.000010274,
+        "reason": "prior_exhausted_try_alternative",
+        "region": "西侧设备区"
+      },
+      {
+        "event": "agent_search_expanded",
+        "sim_time": 365.700019072,
+        "time_s": 365.700019072,
+        "reason": "alternative_budget_exhausted",
+        "alternative_index": 1
+      }
+    ],
+    "limitations": "Sampled tracking log; alignment is not necessarily a spin failure; contact pairs use raw PhysX reports. No statistical success claim."
+  }
+]

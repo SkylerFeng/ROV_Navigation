@@ -1,0 +1,14 @@
+{
+  "run": "logs/stability_20261117/v9/east_equipment",
+  "status": "SUCCEEDED",
+  "reason": "visual_identity_range_heading_and_hold_verified",
+  "simulation_seconds": 200.600010462,
+  "path_length_m": 7.422690351164778,
+  "stationary_turn_seconds": 93.4000048711896,
+  "total_yaw_travel_deg": 932.3453717990033,
+  "yaw_acceleration_p95_rad_s2": 0.17613096324279226,
+  "llm_calls": 7,
+  "recovery_attempts": 0,
+  "verification_failures": 0,
+  "definition": "stationary turn: measured 3D speed <0.03 m/s and yaw rate >3 deg/s; includes useful scanning/alignment, not all wasted time"
+}

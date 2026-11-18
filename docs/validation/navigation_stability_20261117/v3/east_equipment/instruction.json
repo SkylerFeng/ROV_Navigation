@@ -1,0 +1,21 @@
+{
+  "instruction": "不要黄色管子，请寻找蓝色管子，距它表面保持一米。",
+  "resolution": {
+    "status": "accepted",
+    "category": "pipe",
+    "color": "blue",
+    "surface_standoff_m": 1.0,
+    "reason": "明确指定目标为蓝色管子（pipe + blue），排除黄色管子属否定修饰，不构成多目标歧义；距离‘一米’在允许范围[0.6, 1.5]内，单位正确。"
+  },
+  "provider": "qwen",
+  "model": "qwen-plus",
+  "latency_wall_s": 2.451221757999974,
+  "usage": {
+    "total_tokens": 492,
+    "completion_tokens": 91,
+    "prompt_tokens": 401,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  }
+}
